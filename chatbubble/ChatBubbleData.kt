@@ -14,23 +14,23 @@ import pl.gov.coi.common.ui.theme.AppTheme
 sealed class ChatBubbleData(
   open val label: Label?,
   open val isLoading: Boolean,
-  open val content: List&lt;Content&gt;?,
+  open val content: List<Content>?,
   open val additionalInfo: Label?,
   open val footerData: FooterData?,
-  open val actions: List&lt;ClickableContent&gt;?,
-  open val suggestions: List&lt;ClickableContent&gt;?,
-  open val onUrlClick: (String) -&gt; Unit,
+  open val actions: List<ClickableContent>?,
+  open val suggestions: List<ClickableContent>?,
+  open val onUrlClick: (String) -> Unit,
 ) {
 
   data class IncomingMessage(
     override val label: Label?,
     override val isLoading: Boolean = true,
-    override val content: List&lt;Content&gt;? = null,
+    override val content: List<Content>? = null,
     override val additionalInfo: Label? = null,
     override val footerData: FooterData? = null,
-    override val actions: List&lt;ClickableContent&gt;? = null,
-    override val suggestions: List&lt;ClickableContent&gt;? = null,
-    override val onUrlClick: (String) -&gt; Unit = {},
+    override val actions: List<ClickableContent>? = null,
+    override val suggestions: List<ClickableContent>? = null,
+    override val onUrlClick: (String) -> Unit = {},
   ) : ChatBubbleData(
     label = label,
     isLoading = isLoading,
@@ -44,7 +44,7 @@ sealed class ChatBubbleData(
 
   data class OutgoingMessage(
     override val label: Label? = null,
-    override val content: List&lt;Content&gt;,
+    override val content: List<Content>,
   ) : ChatBubbleData(
     label = label,
     isLoading = false,
@@ -72,7 +72,7 @@ enum class ContentType {
 
 data class FooterData(
   val sourcesData: SourcesData?,
-  val actionsData: List&lt;FooterActionData&gt;,
+  val actionsData: List<FooterActionData>,
 ) {
   internal val isVisible = sourcesData != null || actionsData.isNotEmpty()
 }
@@ -81,18 +81,18 @@ data class SourcesData(
   val title: Label,
   val showMoreButtonLabel: Label,
   val showLessButtonLabel: Label,
-  val items: List&lt;ClickableContent&gt;,
+  val items: List<ClickableContent>,
 )
 
 data class ClickableContent(
   val value: String,
-  val onClick: () -&gt; Unit,
+  val onClick: () -> Unit,
 ) {
   internal val actionButtonData = ButtonData(
     buttonSize = ButtonSize.Large(),
     buttonVariant = ButtonVariant.Secondary(),
     buttonType = ButtonType.WithText(
-      label = value.toLabel(tag = &quot;buttonTypeValue&quot;),
+      label = value.toLabel(tag = "buttonTypeValue"),
     ),
     onClick = onClick,
   )
@@ -101,7 +101,7 @@ data class ClickableContent(
 sealed class FooterActionData {
   abstract val buttonData: ButtonIconData
 
-  data class Share(val onClick: () -&gt; Unit) : FooterActionData() {
+  data class Share(val onClick: () -> Unit) : FooterActionData() {
     override val buttonData: ButtonIconData = ButtonIconData(
       iconResId = R.drawable.aa005_upload,
       iconColorProvider = { AppTheme.colors.neutral200 },
@@ -112,15 +112,15 @@ sealed class FooterActionData {
 
   sealed class Toggleable(
     open val isSelected: Boolean,
-    open val onToggle: (selected: Boolean) -&gt; Unit,
+    open val onToggle: (selected: Boolean) -> Unit,
   ) : FooterActionData() {
     override val buttonData by lazy {
       ButtonIconData(
         iconResId = iconResId,
         iconColorProvider = {
           when (isSelected) {
-            true -&gt; AppTheme.colors.primary900
-            else -&gt; AppTheme.colors.neutral200
+            true -> AppTheme.colors.primary900
+            else -> AppTheme.colors.neutral200
           }
         },
         onClick = { onToggle(!isSelected) },
@@ -130,7 +130,7 @@ sealed class FooterActionData {
 
     data class PositiveRate(
       override val isSelected: Boolean,
-      override val onToggle: (selected: Boolean) -&gt; Unit,
+      override val onToggle: (selected: Boolean) -> Unit,
     ) : Toggleable(
       isSelected = isSelected,
       onToggle = onToggle,
@@ -138,7 +138,7 @@ sealed class FooterActionData {
 
     data class NegativeRate(
       override val isSelected: Boolean,
-      override val onToggle: (selected: Boolean) -&gt; Unit,
+      override val onToggle: (selected: Boolean) -> Unit,
     ) : Toggleable(
       isSelected = isSelected,
       onToggle = onToggle,
@@ -148,13 +148,13 @@ sealed class FooterActionData {
 
 private val FooterActionData.Toggleable.iconResId
   get() = when (this) {
-    is FooterActionData.Toggleable.PositiveRate -&gt; when (isSelected) {
-      true -&gt; R.drawable.b013_like
-      false -&gt; R.drawable.ah001_like
+    is FooterActionData.Toggleable.PositiveRate -> when (isSelected) {
+      true -> R.drawable.b013_like
+      false -> R.drawable.ah001_like
     }
-    is FooterActionData.Toggleable.NegativeRate -&gt; when (isSelected) {
-      true -&gt; R.drawable.b014_dislike
-      false -&gt; R.drawable.ah002_dislike
+    is FooterActionData.Toggleable.NegativeRate -> when (isSelected) {
+      true -> R.drawable.b014_dislike
+      false -> R.drawable.ah002_dislike
     }
   }
 
@@ -165,11 +165,11 @@ private fun FooterActionData.Toggleable.contentDescription(): Label {
     CommonUILabelProvider.commonAccessibilityUnchecked()
   }
   val iconContentDescription = when (this) {
-    is FooterActionData.Toggleable.PositiveRate -&gt; CommonUILabelProvider.commonAccessibilityAnswerHelpful()
-    is FooterActionData.Toggleable.NegativeRate -&gt; CommonUILabelProvider.commonAccessibilityAnswerUnhelpful()
+    is FooterActionData.Toggleable.PositiveRate -> CommonUILabelProvider.commonAccessibilityAnswerHelpful()
+    is FooterActionData.Toggleable.NegativeRate -> CommonUILabelProvider.commonAccessibilityAnswerUnhelpful()
   }
-  return &quot;${iconContentDescription.text}. ${statusContentDescription.text}.&quot;
+  return "${iconContentDescription.text}. ${statusContentDescription.text}."
     .toLabel(
-      tag = &quot;${iconContentDescription.tag}_${statusContentDescription.tag}&quot;,
+      tag = "${iconContentDescription.tag}_${statusContentDescription.tag}",
     )
 }

@@ -8,8 +8,8 @@ import pl.gov.coi.common.ui.focus.FocusHost
 import pl.gov.coi.common.ui.focus.createFocusHost
 
 @Deprecated(
-  &quot;This is hack for WCAG requirements to focus titles on every screen enter.&quot; +
-    &quot; Should be deleted with task MOB-72178&quot;,
+  "This is hack for WCAG requirements to focus titles on every screen enter." +
+    " Should be deleted with task MOB-72178",
 )
 @Composable
 fun forceFocusOnStart(forceFocusTrigger: Boolean?): FocusHost {

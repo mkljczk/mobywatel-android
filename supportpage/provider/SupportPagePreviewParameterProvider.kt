@@ -12,44 +12,44 @@ import pl.gov.coi.common.ui.ds.supportpage.SupportPageData
 import pl.gov.coi.common.ui.preview.CustomPreviewParameterProvider
 import pl.gov.coi.common.ui.preview.ScreenShotTestData
 
-class SupportPagePreviewParameterProvider : CustomPreviewParameterProvider&lt;SupportPageData&lt;*&gt;&gt;() {
-  override val screenShotTestValues: Sequence&lt;ScreenShotTestData&lt;SupportPageData&lt;*&gt;&gt;&gt;
+class SupportPagePreviewParameterProvider : CustomPreviewParameterProvider<SupportPageData<*>>() {
+  override val screenShotTestValues: Sequence<ScreenShotTestData<SupportPageData<*>>>
     get() = sequenceOf(
       ScreenShotTestData(
-        screenShotTestName = &quot;SupportPageData&quot;,
+        screenShotTestName = "SupportPageData",
         value = SupportPageData(
-          topBarTitle = &quot;Top bar title&quot;.toLabel(),
+          topBarTitle = "Top bar title".toLabel(),
           topBarIconMainResId = null,
           onTopBarIconMainClick = null,
           topBarIconMenuResId = null,
           onTopBarIconMenuClick = null,
           iconResId = R.drawable.ag005_globe,
           iconContentDescription = Label.EMPTY,
-          title = &quot;Title Size XXL medium 24 Color - black 900&quot;.toLabel(),
-          message = &quot;Description text Size - M, Color - grey 900&quot;.toLabel(),
+          title = "Title Size XXL medium 24 Color - black 900".toLabel(),
+          message = "Description text Size - M, Color - grey 900".toLabel(),
           contentData = Unit,
           buttonData = null,
         ),
       ),
       ScreenShotTestData(
-        screenShotTestName = &quot;SupportPageDataExample&quot;,
+        screenShotTestName = "SupportPageDataExample",
         value = SupportPageData(
-          topBarTitle = &quot;Wybierz język&quot;.toLabel(),
+          topBarTitle = "Wybierz język".toLabel(),
           topBarIconMainResId = R.drawable.ab004_arrow_left,
           onTopBarIconMainClick = {},
           topBarIconMenuResId = null,
           onTopBarIconMenuClick = null,
           iconResId = R.drawable.ag005_globe,
           iconContentDescription = Label.EMPTY,
-          title = &quot;Top bar title&quot;.toLabel(),
-          message = &quot;Nie można zmienić języka w Ustawieniach.&quot;.toLabel(),
+          title = "Top bar title".toLabel(),
+          message = "Nie można zmienić języka w Ustawieniach.".toLabel(),
           contentData = InfoRowListData(
             items = listOf(
               InfoRowData.Bullet(
-                description = &quot;Support text\nSIZE M: Roboto Normal Gray 900&quot;.toLabel(),
+                description = "Support text\nSIZE M: Roboto Normal Gray 900".toLabel(),
               ),
               InfoRowData.Bullet(
-                description = &quot;Support text\nSIZE M: Roboto Normal Gray 900&quot;.toLabel(),
+                description = "Support text\nSIZE M: Roboto Normal Gray 900".toLabel(),
               ),
             ),
           ),
@@ -57,7 +57,7 @@ class SupportPagePreviewParameterProvider : CustomPreviewParameterProvider&lt;Su
             buttonSize = ButtonSize.Large(),
             buttonVariant = ButtonVariant.Primary,
             buttonType = ButtonType.WithText(
-              label = &quot;Dalej&quot;.toLabel(),
+              label = "Dalej".toLabel(),
             ),
             onClick = {},
           ),

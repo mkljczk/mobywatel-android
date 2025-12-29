@@ -11,55 +11,55 @@ import pl.gov.coi.common.ui.ds.link.LinkData
 import pl.gov.coi.common.ui.preview.CustomPreviewParameterProvider
 import pl.gov.coi.common.ui.preview.ScreenShotTestData
 
-class CheckBoxSinglePPP : CustomPreviewParameterProvider&lt;CheckBoxSingleData&gt;() {
-  override val screenShotTestValues: Sequence&lt;ScreenShotTestData&lt;CheckBoxSingleData&gt;&gt; = sequenceOf(
+class CheckBoxSinglePPP : CustomPreviewParameterProvider<CheckBoxSingleData>() {
+  override val screenShotTestValues: Sequence<ScreenShotTestData<CheckBoxSingleData>> = sequenceOf(
     ScreenShotTestData(
-      screenShotTestName = &quot;Default&quot;,
+      screenShotTestName = "Default",
       value = CheckBoxSingleData(
         checkbox = getCheckBoxData(),
         type = CheckBoxType.Default,
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;HelperText&quot;,
+      screenShotTestName = "HelperText",
       value = CheckBoxSingleData(
         checkbox = getCheckBoxData(isChecked = true),
-        type = CheckBoxType.Helper(helperText = &quot;helper text&quot;.toLabel()),
+        type = CheckBoxType.Helper(helperText = "helper text".toLabel()),
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;ErrorText&quot;,
+      screenShotTestName = "ErrorText",
       value = CheckBoxSingleData(
         checkbox = getCheckBoxData(isChecked = true),
-        type = CheckBoxType.Error(errorText = &quot;error text&quot;.toLabel()),
+        type = CheckBoxType.Error(errorText = "error text".toLabel()),
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;Disabled&quot;,
+      screenShotTestName = "Disabled",
       value = CheckBoxSingleData(
         isEnabled = false,
         checkbox = getCheckBoxData(isChecked = true),
-        type = CheckBoxType.Error(errorText = &quot;error text&quot;.toLabel()),
+        type = CheckBoxType.Error(errorText = "error text".toLabel()),
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;ContentBox&quot;,
+      screenShotTestName = "ContentBox",
       value = CheckBoxSingleData(
         checkbox = getCheckBoxData(),
-        type = CheckBoxType.Helper(helperText = &quot;helper text&quot;.toLabel()),
+        type = CheckBoxType.Helper(helperText = "helper text".toLabel()),
         contentType = CheckboxContentType.CONTENT_BOX,
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;Url&quot;,
+      screenShotTestName = "Url",
       value = CheckBoxSingleData(
         checkbox = getCheckBoxData(
           clickableTextData = ClickableTextData.Link(
             linkData = LinkData(
-              label = &quot;urlText&quot;.toLabel(),
-              url = &quot;url&quot;,
+              label = "urlText".toLabel(),
+              url = "url",
               linkType = LinkData.LinkType.WEBSITE,
-              onClick = { url -&gt; println(&quot;Checkbox $url clicked&quot;) },
+              onClick = { url -> println("Checkbox $url clicked") },
             ),
           ),
         ),
@@ -67,13 +67,13 @@ class CheckBoxSinglePPP : CustomPreviewParameterProvider&lt;CheckBoxSingleData&g
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;CheckBoxTextButton&quot;,
+      screenShotTestName = "CheckBoxTextButton",
       value = CheckBoxSingleData(
         checkbox = getCheckBoxData(
           clickableTextData = ClickableTextData.Button(
             buttonData = ButtonTextData(
-              label = &quot;textButton&quot;.toLabel(),
-              onClick = { println(&quot;buttonText clicked&quot;) },
+              label = "textButton".toLabel(),
+              onClick = { println("buttonText clicked") },
             ),
           ),
         ),
@@ -81,19 +81,19 @@ class CheckBoxSinglePPP : CustomPreviewParameterProvider&lt;CheckBoxSingleData&g
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;UrlWithError&quot;,
+      screenShotTestName = "UrlWithError",
       value = CheckBoxSingleData(
         checkbox = getCheckBoxData(
           clickableTextData = ClickableTextData.Link(
             linkData = LinkData(
-              label = &quot;urlText&quot;.toLabel(),
-              url = &quot;url&quot;,
+              label = "urlText".toLabel(),
+              url = "url",
               linkType = LinkData.LinkType.WEBSITE,
-              onClick = { url -&gt; println(&quot;Checkbox $url clicked&quot;) },
+              onClick = { url -> println("Checkbox $url clicked") },
             ),
           ),
         ),
-        type = CheckBoxType.Error(errorText = &quot;error text&quot;.toLabel()),
+        type = CheckBoxType.Error(errorText = "error text".toLabel()),
       ),
     ),
   )
@@ -104,7 +104,7 @@ class CheckBoxSinglePPP : CustomPreviewParameterProvider&lt;CheckBoxSingleData&g
   ) = CheckBoxRowData(
     isChecked = isChecked,
     onCheckedChange = {},
-    label = &quot;Checkbox label&quot;.toLabel(),
+    label = "Checkbox label".toLabel(),
     clickableTextData = clickableTextData,
   )
 }

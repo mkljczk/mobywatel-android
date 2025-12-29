@@ -70,7 +70,7 @@ fun ButtonIcon(
         focusable = false,
       )
     }
-    data.menuData?.let { menuData -&gt;
+    data.menuData?.let { menuData ->
       Menu(
         data = menuData,
       )

@@ -4,5 +4,5 @@ import pl.gov.coi.common.domain.label.Label
 
 data class CheckBoxHeaderData(
   val label: Label,
-  val onClick: (() -&gt; Unit)? = null,
+  val onClick: (() -> Unit)? = null,
 )

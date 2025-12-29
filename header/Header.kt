@@ -32,7 +32,7 @@ fun Header(
       modifier = Modifier.fillMaxWidth(),
       style = AppTheme.typography.headlineLargeMedium,
     )
-    data.message?.let { label -&gt;
+    data.message?.let { label ->
       Spacer(modifier = Modifier.height(height = AppTheme.dimensions.spacing100))
       CustomText(
         label = label,

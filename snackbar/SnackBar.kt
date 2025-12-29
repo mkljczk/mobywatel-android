@@ -47,8 +47,8 @@ fun SnackBar(data: SnackBarData) {
       )
 
       when (data) {
-        is SnackBarData.Default -&gt; Unit
-        is SnackBarData.DefaultWithIcon -&gt; {
+        is SnackBarData.Default -> Unit
+        is SnackBarData.DefaultWithIcon -> {
           Spacer(modifier = Modifier.width(width = AppTheme.dimensions.spacing150))
           Box(contentAlignment = Alignment.TopCenter) {
             ButtonIcon(data = data.iconButtonData)

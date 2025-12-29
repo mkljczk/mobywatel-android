@@ -4,5 +4,5 @@ import pl.gov.coi.common.domain.label.Label
 
 data class UrlData(
   val urlText: Label,
-  val onClick: (url: String) -&gt; Unit,
+  val onClick: (url: String) -> Unit,
 )

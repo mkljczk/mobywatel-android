@@ -41,11 +41,11 @@ internal fun SingleCardSelectableCheckbox(
       disabledContainerColor = AppTheme.colors.neutral30,
     ),
     border = when {
-      data.checkboxData.checkbox.isChecked -&gt; BorderStroke(
+      data.checkboxData.checkbox.isChecked -> BorderStroke(
         width = AppTheme.dimensions.strokeWidth,
         color = AppTheme.colors.primary900,
       )
-      else -&gt; null
+      else -> null
     },
     interactionSource = NoRippleInteractionSource(),
     onClick = { },
@@ -59,9 +59,9 @@ internal fun SingleCardSelectableCheckbox(
         .padding(all = AppTheme.dimensions.spacing250),
     ) {
       when (data) {
-        is SingleCardData.SelectableCheckbox.Title -&gt; SingleCardSelectableCheckboxTitleContent(data = data)
-        is SingleCardData.SelectableCheckbox.IconTitle -&gt; SingleCardSelectableCheckboxIconTitleContent(data = data)
-        is SingleCardData.SelectableCheckbox.TitleDescription -&gt;
+        is SingleCardData.SelectableCheckbox.Title -> SingleCardSelectableCheckboxTitleContent(data = data)
+        is SingleCardData.SelectableCheckbox.IconTitle -> SingleCardSelectableCheckboxIconTitleContent(data = data)
+        is SingleCardData.SelectableCheckbox.TitleDescription ->
           SingleCardSelectableCheckboxTitleDescriptionContent(data = data)
       }
       Spacer(
@@ -104,7 +104,7 @@ internal fun RowScope.SingleCardSelectableCheckboxTitleDescriptionContent(
       color = AppTheme.colors.neutral200,
       modifier = Modifier.fillMaxWidth(),
     )
-    data.descriptionSecond?.let { descriptionSecond -&gt;
+    data.descriptionSecond?.let { descriptionSecond ->
       Spacer(
         modifier = Modifier.height(height = AppTheme.dimensions.spacing100),
       )
@@ -115,7 +115,7 @@ internal fun RowScope.SingleCardSelectableCheckboxTitleDescriptionContent(
         modifier = Modifier.fillMaxWidth(),
       )
     }
-    data.descriptionThird?.let { descriptionThird -&gt;
+    data.descriptionThird?.let { descriptionThird ->
       Spacer(
         modifier = Modifier.height(height = AppTheme.dimensions.spacing100),
       )

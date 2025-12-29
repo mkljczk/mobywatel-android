@@ -16,7 +16,7 @@ import pl.gov.coi.common.ui.theme.AppTheme
 @Composable
 fun ContentBox(
   modifier: Modifier = Modifier,
-  content: @Composable () -&gt; Unit,
+  content: @Composable () -> Unit,
 ) {
   Box(
     modifier = modifier
@@ -39,9 +39,9 @@ fun ContentBoxPreview() {
   ) {
     ContentBox {
       Column {
-        CustomText(label = &quot;Text 1&quot;.toLabel(tag = &quot;text1Label&quot;))
-        CustomText(label = &quot;Text 2&quot;.toLabel(tag = &quot;text2Label&quot;))
-        CustomText(label = &quot;Text 3&quot;.toLabel(tag = &quot;text3Label&quot;))
+        CustomText(label = "Text 1".toLabel(tag = "text1Label"))
+        CustomText(label = "Text 2".toLabel(tag = "text2Label"))
+        CustomText(label = "Text 3".toLabel(tag = "text3Label"))
       }
     }
   }

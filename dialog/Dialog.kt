@@ -49,7 +49,7 @@ fun Dialog(
       if (data is DialogData.WithIcon) {
         Icon(
           data = IconData.Standard(
-            testTag = data.testTag?.let { tag -&gt; tag + &quot;Icon&quot; },
+            testTag = data.testTag?.let { tag -> tag + "Icon" },
             iconResId = data.icon.iconResId,
             iconColorProvider = data.icon.iconColorProvider,
             iconSize = IconSize.SIZE24,
@@ -60,16 +60,16 @@ fun Dialog(
       }
 
       CustomText(
-        testTag = data.testTag?.let { tag -&gt; tag + &quot;Title&quot; },
+        testTag = data.testTag?.let { tag -> tag + "Title" },
         label = data.title,
         style = AppTheme.typography.titleMedium,
         textAlign = data.textAlign,
         color = AppTheme.colors.neutral500,
       )
-      data.annotatedBody?.let { annotatedBody -&gt;
+      data.annotatedBody?.let { annotatedBody ->
         Spacer(modifier = Modifier.height(height = AppTheme.dimensions.spacing200))
         CustomText(
-          testTag = data.testTag?.let { tag -&gt; tag + &quot;AnnotatedBody&quot; },
+          testTag = data.testTag?.let { tag -> tag + "AnnotatedBody" },
           annotatedContent = annotatedBody.invoke(),
           style = AppTheme.typography.bodyMediumRegular,
           textAlign = data.textAlign,
@@ -78,7 +78,7 @@ fun Dialog(
       } ?: data.body?.let {
         Spacer(modifier = Modifier.height(height = AppTheme.dimensions.spacing200))
         CustomText(
-          testTag = data.testTag?.let { tag -&gt; tag + &quot;Body&quot; },
+          testTag = data.testTag?.let { tag -> tag + "Body" },
           label = data.body,
           style = AppTheme.typography.bodyMediumRegular,
           textAlign = TextAlign.Start,
@@ -102,7 +102,7 @@ fun Dialog(
           Modifier.fillMaxWidth(),
           horizontalArrangement = Arrangement.End,
         ) {
-          data.secondaryButtonData?.let { secondaryButtonData -&gt;
+          data.secondaryButtonData?.let { secondaryButtonData ->
             Button(data = secondaryButtonData)
             Spacer(modifier = Modifier.width(width = AppTheme.dimensions.spacing50))
           }

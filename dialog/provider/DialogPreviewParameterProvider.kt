@@ -16,52 +16,52 @@ import pl.gov.coi.common.ui.preview.ScreenShotTestData
 import pl.gov.coi.common.ui.theme.AppTheme
 import pl.gov.coi.common.ui.theme.withStyle
 
-class DialogPreviewParameterProvider() : CustomPreviewParameterProvider&lt;DialogData&gt;() {
-  override val screenShotTestValues: Sequence&lt;ScreenShotTestData&lt;DialogData&gt;&gt; = sequenceOf(
+class DialogPreviewParameterProvider() : CustomPreviewParameterProvider<DialogData>() {
+  override val screenShotTestValues: Sequence<ScreenShotTestData<DialogData>> = sequenceOf(
     ScreenShotTestData(
-      screenShotTestName = &quot;DialogLongTextOneButton&quot;,
+      screenShotTestName = "DialogLongTextOneButton",
       value = provideDialogLongTextOneButton(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;DialogLongTextTwoButtons&quot;,
+      screenShotTestName = "DialogLongTextTwoButtons",
       value = provideDialogLongTextTwoButtons(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;DialogLongTextThreeButtons&quot;,
+      screenShotTestName = "DialogLongTextThreeButtons",
       value = provideDialogLongTextThreeButtons(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;DialogOnlyTitleOneButton&quot;,
+      screenShotTestName = "DialogOnlyTitleOneButton",
       value = provideDialogOnlyTitleOneButton(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;DialogShortTextColoredButton&quot;,
+      screenShotTestName = "DialogShortTextColoredButton",
       value = provideDialogShortTextColoredButton(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;DialogShortTextWithIcon&quot;,
+      screenShotTestName = "DialogShortTextWithIcon",
       value = provideDialogShortTextWithIcon(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;DialogHighlightedTextTwoButtons&quot;,
+      screenShotTestName = "DialogHighlightedTextTwoButtons",
       value = provideDialogHighlightedTextTwoButtons(),
     ),
   )
 
   private fun provideLongText() =
-    &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. &quot; +
-      &quot;Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. &quot; +
-      &quot;Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.&quot;
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. " +
+      "Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. " +
+      "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
 
   private fun provideDialogLongTextOneButton() =
     DialogData.WithText(
-      title = &quot;Dialog Title&quot;.toLabel(),
+      title = "Dialog Title".toLabel(),
       body = provideLongText().toLabel(),
       primaryButtonData =
       ButtonData(
         buttonVariant = ButtonVariant.Tertiary,
         buttonType = ButtonType.WithText(
-          label = &quot;Primary button&quot;.toLabel(),
+          label = "Primary button".toLabel(),
         ),
         buttonSize = ButtonSize.Small,
         onClick = {},
@@ -72,7 +72,7 @@ class DialogPreviewParameterProvider() : CustomPreviewParameterProvider&lt;Dialo
     secondaryButtonData = ButtonData(
       buttonVariant = ButtonVariant.Tertiary,
       buttonType = ButtonType.WithText(
-        label = &quot;Secondary button&quot;.toLabel(),
+        label = "Secondary button".toLabel(),
       ),
       buttonSize = ButtonSize.Small,
       onClick = {},
@@ -80,12 +80,12 @@ class DialogPreviewParameterProvider() : CustomPreviewParameterProvider&lt;Dialo
   )
 
   private fun provideDialogLongTextThreeButtons() = DialogData.WithThreeButtons(
-    title = &quot;Dialog Title&quot;.toLabel(),
+    title = "Dialog Title".toLabel(),
     body = provideLongText().toLabel(),
     primaryButtonData = ButtonData(
       buttonVariant = ButtonVariant.Tertiary,
       buttonType = ButtonType.WithText(
-        label = &quot;Primary button&quot;.toLabel(),
+        label = "Primary button".toLabel(),
       ),
       buttonSize = ButtonSize.Small,
       onClick = {},
@@ -93,7 +93,7 @@ class DialogPreviewParameterProvider() : CustomPreviewParameterProvider&lt;Dialo
     secondaryButtonData = ButtonData(
       buttonVariant = ButtonVariant.Tertiary,
       buttonType = ButtonType.WithText(
-        label = &quot;Secondary button&quot;.toLabel(),
+        label = "Secondary button".toLabel(),
       ),
       buttonSize = ButtonSize.Small,
       onClick = {},
@@ -102,7 +102,7 @@ class DialogPreviewParameterProvider() : CustomPreviewParameterProvider&lt;Dialo
     ButtonData(
       buttonVariant = ButtonVariant.Tertiary,
       buttonType = ButtonType.WithText(
-        label = &quot;Tertiary button&quot;.toLabel(),
+        label = "Tertiary button".toLabel(),
       ),
       buttonSize = ButtonSize.Small,
       onClick = {},
@@ -110,11 +110,11 @@ class DialogPreviewParameterProvider() : CustomPreviewParameterProvider&lt;Dialo
   ) {}
 
   private fun provideDialogOnlyTitleOneButton() = DialogData.WithText(
-    title = &quot;Dialog Title&quot;.toLabel(),
+    title = "Dialog Title".toLabel(),
     primaryButtonData = ButtonData(
       buttonVariant = ButtonVariant.Tertiary,
       buttonType = ButtonType.WithText(
-        label = &quot;Primary button&quot;.toLabel(),
+        label = "Primary button".toLabel(),
       ),
       buttonSize = ButtonSize.Small,
       onClick = {},
@@ -122,12 +122,12 @@ class DialogPreviewParameterProvider() : CustomPreviewParameterProvider&lt;Dialo
   ) {}
 
   private fun provideDialogShortTextColoredButton() = DialogData.WithText(
-    title = &quot;Dialog Title&quot;.toLabel(),
-    body = &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.&quot;.toLabel(),
+    title = "Dialog Title".toLabel(),
+    body = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.".toLabel(),
     primaryButtonData = ButtonData(
       buttonVariant = ButtonVariant.Tertiary,
       buttonType = ButtonType.WithText(
-        label = &quot;Primary button&quot;.toLabel(),
+        label = "Primary button".toLabel(),
       ),
       buttonSize = ButtonSize.Small,
       onClick = {},
@@ -136,7 +136,7 @@ class DialogPreviewParameterProvider() : CustomPreviewParameterProvider&lt;Dialo
       buttonState = ButtonState.Destructive,
       buttonVariant = ButtonVariant.Tertiary,
       buttonType = ButtonType.WithText(
-        label = &quot;Secondary button&quot;.toLabel(),
+        label = "Secondary button".toLabel(),
       ),
       buttonSize = ButtonSize.Small,
       onClick = {},
@@ -148,12 +148,12 @@ class DialogPreviewParameterProvider() : CustomPreviewParameterProvider&lt;Dialo
       iconResId = R.drawable.aa025_star,
       iconColorProvider = { AppTheme.colors.supportRed100 },
     ),
-    title = &quot;Dialog Title&quot;.toLabel(),
-    body = &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.&quot;.toLabel(),
+    title = "Dialog Title".toLabel(),
+    body = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.".toLabel(),
     primaryButtonData = ButtonData(
       buttonVariant = ButtonVariant.Tertiary,
       buttonType = ButtonType.WithText(
-        label = &quot;Primary button&quot;.toLabel(),
+        label = "Primary button".toLabel(),
       ),
       buttonSize = ButtonSize.Small,
       onClick = {},
@@ -161,7 +161,7 @@ class DialogPreviewParameterProvider() : CustomPreviewParameterProvider&lt;Dialo
     secondaryButtonData = ButtonData(
       buttonVariant = ButtonVariant.Tertiary,
       buttonType = ButtonType.WithText(
-        label = &quot;Secondary button&quot;.toLabel(),
+        label = "Secondary button".toLabel(),
       ),
       buttonSize = ButtonSize.Small,
       onClick = {},
@@ -177,7 +177,7 @@ class DialogPreviewParameterProvider() : CustomPreviewParameterProvider&lt;Dialo
     buildAnnotatedString {
       val spanStyle = AppTheme.typography.bodyLargeRegular
       withStyle(spanStyle) {
-        append(&quot;Normal text&quot;)
+        append("Normal text")
       }
       withStyle(
         spanStyle.copy(
@@ -185,10 +185,10 @@ class DialogPreviewParameterProvider() : CustomPreviewParameterProvider&lt;Dialo
           color = AppTheme.colors.primary900,
         ),
       ) {
-        append(&quot; Highlighted text&quot;)
+        append(" Highlighted text")
       }
       withStyle(spanStyle) {
-        append(&quot; Normal text&quot;)
+        append(" Normal text")
       }
     }
 

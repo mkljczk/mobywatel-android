@@ -31,7 +31,7 @@ fun PageIndicator(pagerState: PagerState) {
     horizontalArrangement = Arrangement.Center,
     verticalAlignment = Alignment.Bottom,
   ) {
-    repeat(times = pagerState.pageCount) { iteration -&gt;
+    repeat(times = pagerState.pageCount) { iteration ->
       val modifier = if (pagerState.currentPage == iteration) {
         Modifier.background(color = AppTheme.colors.primary900)
       } else {
@@ -47,7 +47,7 @@ fun PageIndicator(pagerState: PagerState) {
           .size(size = DOT_SIZE)
           .then(other = modifier),
       )
-      if (iteration &lt; pagerState.pageCount - 1) {
+      if (iteration < pagerState.pageCount - 1) {
         Spacer(modifier = Modifier.width(AppTheme.dimensions.spacing150))
       }
     }

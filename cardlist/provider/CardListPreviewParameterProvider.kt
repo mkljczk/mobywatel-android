@@ -27,67 +27,67 @@ data class ProvidedCardListData(
   val data: CardListData,
 )
 
-class CardListPreviewProvider : CustomWrappedDataPreviewParameterProvider&lt;
+class CardListPreviewProvider : CustomWrappedDataPreviewParameterProvider<
   Unit,
   CardListData,
-  Mapper&lt;Unit, CardListData&gt;,
+  Mapper<Unit, CardListData>,
   ProvidedCardListData,
-  &gt;() {
+  >() {
 
   private val cards = mapOf(
-    &quot;InfoTitle&quot; to getCardListInfoTitle(),
-    &quot;InfoTitleLong&quot; to getCardListInfoTitleLong(),
-    &quot;InfoTitleDescriptionLong&quot; to getCardListInfoTitleDescriptionLong(),
-    &quot;InfoTitleInfo&quot; to getCardListInfoTitleInfo(),
-    &quot;InfoTitleDescription&quot; to getCardListInfoTitleDescription(),
-    &quot;InfoTitleInfoLong&quot; to getCardListInfoTitleInfoLong(),
-    &quot;InfoTitleIcon&quot; to getCardListInfoTitleIcon(),
-    &quot;InfoTitleIconBigger&quot; to getCardListInfoTitleIconBigger(),
-    &quot;InfoTitleDescriptionIcon&quot; to getCardListInfoTitleDescriptionIcon(),
-    &quot;InfoTitleDescriptionIconDisabledState&quot; to getCardListInfoTitleDescriptionIconDisabledState(),
-    &quot;InfoTitleWithButton&quot; to getCardListInfoTitleWithButton(),
-    &quot;InfoTitleWithSwitch&quot; to getCardListInfoTitleWithSwitch(),
-    &quot;ClickableTitle&quot; to getCardListClickableTitle(),
-    &quot;ClickableTitleLong&quot; to getCardListClickableTitleLong(),
-    &quot;ClickableTitleDescription&quot; to getCardListClickableTitleDescription(),
-    &quot;ClickableTitleDescriptionLong&quot; to getCardListClickableTitleDescriptionLong(),
-    &quot;ClickableInfoTitle&quot; to getCardListClickableInfoTitle(),
-    &quot;ClickableInfoTitleLong&quot; to getCardListClickableInfoTitleLong(),
-    &quot;ClickableIconTitle&quot; to getCardListClickableIconTitle(),
-    &quot;ClickableIconTitleLong&quot; to getCardListClickableIconTitleLong(),
-    &quot;ClickableIconTitleDescription&quot; to getCardListClickableIconTitleDescription(),
-    &quot;ClickableIconTitleDescriptionLong&quot; to getCardListClickableIconTitleDescriptionLong(),
-    &quot;ClickableIconTitleDescriptionLongIconOnOneLineWithTitle&quot; to
+    "InfoTitle" to getCardListInfoTitle(),
+    "InfoTitleLong" to getCardListInfoTitleLong(),
+    "InfoTitleDescriptionLong" to getCardListInfoTitleDescriptionLong(),
+    "InfoTitleInfo" to getCardListInfoTitleInfo(),
+    "InfoTitleDescription" to getCardListInfoTitleDescription(),
+    "InfoTitleInfoLong" to getCardListInfoTitleInfoLong(),
+    "InfoTitleIcon" to getCardListInfoTitleIcon(),
+    "InfoTitleIconBigger" to getCardListInfoTitleIconBigger(),
+    "InfoTitleDescriptionIcon" to getCardListInfoTitleDescriptionIcon(),
+    "InfoTitleDescriptionIconDisabledState" to getCardListInfoTitleDescriptionIconDisabledState(),
+    "InfoTitleWithButton" to getCardListInfoTitleWithButton(),
+    "InfoTitleWithSwitch" to getCardListInfoTitleWithSwitch(),
+    "ClickableTitle" to getCardListClickableTitle(),
+    "ClickableTitleLong" to getCardListClickableTitleLong(),
+    "ClickableTitleDescription" to getCardListClickableTitleDescription(),
+    "ClickableTitleDescriptionLong" to getCardListClickableTitleDescriptionLong(),
+    "ClickableInfoTitle" to getCardListClickableInfoTitle(),
+    "ClickableInfoTitleLong" to getCardListClickableInfoTitleLong(),
+    "ClickableIconTitle" to getCardListClickableIconTitle(),
+    "ClickableIconTitleLong" to getCardListClickableIconTitleLong(),
+    "ClickableIconTitleDescription" to getCardListClickableIconTitleDescription(),
+    "ClickableIconTitleDescriptionLong" to getCardListClickableIconTitleDescriptionLong(),
+    "ClickableIconTitleDescriptionLongIconOnOneLineWithTitle" to
       getCardListClickableIconTitleDescriptionLongIconOnOneLineWithTitle(),
-    &quot;ClickableIconTitleDescriptionLongFocusState&quot; to getCardListClickableIconTitleDescriptionLongFocusState(),
-    &quot;ClickableIconTitleDescriptionLongDisabledState&quot; to getCardListClickableIconTitleDescriptionLongDisabledState(),
-    &quot;ClickableTitleDescriptionStatusBadge&quot; to getCardListClickableTitleDescriptionStatusBadge(),
-    &quot;ClickableButtonIconTitle&quot; to getCardListClickableButtonIconTitle(),
-    &quot;ClickableDeleteButtonIconTitle&quot; to getCardListClickableDeleteButtonIconTitle(),
-    &quot;SelectableRadioButtonTitleUnselected&quot; to getCardListSelectableRadioButtonTitleUnselected(),
-    &quot;SelectableRadioButtonTitleUnselectedFocusState&quot; to getCardListSelectableRadioButtonTitleUnselectedFocusState(),
-    &quot;SelectableRadioButtonTitleUnselectedDisabledState&quot; to
+    "ClickableIconTitleDescriptionLongFocusState" to getCardListClickableIconTitleDescriptionLongFocusState(),
+    "ClickableIconTitleDescriptionLongDisabledState" to getCardListClickableIconTitleDescriptionLongDisabledState(),
+    "ClickableTitleDescriptionStatusBadge" to getCardListClickableTitleDescriptionStatusBadge(),
+    "ClickableButtonIconTitle" to getCardListClickableButtonIconTitle(),
+    "ClickableDeleteButtonIconTitle" to getCardListClickableDeleteButtonIconTitle(),
+    "SelectableRadioButtonTitleUnselected" to getCardListSelectableRadioButtonTitleUnselected(),
+    "SelectableRadioButtonTitleUnselectedFocusState" to getCardListSelectableRadioButtonTitleUnselectedFocusState(),
+    "SelectableRadioButtonTitleUnselectedDisabledState" to
       getCardListSelectableRadioButtonTitleUnselectedDisabledState(),
-    &quot;SelectableRadioButtonTitleUnselectedLong&quot; to getCardListSelectableRadioButtonTitleUnselectedLong(),
-    &quot;SelectableRadioButtonTitleSelected&quot; to getCardListSelectableRadioButtonTitleSelected(),
-    &quot;SelectableRadioButtonIconTitleUnselected&quot; to getCardListSelectableRadioButtonIconTitleUnselected(),
-    &quot;SelectableRadioButtonIconTitleUnselectedLong&quot; to getCardListSelectableRadioButtonIconTitleUnselectedLong(),
-    &quot;SelectableRadioButtonIconTitleSelected&quot; to getCardListSelectableRadioButtonIconTitleSelected(),
-    &quot;SelectableRadioButtonBiggerIconTitleSelected&quot; to getCardListSelectableRadioButtonBiggerIconTitleSelected(),
-    &quot;SelectableRadioButtonTitleDescriptionUnselected&quot; to getCardListSelectableRadioButtonTitleDescriptionUnselected(),
-    &quot;SelectableRadioButtonTitleDescriptionUnselectedLong&quot; to
+    "SelectableRadioButtonTitleUnselectedLong" to getCardListSelectableRadioButtonTitleUnselectedLong(),
+    "SelectableRadioButtonTitleSelected" to getCardListSelectableRadioButtonTitleSelected(),
+    "SelectableRadioButtonIconTitleUnselected" to getCardListSelectableRadioButtonIconTitleUnselected(),
+    "SelectableRadioButtonIconTitleUnselectedLong" to getCardListSelectableRadioButtonIconTitleUnselectedLong(),
+    "SelectableRadioButtonIconTitleSelected" to getCardListSelectableRadioButtonIconTitleSelected(),
+    "SelectableRadioButtonBiggerIconTitleSelected" to getCardListSelectableRadioButtonBiggerIconTitleSelected(),
+    "SelectableRadioButtonTitleDescriptionUnselected" to getCardListSelectableRadioButtonTitleDescriptionUnselected(),
+    "SelectableRadioButtonTitleDescriptionUnselectedLong" to
       getCardListSelectableRadioButtonTitleDescriptionUnselectedLong(),
-    &quot;SelectableRadioButtonTitleDescriptionSelected&quot; to getCardListSelectableRadioButtonTitleDescriptionSelected(),
+    "SelectableRadioButtonTitleDescriptionSelected" to getCardListSelectableRadioButtonTitleDescriptionSelected(),
   )
 
-  override fun mapper(context: Context): Mapper&lt;Unit, CardListData&gt; {
-    return object : Mapper&lt;Unit, CardListData&gt; {
+  override fun mapper(context: Context): Mapper<Unit, CardListData> {
+    return object : Mapper<Unit, CardListData> {
       override fun invoke(p1: Unit): CardListData = CardListData(cards = emptyList())
     }
   }
 
-  override val screenShotTestValues: Sequence&lt;ScreenShotTestDataProvider&lt;ProvidedCardListData&gt;&gt;
-    get() = cards.map { (testName, cardData) -&gt;
+  override val screenShotTestValues: Sequence<ScreenShotTestDataProvider<ProvidedCardListData>>
+    get() = cards.map { (testName, cardData) ->
       ScreenShotTestDataProvider(
         screenShotTestName = testName,
         wrappedValue = WrappedValue {
@@ -102,10 +102,10 @@ class CardListPreviewProvider : CustomWrappedDataPreviewParameterProvider&lt;
   private fun getCardListInfoTitle() = CardListData(
     cards = listOf(
       SingleCardData.Info.Title(
-        title = &quot;Card title&quot;.toLabel(),
+        title = "Card title".toLabel(),
       ),
       SingleCardData.Info.Title(
-        title = &quot;Card title 2&quot;.toLabel(),
+        title = "Card title 2".toLabel(),
       ),
     ),
   )
@@ -114,14 +114,14 @@ class CardListPreviewProvider : CustomWrappedDataPreviewParameterProvider&lt;
     cards = listOf(
       SingleCardData.Info.Title(
         title = (
-          &quot;Lorem ipsum dolor sit amet, consectetur adipiscing &quot; +
-            &quot;elit, sed do eiusmod tempor incididunt&quot;
+          "Lorem ipsum dolor sit amet, consectetur adipiscing " +
+            "elit, sed do eiusmod tempor incididunt"
           ).toLabel(),
       ),
       SingleCardData.Info.Title(
         title = (
-          &quot;Lorem ipsum dolor sit amet, consectetur adipiscing &quot; +
-            &quot;elit, sed do eiusmod tempor incididunt 2&quot;
+          "Lorem ipsum dolor sit amet, consectetur adipiscing " +
+            "elit, sed do eiusmod tempor incididunt 2"
           ).toLabel(),
       ),
     ),
@@ -130,12 +130,12 @@ class CardListPreviewProvider : CustomWrappedDataPreviewParameterProvider&lt;
   private fun getCardListInfoTitleDescription() = CardListData(
     cards = listOf(
       SingleCardData.Info.TitleDescription(
-        title = &quot;Card title&quot;.toLabel(),
-        description = &quot;Card description&quot;.toLabel(),
+        title = "Card title".toLabel(),
+        description = "Card description".toLabel(),
       ),
       SingleCardData.Info.TitleDescription(
-        title = &quot;Card title 2&quot;.toLabel(),
-        description = &quot;Card description 2&quot;.toLabel(),
+        title = "Card title 2".toLabel(),
+        description = "Card description 2".toLabel(),
       ),
     ),
   )
@@ -143,18 +143,18 @@ class CardListPreviewProvider : CustomWrappedDataPreviewParameterProvider&lt;
   private fun getCardListInfoTitleDescriptionLong() = CardListData(
     cards = listOf(
       SingleCardData.Info.TitleDescription(
-        title = &quot;Card title&quot;.toLabel(),
+        title = "Card title".toLabel(),
         description = (
-          &quot;Lorem ipsum dolor sit amet, consectetur adipiscing &quot; +
-            &quot;elit, sed do eiusmod tempor incididunt&quot;
+          "Lorem ipsum dolor sit amet, consectetur adipiscing " +
+            "elit, sed do eiusmod tempor incididunt"
           )
           .toLabel(),
       ),
       SingleCardData.Info.TitleDescription(
-        title = &quot;Card title 2&quot;.toLabel(),
+        title = "Card title 2".toLabel(),
         description = (
-          &quot;Lorem ipsum dolor sit amet, consectetur adipiscing &quot; +
-            &quot;elit, sed do eiusmod tempor incididunt 2&quot;
+          "Lorem ipsum dolor sit amet, consectetur adipiscing " +
+            "elit, sed do eiusmod tempor incididunt 2"
           )
           .toLabel(),
       ),
@@ -164,12 +164,12 @@ class CardListPreviewProvider : CustomWrappedDataPreviewParameterProvider&lt;
   private fun getCardListInfoTitleInfo() = CardListData(
     cards = listOf(
       SingleCardData.Info.InfoTitle(
-        title = &quot;Card title&quot;.toLabel(),
-        info = &quot;Card info&quot;.toLabel(),
+        title = "Card title".toLabel(),
+        info = "Card info".toLabel(),
       ),
       SingleCardData.Info.InfoTitle(
-        title = &quot;Card title 2&quot;.toLabel(),
-        info = &quot;Card info 2&quot;.toLabel(),
+        title = "Card title 2".toLabel(),
+        info = "Card info 2".toLabel(),
       ),
     ),
   )
@@ -177,17 +177,17 @@ class CardListPreviewProvider : CustomWrappedDataPreviewParameterProvider&lt;
   private fun getCardListInfoTitleInfoLong() = CardListData(
     cards = listOf(
       SingleCardData.Info.InfoTitle(
-        title = &quot;Card title&quot;.toLabel(),
+        title = "Card title".toLabel(),
         info = (
-          &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do &quot; +
-            &quot;eiusmod tempor incididunt&quot;
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do " +
+            "eiusmod tempor incididunt"
           ).toLabel(),
       ),
       SingleCardData.Info.InfoTitle(
-        title = &quot;Card title 2&quot;.toLabel(),
+        title = "Card title 2".toLabel(),
         info = (
-          &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do &quot; +
-            &quot;eiusmod tempor incididunt 2&quot;
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do " +
+            "eiusmod tempor incididunt 2"
           ).toLabel(),
       ),
     ),
@@ -196,11 +196,11 @@ class CardListPreviewProvider : CustomWrappedDataPreviewParameterProvider&lt;
   private fun getCardListInfoTitleIcon() = CardListData(
     cards = listOf(
       SingleCardData.Info.IconTitle(
-        title = &quot;Card title&quot;.toLabel(),
+        title = "Card title".toLabel(),
         iconResId = R.drawable.ab001_home,
       ),
       SingleCardData.Info.IconTitle(
-        title = &quot;Card title 2&quot;.toLabel(),
+        title = "Card title 2".toLabel(),
         iconResId = R.drawable.ab001_home,
       ),
     ),
@@ -209,12 +209,12 @@ class CardListPreviewProvider : CustomWrappedDataPreviewParameterProvider&lt;
   private fun getCardListInfoTitleIconBigger() = CardListData(
     cards = listOf(
       SingleCardData.Info.IconTitle(
-        title = &quot;Card title&quot;.toLabel(),
+        title = "Card title".toLabel(),
         iconResId = R.drawable.ab001_home,
         iconSize = IconSize.SIZE32,
       ),
       SingleCardData.Info.IconTitle(
-        title = &quot;Card title 2&quot;.toLabel(),
+        title = "Card title 2".toLabel(),
         iconResId = R.drawable.ab001_home,
         iconSize = IconSize.SIZE32,
       ),
@@ -224,13 +224,13 @@ class CardListPreviewProvider : CustomWrappedDataPreviewParameterProvider&lt;
   private fun getCardListInfoTitleDescriptionIcon() = CardListData(
     cards = listOf(
       SingleCardData.Info.IconTitleDescription(
-        title = &quot;Card title&quot;.toLabel(),
-        description = &quot;Card description&quot;.toLabel(),
+        title = "Card title".toLabel(),
+        description = "Card description".toLabel(),
         iconResId = R.drawable.ab001_home,
       ),
       SingleCardData.Info.IconTitleDescription(
-        title = &quot;Card title 2&quot;.toLabel(),
-        description = &quot;Card description 2&quot;.toLabel(),
+        title = "Card title 2".toLabel(),
+        description = "Card description 2".toLabel(),
         iconResId = R.drawable.ab001_home,
       ),
     ),
@@ -239,14 +239,14 @@ class CardListPreviewProvider : CustomWrappedDataPreviewParameterProvider&lt;
   private fun getCardListInfoTitleDescriptionIconDisabledState() = CardListData(
     cards = listOf(
       SingleCardData.Info.IconTitleDescription(
-        title = &quot;Card title&quot;.toLabel(),
-        description = &quot;Card description&quot;.toLabel(),
+        title = "Card title".toLabel(),
+        description = "Card description".toLabel(),
         iconResId = R.drawable.ab001_home,
         state = SingleCardInfoState.DISABLE,
       ),
       SingleCardData.Info.IconTitleDescription(
-        title = &quot;Card title 2&quot;.toLabel(),
-        description = &quot;Card description 2&quot;.toLabel(),
+        title = "Card title 2".toLabel(),
+        description = "Card description 2".toLabel(),
         iconResId = R.drawable.ab001_home,
         state = SingleCardInfoState.DISABLE,
       ),
@@ -256,26 +256,26 @@ class CardListPreviewProvider : CustomWrappedDataPreviewParameterProvider&lt;
   private fun getCardListInfoTitleWithButton() = CardListData(
     cards = listOf(
       SingleCardData.Info.Title(
-        title = &quot;Card title&quot;.toLabel(),
+        title = "Card title".toLabel(),
         extras = SingleCardInfoExtras.ButtonMore(
           buttonData = ButtonData(
             buttonSize = ButtonSize.Small,
             buttonVariant = ButtonVariant.Primary,
             buttonType = ButtonType.WithText(
-              label = &quot;Więcej&quot;.toLabel(),
+              label = "Więcej".toLabel(),
             ),
             onClick = {},
           ),
         ),
       ),
       SingleCardData.Info.Title(
-        title = &quot;Card title 2&quot;.toLabel(),
+        title = "Card title 2".toLabel(),
         extras = SingleCardInfoExtras.ButtonMore(
           buttonData = ButtonData(
             buttonSize = ButtonSize.Small,
             buttonVariant = ButtonVariant.Primary,
             buttonType = ButtonType.WithText(
-              label = &quot;Więcej 2&quot;.toLabel(),
+              label = "Więcej 2".toLabel(),
             ),
             onClick = {},
           ),
@@ -287,21 +287,21 @@ class CardListPreviewProvider : CustomWrappedDataPreviewParameterProvider&lt;
   private fun getCardListInfoTitleWithSwitch() = CardListData(
     cards = listOf(
       SingleCardData.Info.Title(
-        title = &quot;Card title&quot;.toLabel(),
+        title = "Card title".toLabel(),
         extras = SingleCardInfoExtras.Switch(
           switchData = SwitchData.SwitchOnly(
-            contentDescription = &quot;Card title&quot;.toLabel(),
+            contentDescription = "Card title".toLabel(),
             checked = false,
             onCheckedChange = {},
           ),
         ),
       ),
       SingleCardData.Info.Title(
-        title = &quot;Card title 2&quot;.toLabel(),
+        title = "Card title 2".toLabel(),
         extras = SingleCardInfoExtras.Switch(
           switchData = SwitchData.SwitchOnly(
             checked = false,
-            contentDescription = &quot;Card title 2&quot;.toLabel(),
+            contentDescription = "Card title 2".toLabel(),
             onCheckedChange = {},
           ),
         ),
@@ -312,11 +312,11 @@ class CardListPreviewProvider : CustomWrappedDataPreviewParameterProvider&lt;
   private fun getCardListClickableTitle() = CardListData(
     cards = listOf(
       SingleCardData.Clickable.Title(
-        title = &quot;Card title&quot;.toLabel(),
+        title = "Card title".toLabel(),
         onClick = {},
       ),
       SingleCardData.Clickable.Title(
-        title = &quot;Card title 2&quot;.toLabel(),
+        title = "Card title 2".toLabel(),
         onClick = {},
       ),
     ),
@@ -326,15 +326,15 @@ class CardListPreviewProvider : CustomWrappedDataPreviewParameterProvider&lt;
     cards = listOf(
       SingleCardData.Clickable.Title(
         title = (
-          &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed &quot; +
-            &quot;do eiusmod tempor incididunt&quot;
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed " +
+            "do eiusmod tempor incididunt"
           ).toLabel(),
         onClick = {},
       ),
       SingleCardData.Clickable.Title(
         title = (
-          &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed &quot; +
-            &quot;do eiusmod tempor incididunt 2&quot;
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed " +
+            "do eiusmod tempor incididunt 2"
           ).toLabel(),
         onClick = {},
       ),
@@ -344,13 +344,13 @@ class CardListPreviewProvider : CustomWrappedDataPreviewParameterProvider&lt;
   private fun getCardListClickableTitleDescription() = CardListData(
     cards = listOf(
       SingleCardData.Clickable.TitleDescription(
-        title = &quot;Card title&quot;.toLabel(),
-        description = &quot;Card description&quot;.toLabel(),
+        title = "Card title".toLabel(),
+        description = "Card description".toLabel(),
         onClick = {},
       ),
       SingleCardData.Clickable.TitleDescription(
-        title = &quot;Card title 2&quot;.toLabel(),
-        description = &quot;Card description 2&quot;.toLabel(),
+        title = "Card title 2".toLabel(),
+        description = "Card description 2".toLabel(),
         onClick = {},
       ),
     ),
@@ -360,23 +360,23 @@ class CardListPreviewProvider : CustomWrappedDataPreviewParameterProvider&lt;
     cards = listOf(
       SingleCardData.Clickable.TitleDescription(
         title = (
-          &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed &quot; +
-            &quot;do eiusmod tempor incididunt&quot;
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed " +
+            "do eiusmod tempor incididunt"
           ).toLabel(),
         description = (
-          &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, &quot; +
-            &quot;sed do eiusmod tempor&quot;
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
+            "sed do eiusmod tempor"
           ).toLabel(),
         onClick = {},
       ),
       SingleCardData.Clickable.TitleDescription(
         title = (
-          &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed &quot; +
-            &quot;do eiusmod tempor incididunt 2&quot;
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed " +
+            "do eiusmod tempor incididunt 2"
           ).toLabel(),
         description = (
-          &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, &quot; +
-            &quot;sed do eiusmod tempor 2&quot;
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
+            "sed do eiusmod tempor 2"
           ).toLabel(),
         onClick = {},
       ),
@@ -386,13 +386,13 @@ class CardListPreviewProvider : CustomWrappedDataPreviewParameterProvider&lt;
   private fun getCardListClickableInfoTitle() = CardListData(
     cards = listOf(
       SingleCardData.Clickable.InfoTitle(
-        title = &quot;Card title&quot;.toLabel(),
-        info = &quot;Card info&quot;.toLabel(),
+        title = "Card title".toLabel(),
+        info = "Card info".toLabel(),
         onClick = {},
       ),
       SingleCardData.Clickable.InfoTitle(
-        title = &quot;Card title 2&quot;.toLabel(),
-        info = &quot;Card info 2&quot;.toLabel(),
+        title = "Card title 2".toLabel(),
+        info = "Card info 2".toLabel(),
         onClick = {},
       ),
     ),
@@ -402,23 +402,23 @@ class CardListPreviewProvider : CustomWrappedDataPreviewParameterProvider&lt;
     cards = listOf(
       SingleCardData.Clickable.InfoTitle(
         title = (
-          &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed &quot; +
-            &quot;do eiusmod tempor incididunt&quot;
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed " +
+            "do eiusmod tempor incididunt"
           ).toLabel(),
         info = (
-          &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed &quot; +
-            &quot;do eiusmod tempor incididunt&quot;
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed " +
+            "do eiusmod tempor incididunt"
           ).toLabel(),
         onClick = {},
       ),
       SingleCardData.Clickable.InfoTitle(
         title = (
-          &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed &quot; +
-            &quot;do eiusmod tempor incididunt 2&quot;
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed " +
+            "do eiusmod tempor incididunt 2"
           ).toLabel(),
         info = (
-          &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed &quot; +
-            &quot;do eiusmod tempor incididunt 2&quot;
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed " +
+            "do eiusmod tempor incididunt 2"
           ).toLabel(),
         onClick = {},
       ),
@@ -429,12 +429,12 @@ class CardListPreviewProvider : CustomWrappedDataPreviewParameterProvider&lt;
     cards = listOf(
       SingleCardData.Clickable.IconTitle(
         iconResId = R.drawable.ab001_home,
-        title = &quot;Card title&quot;.toLabel(),
+        title = "Card title".toLabel(),
         onClick = {},
       ),
       SingleCardData.Clickable.IconTitle(
         iconResId = R.drawable.ab001_home,
-        title = &quot;Card title 2&quot;.toLabel(),
+        title = "Card title 2".toLabel(),
         onClick = {},
       ),
     ),
@@ -445,16 +445,16 @@ class CardListPreviewProvider : CustomWrappedDataPreviewParameterProvider&lt;
       SingleCardData.Clickable.IconTitle(
         iconResId = R.drawable.ab001_home,
         title = (
-          &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed &quot; +
-            &quot;do eiusmod tempor incididunt&quot;
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed " +
+            "do eiusmod tempor incididunt"
           ).toLabel(),
         onClick = {},
       ),
       SingleCardData.Clickable.IconTitle(
         iconResId = R.drawable.ab001_home,
         title = (
-          &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed &quot; +
-            &quot;do eiusmod tempor incididunt 2&quot;
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed " +
+            "do eiusmod tempor incididunt 2"
           ).toLabel(),
         onClick = {},
       ),
@@ -465,14 +465,14 @@ class CardListPreviewProvider : CustomWrappedDataPreviewParameterProvider&lt;
     cards = listOf(
       SingleCardData.Clickable.IconTitleDescription(
         iconResId = R.drawable.ab001_home,
-        title = &quot;Card title&quot;.toLabel(),
-        description = &quot;Card description&quot;.toLabel(),
+        title = "Card title".toLabel(),
+        description = "Card description".toLabel(),
         onClick = {},
       ),
       SingleCardData.Clickable.IconTitleDescription(
         iconResId = R.drawable.ab001_home,
-        title = &quot;Card title 2&quot;.toLabel(),
-        description = &quot;Card description 2&quot;.toLabel(),
+        title = "Card title 2".toLabel(),
+        description = "Card description 2".toLabel(),
         onClick = {},
       ),
     ),
@@ -483,24 +483,24 @@ class CardListPreviewProvider : CustomWrappedDataPreviewParameterProvider&lt;
       SingleCardData.Clickable.IconTitleDescription(
         iconResId = R.drawable.ab001_home,
         title = (
-          &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed &quot; +
-            &quot;do eiusmod tempor incididunt&quot;
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed " +
+            "do eiusmod tempor incididunt"
           ).toLabel(),
         description = (
-          &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, &quot; +
-            &quot;sed do eiusmod tempor&quot;
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
+            "sed do eiusmod tempor"
           ).toLabel(),
         onClick = {},
       ),
       SingleCardData.Clickable.IconTitleDescription(
         iconResId = R.drawable.ab001_home,
         title = (
-          &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed &quot; +
-            &quot;do eiusmod tempor incididunt 2&quot;
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed " +
+            "do eiusmod tempor incididunt 2"
           ).toLabel(),
         description = (
-          &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, &quot; +
-            &quot;sed do eiusmod tempor 2&quot;
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
+            "sed do eiusmod tempor 2"
           ).toLabel(),
         onClick = {},
       ),
@@ -513,12 +513,12 @@ class CardListPreviewProvider : CustomWrappedDataPreviewParameterProvider&lt;
         iconResId = R.drawable.ab001_home,
         iconOnOneLineWithTitle = true,
         title = (
-          &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed &quot; +
-            &quot;do eiusmod tempor incididunt&quot;
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed " +
+            "do eiusmod tempor incididunt"
           ).toLabel(),
         description = (
-          &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, &quot; +
-            &quot;sed do eiusmod tempor&quot;
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
+            "sed do eiusmod tempor"
           ).toLabel(),
         onClick = {},
       ),
@@ -526,12 +526,12 @@ class CardListPreviewProvider : CustomWrappedDataPreviewParameterProvider&lt;
         iconResId = R.drawable.ab001_home,
         iconOnOneLineWithTitle = true,
         title = (
-          &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed &quot; +
-            &quot;do eiusmod tempor incididunt 2&quot;
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed " +
+            "do eiusmod tempor incididunt 2"
           ).toLabel(),
         description = (
-          &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, &quot; +
-            &quot;sed do eiusmod tempor 2&quot;
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
+            "sed do eiusmod tempor 2"
           ).toLabel(),
         onClick = {},
       ),
@@ -543,12 +543,12 @@ class CardListPreviewProvider : CustomWrappedDataPreviewParameterProvider&lt;
       SingleCardData.Clickable.IconTitleDescription(
         iconResId = R.drawable.ab001_home,
         title = (
-          &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed &quot; +
-            &quot;do eiusmod tempor incididunt&quot;
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed " +
+            "do eiusmod tempor incididunt"
           ).toLabel(),
         description = (
-          &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, &quot; +
-            &quot;sed do eiusmod tempor&quot;
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
+            "sed do eiusmod tempor"
           ).toLabel(),
         state = SingleCardClickableRadioButtonState.FOCUS,
         onClick = {},
@@ -556,12 +556,12 @@ class CardListPreviewProvider : CustomWrappedDataPreviewParameterProvider&lt;
       SingleCardData.Clickable.IconTitleDescription(
         iconResId = R.drawable.ab001_home,
         title = (
-          &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed &quot; +
-            &quot;do eiusmod tempor incididunt 2&quot;
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed " +
+            "do eiusmod tempor incididunt 2"
           ).toLabel(),
         description = (
-          &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, &quot; +
-            &quot;sed do eiusmod tempor 2&quot;
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
+            "sed do eiusmod tempor 2"
           ).toLabel(),
         state = SingleCardClickableRadioButtonState.ENABLED,
         onClick = {},
@@ -574,12 +574,12 @@ class CardListPreviewProvider : CustomWrappedDataPreviewParameterProvider&lt;
       SingleCardData.Clickable.IconTitleDescription(
         iconResId = R.drawable.ab001_home,
         title = (
-          &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed &quot; +
-            &quot;do eiusmod tempor incididunt&quot;
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed " +
+            "do eiusmod tempor incididunt"
           ).toLabel(),
         description = (
-          &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, &quot; +
-            &quot;sed do eiusmod tempor&quot;
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
+            "sed do eiusmod tempor"
           ).toLabel(),
         state = SingleCardClickableRadioButtonState.DISABLED,
         onClick = {},
@@ -587,12 +587,12 @@ class CardListPreviewProvider : CustomWrappedDataPreviewParameterProvider&lt;
       SingleCardData.Clickable.IconTitleDescription(
         iconResId = R.drawable.ab001_home,
         title = (
-          &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed &quot; +
-            &quot;do eiusmod tempor incididunt 2&quot;
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed " +
+            "do eiusmod tempor incididunt 2"
           ).toLabel(),
         description = (
-          &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, &quot; +
-            &quot;sed do eiusmod tempor 2&quot;
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
+            "sed do eiusmod tempor 2"
           ).toLabel(),
         state = SingleCardClickableRadioButtonState.DISABLED,
         onClick = {},
@@ -603,20 +603,20 @@ class CardListPreviewProvider : CustomWrappedDataPreviewParameterProvider&lt;
   private fun getCardListClickableTitleDescriptionStatusBadge() = CardListData(
     cards = listOf(
       SingleCardData.Clickable.TitleDescriptionStatusBadge(
-        title = &quot;Card title with status badge&quot;.toLabel(),
-        description = &quot;Card description&quot;.toLabel(),
+        title = "Card title with status badge".toLabel(),
+        description = "Card description".toLabel(),
         badgeData = SingleCardStatusBadgeData.WithIcon.Info(
-          text = &quot;Badge status info&quot;.toLabel(),
-          iconContentDescription = &quot;content desc&quot;.toLabel(),
+          text = "Badge status info".toLabel(),
+          iconContentDescription = "content desc".toLabel(),
         ),
         onClick = {},
       ),
       SingleCardData.Clickable.TitleDescriptionStatusBadge(
-        title = &quot;Card title with status badge 2&quot;.toLabel(),
-        description = &quot;Card description 2&quot;.toLabel(),
+        title = "Card title with status badge 2".toLabel(),
+        description = "Card description 2".toLabel(),
         badgeData = SingleCardStatusBadgeData.WithIcon.Info(
-          text = &quot;Badge status info 2&quot;.toLabel(),
-          iconContentDescription = &quot;content desc 2&quot;.toLabel(),
+          text = "Badge status info 2".toLabel(),
+          iconContentDescription = "content desc 2".toLabel(),
         ),
         onClick = {},
       ),
@@ -627,12 +627,12 @@ class CardListPreviewProvider : CustomWrappedDataPreviewParameterProvider&lt;
     cards = listOf(
       SingleCardData.Clickable.ButtonIconTitle(
         iconResId = R.drawable.ab001_home,
-        title = &quot;Card title&quot;.toLabel(),
+        title = "Card title".toLabel(),
         onIconClick = {},
       ),
       SingleCardData.Clickable.ButtonIconTitle(
         iconResId = R.drawable.ab001_home,
-        title = &quot;Card title 2&quot;.toLabel(),
+        title = "Card title 2".toLabel(),
         onIconClick = {},
       ),
     ),
@@ -641,11 +641,11 @@ class CardListPreviewProvider : CustomWrappedDataPreviewParameterProvider&lt;
   private fun getCardListClickableDeleteButtonIconTitle() = CardListData(
     cards = listOf(
       SingleCardData.Clickable.DeleteButtonIconTitle(
-        title = &quot;Card title&quot;.toLabel(),
+        title = "Card title".toLabel(),
         onClick = {},
       ),
       SingleCardData.Clickable.DeleteButtonIconTitle(
-        title = &quot;Card title 2&quot;.toLabel(),
+        title = "Card title 2".toLabel(),
         onClick = {},
       ),
     ),
@@ -654,12 +654,12 @@ class CardListPreviewProvider : CustomWrappedDataPreviewParameterProvider&lt;
   private fun getCardListSelectableRadioButtonTitleUnselected() = CardListData(
     cards = listOf(
       SingleCardData.SelectableRadioButton.Title(
-        title = &quot;Card title&quot;.toLabel(),
+        title = "Card title".toLabel(),
         radioButtonData = OldRadioButtonData(id = RadioButtonId.Default, isSelected = false),
         onClick = {},
       ),
       SingleCardData.SelectableRadioButton.Title(
-        title = &quot;Card title 2&quot;.toLabel(),
+        title = "Card title 2".toLabel(),
         radioButtonData = OldRadioButtonData(id = RadioButtonId.Default, isSelected = false),
         onClick = {},
       ),
@@ -669,7 +669,7 @@ class CardListPreviewProvider : CustomWrappedDataPreviewParameterProvider&lt;
   private fun getCardListSelectableRadioButtonTitleUnselectedFocusState() = CardListData(
     cards = listOf(
       SingleCardData.SelectableRadioButton.Title(
-        title = &quot;Card title&quot;.toLabel(),
+        title = "Card title".toLabel(),
         radioButtonData = OldRadioButtonData(
           id = RadioButtonId.Default,
           isSelected = false,
@@ -678,7 +678,7 @@ class CardListPreviewProvider : CustomWrappedDataPreviewParameterProvider&lt;
         onClick = {},
       ),
       SingleCardData.SelectableRadioButton.Title(
-        title = &quot;Card title 2&quot;.toLabel(),
+        title = "Card title 2".toLabel(),
         radioButtonData = OldRadioButtonData(id = RadioButtonId.Default, isSelected = false),
         state = SingleCardClickableRadioButtonState.FOCUS,
         onClick = {},
@@ -689,7 +689,7 @@ class CardListPreviewProvider : CustomWrappedDataPreviewParameterProvider&lt;
   private fun getCardListSelectableRadioButtonTitleUnselectedDisabledState() = CardListData(
     cards = listOf(
       SingleCardData.SelectableRadioButton.Title(
-        title = &quot;Card title&quot;.toLabel(),
+        title = "Card title".toLabel(),
         radioButtonData = OldRadioButtonData(
           id = RadioButtonId.Default,
           isSelected = false,
@@ -698,7 +698,7 @@ class CardListPreviewProvider : CustomWrappedDataPreviewParameterProvider&lt;
         onClick = {},
       ),
       SingleCardData.SelectableRadioButton.Title(
-        title = &quot;Card title 2&quot;.toLabel(),
+        title = "Card title 2".toLabel(),
         radioButtonData = OldRadioButtonData(
           id = RadioButtonId.Default,
           isSelected = false,
@@ -713,8 +713,8 @@ class CardListPreviewProvider : CustomWrappedDataPreviewParameterProvider&lt;
     cards = listOf(
       SingleCardData.SelectableRadioButton.Title(
         title = (
-          &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed &quot; +
-            &quot;do eiusmod tempor incididunt&quot;
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed " +
+            "do eiusmod tempor incididunt"
           ).toLabel(),
         radioButtonData = OldRadioButtonData(
           id = RadioButtonId.Default,
@@ -724,8 +724,8 @@ class CardListPreviewProvider : CustomWrappedDataPreviewParameterProvider&lt;
       ),
       SingleCardData.SelectableRadioButton.Title(
         title = (
-          &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed &quot; +
-            &quot;do eiusmod tempor incididunt 2&quot;
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed " +
+            "do eiusmod tempor incididunt 2"
           ).toLabel(),
         radioButtonData = OldRadioButtonData(
           id = RadioButtonId.Default,
@@ -739,7 +739,7 @@ class CardListPreviewProvider : CustomWrappedDataPreviewParameterProvider&lt;
   private fun getCardListSelectableRadioButtonTitleSelected() = CardListData(
     cards = listOf(
       SingleCardData.SelectableRadioButton.Title(
-        title = &quot;Card title&quot;.toLabel(),
+        title = "Card title".toLabel(),
         radioButtonData = OldRadioButtonData(
           id = RadioButtonId.Default,
           isSelected = true,
@@ -747,7 +747,7 @@ class CardListPreviewProvider : CustomWrappedDataPreviewParameterProvider&lt;
         onClick = {},
       ),
       SingleCardData.SelectableRadioButton.Title(
-        title = &quot;Card title 2&quot;.toLabel(),
+        title = "Card title 2".toLabel(),
         radioButtonData = OldRadioButtonData(
           id = RadioButtonId.Default,
           isSelected = false,
@@ -761,13 +761,13 @@ class CardListPreviewProvider : CustomWrappedDataPreviewParameterProvider&lt;
     cards = listOf(
       SingleCardData.SelectableRadioButton.IconTitle(
         iconResId = R.drawable.ab001_home,
-        title = &quot;Card title&quot;.toLabel(),
+        title = "Card title".toLabel(),
         radioButtonData = OldRadioButtonData(id = RadioButtonId.Default, isSelected = false),
         onClick = {},
       ),
       SingleCardData.SelectableRadioButton.IconTitle(
         iconResId = R.drawable.ab001_home,
-        title = &quot;Card title 2&quot;.toLabel(),
+        title = "Card title 2".toLabel(),
         radioButtonData = OldRadioButtonData(id = RadioButtonId.Default, isSelected = false),
         onClick = {},
       ),
@@ -779,8 +779,8 @@ class CardListPreviewProvider : CustomWrappedDataPreviewParameterProvider&lt;
       SingleCardData.SelectableRadioButton.IconTitle(
         iconResId = R.drawable.ab001_home,
         title = (
-          &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed &quot; +
-            &quot;do eiusmod tempor incididunt&quot;
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed " +
+            "do eiusmod tempor incididunt"
           ).toLabel(),
         radioButtonData = OldRadioButtonData(id = RadioButtonId.Default, isSelected = false),
         onClick = {},
@@ -788,8 +788,8 @@ class CardListPreviewProvider : CustomWrappedDataPreviewParameterProvider&lt;
       SingleCardData.SelectableRadioButton.IconTitle(
         iconResId = R.drawable.ab001_home,
         title = (
-          &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed &quot; +
-            &quot;do eiusmod tempor incididunt 2&quot;
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed " +
+            "do eiusmod tempor incididunt 2"
           ).toLabel(),
         radioButtonData = OldRadioButtonData(id = RadioButtonId.Default, isSelected = false),
         onClick = {},
@@ -801,13 +801,13 @@ class CardListPreviewProvider : CustomWrappedDataPreviewParameterProvider&lt;
     cards = listOf(
       SingleCardData.SelectableRadioButton.IconTitle(
         iconResId = R.drawable.ab001_home,
-        title = &quot;Card title&quot;.toLabel(),
+        title = "Card title".toLabel(),
         radioButtonData = OldRadioButtonData(id = RadioButtonId.Default, isSelected = true),
         onClick = {},
       ),
       SingleCardData.SelectableRadioButton.IconTitle(
         iconResId = R.drawable.ab001_home,
-        title = &quot;Card title 2&quot;.toLabel(),
+        title = "Card title 2".toLabel(),
         radioButtonData = OldRadioButtonData(id = RadioButtonId.Default, isSelected = false),
         onClick = {},
       ),
@@ -819,14 +819,14 @@ class CardListPreviewProvider : CustomWrappedDataPreviewParameterProvider&lt;
       SingleCardData.SelectableRadioButton.IconTitle(
         iconResId = R.drawable.ab001_home,
         iconSize = IconSize.SIZE32,
-        title = &quot;Card title&quot;.toLabel(),
+        title = "Card title".toLabel(),
         radioButtonData = OldRadioButtonData(id = RadioButtonId.Default, isSelected = true),
         onClick = {},
       ),
       SingleCardData.SelectableRadioButton.IconTitle(
         iconResId = R.drawable.ab001_home,
         iconSize = IconSize.SIZE32,
-        title = &quot;Card title 2&quot;.toLabel(),
+        title = "Card title 2".toLabel(),
         radioButtonData = OldRadioButtonData(id = RadioButtonId.Default, isSelected = false),
         onClick = {},
       ),
@@ -836,14 +836,14 @@ class CardListPreviewProvider : CustomWrappedDataPreviewParameterProvider&lt;
   private fun getCardListSelectableRadioButtonTitleDescriptionUnselected() = CardListData(
     cards = listOf(
       SingleCardData.SelectableRadioButton.TitleDescription(
-        title = &quot;Card title&quot;.toLabel(),
-        description = &quot;Card description no 1&quot;.toLabel(),
+        title = "Card title".toLabel(),
+        description = "Card description no 1".toLabel(),
         radioButtonData = OldRadioButtonData(id = RadioButtonId.Default, isSelected = false),
         onClick = {},
       ),
       SingleCardData.SelectableRadioButton.TitleDescription(
-        title = &quot;Card title 2&quot;.toLabel(),
-        description = &quot;Card description no 2&quot;.toLabel(),
+        title = "Card title 2".toLabel(),
+        description = "Card description no 2".toLabel(),
         radioButtonData = OldRadioButtonData(id = RadioButtonId.Default, isSelected = false),
         onClick = {},
       ),
@@ -854,24 +854,24 @@ class CardListPreviewProvider : CustomWrappedDataPreviewParameterProvider&lt;
     cards = listOf(
       SingleCardData.SelectableRadioButton.TitleDescription(
         title = (
-          &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed &quot; +
-            &quot;do eiusmod tempor incididunt&quot;
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed " +
+            "do eiusmod tempor incididunt"
           ).toLabel(),
         description = (
-          &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, &quot; +
-            &quot;sed do eiusmod tempor&quot;
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
+            "sed do eiusmod tempor"
           ).toLabel(),
         radioButtonData = OldRadioButtonData(id = RadioButtonId.Default, isSelected = false),
         onClick = {},
       ),
       SingleCardData.SelectableRadioButton.TitleDescription(
         title = (
-          &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed &quot; +
-            &quot;do eiusmod tempor incididunt 2&quot;
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed " +
+            "do eiusmod tempor incididunt 2"
           ).toLabel(),
         description = (
-          &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, &quot; +
-            &quot;sed do eiusmod tempor 2&quot;
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
+            "sed do eiusmod tempor 2"
           ).toLabel(),
         radioButtonData = OldRadioButtonData(id = RadioButtonId.Default, isSelected = false),
         onClick = {},
@@ -882,16 +882,16 @@ class CardListPreviewProvider : CustomWrappedDataPreviewParameterProvider&lt;
   private fun getCardListSelectableRadioButtonTitleDescriptionSelected() = CardListData(
     cards = listOf(
       SingleCardData.SelectableRadioButton.TitleDescription(
-        title = &quot;Card title&quot;.toLabel(),
-        description = &quot;Card description no 1&quot;.toLabel(),
-        descriptionSecond = &quot;Card description no 2&quot;.toLabel(),
+        title = "Card title".toLabel(),
+        description = "Card description no 1".toLabel(),
+        descriptionSecond = "Card description no 2".toLabel(),
         radioButtonData = OldRadioButtonData(id = RadioButtonId.Default, isSelected = true),
         onClick = {},
       ),
       SingleCardData.SelectableRadioButton.TitleDescription(
-        title = &quot;Card title 2&quot;.toLabel(),
-        description = &quot;Card description no 2&quot;.toLabel(),
-        descriptionSecond = &quot;Card description no 2&quot;.toLabel(),
+        title = "Card title 2".toLabel(),
+        description = "Card description no 2".toLabel(),
+        descriptionSecond = "Card description no 2".toLabel(),
         radioButtonData = OldRadioButtonData(id = RadioButtonId.Default, isSelected = false),
         onClick = {},
       ),

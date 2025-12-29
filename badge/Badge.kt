@@ -26,7 +26,7 @@ fun Badge(
 ) {
   val lightBadgeColor = Color(0xFF900E1D)
   when (data) {
-    is BadgeData.BadgeDefault -&gt; Box(
+    is BadgeData.BadgeDefault -> Box(
       modifier = Modifier
         .size(AppTheme.dimensions.spacing100)
         .clip(CircleShape)
@@ -47,7 +47,7 @@ fun BadgePreview(
       .fillMaxSize()
       .background(AppTheme.colors.background),
   ) {
-    Text(&quot;Badge Dot&quot;)
+    Text("Badge Dot")
     Spacer(modifier = Modifier.height(AppTheme.dimensions.spacing200))
     Badge(data = data)
   }

@@ -77,7 +77,7 @@ sealed class SingleCardData(
     class IconTitle(
       testTag: String? = null,
       @DrawableRes val iconResId: Int,
-      iconColorProvider: @Composable () -&gt; Color = { Color.Unspecified },
+      iconColorProvider: @Composable () -> Color = { Color.Unspecified },
       modifier: Modifier = Modifier,
       title: Label,
       draggable: Boolean = false,
@@ -85,11 +85,11 @@ sealed class SingleCardData(
       state: SingleCardInfoState = SingleCardInfoState.ENABLED,
       val cardContentDescription: Label = Label.EMPTY,
       iconContentDescription: Label = Label.EMPTY,
-      val onIconClick: (() -&gt; Unit)? = null,
+      val onIconClick: (() -> Unit)? = null,
     ) : Info(testTag = testTag, title = title, modifier = modifier, draggable = draggable, cardState = state) {
 
       internal val iconData: IconData = IconData.Standard(
-        testTag = testTag?.let { tag -&gt; tag + &quot;Icon&quot; },
+        testTag = testTag?.let { tag -> tag + "Icon" },
         iconResId = iconResId,
         iconSize = iconSize,
         iconColorProvider = iconColorProvider,
@@ -98,9 +98,9 @@ sealed class SingleCardData(
       )
 
       internal val buttonIconData: ButtonIconData? = when (onIconClick) {
-        null -&gt; null
-        else -&gt; ButtonIconData(
-          testTag = testTag?.let { tag -&gt; tag + &quot;ButtonIcon&quot; },
+        null -> null
+        else -> ButtonIconData(
+          testTag = testTag?.let { tag -> tag + "ButtonIcon" },
           iconResId = iconResId,
           iconColorProvider = iconColorProvider,
           contentDescription = iconContentDescription,
@@ -112,7 +112,7 @@ sealed class SingleCardData(
     class IconTitleDescription(
       testTag: String? = null,
       @DrawableRes val iconResId: Int,
-      iconColorProvider: @Composable () -&gt; Color = { Color.Unspecified },
+      iconColorProvider: @Composable () -> Color = { Color.Unspecified },
       modifier: Modifier = Modifier,
       title: Label,
       val description: Label,
@@ -122,10 +122,10 @@ sealed class SingleCardData(
       state: SingleCardInfoState = SingleCardInfoState.ENABLED,
       val cardContentDescription: Label = Label.EMPTY,
       iconContentDescription: Label = Label.EMPTY,
-      val onIconClick: (() -&gt; Unit)? = null,
+      val onIconClick: (() -> Unit)? = null,
     ) : Info(testTag = testTag, title = title, modifier = modifier, draggable = draggable, cardState = state) {
       internal val iconData: IconData = IconData.Standard(
-        testTag = testTag?.let { tag -&gt; tag + &quot;Icon&quot; },
+        testTag = testTag?.let { tag -> tag + "Icon" },
         iconResId = iconResId,
         iconSize = iconSize,
         iconColorProvider = iconColorProvider,
@@ -134,9 +134,9 @@ sealed class SingleCardData(
       )
 
       internal val buttonIconData: ButtonIconData? = when (onIconClick) {
-        null -&gt; null
-        else -&gt; ButtonIconData(
-          testTag = testTag?.let { tag -&gt; tag + &quot;ButtonIcon&quot; },
+        null -> null
+        else -> ButtonIconData(
+          testTag = testTag?.let { tag -> tag + "ButtonIcon" },
           iconResId = iconResId,
           iconColorProvider = iconColorProvider,
           contentDescription = iconContentDescription,
@@ -192,14 +192,14 @@ sealed class SingleCardData(
     val modifier: Modifier = Modifier,
     val state: SingleCardClickableRadioButtonState,
     @DrawableRes val trailingIconResId: Int?,
-    val trailingIconColorProvider: @Composable () -&gt; Color,
+    val trailingIconColorProvider: @Composable () -> Color,
     val trailingIconContentDescription: Label,
-    val onClick: () -&gt; Unit,
+    val onClick: () -> Unit,
   ) : SingleCardData(testTag = testTag, title = title) {
 
-    internal val trailingIcon = trailingIconResId?.let { iconResId -&gt;
+    internal val trailingIcon = trailingIconResId?.let { iconResId ->
       IconData.Standard(
-        testTag = testTag?.let { tag -&gt; tag + &quot;Icon&quot; },
+        testTag = testTag?.let { tag -> tag + "Icon" },
         iconResId = iconResId,
         iconSize = IconSize.SIZE24,
         iconColorProvider = trailingIconColorProvider,
@@ -213,9 +213,9 @@ sealed class SingleCardData(
       title: Label,
       state: SingleCardClickableRadioButtonState = SingleCardClickableRadioButtonState.ENABLED,
       @DrawableRes trailingIonResId: Int? = DEFAULT_TRAILING_ICON_RES_ID,
-      trailingIconColorProvider: @Composable () -&gt; Color = DEFAULT_TRAILING_ICON_COLOR_PROVIDER,
+      trailingIconColorProvider: @Composable () -> Color = DEFAULT_TRAILING_ICON_COLOR_PROVIDER,
       trailingIconContentDescription: Label = DEFAULT_TRAILING_ICON_CONTENT_DESCRIPTION,
-      onClick: () -&gt; Unit,
+      onClick: () -> Unit,
     ) : Clickable(
       testTag = testTag,
       title = title,
@@ -232,9 +232,9 @@ sealed class SingleCardData(
       title: Label,
       state: SingleCardClickableRadioButtonState = SingleCardClickableRadioButtonState.ENABLED,
       @DrawableRes trailingIonResId: Int? = DEFAULT_TRAILING_ICON_RES_ID,
-      trailingIconColorProvider: @Composable () -&gt; Color = DEFAULT_TRAILING_ICON_COLOR_PROVIDER,
+      trailingIconColorProvider: @Composable () -> Color = DEFAULT_TRAILING_ICON_COLOR_PROVIDER,
       trailingIconContentDescription: Label = DEFAULT_TRAILING_ICON_CONTENT_DESCRIPTION,
-      onClick: () -&gt; Unit,
+      onClick: () -> Unit,
     ) : Clickable(
       testTag = testTag,
       title = title,
@@ -251,9 +251,9 @@ sealed class SingleCardData(
       title: Label,
       state: SingleCardClickableRadioButtonState = SingleCardClickableRadioButtonState.ENABLED,
       @DrawableRes trailingIonResId: Int? = null,
-      trailingIconColorProvider: @Composable () -&gt; Color = DEFAULT_TRAILING_ICON_COLOR_PROVIDER,
+      trailingIconColorProvider: @Composable () -> Color = DEFAULT_TRAILING_ICON_COLOR_PROVIDER,
       trailingIconContentDescription: Label = DEFAULT_TRAILING_ICON_CONTENT_DESCRIPTION,
-      onClick: () -&gt; Unit,
+      onClick: () -> Unit,
     ) : Clickable(
       testTag = testTag,
       title = title,
@@ -267,15 +267,15 @@ sealed class SingleCardData(
     class IconTitle(
       testTag: String? = null,
       @DrawableRes val iconResId: Int,
-      iconColorProvider: @Composable () -&gt; Color = { Color.Unspecified },
+      iconColorProvider: @Composable () -> Color = { Color.Unspecified },
       title: Label,
       modifier: Modifier = Modifier,
       state: SingleCardClickableRadioButtonState = SingleCardClickableRadioButtonState.ENABLED,
       @DrawableRes trailingIonResId: Int? = DEFAULT_TRAILING_ICON_RES_ID,
-      trailingIconColorProvider: @Composable () -&gt; Color = DEFAULT_TRAILING_ICON_COLOR_PROVIDER,
+      trailingIconColorProvider: @Composable () -> Color = DEFAULT_TRAILING_ICON_COLOR_PROVIDER,
       trailingIconContentDescription: Label = DEFAULT_TRAILING_ICON_CONTENT_DESCRIPTION,
       val iconSize: IconSize = IconSize.SIZE24,
-      onClick: () -&gt; Unit,
+      onClick: () -> Unit,
     ) : Clickable(
       testTag = testTag,
       title = title,
@@ -288,7 +288,7 @@ sealed class SingleCardData(
     ) {
 
       internal val iconData: IconData = IconData.Standard(
-        testTag = testTag?.let { tag -&gt; tag + &quot;Icon&quot; },
+        testTag = testTag?.let { tag -> tag + "Icon" },
         iconResId = iconResId,
         iconSize = iconSize,
         iconColorProvider = iconColorProvider,
@@ -300,17 +300,17 @@ sealed class SingleCardData(
     class IconTitleColored(
       testTag: String? = null,
       @DrawableRes val iconResId: Int,
-      iconColorProvider: @Composable () -&gt; Color = { Color.Unspecified },
+      iconColorProvider: @Composable () -> Color = { Color.Unspecified },
       title: Label,
-      titleColorProvider: @Composable () -&gt; Color = { Color.Unspecified },
-      val titleStyleProvider: @Composable () -&gt; TextStyle = { AppTheme.typography.bodyLargeMedium },
+      titleColorProvider: @Composable () -> Color = { Color.Unspecified },
+      val titleStyleProvider: @Composable () -> TextStyle = { AppTheme.typography.bodyLargeMedium },
       modifier: Modifier = Modifier,
       state: SingleCardClickableRadioButtonState = SingleCardClickableRadioButtonState.ENABLED,
       @DrawableRes trailingIonResId: Int? = DEFAULT_TRAILING_ICON_RES_ID,
-      trailingIconColorProvider: @Composable () -&gt; Color = DEFAULT_TRAILING_ICON_COLOR_PROVIDER,
+      trailingIconColorProvider: @Composable () -> Color = DEFAULT_TRAILING_ICON_COLOR_PROVIDER,
       trailingIconContentDescription: Label = DEFAULT_TRAILING_ICON_CONTENT_DESCRIPTION,
       val iconSize: IconSize = IconSize.SIZE24,
-      onClick: () -&gt; Unit,
+      onClick: () -> Unit,
     ) : Clickable(
       testTag = testTag,
       title = title,
@@ -323,7 +323,7 @@ sealed class SingleCardData(
     ) {
 
       internal val iconData: IconData = IconData.Standard(
-        testTag = testTag?.let { tag -&gt; tag + &quot;Icon&quot; },
+        testTag = testTag?.let { tag -> tag + "Icon" },
         iconResId = iconResId,
         iconSize = iconSize,
         iconColorProvider = iconColorProvider,
@@ -331,10 +331,10 @@ sealed class SingleCardData(
         iconState = state.toIconState(),
       )
 
-      internal val textColorProvider: @Composable () -&gt; Color = {
+      internal val textColorProvider: @Composable () -> Color = {
         when (state) {
-          SingleCardClickableRadioButtonState.DISABLED -&gt; AppTheme.colors.neutral60
-          else -&gt; titleColorProvider()
+          SingleCardClickableRadioButtonState.DISABLED -> AppTheme.colors.neutral60
+          else -> titleColorProvider()
         }
       }
     }
@@ -342,13 +342,13 @@ sealed class SingleCardData(
     class ButtonIconTitle(
       testTag: String? = null,
       @DrawableRes val iconResId: Int,
-      iconColorProvider: @Composable () -&gt; Color = { Color.Unspecified },
+      iconColorProvider: @Composable () -> Color = { Color.Unspecified },
       title: Label,
       state: SingleCardClickableRadioButtonState = SingleCardClickableRadioButtonState.ENABLED,
       @DrawableRes trailingIonResId: Int? = null,
-      trailingIconColorProvider: @Composable () -&gt; Color = DEFAULT_TRAILING_ICON_COLOR_PROVIDER,
+      trailingIconColorProvider: @Composable () -> Color = DEFAULT_TRAILING_ICON_COLOR_PROVIDER,
       trailingIconContentDescription: Label = DEFAULT_TRAILING_ICON_CONTENT_DESCRIPTION,
-      onIconClick: () -&gt; Unit,
+      onIconClick: () -> Unit,
     ) : Clickable(
       testTag = testTag,
       title = title,
@@ -360,7 +360,7 @@ sealed class SingleCardData(
     ) {
 
       internal val buttonIconData: ButtonIconData = ButtonIconData(
-        testTag = testTag?.let { tag -&gt; tag + &quot;Icon&quot; },
+        testTag = testTag?.let { tag -> tag + "Icon" },
         iconResId = iconResId,
         iconColorProvider = iconColorProvider,
         contentDescription = Label.EMPTY,
@@ -371,14 +371,14 @@ sealed class SingleCardData(
     class ButtonIconTitleDescription(
       testTag: String? = null,
       @DrawableRes val iconResId: Int,
-      iconColorProvider: @Composable () -&gt; Color = { Color.Unspecified },
+      iconColorProvider: @Composable () -> Color = { Color.Unspecified },
       title: Label,
       val description: Label,
       state: SingleCardClickableRadioButtonState = SingleCardClickableRadioButtonState.ENABLED,
       @DrawableRes trailingIonResId: Int? = DEFAULT_TRAILING_ICON_RES_ID,
-      trailingIconColorProvider: @Composable () -&gt; Color = DEFAULT_TRAILING_ICON_COLOR_PROVIDER,
+      trailingIconColorProvider: @Composable () -> Color = DEFAULT_TRAILING_ICON_COLOR_PROVIDER,
       trailingIconContentDescription: Label = DEFAULT_TRAILING_ICON_CONTENT_DESCRIPTION,
-      onIconClick: () -&gt; Unit,
+      onIconClick: () -> Unit,
     ) : Clickable(
       testTag = testTag,
       title = title,
@@ -390,7 +390,7 @@ sealed class SingleCardData(
     ) {
 
       internal val buttonIconData: ButtonIconData = ButtonIconData(
-        testTag = testTag?.let { tag -&gt; tag + &quot;Icon&quot; },
+        testTag = testTag?.let { tag -> tag + "Icon" },
         iconResId = iconResId,
         iconColorProvider = iconColorProvider,
         contentDescription = Label.EMPTY,
@@ -404,9 +404,9 @@ sealed class SingleCardData(
       val iconSize: IconSize = IconSize.SIZE24,
       state: SingleCardClickableRadioButtonState = SingleCardClickableRadioButtonState.ENABLED,
       @DrawableRes trailingIonResId: Int? = null,
-      trailingIconColorProvider: @Composable () -&gt; Color = DEFAULT_TRAILING_ICON_COLOR_PROVIDER,
+      trailingIconColorProvider: @Composable () -> Color = DEFAULT_TRAILING_ICON_COLOR_PROVIDER,
       trailingIconContentDescription: Label = DEFAULT_TRAILING_ICON_CONTENT_DESCRIPTION,
-      onClick: () -&gt; Unit,
+      onClick: () -> Unit,
     ) : Clickable(
       testTag = testTag,
       title = title,
@@ -418,29 +418,29 @@ sealed class SingleCardData(
     ) {
 
       internal val iconData: IconData.Standard = IconData.Standard(
-        testTag = testTag?.let { tag -&gt; tag + &quot;Icon&quot; },
+        testTag = testTag?.let { tag -> tag + "Icon" },
         iconResId = R.drawable.aa002_delete,
         iconSize = iconSize,
         iconColorProvider = { AppTheme.colors.supportRed100 },
         contentDescription = Label.EMPTY,
       )
 
-      internal val textColorProvider: @Composable () -&gt; Color = { AppTheme.colors.supportRed100 }
+      internal val textColorProvider: @Composable () -> Color = { AppTheme.colors.supportRed100 }
     }
 
     class IconTitleDescription(
       testTag: String? = null,
       @DrawableRes val iconResId: Int,
-      iconColorProvider: @Composable () -&gt; Color = { Color.Unspecified },
+      iconColorProvider: @Composable () -> Color = { Color.Unspecified },
       val description: Label,
       val iconOnOneLineWithTitle: Boolean = false,
       title: Label,
       val iconSize: IconSize = IconSize.SIZE24,
       state: SingleCardClickableRadioButtonState = SingleCardClickableRadioButtonState.ENABLED,
       @DrawableRes trailingIonResId: Int? = DEFAULT_TRAILING_ICON_RES_ID,
-      trailingIconColorProvider: @Composable () -&gt; Color = DEFAULT_TRAILING_ICON_COLOR_PROVIDER,
+      trailingIconColorProvider: @Composable () -> Color = DEFAULT_TRAILING_ICON_COLOR_PROVIDER,
       trailingIconContentDescription: Label = DEFAULT_TRAILING_ICON_CONTENT_DESCRIPTION,
-      onClick: () -&gt; Unit,
+      onClick: () -> Unit,
     ) : Clickable(
       testTag = testTag,
       title = title,
@@ -452,7 +452,7 @@ sealed class SingleCardData(
     ) {
 
       internal val iconData: IconData = IconData.Standard(
-        testTag = testTag?.let { tag -&gt; tag + &quot;Icon&quot; },
+        testTag = testTag?.let { tag -> tag + "Icon" },
         iconResId = iconResId,
         iconSize = iconSize,
         iconColorProvider = iconColorProvider,
@@ -467,10 +467,10 @@ sealed class SingleCardData(
       title: Label,
       state: SingleCardClickableRadioButtonState = SingleCardClickableRadioButtonState.ENABLED,
       @DrawableRes trailingIonResId: Int? = DEFAULT_TRAILING_ICON_RES_ID,
-      trailingIconColorProvider: @Composable () -&gt; Color = DEFAULT_TRAILING_ICON_COLOR_PROVIDER,
+      trailingIconColorProvider: @Composable () -> Color = DEFAULT_TRAILING_ICON_COLOR_PROVIDER,
       trailingIconContentDescription: Label = DEFAULT_TRAILING_ICON_CONTENT_DESCRIPTION,
       val badgeData: SingleCardStatusBadgeData,
-      onClick: () -&gt; Unit,
+      onClick: () -> Unit,
     ) : Clickable(
       testTag = testTag,
       title = title,
@@ -483,7 +483,7 @@ sealed class SingleCardData(
 
     private companion object {
       val DEFAULT_TRAILING_ICON_RES_ID = R.drawable.ab006_chevron_right
-      val DEFAULT_TRAILING_ICON_COLOR_PROVIDER: @Composable () -&gt; Color = { Color.Unspecified }
+      val DEFAULT_TRAILING_ICON_COLOR_PROVIDER: @Composable () -> Color = { Color.Unspecified }
       val DEFAULT_TRAILING_ICON_CONTENT_DESCRIPTION = Label.EMPTY
     }
   }
@@ -491,7 +491,7 @@ sealed class SingleCardData(
   sealed class SelectableRadioButton(
     testTag: String?,
     val radioButtonData: OldRadioButtonData,
-    val onClick: () -&gt; Unit,
+    val onClick: () -> Unit,
     val state: SingleCardClickableRadioButtonState,
     val drawBorder: Boolean = true,
     title: Label,
@@ -502,7 +502,7 @@ sealed class SingleCardData(
       title: Label,
       state: SingleCardClickableRadioButtonState = SingleCardClickableRadioButtonState.ENABLED,
       drawBorder: Boolean = true, 
-      onClick: () -&gt; Unit,
+      onClick: () -> Unit,
     ) : SelectableRadioButton(
       testTag = testTag,
       title = title,
@@ -515,13 +515,13 @@ sealed class SingleCardData(
     class IconTitle(
       testTag: String? = null,
       @DrawableRes val iconResId: Int,
-      iconColorProvider: @Composable () -&gt; Color = { Color.Unspecified },
+      iconColorProvider: @Composable () -> Color = { Color.Unspecified },
       radioButtonData: OldRadioButtonData,
       title: Label,
       state: SingleCardClickableRadioButtonState = SingleCardClickableRadioButtonState.ENABLED,
       val iconSize: IconSize = IconSize.SIZE24,
       drawBorder: Boolean = true, 
-      onClick: () -&gt; Unit,
+      onClick: () -> Unit,
     ) : SelectableRadioButton(
       testTag = testTag,
       title = title,
@@ -532,7 +532,7 @@ sealed class SingleCardData(
     ) {
 
       internal val iconData: IconData = IconData.Standard(
-        testTag = testTag?.let { tag -&gt; tag + &quot;Icon&quot; },
+        testTag = testTag?.let { tag -> tag + "Icon" },
         iconResId = iconResId,
         iconSize = iconSize,
         iconColorProvider = iconColorProvider,
@@ -549,7 +549,7 @@ sealed class SingleCardData(
       title: Label,
       state: SingleCardClickableRadioButtonState = SingleCardClickableRadioButtonState.ENABLED,
       drawBorder: Boolean = true, 
-      onClick: () -&gt; Unit,
+      onClick: () -> Unit,
     ) : SelectableRadioButton(
       testTag = testTag,
       title = title,
@@ -574,13 +574,13 @@ sealed class SingleCardData(
     class IconTitle(
       testTag: String? = null,
       @DrawableRes val iconResId: Int,
-      iconColorProvider: @Composable () -&gt; Color = { Color.Unspecified },
+      iconColorProvider: @Composable () -> Color = { Color.Unspecified },
       checkboxData: CheckBoxSingleData,
       title: Label,
     ) : SelectableCheckbox(testTag = testTag, title = title, checkboxData = checkboxData) {
 
       internal val iconData: IconData = IconData.Standard(
-        testTag = testTag?.let { tag -&gt; tag + &quot;Icon&quot; },
+        testTag = testTag?.let { tag -> tag + "Icon" },
         iconResId = iconResId,
         iconSize = IconSize.SIZE24,
         iconColorProvider = iconColorProvider,
@@ -600,14 +600,14 @@ sealed class SingleCardData(
 }
 
 fun SingleCardInfoState.toIconState() = when (this) {
-  SingleCardInfoState.ENABLED -&gt; IconState.ENABLED
-  SingleCardInfoState.DISABLE -&gt; IconState.DISABLED
+  SingleCardInfoState.ENABLED -> IconState.ENABLED
+  SingleCardInfoState.DISABLE -> IconState.DISABLED
 }
 
 fun SingleCardClickableRadioButtonState.toIconState() = when (this) {
   SingleCardClickableRadioButtonState.ENABLED,
   SingleCardClickableRadioButtonState.FOCUS,
-  -&gt; IconState.ENABLED
+  -> IconState.ENABLED
 
-  SingleCardClickableRadioButtonState.DISABLED -&gt; IconState.DISABLED
+  SingleCardClickableRadioButtonState.DISABLED -> IconState.DISABLED
 }

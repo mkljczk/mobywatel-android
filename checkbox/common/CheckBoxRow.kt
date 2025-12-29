@@ -50,13 +50,13 @@ internal fun CheckboxRow(
           enabled = isEnabled,
           value = data.isChecked,
           role = Role.Checkbox,
-          onValueChange = { checked -&gt;
+          onValueChange = { checked ->
             data.onCheckedChange(checked)
           },
         )
         .semantics {
           testTagsAsResourceId = true
-          testTag = data.testTag ?: &quot;checkbox${data.label}&quot;
+          testTag = data.testTag ?: "checkbox${data.label}"
         },
       verticalAlignment = Alignment.Top,
     ) {
@@ -83,7 +83,7 @@ internal fun CheckboxRow(
           if (data.isChecked) {
             Icon(
               data = IconData.Standard(
-                testTag = data.testTag?.let { tag -&gt; tag + &quot;Icon&quot; },
+                testTag = data.testTag?.let { tag -> tag + "Icon" },
                 iconResId = R.drawable.e006_checkbox_mark,
                 iconSize = IconSize.SIZE16,
                 iconColorProvider = { AppTheme.colors.white },
@@ -97,7 +97,7 @@ internal fun CheckboxRow(
       if (data.label.isNotBlank()) {
         Spacer(modifier = Modifier.width(AppTheme.dimensions.spacing200))
         CustomText(
-          testTag = data.testTag?.let { tag -&gt; tag + &quot;Text&quot; },
+          testTag = data.testTag?.let { tag -> tag + "Text" },
           textAlign = TextAlign.Start,
           label = data.label,
           style = AppTheme.typography.bodyLargeRegular,
@@ -105,7 +105,7 @@ internal fun CheckboxRow(
         )
       }
     }
-    data.clickableTextData?.let { clickableText -&gt;
+    data.clickableTextData?.let { clickableText ->
       CheckBoxClickableText(data = clickableText)
     }
   }
@@ -121,8 +121,8 @@ private fun CheckBoxClickableText(data: ClickableTextData) {
     ),
   ) {
     when (data) {
-      is ClickableTextData.Button -&gt; ButtonText(data = data.buttonData)
-      is ClickableTextData.Link -&gt; Link(data = data.linkData)
+      is ClickableTextData.Button -> ButtonText(data = data.buttonData)
+      is ClickableTextData.Link -> Link(data = data.linkData)
     }
   }
 }
@@ -138,16 +138,16 @@ private fun getLabelColor(isEnabled: Boolean) =
 @Composable
 private fun CheckBoxType.getBackgroundColor(isChecked: Boolean, isEnabled: Boolean) =
   when {
-    isChecked.not() -&gt; Color.Transparent
-    isEnabled.not() -&gt; AppTheme.colors.neutral30
-    this is CheckBoxType.Error -&gt; AppTheme.colors.supportRed100
-    else -&gt; AppTheme.colors.primary900
+    isChecked.not() -> Color.Transparent
+    isEnabled.not() -> AppTheme.colors.neutral30
+    this is CheckBoxType.Error -> AppTheme.colors.supportRed100
+    else -> AppTheme.colors.primary900
   }
 
 @Composable
 private fun CheckBoxType.getBorderStrokeColor(isEnabled: Boolean, isChecked: Boolean) =
   when {
-    isEnabled.not() -&gt; AppTheme.colors.neutral30
-    this is CheckBoxType.Error -&gt; AppTheme.colors.supportRed100
-    else -&gt; if (isChecked) AppTheme.colors.primary900 else AppTheme.colors.neutral80
+    isEnabled.not() -> AppTheme.colors.neutral30
+    this is CheckBoxType.Error -> AppTheme.colors.supportRed100
+    else -> if (isChecked) AppTheme.colors.primary900 else AppTheme.colors.neutral80
   }

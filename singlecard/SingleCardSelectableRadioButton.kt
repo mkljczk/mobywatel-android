@@ -43,11 +43,11 @@ internal fun SingleCardSelectableRadioButton(
       )
     } else {
       when {
-        data.radioButtonData.isSelected &amp;&amp; data.drawBorder -&gt; BorderStroke(
+        data.radioButtonData.isSelected && data.drawBorder -> BorderStroke(
           width = AppTheme.dimensions.strokeWidth,
           color = AppTheme.colors.primary900,
         )
-        else -&gt; null
+        else -> null
       }
     },
     interactionSource = NoRippleInteractionSource(),
@@ -62,10 +62,10 @@ internal fun SingleCardSelectableRadioButton(
         .padding(all = AppTheme.dimensions.spacing250),
     ) {
       when (data) {
-        is SingleCardData.SelectableRadioButton.Title -&gt; SingleCardSelectableRadioButtonTitleContent(data = data)
-        is SingleCardData.SelectableRadioButton.IconTitle -&gt;
+        is SingleCardData.SelectableRadioButton.Title -> SingleCardSelectableRadioButtonTitleContent(data = data)
+        is SingleCardData.SelectableRadioButton.IconTitle ->
           SingleCardSelectableRadioButtonIconTitleContent(data = data)
-        is SingleCardData.SelectableRadioButton.TitleDescription -&gt;
+        is SingleCardData.SelectableRadioButton.TitleDescription ->
           SingleCardSelectableRadioButtonTitleDescriptionContent(data = data)
       }
       Spacer(
@@ -83,7 +83,7 @@ internal fun RowScope.SingleCardSelectableRadioButtonTitleContent(
   data: SingleCardData.SelectableRadioButton.Title,
 ) {
   CustomText(
-    testTag = data.testTag?.let { tag -&gt; tag + &quot;TitleText&quot; },
+    testTag = data.testTag?.let { tag -> tag + "TitleText" },
     label = data.title,
     style = AppTheme.typography.bodyLargeMedium,
     modifier = Modifier.weight(1f),
@@ -100,37 +100,37 @@ internal fun RowScope.SingleCardSelectableRadioButtonTitleDescriptionContent(
       .weight(1f),
   ) {
     CustomText(
-      testTag = data.testTag?.let { tag -&gt; tag + &quot;TitleText&quot; },
+      testTag = data.testTag?.let { tag -> tag + "TitleText" },
       label = data.title,
       style = AppTheme.typography.bodyLargeMedium,
       modifier = Modifier.fillMaxWidth(),
     )
     Spacer(modifier = Modifier.height(height = AppTheme.dimensions.spacing100))
     CustomText(
-      testTag = data.testTag?.let { tag -&gt; tag + &quot;DescriptionText&quot; },
+      testTag = data.testTag?.let { tag -> tag + "DescriptionText" },
       label = data.description,
       style = AppTheme.typography.bodyMediumRegular,
       color = AppTheme.colors.neutral200,
       modifier = Modifier.fillMaxWidth(),
     )
-    data.descriptionSecond?.let { descriptionSecond -&gt;
+    data.descriptionSecond?.let { descriptionSecond ->
       Spacer(
         modifier = Modifier.height(height = AppTheme.dimensions.spacing100),
       )
       CustomText(
-        testTag = data.testTag?.let { tag -&gt; tag + &quot;DescriptionSecondText&quot; },
+        testTag = data.testTag?.let { tag -> tag + "DescriptionSecondText" },
         label = descriptionSecond,
         style = AppTheme.typography.bodyMediumRegular,
         color = AppTheme.colors.neutral200,
         modifier = Modifier.fillMaxWidth(),
       )
     }
-    data.descriptionThird?.let { descriptionThird -&gt;
+    data.descriptionThird?.let { descriptionThird ->
       Spacer(
         modifier = Modifier.height(height = AppTheme.dimensions.spacing100),
       )
       CustomText(
-        testTag = data.testTag?.let { tag -&gt; tag + &quot;DescriptionThirdText&quot; },
+        testTag = data.testTag?.let { tag -> tag + "DescriptionThirdText" },
         label = descriptionThird,
         style = AppTheme.typography.bodyMediumRegular,
         color = AppTheme.colors.neutral200,
@@ -157,7 +157,7 @@ internal fun RowScope.SingleCardSelectableRadioButtonIconTitleContent(
       modifier = Modifier.width(width = AppTheme.dimensions.spacing200),
     )
     CustomText(
-      testTag = data.testTag?.let { tag -&gt; tag + &quot;TitleText&quot; },
+      testTag = data.testTag?.let { tag -> tag + "TitleText" },
       label = data.title,
       style = AppTheme.typography.bodyLargeMedium,
       modifier = Modifier.fillMaxWidth(),

@@ -25,7 +25,7 @@ sealed class SnackBarData(
     override val messageLabel: Label,
     override val withDismissAction: Boolean = true,
     override val message: String = messageLabel.text,
-    val onAction: () -&gt; Unit = {},
+    val onAction: () -> Unit = {},
   ) : SnackBarData(messageLabel = messageLabel) {
     internal val iconButtonData = ButtonIconData(
       iconResId = R.drawable.ab009_x_mark,

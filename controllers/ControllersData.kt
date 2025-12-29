@@ -7,7 +7,7 @@ sealed class ControllersData {
     val leftItem: TabItem,
     val rightItem: TabItem,
     val selectedItemType: Type,
-    val onClick: (Type) -&gt; Unit,
+    val onClick: (Type) -> Unit,
   ) : ControllersData() {
 
     data class TabItem(
@@ -22,8 +22,8 @@ sealed class ControllersData {
   }
 
   data class Filter(
-    val items: List&lt;Label&gt;,
+    val items: List<Label>,
     val selectedItemIndex: Int,
-    val onClick: (Int) -&gt; Unit,
+    val onClick: (Int) -> Unit,
   ) : ControllersData()
 }

@@ -81,14 +81,14 @@ internal fun TextField(
   Card(
     border = BorderStroke(
       width = when {
-        focusHost.isFocused -&gt; AppTheme.dimensions.spacing25
-        else -&gt; AppTheme.dimensions.strokeWidth
+        focusHost.isFocused -> AppTheme.dimensions.spacing25
+        else -> AppTheme.dimensions.strokeWidth
       },
       color = when {
-        data.validationState is ValidationState.Invalid -&gt; AppTheme.colors.supportRed100
-        focusHost.isFocused -&gt; AppTheme.colors.primary900
-        !data.enabled -&gt; AppTheme.colors.neutral30
-        else -&gt; AppTheme.colors.neutral80
+        data.validationState is ValidationState.Invalid -> AppTheme.colors.supportRed100
+        focusHost.isFocused -> AppTheme.colors.primary900
+        !data.enabled -> AppTheme.colors.neutral30
+        else -> AppTheme.colors.neutral80
       },
     ),
     backgroundColor = Color.White,
@@ -102,8 +102,8 @@ internal fun TextField(
           contentDescription = data.contentDescription()
           editableText = AnnotatedString(data.value.text)
           testTag = data.testTag ?: data.label?.tag
-            .let { tag -&gt; &quot;${tag}EditText&quot; }
-            .let { tag -&gt; &quot;$tag${data.indexTag?.let { &quot;_${data.indexTag}&quot; } ?: &quot;&quot;}&quot; }
+            .let { tag -> "${tag}EditText" }
+            .let { tag -> "$tag${data.indexTag?.let { "_${data.indexTag}" } ?: ""}" }
         }
         .fillMaxWidth()
         .heightIn(min = AppTheme.dimensions.spacing700),
@@ -113,7 +113,7 @@ internal fun TextField(
       ),
       keyboardActions = data.keyboardAction(focusManager),
       value = data.value.text,
-      onValueChange = { value -&gt;
+      onValueChange = { value ->
         if (data is TextInputData.Masked) {
           data.maskType.run {
             if (filter(value)) data.onValueChanged(value)
@@ -124,14 +124,14 @@ internal fun TextField(
       },
       interactionSource = inputInteractionSource,
       visualTransformation = when (data) {
-        is TextInputData.Masked -&gt; MaskVisualTransformation(data.maskType)
-        is TextInputData.Password -&gt; if (isPasswordVisible) {
+        is TextInputData.Masked -> MaskVisualTransformation(data.maskType)
+        is TextInputData.Password -> if (isPasswordVisible) {
           VisualTransformation.None
         } else {
           PasswordVisualTransformation()
         }
 
-        else -&gt; VisualTransformation.None
+        else -> VisualTransformation.None
       },
       enabled = data.enabled,
       textStyle = AppTheme.typography.bodyLargeRegular.copy(
@@ -144,7 +144,7 @@ internal fun TextField(
       ),
       singleLine = data.singleLine,
       cursorBrush = SolidColor(AppTheme.colors.primary900),
-      decorationBox = { innerTextField -&gt;
+      decorationBox = { innerTextField ->
         Row(
           modifier = Modifier
             .padding(all = AppTheme.dimensions.spacing200)
@@ -154,12 +154,12 @@ internal fun TextField(
         ) {
           LeftIcon(data = data)
           when (data) {
-            is TextInputData.Masked -&gt;
+            is TextInputData.Masked ->
               Box(modifier = Modifier.weight(1F)) {
                 Placeholder(data = data)
                 innerTextField()
               }
-            else -&gt;
+            else ->
               Box(modifier = Modifier.weight(1F)) {
                 Hint(data = data)
                 innerTextField()
@@ -169,7 +169,7 @@ internal fun TextField(
             data = data,
             isFocused = focusHost.isFocused,
             isPasswordVisible = isPasswordVisible,
-          ) { passwordVisible -&gt;
+          ) { passwordVisible ->
             isPasswordVisible = passwordVisible
           }
         }
@@ -182,19 +182,19 @@ private fun TextInputData.contentDescription() =
   (
     label.textWithDotAndSpaceOrEmpty() +
       when (validationState) {
-        is ValidationState.Invalid -&gt; (validationState as ValidationState.Invalid).message.textWithDotAndSpaceOrEmpty()
-        else -&gt; helperText.textWithDotAndSpaceOrEmpty()
+        is ValidationState.Invalid -> (validationState as ValidationState.Invalid).message.textWithDotAndSpaceOrEmpty()
+        else -> helperText.textWithDotAndSpaceOrEmpty()
       }
     ).trim()
 
 @Composable
 private fun LeftIcon(data: TextInputData) {
   when (data) {
-    is TextInputData.Search -&gt; SearchIcon(
-      iconTestTag = data.testTag?.let { tag -&gt; tag + &quot;SearchIcon&quot; },
+    is TextInputData.Search -> SearchIcon(
+      iconTestTag = data.testTag?.let { tag -> tag + "SearchIcon" },
       enabled = data.enabled,
     )
-    else -&gt; Unit
+    else -> Unit
   }
 }
 
@@ -203,7 +203,7 @@ private fun RightIcon(
   data: TextInputData,
   isFocused: Boolean,
   isPasswordVisible: Boolean,
-  changePasswordVisibility: (Boolean) -&gt; Unit,
+  changePasswordVisibility: (Boolean) -> Unit,
 ) {
   val context = LocalContext.current
 
@@ -211,20 +211,20 @@ private fun RightIcon(
   val isNotPasswordInputType = (data is TextInputData.Password).not()
 
   when {
-    isValueNotEmpty &amp;&amp; isFocused &amp;&amp; isNotPasswordInputType &amp;&amp; data.removableIconVisible -&gt;
+    isValueNotEmpty && isFocused && isNotPasswordInputType && data.removableIconVisible ->
       RemoveIconButton(
         context = context,
-        iconButtonTestTag = data.testTag?.let { tag -&gt; tag + &quot;RemoveIconButton&quot; },
+        iconButtonTestTag = data.testTag?.let { tag -> tag + "RemoveIconButton" },
         enabled = data.enabled,
         onValueChanged = data.onValueChanged,
         indexTag = data.indexTag,
         contentDescription = with(CommonUILabelProvider.inputIconRemoveLabel()) {
-          &quot;$text ${data.label?.text.orEmpty()}&quot;.trim().toLabel(tag = tag)
+          "$text ${data.label?.text.orEmpty()}".trim().toLabel(tag = tag)
         },
       )
 
-    data is TextInputData.Password -&gt; PasswordIconButton(
-      iconButtonTestTag = data.testTag?.let { tag -&gt; tag + &quot;PasswordIconButton&quot; },
+    data is TextInputData.Password -> PasswordIconButton(
+      iconButtonTestTag = data.testTag?.let { tag -> tag + "PasswordIconButton" },
       isPasswordVisible = isPasswordVisible,
       isFocused = isFocused,
       enabled = data.enabled,
@@ -242,9 +242,9 @@ private fun RightIcon(
 @Composable
 private fun Hint(data: TextInputData) {
   with(data) {
-    if (value.text.isEmpty() &amp;&amp; enabled &amp;&amp; hint != null) {
+    if (value.text.isEmpty() && enabled && hint != null) {
       CustomText(
-        testTag = testTag?.let { tag -&gt; tag + &quot;HintText&quot; },
+        testTag = testTag?.let { tag -> tag + "HintText" },
         label = hint,
         style = AppTheme.typography.bodyLargeRegular,
         color = AppTheme.colors.neutral100,
@@ -259,8 +259,8 @@ private fun Placeholder(data: TextInputData.Masked) {
   with(data) {
     if (value.text.isEmpty()) {
       CustomText(
-        testTag = testTag?.let { tag -&gt; tag + &quot;PlaceholderText&quot; },
-        label = data.maskType.getPlaceholderValue().takeIf { placeholder -&gt; placeholder.isNotBlank() } ?: data.hint,
+        testTag = testTag?.let { tag -> tag + "PlaceholderText" },
+        label = data.maskType.getPlaceholderValue().takeIf { placeholder -> placeholder.isNotBlank() } ?: data.hint,
         style = AppTheme.typography.bodyLargeRegular,
         color = AppTheme.colors.neutral100,
         focusable = false,
@@ -282,8 +282,8 @@ private fun SearchIcon(
         iconSize = IconSize.SIZE24,
         iconColorProvider = {
           when (enabled) {
-            true -&gt; AppTheme.colors.neutral200
-            else -&gt; AppTheme.colors.neutral60
+            true -> AppTheme.colors.neutral200
+            else -> AppTheme.colors.neutral60
           }
         },
         contentDescription = Label.EMPTY,
@@ -299,7 +299,7 @@ private fun RemoveIconButton(
   iconButtonTestTag: String?,
   context: Context,
   enabled: Boolean,
-  onValueChanged: (String) -&gt; Unit,
+  onValueChanged: (String) -> Unit,
   contentDescription: Label,
   indexTag: Int? = null,
 ) {
@@ -308,23 +308,23 @@ private fun RemoveIconButton(
       .semantics { testTagsAsResourceId = true }
       .semantics {
         testTag = iconButtonTestTag ?: getResourceEntryNameIcon(R.drawable.aa018_fail, context)
-          .let { tag -&gt; &quot;$tag${indexTag?.let { &quot;_$indexTag&quot; } ?: &quot;&quot;}&quot; }
+          .let { tag -> "$tag${indexTag?.let { "_$indexTag" } ?: ""}" }
       }
       .clickable(
         enabled = enabled,
         role = Role.Button,
         indication = null,
         interactionSource = NoRippleInteractionSource(),
-        onClick = { onValueChanged(&quot;&quot;) },
+        onClick = { onValueChanged("") },
       ),
     data = IconData.Standard(
-      testTag = iconButtonTestTag?.let { tag -&gt; tag + &quot;Icon&quot; },
+      testTag = iconButtonTestTag?.let { tag -> tag + "Icon" },
       iconResId = R.drawable.aa018_fail,
       iconSize = IconSize.SIZE24,
       iconColorProvider = {
         when (enabled) {
-          true -&gt; AppTheme.colors.neutral200
-          else -&gt; AppTheme.colors.neutral60
+          true -> AppTheme.colors.neutral200
+          else -> AppTheme.colors.neutral60
         }
       },
       contentDescription = contentDescription,
@@ -340,30 +340,30 @@ private fun PasswordIconButton(
   isFocused: Boolean,
   enabled: Boolean,
   context: Context,
-  onClicked: () -&gt; Unit,
+  onClicked: () -> Unit,
   iconContentDescription: TextInputData.Password.IconContentDescription,
   indexTag: Int? = null,
 ) {
   val passwordVisibilityIcon = when (isPasswordVisible) {
-    true -&gt; R.drawable.aa023_hide_password
-    else -&gt; R.drawable.aa022_show_password
+    true -> R.drawable.aa023_hide_password
+    else -> R.drawable.aa022_show_password
   }
   val contentDescription = when (isPasswordVisible) {
-    true -&gt; iconContentDescription.whenPasswordVisible
-    false -&gt; iconContentDescription.whenPasswordHidden
+    true -> iconContentDescription.whenPasswordVisible
+    false -> iconContentDescription.whenPasswordHidden
   }
   Spacer(modifier = Modifier.width(width = AppTheme.dimensions.spacing100))
   Icon(
     modifier = Modifier
       .semantics {
         when (isFocused) {
-          true -&gt; {
+          true -> {
             testTagsAsResourceId = true
             testTag = iconButtonTestTag ?: getResourceEntryNameIcon(passwordVisibilityIcon, context)
-              .let { tag -&gt; &quot;$tag${indexTag?.let { &quot;_$$indexTag&quot; } ?: &quot;&quot;}&quot; }
+              .let { tag -> "$tag${indexTag?.let { "_$$indexTag" } ?: ""}" }
           }
 
-          else -&gt; invisibleToUser()
+          else -> invisibleToUser()
         }
       }
       .clickable(
@@ -374,13 +374,13 @@ private fun PasswordIconButton(
         onClick = onClicked,
       ),
     data = IconData.Standard(
-      testTag = iconButtonTestTag?.let { tag -&gt; tag + &quot;Icon&quot; },
+      testTag = iconButtonTestTag?.let { tag -> tag + "Icon" },
       iconResId = passwordVisibilityIcon,
       iconSize = IconSize.SIZE24,
       iconColorProvider = {
         when (enabled) {
-          true -&gt; AppTheme.colors.neutral200
-          else -&gt; AppTheme.colors.neutral60
+          true -> AppTheme.colors.neutral200
+          else -> AppTheme.colors.neutral60
         }
       },
       contentDescription = contentDescription,

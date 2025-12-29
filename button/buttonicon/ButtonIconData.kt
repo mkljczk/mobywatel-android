@@ -11,8 +11,8 @@ import pl.gov.coi.common.ui.theme.AppTheme
 data class ButtonIconData(
   val testTag: String? = null,
   @DrawableRes val iconResId: Int,
-  val iconColorProvider: @Composable () -&gt; Color = { AppTheme.colors.primary900 },
+  val iconColorProvider: @Composable () -> Color = { AppTheme.colors.primary900 },
   val menuData: MenuData? = null,
   val contentDescription: Label = Label.EMPTY,
-  val onClick: () -&gt; Unit,
+  val onClick: () -> Unit,
 )

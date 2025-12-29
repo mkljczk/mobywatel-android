@@ -47,7 +47,7 @@ fun DropDownButton(data: DropDownButtonData) {
     modifier = Modifier
       .wrapContentHeight()
       .semantics {
-        if (data.buttonType is DropDownButtonState.Error &amp;&amp; data.buttonType.errorText != null) {
+        if (data.buttonType is DropDownButtonState.Error && data.buttonType.errorText != null) {
           liveRegion = LiveRegionMode.Assertive
           stateDescription = data.buttonType.errorText.text
         }
@@ -68,17 +68,17 @@ fun DropDownButton(data: DropDownButtonData) {
 @Composable
 fun DropDownBottomText(data: DropDownButtonData) {
   when (data.buttonType) {
-    is DropDownButtonState.Error -&gt; data.buttonType.errorText?.let {
+    is DropDownButtonState.Error -> data.buttonType.errorText?.let {
       Spacer(modifier = Modifier.height(AppTheme.dimensions.spacing50))
       ErrorText(errorText = data.buttonType.errorText, ignoreForAccessibility = true)
     }
 
-    is DropDownButtonState.Disabled -&gt;
+    is DropDownButtonState.Disabled ->
       data.buttonType.helperText?.let {
         DropDownHelperText(helperText = data.buttonType.helperText)
       }
 
-    is DropDownButtonState.Enabled -&gt; data.buttonType.helperText?.let {
+    is DropDownButtonState.Enabled -> data.buttonType.helperText?.let {
       DropDownHelperText(helperText = data.buttonType.helperText)
     }
   }
@@ -93,37 +93,37 @@ private fun DropDownHelperText(helperText: Label) {
 @Composable
 private fun DropDownButtonState.getLabelColor() =
   when (this) {
-    is DropDownButtonState.Disabled -&gt; AppTheme.colors.neutral60
-    else -&gt; AppTheme.colors.neutral200
+    is DropDownButtonState.Disabled -> AppTheme.colors.neutral60
+    else -> AppTheme.colors.neutral200
   }
 
 @Composable
 private fun DropDownButtonState.getPlaceholderColor() =
   when (this) {
-    is DropDownButtonState.Disabled -&gt; AppTheme.colors.neutral60
-    else -&gt; AppTheme.colors.neutral100
+    is DropDownButtonState.Disabled -> AppTheme.colors.neutral60
+    else -> AppTheme.colors.neutral100
   }
 
 @Composable
 private fun DropDownButtonState.getIconColor() =
   when (this) {
-    is DropDownButtonState.Disabled -&gt; AppTheme.colors.neutral60
-    else -&gt; AppTheme.colors.neutral200
+    is DropDownButtonState.Disabled -> AppTheme.colors.neutral60
+    else -> AppTheme.colors.neutral200
   }
 
 @Composable
 private fun DropDownButtonState.getFilledTextColor() =
   when (this) {
-    is DropDownButtonState.Disabled -&gt; AppTheme.colors.neutral60
-    else -&gt; AppTheme.colors.neutral500
+    is DropDownButtonState.Disabled -> AppTheme.colors.neutral60
+    else -> AppTheme.colors.neutral500
   }
 
 @Composable
 private fun DropDownButtonState.getBorderStroke() =
   when (this) {
-    is DropDownButtonState.Disabled -&gt; AppTheme.colors.neutral30
-    is DropDownButtonState.Enabled -&gt; AppTheme.colors.neutral80
-    is DropDownButtonState.Error -&gt; AppTheme.colors.supportRed100
+    is DropDownButtonState.Disabled -> AppTheme.colors.neutral30
+    is DropDownButtonState.Enabled -> AppTheme.colors.neutral80
+    is DropDownButtonState.Error -> AppTheme.colors.supportRed100
   }
 
 @OptIn(ExperimentalComposeUiApi::class)
@@ -196,9 +196,9 @@ private fun DropDownClickableRow(
 private fun DropDownButtonData.contentDescription() = label.textWithDotAndSpaceOrEmpty() +
   (initialSelectedItem?.let { items[initialSelectedItem] } ?: placeholder).textWithDotAndSpaceOrEmpty() +
   when (buttonType) {
-    is DropDownButtonState.Error -&gt; buttonType.errorText
-    is DropDownButtonState.Disabled -&gt; buttonType.helperText
-    is DropDownButtonState.Enabled -&gt; buttonType.helperText
+    is DropDownButtonState.Error -> buttonType.errorText
+    is DropDownButtonState.Disabled -> buttonType.helperText
+    is DropDownButtonState.Enabled -> buttonType.helperText
   }
     .textWithDotAndSpaceOrEmpty()
     .trim()

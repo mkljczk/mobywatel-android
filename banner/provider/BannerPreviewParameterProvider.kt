@@ -11,140 +11,140 @@ import pl.gov.coi.common.ui.ds.button.common.ButtonVariant
 import pl.gov.coi.common.ui.preview.CustomPreviewParameterProvider
 import pl.gov.coi.common.ui.preview.ScreenShotTestData
 
-class BannerPreviewParameterProvider : CustomPreviewParameterProvider&lt;BannerData&gt;() {
-  override val screenShotTestValues: Sequence&lt;ScreenShotTestData&lt;BannerData&gt;&gt; = sequenceOf(
+class BannerPreviewParameterProvider : CustomPreviewParameterProvider<BannerData>() {
+  override val screenShotTestValues: Sequence<ScreenShotTestData<BannerData>> = sequenceOf(
     ScreenShotTestData(
-      screenShotTestName = &quot;BannerInfoWithoutTitle&quot;,
+      screenShotTestName = "BannerInfoWithoutTitle",
       value = provideBannerInfoWithoutTitle(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;BannerInfo&quot;,
+      screenShotTestName = "BannerInfo",
       value = provideBannerInfo(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;BannerInfoFull&quot;,
+      screenShotTestName = "BannerInfoFull",
       value = provideBannerInfoFull(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;BannerInfoErrorWithoutTitle&quot;,
+      screenShotTestName = "BannerInfoErrorWithoutTitle",
       value = provideBannerErrorWithoutTitle(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;BannerError&quot;,
+      screenShotTestName = "BannerError",
       value = provideBannerError(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;BannerErrorFull&quot;,
+      screenShotTestName = "BannerErrorFull",
       value = provideBannerErrorFull(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;BannerHighEmphasisInfoWithoutTitle&quot;,
+      screenShotTestName = "BannerHighEmphasisInfoWithoutTitle",
       value = provideBannerHighEmphasisInfoWithoutTitle(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;BannerHighEmphasisInfo&quot;,
+      screenShotTestName = "BannerHighEmphasisInfo",
       value = provideBannerHighEmphasisInfo(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;BannerHighEmphasisInfoFull&quot;,
+      screenShotTestName = "BannerHighEmphasisInfoFull",
       value = provideBannerHighEmphasisInfoFull(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;BannerHighEmphasisErrorWithoutTitle&quot;,
+      screenShotTestName = "BannerHighEmphasisErrorWithoutTitle",
       value = provideBannerHighEmphasisErrorWithoutTitle(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;BannerHighEmphasisError&quot;,
+      screenShotTestName = "BannerHighEmphasisError",
       value = provideBannerHighEmphasisError(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;BannerHighEmphasisErrorFull&quot;,
+      screenShotTestName = "BannerHighEmphasisErrorFull",
       value = provideBannerHighEmphasisErrorFull(),
     ),
   )
 
   private fun provideBannerInfoWithoutTitle() = BannerData.Info(
     bodyText = (
-      &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor &quot; +
-        &quot;incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.&quot;
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
+        "incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
       ).toLabel(),
     iconContentDescription = Label.EMPTY,
   )
 
   private fun provideBannerInfo() = BannerData.Info(
-    title = &quot;Info banner&quot;.toLabel(),
+    title = "Info banner".toLabel(),
     bodyText = (
-      &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor &quot; +
-        &quot;incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.&quot;
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
+        "incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
       ).toLabel(),
     iconContentDescription = Label.EMPTY,
   )
 
   private fun provideBannerInfoFull() = BannerData.Info(
-    title = &quot;Info banner&quot;.toLabel(),
+    title = "Info banner".toLabel(),
     bodyText = (
-      &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor &quot; +
-        &quot;incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.&quot;
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
+        "incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
       ).toLabel(),
     iconContentDescription = Label.EMPTY,
     buttonData = ButtonTextData(
-      label = &quot;Text button&quot;.toLabel(),
+      label = "Text button".toLabel(),
     ) {},
     onCloseButtonClick = {},
   )
 
   private fun provideBannerErrorWithoutTitle() = BannerData.Error(
     bodyText = (
-      &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor &quot; +
-        &quot;incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.&quot;
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
+        "incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
       ).toLabel(),
     iconContentDescription = Label.EMPTY,
   )
 
   private fun provideBannerError() = BannerData.Error(
-    title = &quot;Error banner&quot;.toLabel(),
+    title = "Error banner".toLabel(),
     bodyText = (
-      &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor &quot; +
-        &quot;incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.&quot;
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
+        "incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
       ).toLabel(),
     iconContentDescription = Label.EMPTY,
   )
 
   private fun provideBannerErrorFull() = BannerData.Error(
-    title = &quot;Error banner with very very very very long title&quot;.toLabel(),
+    title = "Error banner with very very very very long title".toLabel(),
     bodyText = (
-      &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor &quot; +
-        &quot;incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.&quot;
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
+        "incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
       ).toLabel(),
     iconContentDescription = Label.EMPTY,
     buttonData = ButtonTextData(
-      label = &quot;Text Button&quot;.toLabel(),
+      label = "Text Button".toLabel(),
     ) {},
     onCloseButtonClick = {},
   )
 
   private fun provideBannerHighEmphasisInfoWithoutTitle() = BannerData.HighEmphasisInfo(
     bodyText = (
-      &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor &quot; +
-        &quot;incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.&quot;
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
+        "incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
       ).toLabel(),
     iconContentDescription = Label.EMPTY,
   )
 
   private fun provideBannerHighEmphasisInfo() = BannerData.HighEmphasisInfo(
-    title = &quot;High emphasis info banner&quot;.toLabel(),
+    title = "High emphasis info banner".toLabel(),
     bodyText = (
-      &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor &quot; +
-        &quot;incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.&quot;
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
+        "incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
       ).toLabel(),
     iconContentDescription = Label.EMPTY,
   )
 
   private fun provideBannerHighEmphasisInfoFull() = BannerData.HighEmphasisInfo(
-    title = &quot;High emphasis info banner&quot;.toLabel(),
+    title = "High emphasis info banner".toLabel(),
     bodyText = (
-      &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor &quot; +
-        &quot;incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.&quot;
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
+        "incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
       ).toLabel(),
     iconContentDescription = Label.EMPTY,
     buttonData = ButtonData(
@@ -153,7 +153,7 @@ class BannerPreviewParameterProvider : CustomPreviewParameterProvider&lt;BannerD
         reversedColor = true,
       ),
       buttonType = ButtonType.WithText(
-        label = &quot;Small Button&quot;.toLabel(),
+        label = "Small Button".toLabel(),
       ),
       onClick = {},
     ),
@@ -162,26 +162,26 @@ class BannerPreviewParameterProvider : CustomPreviewParameterProvider&lt;BannerD
 
   private fun provideBannerHighEmphasisErrorWithoutTitle() = BannerData.HighEmphasisError(
     bodyText = (
-      &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor &quot; +
-        &quot;incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.&quot;
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
+        "incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
       ).toLabel(),
     iconContentDescription = Label.EMPTY,
   )
 
   private fun provideBannerHighEmphasisError() = BannerData.HighEmphasisError(
-    title = &quot;High emphasis error banner&quot;.toLabel(),
+    title = "High emphasis error banner".toLabel(),
     bodyText = (
-      &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor &quot; +
-        &quot;incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.&quot;
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
+        "incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
       ).toLabel(),
     iconContentDescription = Label.EMPTY,
   )
 
   private fun provideBannerHighEmphasisErrorFull() = BannerData.HighEmphasisError(
-    title = &quot;High emphasis error banner&quot;.toLabel(),
+    title = "High emphasis error banner".toLabel(),
     bodyText = (
-      &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor &quot; +
-        &quot;incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.&quot;
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
+        "incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
       ).toLabel(),
     iconContentDescription = Label.EMPTY,
     buttonData = ButtonData(
@@ -190,7 +190,7 @@ class BannerPreviewParameterProvider : CustomPreviewParameterProvider&lt;BannerD
         reversedColor = true,
       ),
       buttonType = ButtonType.WithText(
-        label = &quot;Small Button&quot;.toLabel(),
+        label = "Small Button".toLabel(),
       ),
       onClick = {},
     ),

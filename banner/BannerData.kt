@@ -15,13 +15,13 @@ sealed class BannerData(
   val title: Label?,
   val bodyText: Label,
   iconResId: Int,
-  iconColorProvider: @Composable () -&gt; Color,
+  iconColorProvider: @Composable () -> Color,
   iconContentDescription: Label,
-  onCloseButtonClick: (() -&gt; Unit)?,
+  onCloseButtonClick: (() -> Unit)?,
   closeIconContentDescription: Label,
 ) {
 
-  internal open val closeButtonData = onCloseButtonClick?.let { onCloseButtonClick -&gt;
+  internal open val closeButtonData = onCloseButtonClick?.let { onCloseButtonClick ->
     ButtonIconData(
       iconResId = R.drawable.ab009_x_mark,
       iconColorProvider = { AppTheme.colors.neutral200 },
@@ -42,7 +42,7 @@ sealed class BannerData(
     bodyText: Label,
     iconContentDescription: Label,
     val buttonData: ButtonTextData? = null,
-    onCloseButtonClick: (() -&gt; Unit)? = null,
+    onCloseButtonClick: (() -> Unit)? = null,
     closeIconContentDescription: Label = Label.EMPTY,
   ) : BannerData(
     title = title,
@@ -59,7 +59,7 @@ sealed class BannerData(
     bodyText: Label,
     iconContentDescription: Label,
     val buttonData: ButtonTextData? = null,
-    onCloseButtonClick: (() -&gt; Unit)? = null,
+    onCloseButtonClick: (() -> Unit)? = null,
     closeIconContentDescription: Label = Label.EMPTY,
   ) : BannerData(
     title = title,
@@ -76,7 +76,7 @@ sealed class BannerData(
     bodyText: Label,
     iconContentDescription: Label,
     val buttonData: ButtonData? = null,
-    onCloseButtonClick: (() -&gt; Unit)? = null,
+    onCloseButtonClick: (() -> Unit)? = null,
     closeIconContentDescription: Label = Label.EMPTY,
   ) : BannerData(
     title = title,
@@ -87,7 +87,7 @@ sealed class BannerData(
     onCloseButtonClick = onCloseButtonClick,
     closeIconContentDescription = closeIconContentDescription,
   ) {
-    override val closeButtonData = onCloseButtonClick?.let { onCloseButtonClick -&gt;
+    override val closeButtonData = onCloseButtonClick?.let { onCloseButtonClick ->
       ButtonIconData(
         iconResId = R.drawable.ab009_x_mark,
         iconColorProvider = { AppTheme.colors.white },
@@ -102,7 +102,7 @@ sealed class BannerData(
     bodyText: Label,
     iconContentDescription: Label,
     val buttonData: ButtonData? = null,
-    onCloseButtonClick: (() -&gt; Unit)? = null,
+    onCloseButtonClick: (() -> Unit)? = null,
     closeIconContentDescription: Label = Label.EMPTY,
   ) : BannerData(
     title = title,
@@ -113,7 +113,7 @@ sealed class BannerData(
     onCloseButtonClick = onCloseButtonClick,
     closeIconContentDescription = closeIconContentDescription,
   ) {
-    override val closeButtonData = onCloseButtonClick?.let { onCloseButtonClick -&gt;
+    override val closeButtonData = onCloseButtonClick?.let { onCloseButtonClick ->
       ButtonIconData(
         iconResId = R.drawable.ab009_x_mark,
         iconColorProvider = { AppTheme.colors.white },

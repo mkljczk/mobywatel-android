@@ -19,7 +19,7 @@ class DatePickerDataVMSImpl(
     Will be checked in MOB-60795 
      */
     val currentLocalDate = LocalDate.ofInstant(Instant.ofEpochMilli(currentCalendarDate), ZoneOffset.UTC)
-    return (minDate?.isBefore(currentLocalDate) ?: true || minDate?.isEqual(currentLocalDate) ?: true) &amp;&amp;
+    return (minDate?.isBefore(currentLocalDate) ?: true || minDate?.isEqual(currentLocalDate) ?: true) &&
       (maxDate?.isAfter(currentLocalDate) ?: true || maxDate?.isEqual(currentLocalDate) ?: true)
   }
 

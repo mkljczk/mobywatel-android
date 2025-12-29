@@ -40,7 +40,7 @@ class LabelButtonImageSingleCard(val data: LabelButtonImageSingleCardData) : Cus
       modifier = Modifier.fillMaxWidth(),
     ) {
       Column {
-        data.label?.let { label -&gt;
+        data.label?.let { label ->
           CustomText(
             label = label,
             style = AppTheme.typography.bodyMediumRegular,
@@ -65,15 +65,15 @@ class LabelButtonImageSingleCard(val data: LabelButtonImageSingleCardData) : Cus
 fun QrCodeCustomSingleCardPreview() {
   SingleCard(
     singleCardData = CustomSingleCardData(
-      oldTestTag = &quot;qrCodeCard&quot;.toLabel(tag = &quot;qrCodeCard&quot;),
+      oldTestTag = "qrCodeCard".toLabel(tag = "qrCodeCard"),
       customContent =
       LabelButtonImageSingleCard(
         data = LabelButtonImageSingleCardData(
-          label = &quot;Kod QR&quot;.toLabel(tag = &quot;qrCodeButton&quot;),
+          label = "Kod QR".toLabel(tag = "qrCodeButton"),
           buttonData = ButtonData(
             buttonSize = ButtonSize.Small,
             buttonType = ButtonType.WithText(
-              label = &quot;Powiększ kod QR&quot;.toLabel(tag = &quot;zoomInQrCodeButton&quot;),
+              label = "Powiększ kod QR".toLabel(tag = "zoomInQrCodeButton"),
             ),
             buttonVariant = ButtonVariant.Primary,
             onClick = {},
@@ -94,7 +94,7 @@ private fun provideBitmap(value: String): Bitmap {
 }
 
 private val qrCodeValue =
-  &quot;iVBORw0KGgoAAAANSUhEUgAAAH0AAAB9AQAAAACn+1GIAAAApklEQVR4Xu2UMQ4EMQgD/QP+/0vK6zjsvayUMm&quot; +
-    &quot;avWxQpMAUBkwS12wcveAAkgNSCD3rR5Lkgoai3GUCMgWqbAEYR3HxAkZlzU/0MyBisYRs&quot; +
-    &quot;gI1ERFfcpBpA+ze6k56Cj7KTdXNigFWZvSOpsgqLfd&quot; +
-    &quot;18i2aAukXh9TXBNmdWt5gzA/oqzWkkN8HtA7G8CNOwYAiZt3wZixUfkA32OHNQq7Bxs9oI/gC/9fV8AVCkPjQAAAABJRU5ErkJggg==&quot;
+  "iVBORw0KGgoAAAANSUhEUgAAAH0AAAB9AQAAAACn+1GIAAAApklEQVR4Xu2UMQ4EMQgD/QP+/0vK6zjsvayUMm" +
+    "avWxQpMAUBkwS12wcveAAkgNSCD3rR5Lkgoai3GUCMgWqbAEYR3HxAkZlzU/0MyBisYRs" +
+    "gI1ERFfcpBpA+ze6k56Cj7KTdXNigFWZvSOpsgqLfd" +
+    "18i2aAukXh9TXBNmdWt5gzA/oqzWkkN8HtA7G8CNOwYAiZt3wZixUfkA32OHNQq7Bxs9oI/gC/9fV8AVCkPjQAAAABJRU5ErkJggg=="

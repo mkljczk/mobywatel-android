@@ -4,11 +4,11 @@ import pl.gov.coi.common.domain.label.Label
 
 data class DropDownButtonData(
   val label: Label,
-  val items: List&lt;Label&gt;,
+  val items: List<Label>,
   val initialSelectedItem: Int? = null,
   val buttonType: DropDownButtonState = DropDownButtonState.Enabled(),
   val placeholder: Label,
-  val onClick: (DropDownButtonData) -&gt; Unit,
+  val onClick: (DropDownButtonData) -> Unit,
 )
 
 sealed interface DropDownButtonState {

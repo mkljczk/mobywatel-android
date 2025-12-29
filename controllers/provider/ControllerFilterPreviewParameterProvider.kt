@@ -5,18 +5,18 @@ import pl.gov.coi.common.ui.preview.CustomPreviewParameterProvider
 import pl.gov.coi.common.ui.preview.ScreenShotTestData
 import pl.gov.coi.common.ui.ds.controllers.ControllersData
 
-class ControllerFilterPreviewParameterProvider : CustomPreviewParameterProvider&lt;ControllersData.Filter&gt;() {
-  override val screenShotTestValues: Sequence&lt;ScreenShotTestData&lt;ControllersData.Filter&gt;&gt; = sequenceOf(
+class ControllerFilterPreviewParameterProvider : CustomPreviewParameterProvider<ControllersData.Filter>() {
+  override val screenShotTestValues: Sequence<ScreenShotTestData<ControllersData.Filter>> = sequenceOf(
     ScreenShotTestData(
-      screenShotTestName = &quot;ControllerFilterFirstSelected&quot;,
+      screenShotTestName = "ControllerFilterFirstSelected",
       value = provideControllerFilterFirstSelectedPreviewData(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;ControllerFilterThirdSelected&quot;,
+      screenShotTestName = "ControllerFilterThirdSelected",
       value = provideControllerFilterThirdSelectedPreviewData(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;ControllerFilterShortLabel&quot;,
+      screenShotTestName = "ControllerFilterShortLabel",
       value = provideControllerFilterShortLabelPreviewData(),
     ),
   )
@@ -25,10 +25,10 @@ class ControllerFilterPreviewParameterProvider : CustomPreviewParameterProvider&
 private fun provideControllerFilterFirstSelectedPreviewData() =
   ControllersData.Filter(
     items = listOf(
-      &quot;Główne&quot;,
-      &quot;Tymczasowe&quot;,
-      &quot;Niezdeklarowane&quot;,
-      &quot;Nieważne&quot;,
+      "Główne",
+      "Tymczasowe",
+      "Niezdeklarowane",
+      "Nieważne",
     ).map { it.toLabel(tag = it) },
     selectedItemIndex = 0,
     onClick = {},
@@ -37,10 +37,10 @@ private fun provideControllerFilterFirstSelectedPreviewData() =
 private fun provideControllerFilterThirdSelectedPreviewData() =
   ControllersData.Filter(
     items = listOf(
-      &quot;Główne&quot;,
-      &quot;Tymczasowe&quot;,
-      &quot;Niezdeklarowane&quot;,
-      &quot;Nieważne&quot;,
+      "Główne",
+      "Tymczasowe",
+      "Niezdeklarowane",
+      "Nieważne",
     ).map { it.toLabel(tag = it) },
     selectedItemIndex = 2,
     onClick = {},
@@ -49,17 +49,17 @@ private fun provideControllerFilterThirdSelectedPreviewData() =
 private fun provideControllerFilterShortLabelPreviewData() =
   ControllersData.Filter(
     items = listOf(
-      &quot;a&quot;,
-      &quot;b&quot;,
-      &quot;c&quot;,
-      &quot;d&quot;,
-      &quot;e&quot;,
-      &quot;f&quot;,
-      &quot;g&quot;,
-      &quot;h&quot;,
-      &quot;i&quot;,
-      &quot;j&quot;,
-      &quot;k&quot;,
+      "a",
+      "b",
+      "c",
+      "d",
+      "e",
+      "f",
+      "g",
+      "h",
+      "i",
+      "j",
+      "k",
     ).map { it.toLabel(tag = it) },
     selectedItemIndex = 1,
     onClick = {},

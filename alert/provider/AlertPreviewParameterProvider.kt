@@ -9,162 +9,162 @@ import pl.gov.coi.common.ui.ds.link.LinkData
 import pl.gov.coi.common.ui.preview.CustomPreviewParameterProvider
 import pl.gov.coi.common.ui.preview.ScreenShotTestData
 
-class AlertPreviewParameterProvider : CustomPreviewParameterProvider&lt;AlertData&gt;() {
-  override val screenShotTestValues: Sequence&lt;ScreenShotTestData&lt;AlertData&gt;&gt; = sequenceOf(
+class AlertPreviewParameterProvider : CustomPreviewParameterProvider<AlertData>() {
+  override val screenShotTestValues: Sequence<ScreenShotTestData<AlertData>> = sequenceOf(
     ScreenShotTestData(
-      screenShotTestName = &quot;AlertInfoDescr&quot;,
+      screenShotTestName = "AlertInfoDescr",
       value = provideAlertInfoOnlyDescription(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;AlertInfoTitleDescr&quot;,
+      screenShotTestName = "AlertInfoTitleDescr",
       value = provideAlertInfoTitleDescription(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;AlertInfoDescrTextBtn&quot;,
+      screenShotTestName = "AlertInfoDescrTextBtn",
       value = provideAlertInfoDescriptionTextBtn(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;AlertInfoDescrLink&quot;,
+      screenShotTestName = "AlertInfoDescrLink",
       value = provideAlertInfoDescriptionLink(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;AlertInfoTitleDescrTextBtn&quot;,
+      screenShotTestName = "AlertInfoTitleDescrTextBtn",
       value = provideAlertInfoTitleDescrTextBtn(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;AlertInfoDescrTextBtnCloseBtn&quot;,
+      screenShotTestName = "AlertInfoDescrTextBtnCloseBtn",
       value = provideAlertInfoDescrTextBtnCloseBtn(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;AlertInfoFull&quot;,
+      screenShotTestName = "AlertInfoFull",
       value = provideAlertInfoFull(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;AlertErrorDescr&quot;,
+      screenShotTestName = "AlertErrorDescr",
       value = provideAlertErrorOnlyDescription(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;AlertErrorTitleDescr&quot;,
+      screenShotTestName = "AlertErrorTitleDescr",
       value = provideAlertErrorTitleDescription(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;AlertErrorDescrTextBtn&quot;,
+      screenShotTestName = "AlertErrorDescrTextBtn",
       value = provideAlertErrorDescriptionTextBtn(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;AlertErrorDescrLink&quot;,
+      screenShotTestName = "AlertErrorDescrLink",
       value = provideAlertErrorDescriptionLink(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;AlertErrorTitleDescrTextBtn&quot;,
+      screenShotTestName = "AlertErrorTitleDescrTextBtn",
       value = provideAlertErrorTitleDescrTextBtn(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;AlertErrorDescrTextBtnCloseBtn&quot;,
+      screenShotTestName = "AlertErrorDescrTextBtnCloseBtn",
       value = provideAlertErrorDescrTextBtnCloseBtn(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;AlertErrorFull&quot;,
+      screenShotTestName = "AlertErrorFull",
       value = provideAlertErrorFull(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;AlertWarningDescr&quot;,
+      screenShotTestName = "AlertWarningDescr",
       value = provideAlertWarningOnlyDescription(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;AlertWarningTitleDescr&quot;,
+      screenShotTestName = "AlertWarningTitleDescr",
       value = provideAlertWarningTitleDescription(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;AlertWarningDescrTextBtn&quot;,
+      screenShotTestName = "AlertWarningDescrTextBtn",
       value = provideAlertWarningDescriptionTextBtn(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;AlertWarningDescrLink&quot;,
+      screenShotTestName = "AlertWarningDescrLink",
       value = provideAlertWarningDescriptionLink(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;AlertWarningTitleDescrTextBtn&quot;,
+      screenShotTestName = "AlertWarningTitleDescrTextBtn",
       value = provideAlertWarningTitleDescrTextBtn(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;AlertWarningDescrTextBtnCloseBtn&quot;,
+      screenShotTestName = "AlertWarningDescrTextBtnCloseBtn",
       value = provideAlertWarningDescrTextBtnCloseBtn(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;AlertWarningFull&quot;,
+      screenShotTestName = "AlertWarningFull",
       value = provideAlertWarningFull(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;AlertSuccessDescr&quot;,
+      screenShotTestName = "AlertSuccessDescr",
       value = provideAlertSuccessOnlyDescription(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;AlertSuccessTitleDescr&quot;,
+      screenShotTestName = "AlertSuccessTitleDescr",
       value = provideAlertSuccessTitleDescription(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;AlertSuccessDescrTextBtn&quot;,
+      screenShotTestName = "AlertSuccessDescrTextBtn",
       value = provideAlertSuccessDescriptionTextBtn(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;AlertSuccessDescrLink&quot;,
+      screenShotTestName = "AlertSuccessDescrLink",
       value = provideAlertSuccessDescriptionLink(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;AlertSuccessTitleDescrTextBtn&quot;,
+      screenShotTestName = "AlertSuccessTitleDescrTextBtn",
       value = provideAlertSuccessTitleDescrTextBtn(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;AlertSuccessDescrTextBtnCloseBtn&quot;,
+      screenShotTestName = "AlertSuccessDescrTextBtnCloseBtn",
       value = provideAlertSuccessDescrTextBtnCloseBtn(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;AlertSuccessFull&quot;,
+      screenShotTestName = "AlertSuccessFull",
       value = provideAlertSuccessFull(),
     ),
   )
 
   private fun provideAlertInfoOnlyDescription() = AlertData.Info(
     bodyText = (
-      &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor &quot; +
-        &quot;incididunt ut labore.&quot;
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
+        "incididunt ut labore."
       ).toLabel(),
     alertContentDescription = Label.EMPTY,
   )
 
   private fun provideAlertInfoTitleDescription() = AlertData.Info(
-    title = &quot;Info alert&quot;.toLabel(),
+    title = "Info alert".toLabel(),
     bodyText = (
-      &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor &quot; +
-        &quot;incididunt ut labore.&quot;
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
+        "incididunt ut labore."
       ).toLabel(),
     alertContentDescription = Label.EMPTY,
   )
 
   private fun provideAlertInfoDescriptionTextBtn() = AlertData.Info(
     bodyText = (
-      &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor &quot; +
-        &quot;incididunt ut labore.&quot;
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
+        "incididunt ut labore."
       ).toLabel(),
     alertContentDescription = Label.EMPTY,
     alertButtonData = AlertButtonData.ButtonText(
       data = ButtonTextData(
-        label = &quot;Text button&quot;.toLabel(),
+        label = "Text button".toLabel(),
       ) {},
     ),
   )
 
   private fun provideAlertInfoDescriptionLink() = AlertData.Info(
     bodyText = (
-      &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor &quot; +
-        &quot;incididunt ut labore.&quot;
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
+        "incididunt ut labore."
       ).toLabel(),
     alertContentDescription = Label.EMPTY,
     alertButtonData = AlertButtonData.Link(
       data = LinkData(
-        label = &quot;Link&quot;.toLabel(),
-        url = &quot;&quot;,
+        label = "Link".toLabel(),
+        url = "",
         linkType = LinkData.LinkType.WEBSITE,
         onClick = {},
       ),
@@ -172,45 +172,45 @@ class AlertPreviewParameterProvider : CustomPreviewParameterProvider&lt;AlertDat
   )
 
   private fun provideAlertInfoTitleDescrTextBtn() = AlertData.Info(
-    title = &quot;Info alert&quot;.toLabel(),
+    title = "Info alert".toLabel(),
     bodyText = (
-      &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor &quot; +
-        &quot;incididunt ut labore.&quot;
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
+        "incididunt ut labore."
       ).toLabel(),
     alertContentDescription = Label.EMPTY,
     alertButtonData = AlertButtonData.ButtonText(
       data = ButtonTextData(
-        label = &quot;Text button&quot;.toLabel(),
+        label = "Text button".toLabel(),
       ) {},
     ),
   )
 
   private fun provideAlertInfoDescrTextBtnCloseBtn() = AlertData.Info(
     bodyText = (
-      &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor &quot; +
-        &quot;incididunt ut labore.&quot;
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
+        "incididunt ut labore."
       ).toLabel(),
     alertContentDescription = Label.EMPTY,
     onCloseButtonClick = {},
     alertButtonData = AlertButtonData.ButtonText(
       data = ButtonTextData(
-        label = &quot;Text button&quot;.toLabel(),
+        label = "Text button".toLabel(),
         onClick = {},
       ),
     ),
   )
 
   private fun provideAlertInfoFull() = AlertData.Info(
-    title = &quot;Info alert&quot;.toLabel(),
+    title = "Info alert".toLabel(),
     bodyText = (
-      &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor &quot; +
-        &quot;incididunt ut labore.&quot;
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
+        "incididunt ut labore."
       ).toLabel(),
     alertContentDescription = Label.EMPTY,
     onCloseButtonClick = {},
     alertButtonData = AlertButtonData.ButtonText(
       data = ButtonTextData(
-        label = &quot;Text button&quot;.toLabel(),
+        label = "Text button".toLabel(),
         onClick = {},
       ),
     ),
@@ -218,30 +218,30 @@ class AlertPreviewParameterProvider : CustomPreviewParameterProvider&lt;AlertDat
 
   private fun provideAlertErrorOnlyDescription() = AlertData.Error(
     bodyText = (
-      &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor &quot; +
-        &quot;incididunt ut labore.&quot;
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
+        "incididunt ut labore."
       ).toLabel(),
     alertContentDescription = Label.EMPTY,
   )
 
   private fun provideAlertErrorTitleDescription() = AlertData.Error(
-    title = &quot;Error alert&quot;.toLabel(),
+    title = "Error alert".toLabel(),
     bodyText = (
-      &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor &quot; +
-        &quot;incididunt ut labore.&quot;
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
+        "incididunt ut labore."
       ).toLabel(),
     alertContentDescription = Label.EMPTY,
   )
 
   private fun provideAlertErrorDescriptionTextBtn() = AlertData.Error(
     bodyText = (
-      &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor &quot; +
-        &quot;incididunt ut labore.&quot;
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
+        "incididunt ut labore."
       ).toLabel(),
     alertContentDescription = Label.EMPTY,
     alertButtonData = AlertButtonData.ButtonText(
       data = ButtonTextData(
-        label = &quot;Text button&quot;.toLabel(),
+        label = "Text button".toLabel(),
         onClick = {},
       ),
     ),
@@ -249,14 +249,14 @@ class AlertPreviewParameterProvider : CustomPreviewParameterProvider&lt;AlertDat
 
   private fun provideAlertErrorDescriptionLink() = AlertData.Error(
     bodyText = (
-      &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor &quot; +
-        &quot;incididunt ut labore.&quot;
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
+        "incididunt ut labore."
       ).toLabel(),
     alertContentDescription = Label.EMPTY,
     alertButtonData = AlertButtonData.Link(
       data = LinkData(
-        label = &quot;Link&quot;.toLabel(),
-        url = &quot;&quot;,
+        label = "Link".toLabel(),
+        url = "",
         linkType = LinkData.LinkType.WEBSITE,
         onClick = {},
       ),
@@ -264,15 +264,15 @@ class AlertPreviewParameterProvider : CustomPreviewParameterProvider&lt;AlertDat
   )
 
   private fun provideAlertErrorTitleDescrTextBtn() = AlertData.Error(
-    title = &quot;Error alert&quot;.toLabel(),
+    title = "Error alert".toLabel(),
     bodyText = (
-      &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor &quot; +
-        &quot;incididunt ut labore.&quot;
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
+        "incididunt ut labore."
       ).toLabel(),
     alertContentDescription = Label.EMPTY,
     alertButtonData = AlertButtonData.ButtonText(
       data = ButtonTextData(
-        label = &quot;Text button&quot;.toLabel(),
+        label = "Text button".toLabel(),
         onClick = {},
       ),
     ),
@@ -280,30 +280,30 @@ class AlertPreviewParameterProvider : CustomPreviewParameterProvider&lt;AlertDat
 
   private fun provideAlertErrorDescrTextBtnCloseBtn() = AlertData.Error(
     bodyText = (
-      &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor &quot; +
-        &quot;incididunt ut labore.&quot;
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
+        "incididunt ut labore."
       ).toLabel(),
     alertContentDescription = Label.EMPTY,
     onCloseButtonClick = {},
     alertButtonData = AlertButtonData.ButtonText(
       data = ButtonTextData(
-        label = &quot;Text button&quot;.toLabel(),
+        label = "Text button".toLabel(),
         onClick = {},
       ),
     ),
   )
 
   private fun provideAlertErrorFull() = AlertData.Error(
-    title = &quot;Error alert&quot;.toLabel(),
+    title = "Error alert".toLabel(),
     bodyText = (
-      &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor &quot; +
-        &quot;incididunt ut labore.&quot;
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
+        "incididunt ut labore."
       ).toLabel(),
     alertContentDescription = Label.EMPTY,
     onCloseButtonClick = {},
     alertButtonData = AlertButtonData.ButtonText(
       data = ButtonTextData(
-        label = &quot;Text button&quot;.toLabel(),
+        label = "Text button".toLabel(),
         onClick = {},
       ),
     ),
@@ -311,30 +311,30 @@ class AlertPreviewParameterProvider : CustomPreviewParameterProvider&lt;AlertDat
 
   private fun provideAlertWarningOnlyDescription() = AlertData.Warning(
     bodyText = (
-      &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor &quot; +
-        &quot;incididunt ut labore.&quot;
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
+        "incididunt ut labore."
       ).toLabel(),
     alertContentDescription = Label.EMPTY,
   )
 
   private fun provideAlertWarningTitleDescription() = AlertData.Warning(
-    title = &quot;Warning alert&quot;.toLabel(),
+    title = "Warning alert".toLabel(),
     bodyText = (
-      &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor &quot; +
-        &quot;incididunt ut labore.&quot;
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
+        "incididunt ut labore."
       ).toLabel(),
     alertContentDescription = Label.EMPTY,
   )
 
   private fun provideAlertWarningDescriptionTextBtn() = AlertData.Warning(
     bodyText = (
-      &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor &quot; +
-        &quot;incididunt ut labore.&quot;
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
+        "incididunt ut labore."
       ).toLabel(),
     alertContentDescription = Label.EMPTY,
     alertButtonData = AlertButtonData.ButtonText(
       data = ButtonTextData(
-        label = &quot;Text button&quot;.toLabel(),
+        label = "Text button".toLabel(),
         onClick = {},
       ),
     ),
@@ -342,14 +342,14 @@ class AlertPreviewParameterProvider : CustomPreviewParameterProvider&lt;AlertDat
 
   private fun provideAlertWarningDescriptionLink() = AlertData.Warning(
     bodyText = (
-      &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor &quot; +
-        &quot;incididunt ut labore.&quot;
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
+        "incididunt ut labore."
       ).toLabel(),
     alertContentDescription = Label.EMPTY,
     alertButtonData = AlertButtonData.Link(
       data = LinkData(
-        label = &quot;Link&quot;.toLabel(),
-        url = &quot;&quot;,
+        label = "Link".toLabel(),
+        url = "",
         linkType = LinkData.LinkType.WEBSITE,
         onClick = {},
       ),
@@ -357,15 +357,15 @@ class AlertPreviewParameterProvider : CustomPreviewParameterProvider&lt;AlertDat
   )
 
   private fun provideAlertWarningTitleDescrTextBtn() = AlertData.Warning(
-    title = &quot;Warning alert&quot;.toLabel(),
+    title = "Warning alert".toLabel(),
     bodyText = (
-      &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor &quot; +
-        &quot;incididunt ut labore.&quot;
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
+        "incididunt ut labore."
       ).toLabel(),
     alertContentDescription = Label.EMPTY,
     alertButtonData = AlertButtonData.ButtonText(
       data = ButtonTextData(
-        label = &quot;Text button&quot;.toLabel(),
+        label = "Text button".toLabel(),
         onClick = {},
       ),
     ),
@@ -373,30 +373,30 @@ class AlertPreviewParameterProvider : CustomPreviewParameterProvider&lt;AlertDat
 
   private fun provideAlertWarningDescrTextBtnCloseBtn() = AlertData.Warning(
     bodyText = (
-      &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor &quot; +
-        &quot;incididunt ut labore.&quot;
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
+        "incididunt ut labore."
       ).toLabel(),
     alertContentDescription = Label.EMPTY,
     onCloseButtonClick = {},
     alertButtonData = AlertButtonData.ButtonText(
       data = ButtonTextData(
-        label = &quot;Text button&quot;.toLabel(),
+        label = "Text button".toLabel(),
         onClick = {},
       ),
     ),
   )
 
   private fun provideAlertWarningFull() = AlertData.Warning(
-    title = &quot;Warning alert&quot;.toLabel(),
+    title = "Warning alert".toLabel(),
     bodyText = (
-      &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor &quot; +
-        &quot;incididunt ut labore.&quot;
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
+        "incididunt ut labore."
       ).toLabel(),
     alertContentDescription = Label.EMPTY,
     onCloseButtonClick = {},
     alertButtonData = AlertButtonData.ButtonText(
       data = ButtonTextData(
-        label = &quot;Text button&quot;.toLabel(),
+        label = "Text button".toLabel(),
         onClick = {},
       ),
     ),
@@ -404,30 +404,30 @@ class AlertPreviewParameterProvider : CustomPreviewParameterProvider&lt;AlertDat
 
   private fun provideAlertSuccessOnlyDescription() = AlertData.Success(
     bodyText = (
-      &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor &quot; +
-        &quot;incididunt ut labore.&quot;
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
+        "incididunt ut labore."
       ).toLabel(),
     alertContentDescription = Label.EMPTY,
   )
 
   private fun provideAlertSuccessTitleDescription() = AlertData.Success(
-    title = &quot;Success alert&quot;.toLabel(),
+    title = "Success alert".toLabel(),
     bodyText = (
-      &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor &quot; +
-        &quot;incididunt ut labore.&quot;
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
+        "incididunt ut labore."
       ).toLabel(),
     alertContentDescription = Label.EMPTY,
   )
 
   private fun provideAlertSuccessDescriptionTextBtn() = AlertData.Success(
     bodyText = (
-      &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor &quot; +
-        &quot;incididunt ut labore.&quot;
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
+        "incididunt ut labore."
       ).toLabel(),
     alertContentDescription = Label.EMPTY,
     alertButtonData = AlertButtonData.ButtonText(
       data = ButtonTextData(
-        label = &quot;Text button&quot;.toLabel(),
+        label = "Text button".toLabel(),
         onClick = {},
       ),
     ),
@@ -435,14 +435,14 @@ class AlertPreviewParameterProvider : CustomPreviewParameterProvider&lt;AlertDat
 
   private fun provideAlertSuccessDescriptionLink() = AlertData.Success(
     bodyText = (
-      &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor &quot; +
-        &quot;incididunt ut labore.&quot;
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
+        "incididunt ut labore."
       ).toLabel(),
     alertContentDescription = Label.EMPTY,
     alertButtonData = AlertButtonData.Link(
       data = LinkData(
-        label = &quot;Link&quot;.toLabel(),
-        url = &quot;&quot;,
+        label = "Link".toLabel(),
+        url = "",
         linkType = LinkData.LinkType.WEBSITE,
         onClick = {},
       ),
@@ -450,15 +450,15 @@ class AlertPreviewParameterProvider : CustomPreviewParameterProvider&lt;AlertDat
   )
 
   private fun provideAlertSuccessTitleDescrTextBtn() = AlertData.Success(
-    title = &quot;Success alert&quot;.toLabel(),
+    title = "Success alert".toLabel(),
     bodyText = (
-      &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor &quot; +
-        &quot;incididunt ut labore.&quot;
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
+        "incididunt ut labore."
       ).toLabel(),
     alertContentDescription = Label.EMPTY,
     alertButtonData = AlertButtonData.ButtonText(
       data = ButtonTextData(
-        label = &quot;Text button&quot;.toLabel(),
+        label = "Text button".toLabel(),
         onClick = {},
       ),
     ),
@@ -466,30 +466,30 @@ class AlertPreviewParameterProvider : CustomPreviewParameterProvider&lt;AlertDat
 
   private fun provideAlertSuccessDescrTextBtnCloseBtn() = AlertData.Success(
     bodyText = (
-      &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor &quot; +
-        &quot;incididunt ut labore.&quot;
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
+        "incididunt ut labore."
       ).toLabel(),
     alertContentDescription = Label.EMPTY,
     onCloseButtonClick = {},
     alertButtonData = AlertButtonData.ButtonText(
       data = ButtonTextData(
-        label = &quot;Text button&quot;.toLabel(),
+        label = "Text button".toLabel(),
         onClick = {},
       ),
     ),
   )
 
   private fun provideAlertSuccessFull() = AlertData.Success(
-    title = &quot;Success alert&quot;.toLabel(),
+    title = "Success alert".toLabel(),
     bodyText = (
-      &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor &quot; +
-        &quot;incididunt ut labore.&quot;
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
+        "incididunt ut labore."
       ).toLabel(),
     alertContentDescription = Label.EMPTY,
     onCloseButtonClick = {},
     alertButtonData = AlertButtonData.ButtonText(
       data = ButtonTextData(
-        label = &quot;Text button&quot;.toLabel(),
+        label = "Text button".toLabel(),
         onClick = {},
       ),
     ),

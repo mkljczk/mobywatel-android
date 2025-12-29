@@ -35,9 +35,9 @@ import pl.gov.coi.common.ui.theme.AppTheme
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun &lt;CONTENT_DATA&gt; PageController(
-  data: PageControllerData&lt;CONTENT_DATA&gt;,
-  contents: @Composable (CONTENT_DATA) -&gt; Unit = { },
+fun <CONTENT_DATA> PageController(
+  data: PageControllerData<CONTENT_DATA>,
+  contents: @Composable (CONTENT_DATA) -> Unit = { },
 ) {
   val coroutineScope = rememberCoroutineScope()
 
@@ -58,7 +58,7 @@ fun &lt;CONTENT_DATA&gt; PageController(
       modifier = Modifier
         .fillMaxSize()
         .weight(10f),
-    ) { page -&gt;
+    ) { page ->
       Box(
         modifier = Modifier
           .fillMaxSize(),
@@ -72,7 +72,7 @@ fun &lt;CONTENT_DATA&gt; PageController(
     Column(
       modifier = Modifier.weight(1f),
     ) {
-      data.contentsData[pagerState.currentPage].let { pageData -&gt;
+      data.contentsData[pagerState.currentPage].let { pageData ->
         if (pageData.isButtonVisible) {
           Row(
             Modifier
@@ -91,10 +91,10 @@ fun &lt;CONTENT_DATA&gt; PageController(
                 ),
                 onClick = {
                   when (pageData.buttonAction) {
-                    PageControllerData.PageData.ButtonAction.GoToNextPage -&gt; coroutineScope.launch {
+                    PageControllerData.PageData.ButtonAction.GoToNextPage -> coroutineScope.launch {
                       pagerState.animateScrollToPage(pagerState.currentPage + 1)
                     }
-                    is PageControllerData.PageData.ButtonAction.Custom -&gt; pageData.buttonAction.invoke()
+                    is PageControllerData.PageData.ButtonAction.Custom -> pageData.buttonAction.invoke()
                   }
                 },
               ),
@@ -109,14 +109,14 @@ fun &lt;CONTENT_DATA&gt; PageController(
 @Preview
 @Composable
 fun PageControllerPreview(
-  @PreviewParameter(PageControllerPreviewParameterProvider::class) data: PageControllerData&lt;*&gt;,
+  @PreviewParameter(PageControllerPreviewParameterProvider::class) data: PageControllerData<*>,
 ) {
   PageController(
     data = data,
-    contents = { contentData -&gt;
+    contents = { contentData ->
       when (contentData) {
-        is SmallCardData -&gt; SmallCard(data = contentData)
-        is OnboardingPageData -&gt; OnboardingPage(page = contentData)
+        is SmallCardData -> SmallCard(data = contentData)
+        is OnboardingPageData -> OnboardingPage(page = contentData)
       }
     },
   )

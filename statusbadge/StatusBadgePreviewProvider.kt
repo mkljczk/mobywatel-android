@@ -3,109 +3,109 @@ package pl.gov.coi.common.ui.ds.statusbadge
 import pl.gov.coi.common.ui.preview.CustomPreviewParameterProvider
 import pl.gov.coi.common.ui.preview.ScreenShotTestData
 
-class StatusBadgePreviewProvider : CustomPreviewParameterProvider&lt;StatusBadgeData&gt;() {
+class StatusBadgePreviewProvider : CustomPreviewParameterProvider<StatusBadgeData>() {
 
-  override val screenShotTestValues: Sequence&lt;ScreenShotTestData&lt;StatusBadgeData&gt;&gt;
+  override val screenShotTestValues: Sequence<ScreenShotTestData<StatusBadgeData>>
     get() = sequenceOf(
       ScreenShotTestData(
-        screenShotTestName = &quot; StatusBadgeDataDotPositive&quot;,
+        screenShotTestName = " StatusBadgeDataDotPositive",
         value = StatusBadgeData.WithDot(
-          label = &quot;Roboto, Medium, 16, Neutral-500&quot;.toLabel(),
+          label = "Roboto, Medium, 16, Neutral-500".toLabel(),
           status = StatusBadgeWithDotStatus.POSITIVE,
         ),
       ),
       ScreenShotTestData(
-        screenShotTestName = &quot; StatusBadgeDataDotInformative&quot;,
+        screenShotTestName = " StatusBadgeDataDotInformative",
         value = StatusBadgeData.WithDot(
-          label = &quot;Roboto, Medium, 16, Neutral-500&quot;.toLabel(),
+          label = "Roboto, Medium, 16, Neutral-500".toLabel(),
           status = StatusBadgeWithDotStatus.INFORMATIVE,
         ),
       ),
       ScreenShotTestData(
-        screenShotTestName = &quot; StatusBadgeDataDotNegative&quot;,
+        screenShotTestName = " StatusBadgeDataDotNegative",
         value = StatusBadgeData.WithDot(
-          label = &quot;Roboto, Medium, 16, Neutral-500&quot;.toLabel(),
+          label = "Roboto, Medium, 16, Neutral-500".toLabel(),
           status = StatusBadgeWithDotStatus.NEGATIVE,
         ),
       ),
       ScreenShotTestData(
-        screenShotTestName = &quot; StatusBadgeDataDotWarning&quot;,
+        screenShotTestName = " StatusBadgeDataDotWarning",
         value = StatusBadgeData.WithDot(
-          label = &quot;Roboto, Medium, 16, Neutral-500&quot;.toLabel(),
+          label = "Roboto, Medium, 16, Neutral-500".toLabel(),
           status = StatusBadgeWithDotStatus.WARNING,
         ),
       ),
       ScreenShotTestData(
-        screenShotTestName = &quot; StatusBadgeDataPositive&quot;,
+        screenShotTestName = " StatusBadgeDataPositive",
         value = StatusBadgeData.WithIcon(
-          label = &quot;Roboto, Regular, 12, Neutral-500&quot;.toLabel(),
+          label = "Roboto, Regular, 12, Neutral-500".toLabel(),
           status = StatusBadgeWithIconStatus.POSITIVE,
         ),
       ),
       ScreenShotTestData(
-        screenShotTestName = &quot; StatusBadgeDataNegative&quot;,
+        screenShotTestName = " StatusBadgeDataNegative",
         value = StatusBadgeData.WithIcon(
-          label = &quot;Roboto, Regular, 12, Neutral-500&quot;.toLabel(),
+          label = "Roboto, Regular, 12, Neutral-500".toLabel(),
           status = StatusBadgeWithIconStatus.NEGATIVE,
         ),
       ),
       ScreenShotTestData(
-        screenShotTestName = &quot; StatusBadgeDataNotice&quot;,
+        screenShotTestName = " StatusBadgeDataNotice",
         value = StatusBadgeData.WithIcon(
-          label = &quot;Roboto, Regular, 12, Neutral-500&quot;.toLabel(),
+          label = "Roboto, Regular, 12, Neutral-500".toLabel(),
           status = StatusBadgeWithIconStatus.NOTICE,
         ),
       ),
       ScreenShotTestData(
-        screenShotTestName = &quot; StatusBadgeDataInformative&quot;,
+        screenShotTestName = " StatusBadgeDataInformative",
         value = StatusBadgeData.WithIcon(
-          label = &quot;Roboto, Regular, 12, Neutral-500&quot;.toLabel(),
+          label = "Roboto, Regular, 12, Neutral-500".toLabel(),
           status = StatusBadgeWithIconStatus.INFORMATIVE,
         ),
       ),
       ScreenShotTestData(
-        screenShotTestName = &quot; StatusBadgeDataNeutral&quot;,
+        screenShotTestName = " StatusBadgeDataNeutral",
         value = StatusBadgeData.WithIcon(
-          label = &quot;Roboto, Regular, 12, Neutral-500&quot;.toLabel(),
+          label = "Roboto, Regular, 12, Neutral-500".toLabel(),
           status = StatusBadgeWithIconStatus.MINUS,
         ),
       ),
       ScreenShotTestData(
-        screenShotTestName = &quot; StatusBadgeDataWithoutBorderPositive&quot;,
+        screenShotTestName = " StatusBadgeDataWithoutBorderPositive",
         value = StatusBadgeData.WithIcon(
-          label = &quot;Roboto, Regular, 16, Neutral-500&quot;.toLabel(),
+          label = "Roboto, Regular, 16, Neutral-500".toLabel(),
           status = StatusBadgeWithIconStatus.POSITIVE,
           withBorder = false,
         ),
       ),
       ScreenShotTestData(
-        screenShotTestName = &quot; StatusBadgeDataWithoutBorderNegative&quot;,
+        screenShotTestName = " StatusBadgeDataWithoutBorderNegative",
         value = StatusBadgeData.WithIcon(
-          label = &quot;Roboto, Regular, 16, Neutral-500&quot;.toLabel(),
+          label = "Roboto, Regular, 16, Neutral-500".toLabel(),
           status = StatusBadgeWithIconStatus.NEGATIVE,
           withBorder = false,
         ),
       ),
       ScreenShotTestData(
-        screenShotTestName = &quot; StatusBadgeDataWithoutBorderNotice&quot;,
+        screenShotTestName = " StatusBadgeDataWithoutBorderNotice",
         value = StatusBadgeData.WithIcon(
-          label = &quot;Roboto, Regular, 16, Neutral-500&quot;.toLabel(),
+          label = "Roboto, Regular, 16, Neutral-500".toLabel(),
           status = StatusBadgeWithIconStatus.NOTICE,
           withBorder = false,
         ),
       ),
       ScreenShotTestData(
-        screenShotTestName = &quot; StatusBadgeDataWithoutBorderInformative&quot;,
+        screenShotTestName = " StatusBadgeDataWithoutBorderInformative",
         value = StatusBadgeData.WithIcon(
-          label = &quot;Roboto, Regular, 16, Neutral-500&quot;.toLabel(),
+          label = "Roboto, Regular, 16, Neutral-500".toLabel(),
           status = StatusBadgeWithIconStatus.INFORMATIVE,
           withBorder = false,
         ),
       ),
       ScreenShotTestData(
-        screenShotTestName = &quot; StatusBadgeDataWithoutBorderNeutral&quot;,
+        screenShotTestName = " StatusBadgeDataWithoutBorderNeutral",
         value = StatusBadgeData.WithIcon(
-          label = &quot;Roboto, Regular, 16, Neutral-500&quot;.toLabel(),
+          label = "Roboto, Regular, 16, Neutral-500".toLabel(),
           status = StatusBadgeWithIconStatus.MINUS,
           withBorder = false,
         ),

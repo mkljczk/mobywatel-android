@@ -63,7 +63,7 @@ fun InputDateTime(
         .padding(vertical = AppTheme.dimensions.spacing50)
         .semantics {
           if (data.enabled.not()) disabled()
-          testTag = data.label.text + &quot;Value&quot;
+          testTag = data.label.text + "Value"
         }
         .clickable(
           enabled = data.enabled,
@@ -76,9 +76,9 @@ fun InputDateTime(
       border = BorderStroke(
         width = AppTheme.dimensions.strokeWidth,
         color = when {
-          data.validationState is ValidationState.Invalid -&gt; AppTheme.colors.supportRed100
-          data.enabled.not() -&gt; AppTheme.colors.neutral30
-          else -&gt; AppTheme.colors.neutral80
+          data.validationState is ValidationState.Invalid -> AppTheme.colors.supportRed100
+          data.enabled.not() -> AppTheme.colors.neutral30
+          else -> AppTheme.colors.neutral80
         },
       ),
       shape = AppTheme.shapes.radius50,
@@ -99,9 +99,9 @@ fun InputDateTime(
           overflow = TextOverflow.Ellipsis,
           style = AppTheme.typography.bodyLargeRegular,
           color = when {
-            data.enabled.not() -&gt; AppTheme.colors.neutral60
-            data.inputText.isNullOrBlank() -&gt; AppTheme.colors.neutral100
-            else -&gt; AppTheme.colors.neutral500
+            data.enabled.not() -> AppTheme.colors.neutral60
+            data.inputText.isNullOrBlank() -> AppTheme.colors.neutral100
+            else -> AppTheme.colors.neutral500
           },
         )
         Icon(
@@ -123,7 +123,7 @@ fun InputDateTime(
     if (data.validationState is ValidationState.Invalid) {
       ErrorText(errorText = data.validationState.message)
     } else {
-      data.helperText?.let { text -&gt;
+      data.helperText?.let { text ->
         HelperText(helperLabel = text)
       }
     }

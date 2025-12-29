@@ -40,7 +40,7 @@ fun ControllerSwitch(
     listOf(
       data.leftItem,
       data.rightItem,
-    ).forEach { tabItem -&gt;
+    ).forEach { tabItem ->
       val isSelected = data.selectedItemType.tabIndex == tabItem.type.tabIndex
       Tab(
         modifier = Modifier
@@ -49,25 +49,25 @@ fun ControllerSwitch(
             bottom = AppTheme.dimensions.spacing50,
             top = AppTheme.dimensions.spacing50,
             start = when (tabItem.type) {
-              ControllersData.Switch.Type.LEFT -&gt; AppTheme.dimensions.spacing50
-              ControllersData.Switch.Type.RIGHT -&gt; AppTheme.dimensions.spacing25
+              ControllersData.Switch.Type.LEFT -> AppTheme.dimensions.spacing50
+              ControllersData.Switch.Type.RIGHT -> AppTheme.dimensions.spacing25
             },
             end = when (tabItem.type) {
-              ControllersData.Switch.Type.LEFT -&gt; AppTheme.dimensions.spacing25
-              ControllersData.Switch.Type.RIGHT -&gt; AppTheme.dimensions.spacing50
+              ControllersData.Switch.Type.LEFT -> AppTheme.dimensions.spacing25
+              ControllersData.Switch.Type.RIGHT -> AppTheme.dimensions.spacing50
             },
           )
           .shadow(
             shape = RoundedCornerShape(percent = ROUNDED_CORNER_SHAPE_PERCENTAGE_VALUE),
             elevation = when (isSelected) {
-              true -&gt; AppTheme.elevations.level1
-              false -&gt; AppTheme.elevations.level0
+              true -> AppTheme.elevations.level1
+              false -> AppTheme.elevations.level0
             },
           )
           .background(
             color = when (isSelected) {
-              true -&gt; Color.White
-              false -&gt; Color.Transparent
+              true -> Color.White
+              false -> Color.Transparent
             },
             shape = RoundedCornerShape(percent = ROUNDED_CORNER_SHAPE_PERCENTAGE_VALUE),
           ),
@@ -80,12 +80,12 @@ fun ControllerSwitch(
             label = tabItem.label,
             textAlign = TextAlign.Center,
             style = when (isSelected) {
-              true -&gt; AppTheme.typography.bodyMediumMedium
-              false -&gt; AppTheme.typography.bodyMediumRegular
+              true -> AppTheme.typography.bodyMediumMedium
+              false -> AppTheme.typography.bodyMediumRegular
             },
             color = when (isSelected) {
-              true -&gt; AppTheme.colors.primary900
-              false -&gt; AppTheme.colors.neutral200
+              true -> AppTheme.colors.primary900
+              false -> AppTheme.colors.neutral200
             },
             maxLines = MAX_LINES,
           )

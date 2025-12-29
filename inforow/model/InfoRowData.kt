@@ -28,7 +28,7 @@ sealed class InfoRowData(
   class Default(
     description: Label,
     @DrawableRes val iconResId: Int,
-    iconColorProvider: @Composable () -&gt; Color,
+    iconColorProvider: @Composable () -> Color,
     val title: Label,
   ) : InfoRowData(
     description = description,

@@ -4,20 +4,20 @@ import pl.gov.coi.common.ui.ds.searchbar.SearchBarData
 import pl.gov.coi.common.ui.preview.CustomPreviewParameterProvider
 import pl.gov.coi.common.ui.preview.ScreenShotTestData
 
-class SearchBarPPP : CustomPreviewParameterProvider&lt;SearchBarData&gt;() {
-  override val screenShotTestValues: Sequence&lt;ScreenShotTestData&lt;SearchBarData&gt;&gt; = sequenceOf(
+class SearchBarPPP : CustomPreviewParameterProvider<SearchBarData>() {
+  override val screenShotTestValues: Sequence<ScreenShotTestData<SearchBarData>> = sequenceOf(
     ScreenShotTestData(
-      screenShotTestName = &quot;SearchBarInactive&quot;,
+      screenShotTestName = "SearchBarInactive",
       value = createInitializedState(
         isActive = false,
-        query = &quot;&quot;,
+        query = "",
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SearchBarActive&quot;,
+      screenShotTestName = "SearchBarActive",
       value = createInitializedState(
         isActive = true,
-        query = &quot;&quot;,
+        query = "",
       ),
     ),
   )
@@ -26,11 +26,11 @@ class SearchBarPPP : CustomPreviewParameterProvider&lt;SearchBarData&gt;() {
     isActive: Boolean,
     query: String,
   ) = SearchBarData(
-    placeholder = &quot;Wyszukaj&quot;.toLabel(),
+    placeholder = "Wyszukaj".toLabel(),
     isActive = isActive,
     query = query,
-    onQueryChange = { _ -&gt; },
-    onActiveChange = { _ -&gt; },
+    onQueryChange = { _ -> },
+    onActiveChange = { _ -> },
     onClearClicked = {},
   )
 }

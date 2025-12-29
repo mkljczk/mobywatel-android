@@ -1,11 +1,11 @@
-&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;module type=&quot;JAVA_MODULE&quot; version=&quot;4&quot;&gt;
-  &lt;component name=&quot;NewModuleRootManager&quot; inherit-compiler-output=&quot;true&quot;&gt;
-    &lt;exclude-output /&gt;
-    &lt;content url=&quot;file://$MODULE_DIR$&quot;&gt;
-      &lt;sourceFolder url=&quot;file://$MODULE_DIR$&quot; isTestSource=&quot;false&quot; packagePrefix=&quot;pl.gov.coi.common.ui.ds&quot; /&gt;
-    &lt;/content&gt;
-    &lt;orderEntry type=&quot;inheritedJdk&quot; /&gt;
-    &lt;orderEntry type=&quot;sourceFolder&quot; forTests=&quot;false&quot; /&gt;
-  &lt;/component&gt;
-&lt;/module&gt;
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" packagePrefix="pl.gov.coi.common.ui.ds" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

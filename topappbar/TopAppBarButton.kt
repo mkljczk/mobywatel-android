@@ -26,18 +26,18 @@ internal fun TopAppBarButton(buttonIconData: ButtonIconData) {
 
 @Composable
 internal fun MenuType?.CreateMenuButtons() = when (this) {
-  is MenuType.Icon -&gt; TopAppBarButton(buttonIconData = menuButtonData.getButton())
-  is MenuType.IconList -&gt; menuIconList.forEach { buttonData -&gt;
+  is MenuType.Icon -> TopAppBarButton(buttonIconData = menuButtonData.getButton())
+  is MenuType.IconList -> menuIconList.forEach { buttonData ->
     TopAppBarButton(buttonIconData = buttonData.getButton())
   }
 
-  null -&gt; Box(modifier = Modifier.size(AppTheme.dimensions.spacing600))
+  null -> Box(modifier = Modifier.size(AppTheme.dimensions.spacing600))
 }
 
 @Composable
 internal fun NavigationButtonData?.CreateNavigationButton() = when (this) {
-  null -&gt; Box(modifier = Modifier.size(AppTheme.dimensions.spacing600))
-  else -&gt; TopAppBarButton(
+  null -> Box(modifier = Modifier.size(AppTheme.dimensions.spacing600))
+  else -> TopAppBarButton(
     buttonIconData = ButtonIconData(
       iconResId = this.icon.iconResId,
       iconColorProvider = { AppTheme.colors.neutral200 },

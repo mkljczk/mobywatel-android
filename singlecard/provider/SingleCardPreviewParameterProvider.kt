@@ -18,259 +18,259 @@ import pl.gov.coi.common.ui.ds.switchcomponent.SwitchData
 import pl.gov.coi.common.ui.preview.CustomPreviewParameterProvider
 import pl.gov.coi.common.ui.preview.ScreenShotTestData
 
-class SingleCardPreviewParameterProvider : CustomPreviewParameterProvider&lt;SingleCardData&gt;() {
-  override val screenShotTestValues: Sequence&lt;ScreenShotTestData&lt;SingleCardData&gt;&gt; = sequenceOf(
+class SingleCardPreviewParameterProvider : CustomPreviewParameterProvider<SingleCardData>() {
+  override val screenShotTestValues: Sequence<ScreenShotTestData<SingleCardData>> = sequenceOf(
     ScreenShotTestData(
-      screenShotTestName = &quot;SingleCardInfoTitle&quot;,
+      screenShotTestName = "SingleCardInfoTitle",
       value = provideSingleCardInfoTitle(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SingleCardInfoTitleLong&quot;,
+      screenShotTestName = "SingleCardInfoTitleLong",
       value = provideSingleCardInfoTitleLong(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SingleCardInfoTitleDescription&quot;,
+      screenShotTestName = "SingleCardInfoTitleDescription",
       value = provideSingleCardInfoTitleDescription(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SingleCardInfoTitleDescriptionLong&quot;,
+      screenShotTestName = "SingleCardInfoTitleDescriptionLong",
       value = provideSingleCardInfoTitleDescriptionLong(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SingleCardInfoTitleInfo&quot;,
+      screenShotTestName = "SingleCardInfoTitleInfo",
       value = provideSingleCardInfoTitleInfo(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SingleCardInfoTitleInfoLong&quot;,
+      screenShotTestName = "SingleCardInfoTitleInfoLong",
       value = provideSingleCardInfoTitleInfoLong(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SingleCardInfoTitleIcon&quot;,
+      screenShotTestName = "SingleCardInfoTitleIcon",
       value = provideSingleCardInfoTitleIcon(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SingleCardInfoTitleInfoLong&quot;,
+      screenShotTestName = "SingleCardInfoTitleInfoLong",
       value = provideSingleCardInfoTitleIconBigger(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SingleCardInfoTitleDescriptionIcon&quot;,
+      screenShotTestName = "SingleCardInfoTitleDescriptionIcon",
       value = provideSingleCardInfoTitleDescriptionIcon(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SingleCardInfoTitleDescriptionIconDisabledState&quot;,
+      screenShotTestName = "SingleCardInfoTitleDescriptionIconDisabledState",
       value = provideSingleCardInfoTitleDescriptionIconDisabledState(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SingleCardInfoTitleWithButton&quot;,
+      screenShotTestName = "SingleCardInfoTitleWithButton",
       value = provideSingleCardInfoTitleWithButton(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SingleCardInfoTitleWithSwitch&quot;,
+      screenShotTestName = "SingleCardInfoTitleWithSwitch",
       value = provideSingleCardInfoTitleWithSwitch(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SingleCardInfoDraggableTitle&quot;,
+      screenShotTestName = "SingleCardInfoDraggableTitle",
       value = provideSingleCardInfoDraggableTitle(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SingleCardInfoDraggableTitleDescription&quot;,
+      screenShotTestName = "SingleCardInfoDraggableTitleDescription",
       value = provideSingleCardInfoDraggableTitleDescription(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SingleCardClickableTitle&quot;,
+      screenShotTestName = "SingleCardClickableTitle",
       value = provideSingleCardClickableTitle(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SingleCardClickableTitleWithoutTrailingIcon&quot;,
+      screenShotTestName = "SingleCardClickableTitleWithoutTrailingIcon",
       value = provideSingleCardClickableTitleWithoutTrailingIcon(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SingleCardClickableTitleLong&quot;,
+      screenShotTestName = "SingleCardClickableTitleLong",
       value = provideSingleCardClickableTitleLong(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SingleCardClickableTitleDescription&quot;,
+      screenShotTestName = "SingleCardClickableTitleDescription",
       value = provideSingleCardClickableTitleDescription(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SingleCardClickableTitleDescriptionLong&quot;,
+      screenShotTestName = "SingleCardClickableTitleDescriptionLong",
       value = provideSingleCardClickableTitleDescriptionLong(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SingleCardClickableInfoTitle&quot;,
+      screenShotTestName = "SingleCardClickableInfoTitle",
       value = provideSingleCardClickableInfoTitle(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SingleCardClickableInfoTitleLong&quot;,
+      screenShotTestName = "SingleCardClickableInfoTitleLong",
       value = provideSingleCardClickableInfoTitleLong(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SingleCardClickableIconTitle&quot;,
+      screenShotTestName = "SingleCardClickableIconTitle",
       value = provideSingleCardClickableIconTitle(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SingleCardClickableIconTitleLong&quot;,
+      screenShotTestName = "SingleCardClickableIconTitleLong",
       value = provideSingleCardClickableIconTitleLong(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SingleCardClickableIconTitleDescription&quot;,
+      screenShotTestName = "SingleCardClickableIconTitleDescription",
       value = provideSingleCardClickableIconTitleDescription(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SingleCardClickableIconTitleDescriptionLong&quot;,
+      screenShotTestName = "SingleCardClickableIconTitleDescriptionLong",
       value = provideSingleCardClickableIconTitleDescriptionLong(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SingleCardClickableButtonIconTitle&quot;,
+      screenShotTestName = "SingleCardClickableButtonIconTitle",
       value = provideSingleCardButtonIconTitle(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SingleCardClickableButtonIconTitleDescription&quot;,
+      screenShotTestName = "SingleCardClickableButtonIconTitleDescription",
       value = provideSingleCardButtonIconTitleDescription(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SingleCardClickableDeleteButtonIconTitle&quot;,
+      screenShotTestName = "SingleCardClickableDeleteButtonIconTitle",
       value = provideSingleCardDeleteButtonIconTitle(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SingleCardClickableIconTitleDescriptionLongEnabledState&quot;,
+      screenShotTestName = "SingleCardClickableIconTitleDescriptionLongEnabledState",
       value = provideSingleCardClickableIconTitleDescriptionLong(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SingleCardClickableIconTitleDescriptionLongFocusState&quot;,
+      screenShotTestName = "SingleCardClickableIconTitleDescriptionLongFocusState",
       value = provideSingleCardClickableIconTitleDescriptionLongFocusState(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SingleCardClickableIconTitleDescriptionLongDisabledState&quot;,
+      screenShotTestName = "SingleCardClickableIconTitleDescriptionLongDisabledState",
       value = provideSingleCardClickableIconTitleDescriptionLongDisabledState(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SingleCardClickableIconTitleDescriptionLongIconOnOneLineWithTitle&quot;,
+      screenShotTestName = "SingleCardClickableIconTitleDescriptionLongIconOnOneLineWithTitle",
       value = provideSingleCardClickableIconTitleDescriptionLongIconOnOneLineWithTitle(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SingleCardClickableTitleDescriptionStatusBadge&quot;,
+      screenShotTestName = "SingleCardClickableTitleDescriptionStatusBadge",
       value = provideSingleCardClickableTitleDescriptionStatusBadge(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SingleCardSelectableRadioButtonTitleUnselected&quot;,
+      screenShotTestName = "SingleCardSelectableRadioButtonTitleUnselected",
       value = provideSingleCardSelectableRadioButtonTitleUnselected(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SingleCardSelectableRadioButtonTitleUnselectedLong&quot;,
+      screenShotTestName = "SingleCardSelectableRadioButtonTitleUnselectedLong",
       value = provideSingleCardSelectableRadioButtonTitleUnselectedLong(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SingleCardSelectableRadioButtonTitleSelected&quot;,
+      screenShotTestName = "SingleCardSelectableRadioButtonTitleSelected",
       value = provideSingleCardSelectableRadioButtonTitleSelected(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SingleCardSelectableRadioButtonIconTitleUnselected&quot;,
+      screenShotTestName = "SingleCardSelectableRadioButtonIconTitleUnselected",
       value = provideSingleCardSelectableRadioButtonIconTitleUnselected(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SingleCardSelectableRadioButtonIconTitleUnselectedLong&quot;,
+      screenShotTestName = "SingleCardSelectableRadioButtonIconTitleUnselectedLong",
       value = provideSingleCardSelectableRadioButtonIconTitleUnselectedLong(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SingleCardSelectableRadioButtonIconTitleSelected&quot;,
+      screenShotTestName = "SingleCardSelectableRadioButtonIconTitleSelected",
       value = provideSingleCardSelectableRadioButtonIconTitleSelected(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SingleCardSelectableRadioButtonTitleDescriptionUnselected&quot;,
+      screenShotTestName = "SingleCardSelectableRadioButtonTitleDescriptionUnselected",
       value = provideSingleCardSelectableRadioButtonTitleDescriptionUnselected(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SingleCardSelectableRadioButtonTitleDescriptionUnselectedLong&quot;,
+      screenShotTestName = "SingleCardSelectableRadioButtonTitleDescriptionUnselectedLong",
       value = provideSingleCardSelectableRadioButtonTitleDescriptionUnselectedLong(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SingleCardSelectableRadioButtonTitleDescriptionSelected&quot;,
+      screenShotTestName = "SingleCardSelectableRadioButtonTitleDescriptionSelected",
       value = provideSingleCardSelectableRadioButtonTitleDescriptionSelected(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SingleCardSelectableRadioButtonTitleUnselectedEnabledState&quot;,
+      screenShotTestName = "SingleCardSelectableRadioButtonTitleUnselectedEnabledState",
       value = provideSingleCardSelectableRadioButtonTitleUnselected(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SingleCardSelectableRadioButtonTitleUnselectedFocusState&quot;,
+      screenShotTestName = "SingleCardSelectableRadioButtonTitleUnselectedFocusState",
       value = provideSingleCardSelectableRadioButtonTitleUnselectedFocusState(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SingleCardSelectableRadioButtonTitleUnselectedDisabledState&quot;,
+      screenShotTestName = "SingleCardSelectableRadioButtonTitleUnselectedDisabledState",
       value = provideSingleCardSelectableRadioButtonTitleUnselectedDisabledState(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SingleCardSelectableRadioButtonBiggerIconTitleSelected&quot;,
+      screenShotTestName = "SingleCardSelectableRadioButtonBiggerIconTitleSelected",
       value = provideSingleCardSelectableRadioButtonBiggerIconTitleSelected(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SingleCardInfoTitleDescriptionStatusBadge&quot;,
+      screenShotTestName = "SingleCardInfoTitleDescriptionStatusBadge",
       value = provideSingleCardInfoTitleDescriptionStatusBadge(),
     ),
   )
 
   private fun provideSingleCardInfoTitle() = SingleCardData.Info.Title(
-    title = &quot;Card title&quot;.toLabel(),
+    title = "Card title".toLabel(),
   )
 
   private fun provideSingleCardInfoTitleLong() = SingleCardData.Info.Title(
-    title = &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt&quot;.toLabel(),
+    title = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt".toLabel(),
   )
 
   private fun provideSingleCardInfoTitleDescription() = SingleCardData.Info.TitleDescription(
-    title = &quot;Card title&quot;.toLabel(),
-    description = &quot;Card description&quot;.toLabel(),
+    title = "Card title".toLabel(),
+    description = "Card description".toLabel(),
   )
 
   private fun provideSingleCardInfoTitleDescriptionLong() = SingleCardData.Info.TitleDescription(
-    title = &quot;Card title&quot;.toLabel(),
-    description = &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt&quot;
+    title = "Card title".toLabel(),
+    description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"
       .toLabel(),
   )
 
   private fun provideSingleCardInfoTitleInfo() = SingleCardData.Info.InfoTitle(
-    title = &quot;Card title&quot;.toLabel(),
-    info = &quot;Card info&quot;.toLabel(),
+    title = "Card title".toLabel(),
+    info = "Card info".toLabel(),
   )
 
   private fun provideSingleCardInfoTitleInfoLong() = SingleCardData.Info.InfoTitle(
-    title = &quot;Card title&quot;.toLabel(),
-    info = &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt&quot;.toLabel(),
+    title = "Card title".toLabel(),
+    info = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt".toLabel(),
   )
 
   private fun provideSingleCardInfoTitleIcon() = SingleCardData.Info.IconTitle(
-    title = &quot;Card title&quot;.toLabel(),
+    title = "Card title".toLabel(),
     iconResId = R.drawable.ab001_home,
   )
 
   private fun provideSingleCardInfoTitleIconBigger() = SingleCardData.Info.IconTitle(
-    title = &quot;Card title&quot;.toLabel(),
+    title = "Card title".toLabel(),
     iconResId = R.drawable.ab001_home,
     iconSize = IconSize.SIZE32,
   )
 
   private fun provideSingleCardInfoTitleDescriptionIcon() = SingleCardData.Info.IconTitleDescription(
-    title = &quot;Card title&quot;.toLabel(),
-    description = &quot;Card description&quot;.toLabel(),
+    title = "Card title".toLabel(),
+    description = "Card description".toLabel(),
     iconResId = R.drawable.ab001_home,
   )
 
   private fun provideSingleCardInfoTitleDescriptionIconDisabledState() = SingleCardData.Info.IconTitleDescription(
-    title = &quot;Card title&quot;.toLabel(),
-    description = &quot;Card description&quot;.toLabel(),
+    title = "Card title".toLabel(),
+    description = "Card description".toLabel(),
     iconResId = R.drawable.ab001_home,
     state = SingleCardInfoState.DISABLE,
   )
 
   private fun provideSingleCardInfoTitleWithButton() = SingleCardData.Info.Title(
-    title = &quot;Card title&quot;.toLabel(),
+    title = "Card title".toLabel(),
     extras = SingleCardInfoExtras.ButtonMore(
       buttonData = ButtonData(
         buttonSize = ButtonSize.Small,
         buttonVariant = ButtonVariant.Primary,
         buttonType = ButtonType.WithText(
-          label = &quot;Więcej&quot;.toLabel(),
+          label = "Więcej".toLabel(),
         ),
         onClick = {},
       ),
@@ -278,10 +278,10 @@ class SingleCardPreviewParameterProvider : CustomPreviewParameterProvider&lt;Sin
   )
 
   private fun provideSingleCardInfoTitleWithSwitch() = SingleCardData.Info.Title(
-    title = &quot;Card title&quot;.toLabel(),
+    title = "Card title".toLabel(),
     extras = SingleCardInfoExtras.Switch(
       switchData = SwitchData.SwitchOnly(
-        contentDescription = &quot;Card title&quot;.toLabel(),
+        contentDescription = "Card title".toLabel(),
         checked = false,
         onCheckedChange = {},
       ),
@@ -289,79 +289,79 @@ class SingleCardPreviewParameterProvider : CustomPreviewParameterProvider&lt;Sin
   )
 
   private fun provideSingleCardInfoDraggableTitle() = SingleCardData.Info.Title(
-    title = &quot;Card title&quot;.toLabel(),
+    title = "Card title".toLabel(),
     draggable = true,
   )
 
   private fun provideSingleCardInfoDraggableTitleDescription() = SingleCardData.Info.TitleDescription(
-    title = &quot;Card title&quot;.toLabel(),
-    description = &quot;Card description&quot;.toLabel(),
+    title = "Card title".toLabel(),
+    description = "Card description".toLabel(),
     draggable = true,
   )
 
   private fun provideSingleCardClickableTitle() = SingleCardData.Clickable.Title(
-    title = &quot;Card title&quot;.toLabel(),
+    title = "Card title".toLabel(),
     onClick = {},
   )
 
   private fun provideSingleCardClickableTitleWithoutTrailingIcon() = SingleCardData.Clickable.Title(
-    title = &quot;Card title&quot;.toLabel(),
+    title = "Card title".toLabel(),
     onClick = {},
     trailingIonResId = null,
   )
 
   private fun provideSingleCardClickableTitleLong() = SingleCardData.Clickable.Title(
-    title = &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt&quot;.toLabel(),
+    title = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt".toLabel(),
     onClick = {},
   )
 
   private fun provideSingleCardClickableTitleDescription() = SingleCardData.Clickable.TitleDescription(
-    title = &quot;Card title&quot;.toLabel(),
-    description = &quot;Card description&quot;.toLabel(),
+    title = "Card title".toLabel(),
+    description = "Card description".toLabel(),
     onClick = {},
   )
 
   private fun provideSingleCardClickableTitleDescriptionLong() = SingleCardData.Clickable.TitleDescription(
-    title = &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt&quot;.toLabel(),
-    description = &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor&quot;.toLabel(),
+    title = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt".toLabel(),
+    description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor".toLabel(),
     onClick = {},
   )
 
   private fun provideSingleCardClickableInfoTitle() = SingleCardData.Clickable.InfoTitle(
-    title = &quot;Card title&quot;.toLabel(),
-    info = &quot;Card info&quot;.toLabel(),
+    title = "Card title".toLabel(),
+    info = "Card info".toLabel(),
     onClick = {},
   )
 
   private fun provideSingleCardClickableInfoTitleLong() = SingleCardData.Clickable.InfoTitle(
-    title = &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt&quot;.toLabel(),
-    info = &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt&quot;.toLabel(),
+    title = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt".toLabel(),
+    info = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt".toLabel(),
     onClick = {},
   )
 
   private fun provideSingleCardClickableIconTitle() = SingleCardData.Clickable.IconTitle(
     iconResId = R.drawable.ab001_home,
-    title = &quot;Card title&quot;.toLabel(),
+    title = "Card title".toLabel(),
     onClick = {},
   )
 
   private fun provideSingleCardClickableIconTitleLong() = SingleCardData.Clickable.IconTitle(
     iconResId = R.drawable.ab001_home,
-    title = &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt&quot;.toLabel(),
+    title = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt".toLabel(),
     onClick = {},
   )
 
   private fun provideSingleCardClickableIconTitleDescription() = SingleCardData.Clickable.IconTitleDescription(
     iconResId = R.drawable.ab001_home,
-    title = &quot;Card title&quot;.toLabel(),
-    description = &quot;Card description&quot;.toLabel(),
+    title = "Card title".toLabel(),
+    description = "Card description".toLabel(),
     onClick = {},
   )
 
   private fun provideSingleCardClickableIconTitleDescriptionLong() = SingleCardData.Clickable.IconTitleDescription(
     iconResId = R.drawable.ab001_home,
-    title = &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt&quot;.toLabel(),
-    description = &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor&quot;.toLabel(),
+    title = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt".toLabel(),
+    description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor".toLabel(),
     onClick = {},
   )
 
@@ -369,16 +369,16 @@ class SingleCardPreviewParameterProvider : CustomPreviewParameterProvider&lt;Sin
     SingleCardData.Clickable.IconTitleDescription(
       iconResId = R.drawable.ab001_home,
       iconOnOneLineWithTitle = true,
-      title = &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt&quot;.toLabel(),
-      description = &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor&quot;.toLabel(),
+      title = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt".toLabel(),
+      description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor".toLabel(),
       onClick = {},
     )
 
   private fun provideSingleCardClickableIconTitleDescriptionLongFocusState() =
     SingleCardData.Clickable.IconTitleDescription(
       iconResId = R.drawable.ab001_home,
-      title = &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt&quot;.toLabel(),
-      description = &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor&quot;.toLabel(),
+      title = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt".toLabel(),
+      description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor".toLabel(),
       state = SingleCardClickableRadioButtonState.FOCUS,
       onClick = {},
     )
@@ -386,50 +386,50 @@ class SingleCardPreviewParameterProvider : CustomPreviewParameterProvider&lt;Sin
   private fun provideSingleCardClickableIconTitleDescriptionLongDisabledState() =
     SingleCardData.Clickable.IconTitleDescription(
       iconResId = R.drawable.ab001_home,
-      title = &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt&quot;.toLabel(),
-      description = &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor&quot;.toLabel(),
+      title = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt".toLabel(),
+      description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor".toLabel(),
       state = SingleCardClickableRadioButtonState.DISABLED,
       onClick = {},
     )
 
   private fun provideSingleCardClickableTitleDescriptionStatusBadge() =
     SingleCardData.Clickable.TitleDescriptionStatusBadge(
-      title = &quot;Card title with status badge&quot;.toLabel(),
-      description = &quot;Card description&quot;.toLabel(),
+      title = "Card title with status badge".toLabel(),
+      description = "Card description".toLabel(),
       badgeData = SingleCardStatusBadgeData.WithIcon.Info(
-        text = &quot;Badge status info&quot;.toLabel(),
-        iconContentDescription = &quot;content desc&quot;.toLabel(),
+        text = "Badge status info".toLabel(),
+        iconContentDescription = "content desc".toLabel(),
       ),
       onClick = {},
     )
 
   private fun provideSingleCardButtonIconTitle() = SingleCardData.Clickable.ButtonIconTitle(
     iconResId = R.drawable.ab001_home,
-    title = &quot;Card title&quot;.toLabel(),
+    title = "Card title".toLabel(),
     onIconClick = {},
   )
 
   private fun provideSingleCardButtonIconTitleDescription() = SingleCardData.Clickable.ButtonIconTitleDescription(
     iconResId = R.drawable.ab001_home,
-    title = &quot;Card title&quot;.toLabel(),
-    description = &quot;Card description&quot;.toLabel(),
+    title = "Card title".toLabel(),
+    description = "Card description".toLabel(),
     onIconClick = {},
   )
 
   private fun provideSingleCardDeleteButtonIconTitle() = SingleCardData.Clickable.DeleteButtonIconTitle(
-    title = &quot;Card title&quot;.toLabel(),
+    title = "Card title".toLabel(),
     onClick = {},
   )
 
   private fun provideSingleCardSelectableRadioButtonTitleUnselected() = SingleCardData.SelectableRadioButton.Title(
-    title = &quot;Card title&quot;.toLabel(),
+    title = "Card title".toLabel(),
     radioButtonData = OldRadioButtonData(id = RadioButtonId.Default, isSelected = false),
     onClick = {},
   )
 
   private fun provideSingleCardSelectableRadioButtonTitleUnselectedFocusState() =
     SingleCardData.SelectableRadioButton.Title(
-      title = &quot;Card title&quot;.toLabel(),
+      title = "Card title".toLabel(),
       radioButtonData = OldRadioButtonData(id = RadioButtonId.Default, isSelected = false),
       state = SingleCardClickableRadioButtonState.FOCUS,
       onClick = {},
@@ -437,7 +437,7 @@ class SingleCardPreviewParameterProvider : CustomPreviewParameterProvider&lt;Sin
 
   private fun provideSingleCardSelectableRadioButtonTitleUnselectedDisabledState() =
     SingleCardData.SelectableRadioButton.Title(
-      title = &quot;Card title&quot;.toLabel(),
+      title = "Card title".toLabel(),
       radioButtonData = OldRadioButtonData(id = RadioButtonId.Default, isSelected = false),
       state = SingleCardClickableRadioButtonState.DISABLED,
       onClick = {},
@@ -445,14 +445,14 @@ class SingleCardPreviewParameterProvider : CustomPreviewParameterProvider&lt;Sin
 
   private fun provideSingleCardSelectableRadioButtonTitleUnselectedLong() =
     SingleCardData.SelectableRadioButton.Title(
-      title = &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt&quot;.toLabel(),
+      title = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt".toLabel(),
       radioButtonData = OldRadioButtonData(id = RadioButtonId.Default, isSelected = false),
       onClick = {},
     )
 
   private fun provideSingleCardSelectableRadioButtonTitleSelected() =
     SingleCardData.SelectableRadioButton.Title(
-      title = &quot;Card title&quot;.toLabel(),
+      title = "Card title".toLabel(),
       radioButtonData = OldRadioButtonData(id = RadioButtonId.Default, isSelected = true),
       onClick = {},
     )
@@ -460,7 +460,7 @@ class SingleCardPreviewParameterProvider : CustomPreviewParameterProvider&lt;Sin
   private fun provideSingleCardSelectableRadioButtonIconTitleUnselected() =
     SingleCardData.SelectableRadioButton.IconTitle(
       iconResId = R.drawable.ab001_home,
-      title = &quot;Card title&quot;.toLabel(),
+      title = "Card title".toLabel(),
       radioButtonData = OldRadioButtonData(id = RadioButtonId.Default, isSelected = false),
       onClick = {},
     )
@@ -468,7 +468,7 @@ class SingleCardPreviewParameterProvider : CustomPreviewParameterProvider&lt;Sin
   private fun provideSingleCardSelectableRadioButtonIconTitleUnselectedLong() =
     SingleCardData.SelectableRadioButton.IconTitle(
       iconResId = R.drawable.ab001_home,
-      title = &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt&quot;.toLabel(),
+      title = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt".toLabel(),
       radioButtonData = OldRadioButtonData(id = RadioButtonId.Default, isSelected = false),
       onClick = {},
     )
@@ -476,7 +476,7 @@ class SingleCardPreviewParameterProvider : CustomPreviewParameterProvider&lt;Sin
   private fun provideSingleCardSelectableRadioButtonIconTitleSelected() =
     SingleCardData.SelectableRadioButton.IconTitle(
       iconResId = R.drawable.ab001_home,
-      title = &quot;Card title&quot;.toLabel(),
+      title = "Card title".toLabel(),
       radioButtonData = OldRadioButtonData(id = RadioButtonId.Default, isSelected = true),
       onClick = {},
     )
@@ -485,42 +485,42 @@ class SingleCardPreviewParameterProvider : CustomPreviewParameterProvider&lt;Sin
     SingleCardData.SelectableRadioButton.IconTitle(
       iconResId = R.drawable.ab001_home,
       iconSize = IconSize.SIZE32,
-      title = &quot;Card title&quot;.toLabel(),
+      title = "Card title".toLabel(),
       radioButtonData = OldRadioButtonData(id = RadioButtonId.Default, isSelected = true),
       onClick = {},
     )
 
   private fun provideSingleCardSelectableRadioButtonTitleDescriptionUnselected() =
     SingleCardData.SelectableRadioButton.TitleDescription(
-      title = &quot;Card title&quot;.toLabel(),
-      description = &quot;Card description no 1&quot;.toLabel(),
+      title = "Card title".toLabel(),
+      description = "Card description no 1".toLabel(),
       radioButtonData = OldRadioButtonData(id = RadioButtonId.Default, isSelected = false),
       onClick = {},
     )
 
   private fun provideSingleCardSelectableRadioButtonTitleDescriptionUnselectedLong() =
     SingleCardData.SelectableRadioButton.TitleDescription(
-      title = &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt&quot;.toLabel(),
-      description = &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor&quot;.toLabel(),
+      title = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt".toLabel(),
+      description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor".toLabel(),
       radioButtonData = OldRadioButtonData(id = RadioButtonId.Default, isSelected = false),
       onClick = {},
     )
 
   private fun provideSingleCardSelectableRadioButtonTitleDescriptionSelected() =
     SingleCardData.SelectableRadioButton.TitleDescription(
-      title = &quot;Card title&quot;.toLabel(),
-      description = &quot;Card description no 1&quot;.toLabel(),
-      descriptionSecond = &quot;Card description no 2&quot;.toLabel(),
+      title = "Card title".toLabel(),
+      description = "Card description no 1".toLabel(),
+      descriptionSecond = "Card description no 2".toLabel(),
       radioButtonData = OldRadioButtonData(id = RadioButtonId.Default, isSelected = true),
       onClick = {},
     )
 
   private fun provideSingleCardInfoTitleDescriptionStatusBadge() =
     SingleCardData.Info.TitleStatusBadge(
-      title = &quot;Status&quot;.toLabel(),
+      title = "Status".toLabel(),
       state = SingleCardInfoState.ENABLED,
       badgeData = SingleCardStatusBadgeData.Default.Green(
-        text = &quot;Opłacona&quot;.toLabel(),
+        text = "Opłacona".toLabel(),
       ),
     )
 }

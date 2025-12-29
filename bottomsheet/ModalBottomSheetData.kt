@@ -8,14 +8,14 @@ import pl.gov.coi.common.ui.theme.AppTheme
 data class ModalBottomSheetData(
   val sheetState: ModalSheetState,
   val title: Label? = null,
-  val onCloseClick: (() -&gt; Unit)? = null,
-  val colorProvider: @Composable () -&gt; Color = { AppTheme.colors.white },
+  val onCloseClick: (() -> Unit)? = null,
+  val colorProvider: @Composable () -> Color = { AppTheme.colors.white },
 )
 
 data class ModalSheetState(
   val value: ModalSheetValue,
   val skipHalfExpanded: Boolean = true,
-  val onValueChange: (ModalSheetValue) -&gt; Unit,
+  val onValueChange: (ModalSheetValue) -> Unit,
 )
 
 enum class ModalSheetValue {

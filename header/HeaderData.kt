@@ -11,8 +11,8 @@ import pl.gov.coi.common.ui.ds.custom.icon.IconState
 
 class HeaderData(
   @DrawableRes iconResId: Int,
-  iconColorProvider: @Composable () -&gt; Color,
-  iconBackgroundColorProvider: @Composable () -&gt; Color,
+  iconColorProvider: @Composable () -> Color,
+  iconBackgroundColorProvider: @Composable () -> Color,
   internal val title: Label,
   internal val message: Label?,
 ) {
@@ -29,8 +29,8 @@ class HeaderData(
 
 class CustomHeaderIconData(
   internal val iconResId: Int,
-  internal val iconColorProvider: @Composable () -&gt; Color,
-  internal val backgroundColorProvider: @Composable () -&gt; Color,
+  internal val iconColorProvider: @Composable () -> Color,
+  internal val backgroundColorProvider: @Composable () -> Color,
   internal val contentDescription: Label?,
   internal val iconState: IconState = IconState.ENABLED,
 )

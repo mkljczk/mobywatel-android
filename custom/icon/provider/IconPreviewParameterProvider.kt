@@ -9,27 +9,27 @@ import pl.gov.coi.common.ui.preview.CustomPreviewParameterProvider
 import pl.gov.coi.common.ui.preview.ScreenShotTestData
 import pl.gov.coi.common.ui.theme.AppTheme
 
-class IconPreviewParameterProvider : CustomPreviewParameterProvider&lt;IconData&gt;() {
-  override val screenShotTestValues: Sequence&lt;ScreenShotTestData&lt;IconData&gt;&gt;
+class IconPreviewParameterProvider : CustomPreviewParameterProvider<IconData>() {
+  override val screenShotTestValues: Sequence<ScreenShotTestData<IconData>>
     get() = sequenceOf(
       ScreenShotTestData(
-        screenShotTestName = &quot;IconDataStandard&quot;,
+        screenShotTestName = "IconDataStandard",
         value = providerIconDataStandard(),
       ),
       ScreenShotTestData(
-        screenShotTestName = &quot;IconBackgroundRounded&quot;,
+        screenShotTestName = "IconBackgroundRounded",
         value = providerIconDataBackgroundRounded(),
       ),
       ScreenShotTestData(
-        screenShotTestName = &quot;IconBackgroundSquare&quot;,
+        screenShotTestName = "IconBackgroundSquare",
         value = providerIconDataBackgroundSquare(),
       ),
       ScreenShotTestData(
-        screenShotTestName = &quot;IconBackgroundRoundedSquare&quot;,
+        screenShotTestName = "IconBackgroundRoundedSquare",
         value = providerIconDataBackgroundRoundedSquare(),
       ),
       ScreenShotTestData(
-        screenShotTestName = &quot;IconBackgroundRoundedExample&quot;,
+        screenShotTestName = "IconBackgroundRoundedExample",
         value = providerIconDataBackgroundRoundedExample(),
       ),
     )

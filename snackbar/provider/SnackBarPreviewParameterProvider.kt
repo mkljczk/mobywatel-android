@@ -4,38 +4,38 @@ import pl.gov.coi.common.ui.ds.snackbar.SnackBarData
 import pl.gov.coi.common.ui.preview.CustomPreviewParameterProvider
 import pl.gov.coi.common.ui.preview.ScreenShotTestData
 
-class SnackBarPreviewParameterProvider : CustomPreviewParameterProvider&lt;SnackBarData&gt;() {
+class SnackBarPreviewParameterProvider : CustomPreviewParameterProvider<SnackBarData>() {
 
-  override val screenShotTestValues: Sequence&lt;ScreenShotTestData&lt;SnackBarData&gt;&gt; = sequenceOf(
+  override val screenShotTestValues: Sequence<ScreenShotTestData<SnackBarData>> = sequenceOf(
     ScreenShotTestData(
-      screenShotTestName = &quot;SnackBarDataSimple&quot;,
+      screenShotTestName = "SnackBarDataSimple",
       value = SnackBarData.Default(
-        messageLabel = &quot;Single-line snackbar&quot;.toLabel(),
+        messageLabel = "Single-line snackbar".toLabel(),
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SnackBarDataSimple&quot;,
+      screenShotTestName = "SnackBarDataSimple",
       value = SnackBarData.Default(
-        (&quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laore&quot;).toLabel(),
+        ("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laore").toLabel(),
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SnackBarDataClosable&quot;,
+      screenShotTestName = "SnackBarDataClosable",
       value = SnackBarData.DefaultWithIcon(
-        messageLabel = &quot;Single-line snackbar with close affordance&quot;.toLabel(),
+        messageLabel = "Single-line snackbar with close affordance".toLabel(),
       ) {},
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SnackBarDataClosable&quot;,
+      screenShotTestName = "SnackBarDataClosable",
       value = SnackBarData.DefaultWithIcon(
-        (&quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laore&quot;).toLabel(),
+        ("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laore").toLabel(),
       ) {},
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SnackBarDataDefaultWithIcon&quot;,
+      screenShotTestName = "SnackBarDataDefaultWithIcon",
       value = SnackBarData.DefaultWithIcon(
-        (&quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laore.&quot; +
-          &quot; Lorem ipsum dolor sit amet.&quot;).toLabel(),
+        ("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laore." +
+          " Lorem ipsum dolor sit amet.").toLabel(),
       ),
     ),
   )

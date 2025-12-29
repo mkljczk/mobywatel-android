@@ -12,7 +12,7 @@ import pl.gov.coi.common.ui.theme.AppTheme
 internal fun RadioButtonDescription(
   description: Label?,
 ) {
-  description?.let { descriptionLabel -&gt;
+  description?.let { descriptionLabel ->
     Spacer(modifier = Modifier.height(AppTheme.dimensions.spacing100))
     CustomText(
       label = descriptionLabel,

@@ -6,9 +6,9 @@ import pl.gov.coi.common.ui.ds.radiobutton.common.model.RadioButtonSupportText
 import pl.gov.coi.common.ui.ds.radiobutton.common.model.RadioButtonVariant
 
 data class RadioButtonData(
-  val items: List&lt;RadioButtonRow&gt;,
+  val items: List<RadioButtonRow>,
   val radioButtonVariant: RadioButtonVariant,
   val supportText: RadioButtonSupportText = RadioButtonSupportText.None,
   val label: Label? = null,
-  val onClickHelperIcon: (() -&gt; Unit)? = null,
+  val onClickHelperIcon: (() -> Unit)? = null,
 )

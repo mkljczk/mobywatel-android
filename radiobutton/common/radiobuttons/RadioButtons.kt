@@ -11,10 +11,10 @@ import pl.gov.coi.common.ui.ds.radiobutton.common.radiobuttonrow.RadioButtonRow
 
 @Composable
 internal fun RadioButtons(
-  items: List&lt;RadioButtonRow&gt;,
+  items: List<RadioButtonRow>,
   state: RadioButtonSupportText,
 ) {
-  items.forEachIndexed { index, radioButtonItem -&gt;
+  items.forEachIndexed { index, radioButtonItem ->
     RadioButtonRow(
       data = radioButtonItem
         .setValidationState(state = state),

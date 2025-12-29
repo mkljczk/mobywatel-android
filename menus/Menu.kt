@@ -47,13 +47,13 @@ fun Menu(
     expanded = data.isMenuVisible,
     onDismissRequest = data.onMenuClose,
   ) {
-    data.items.forEachIndexed { index, item -&gt;
+    data.items.forEachIndexed { index, item ->
       DropdownMenuItem(
         contentPadding = PaddingValues(horizontal = AppTheme.dimensions.spacing200),
         interactionSource = NoRippleInteractionSource(),
         modifier = Modifier
           .semantics { testTagsAsResourceId = true }
-          .semantics { testTag = item.testTag ?: &quot;menuItem_${item.label.tag}&quot; },
+          .semantics { testTag = item.testTag ?: "menuItem_${item.label.tag}" },
         onClick = {
           multipleEventsCutter.processEvent {
             data.onMenuClose()
@@ -63,7 +63,7 @@ fun Menu(
         leadingIcon = item.leftIconData?.let { { Icon(data = it) } },
         text = {
           CustomText(
-            testTag = item.testTag?.let { tag -&gt; tag + &quot;Text&quot; },
+            testTag = item.testTag?.let { tag -> tag + "Text" },
             label = item.label,
             color = AppTheme.colors.neutral500,
             style = AppTheme.typography.bodyMediumRegular,

@@ -5,5 +5,5 @@ import androidx.compose.ui.semantics.SemanticsPropertyReceiver
 data class SemanticsData(
   val mergeDescendants: Boolean = false,
   val semanticsContentDescription: String? = null,
-  val semanticsProperties: (SemanticsPropertyReceiver.() -&gt; Unit) = {},
+  val semanticsProperties: (SemanticsPropertyReceiver.() -> Unit) = {},
 )

@@ -11,57 +11,57 @@ import pl.gov.coi.common.ui.theme.AppTheme
 
 private val NOTIFICATION = object : MenuIcon {
   override val iconResId = R.drawable.ab013_notifications
-  override val contentDescription = &quot;Powiadomienia&quot;.toLabel(&quot;Powiadomienia&quot;)
+  override val contentDescription = "Powiadomienia".toLabel("Powiadomienia")
 }
 
-class TopAppBarPPP : CustomPreviewParameterProvider&lt;TopAppBarData&gt;() {
-  override val screenShotTestValues: Sequence&lt;ScreenShotTestData&lt;TopAppBarData&gt;&gt; = sequenceOf(
+class TopAppBarPPP : CustomPreviewParameterProvider<TopAppBarData>() {
+  override val screenShotTestValues: Sequence<ScreenShotTestData<TopAppBarData>> = sequenceOf(
     ScreenShotTestData(
-      screenShotTestName = &quot;MediumTopAppBar&quot;,
+      screenShotTestName = "MediumTopAppBar",
       value = getMediumTopAppBar(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;LargeTopAppBar&quot;,
+      screenShotTestName = "LargeTopAppBar",
       value = getLargeTopAppBar(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SmallDefaultTopAppBar - Center&quot;,
+      screenShotTestName = "SmallDefaultTopAppBar - Center",
       value = getSmallDefaultTopAppBar(titleAlignment = TitleAlignment.Center),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SmallDefaultTopAppBar - Left&quot;,
+      screenShotTestName = "SmallDefaultTopAppBar - Left",
       value = getSmallDefaultTopAppBar(titleAlignment = TitleAlignment.Left),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SmallDefaultIconListTopAppBar - Center&quot;,
+      screenShotTestName = "SmallDefaultIconListTopAppBar - Center",
       value = getSmallDefaultIconListTopAppBar(titleAlignment = TitleAlignment.Center),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SmallDefaultIconListTopAppBar - Left&quot;,
+      screenShotTestName = "SmallDefaultIconListTopAppBar - Left",
       value = getSmallDefaultIconListTopAppBar(titleAlignment = TitleAlignment.Left),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SmallDefaultLogoNoTitleTopAppBar&quot;,
+      screenShotTestName = "SmallDefaultLogoNoTitleTopAppBar",
       value = getSmallDefaultNoTitleTopAppBar(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SmallDefaultLogoNoActionsTopAppBar&quot;,
+      screenShotTestName = "SmallDefaultLogoNoActionsTopAppBar",
       value = getSmallDefaultNoActionsTopAppBar(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SmallDefaultLogoTopNoNavigationAppBar&quot;,
+      screenShotTestName = "SmallDefaultLogoTopNoNavigationAppBar",
       value = getSmallDefaultNoNavigationTopAppBar(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SmallLogoTopAppBar&quot;,
+      screenShotTestName = "SmallLogoTopAppBar",
       value = getSmallLogoTopAppBar(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SmallSygnetTopAppBar&quot;,
+      screenShotTestName = "SmallSygnetTopAppBar",
       value = getSmallSygnetTopAppBar(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SmallDefaultWithProgressTopAppBar&quot;,
+      screenShotTestName = "SmallDefaultWithProgressTopAppBar",
       value = getSmallDefaultWithProgressTopAppBar(),
     ),
   )
@@ -82,7 +82,7 @@ class TopAppBarPPP : CustomPreviewParameterProvider&lt;TopAppBarData&gt;() {
   )
 
   private fun getSmallDefaultNoActionsTopAppBar(): TopAppBarData = TopAppBarData.Small.Default(
-    title = &quot;Small Title&quot;.toLabel(),
+    title = "Small Title".toLabel(),
     alignment = TitleAlignment.Center,
     navigationButtonData = NavigationButtonData(
       icon = NavigationButtonData.Icon.BACK_ARROW,
@@ -91,7 +91,7 @@ class TopAppBarPPP : CustomPreviewParameterProvider&lt;TopAppBarData&gt;() {
   )
 
   private fun getSmallDefaultNoNavigationTopAppBar(): TopAppBarData = TopAppBarData.Small.Default(
-    title = &quot;Small Title&quot;.toLabel(),
+    title = "Small Title".toLabel(),
     alignment = TitleAlignment.Center,
     menuType = MenuType.Icon(
       menuButtonData = MenuButtonData(
@@ -103,7 +103,7 @@ class TopAppBarPPP : CustomPreviewParameterProvider&lt;TopAppBarData&gt;() {
   )
 
   private fun getSmallDefaultWithProgressTopAppBar(): TopAppBarData = TopAppBarData.Small.Default(
-    title = &quot;Small Title&quot;.toLabel(),
+    title = "Small Title".toLabel(),
     alignment = TitleAlignment.Center,
     navigationButtonData = NavigationButtonData(
       icon = NavigationButtonData.Icon.BACK_ARROW,
@@ -117,7 +117,7 @@ class TopAppBarPPP : CustomPreviewParameterProvider&lt;TopAppBarData&gt;() {
     ),
     progressBarData = ProgressBarData.IndicatorBar(
       value = 45,
-      label = &quot;45%&quot;.toLabel(),
+      label = "45%".toLabel(),
     ),
   )
 
@@ -135,7 +135,7 @@ class TopAppBarPPP : CustomPreviewParameterProvider&lt;TopAppBarData&gt;() {
   private fun getSmallDefaultTopAppBar(
     titleAlignment: TitleAlignment,
   ): TopAppBarData = TopAppBarData.Small.Default(
-    title = &quot;Small Title&quot;.toLabel(),
+    title = "Small Title".toLabel(),
     alignment = titleAlignment,
     navigationButtonData = NavigationButtonData(
       icon = NavigationButtonData.Icon.BACK_ARROW,
@@ -152,7 +152,7 @@ class TopAppBarPPP : CustomPreviewParameterProvider&lt;TopAppBarData&gt;() {
   private fun getSmallDefaultIconListTopAppBar(
     titleAlignment: TitleAlignment,
   ): TopAppBarData = TopAppBarData.Small.Default(
-    title = &quot;Small Title&quot;.toLabel(),
+    title = "Small Title".toLabel(),
     alignment = titleAlignment,
     navigationButtonData = NavigationButtonData(
       icon = NavigationButtonData.Icon.BACK_ARROW,
@@ -176,7 +176,7 @@ class TopAppBarPPP : CustomPreviewParameterProvider&lt;TopAppBarData&gt;() {
   )
 
   private fun getLargeTopAppBar() = TopAppBarData.Large(
-    title = &quot;Large Large Large Large Large Large &quot;.toLabel(),
+    title = "Large Large Large Large Large Large ".toLabel(),
     navigationButtonData = NavigationButtonData(
       icon = NavigationButtonData.Icon.BACK_ARROW,
       onClick = {},
@@ -200,7 +200,7 @@ class TopAppBarPPP : CustomPreviewParameterProvider&lt;TopAppBarData&gt;() {
   )
 
   private fun getMediumTopAppBar() = TopAppBarData.Medium(
-    title = &quot;Medium Medium Medium Medium Medium Medium&quot;.toLabel(),
+    title = "Medium Medium Medium Medium Medium Medium".toLabel(),
     navigationButtonData = NavigationButtonData(
       icon = NavigationButtonData.Icon.BACK_ARROW,
       onClick = {},

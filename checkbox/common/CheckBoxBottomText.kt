@@ -12,14 +12,14 @@ import pl.gov.coi.common.ui.theme.AppTheme
 @Composable
 fun CheckBoxBottomText(type: CheckBoxType) {
   when (type) {
-    is CheckBoxType.Error -&gt; type.errorText?.let { errorText -&gt;
+    is CheckBoxType.Error -> type.errorText?.let { errorText ->
       Spacer(modifier = Modifier.height(AppTheme.dimensions.spacing200))
-      ErrorText(testTag = type.testTag?.let { tag -&gt; tag + &quot;ErrorText&quot; }, errorText = errorText)
+      ErrorText(testTag = type.testTag?.let { tag -> tag + "ErrorText" }, errorText = errorText)
     }
-    is CheckBoxType.Helper -&gt; if (type.helperText.isNotBlank()) {
+    is CheckBoxType.Helper -> if (type.helperText.isNotBlank()) {
       Spacer(modifier = Modifier.height(AppTheme.dimensions.spacing200))
-      HelperText(testTag = type.testTag?.let { tag -&gt; tag + &quot;HelperText&quot; }, type.helperText)
+      HelperText(testTag = type.testTag?.let { tag -> tag + "HelperText" }, type.helperText)
     }
-    is CheckBoxType.Default -&gt; Unit
+    is CheckBoxType.Default -> Unit
   }
 }

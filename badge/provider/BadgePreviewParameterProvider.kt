@@ -4,10 +4,10 @@ import pl.gov.coi.common.ui.ds.badge.BadgeData
 import pl.gov.coi.common.ui.preview.CustomPreviewParameterProvider
 import pl.gov.coi.common.ui.preview.ScreenShotTestData
 
-class BadgePreviewParameterProvider : CustomPreviewParameterProvider&lt;BadgeData&gt;() {
-  override val screenShotTestValues: Sequence&lt;ScreenShotTestData&lt;BadgeData&gt;&gt; = sequenceOf(
+class BadgePreviewParameterProvider : CustomPreviewParameterProvider<BadgeData>() {
+  override val screenShotTestValues: Sequence<ScreenShotTestData<BadgeData>> = sequenceOf(
     ScreenShotTestData(
-      screenShotTestName = &quot;BadgeDataDefault&quot;,
+      screenShotTestName = "BadgeDataDefault",
       value = BadgeData.BadgeDefault,
     ),
   )

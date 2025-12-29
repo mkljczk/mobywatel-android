@@ -12,10 +12,10 @@ import pl.gov.coi.common.ui.preview.CustomPreviewParameterProvider
 import pl.gov.coi.common.ui.preview.ScreenShotTestData
 import pl.gov.coi.common.ui.theme.AppTheme
 
-class ResultModalPreviewParameterProvider : CustomPreviewParameterProvider&lt;ResultModalData&gt;() {
-  override val screenShotTestValues: Sequence&lt;ScreenShotTestData&lt;ResultModalData&gt;&gt; = sequenceOf(
+class ResultModalPreviewParameterProvider : CustomPreviewParameterProvider<ResultModalData>() {
+  override val screenShotTestValues: Sequence<ScreenShotTestData<ResultModalData>> = sequenceOf(
     ScreenShotTestData(
-      screenShotTestName = &quot;ResultModalData&quot;,
+      screenShotTestName = "ResultModalData",
       value = provideResultModalData(),
     ),
   )
@@ -24,16 +24,16 @@ class ResultModalPreviewParameterProvider : CustomPreviewParameterProvider&lt;Re
     iconRes = R.drawable.f4_success,
     iconColorProvider = { AppTheme.colors.supportGreen100 },
     iconContentDescription = Label.EMPTY,
-    title = &quot;Title Roboto Medium 20&quot;.toLabel(),
-    dataTitle1 = &quot;Data title 2 Roboto Regular 16&quot;.toLabel(),
-    data1 = &quot;Data 1 Roboto Medium 18\nData 1 Roboto Medium 18&quot;.toLabel(),
-    dataTitle2 = &quot;Data title 2 Roboto Regular 16&quot;.toLabel(),
-    data2 = &quot;Data 2 Roboto Medium 18&quot;.toLabel(),
+    title = "Title Roboto Medium 20".toLabel(),
+    dataTitle1 = "Data title 2 Roboto Regular 16".toLabel(),
+    data1 = "Data 1 Roboto Medium 18\nData 1 Roboto Medium 18".toLabel(),
+    dataTitle2 = "Data title 2 Roboto Regular 16".toLabel(),
+    data2 = "Data 2 Roboto Medium 18".toLabel(),
     primaryButton = ButtonData(
       buttonSize = ButtonSize.Large(),
       buttonVariant = ButtonVariant.Primary,
       buttonType = ButtonType.WithText(
-        label = &quot;Primary button&quot;.toLabel(),
+        label = "Primary button".toLabel(),
       ),
       onClick = {},
     ),
@@ -41,7 +41,7 @@ class ResultModalPreviewParameterProvider : CustomPreviewParameterProvider&lt;Re
       buttonSize = ButtonSize.Large(),
       buttonVariant = ButtonVariant.Secondary(),
       buttonType = ButtonType.WithText(
-        label = &quot;Secondary button&quot;.toLabel(),
+        label = "Secondary button".toLabel(),
       ),
       onClick = {},
     ),
@@ -49,7 +49,7 @@ class ResultModalPreviewParameterProvider : CustomPreviewParameterProvider&lt;Re
       buttonSize = ButtonSize.Large(),
       buttonVariant = ButtonVariant.Tertiary,
       buttonType = ButtonType.WithText(
-        label = &quot;Tertiary button&quot;.toLabel(),
+        label = "Tertiary button".toLabel(),
       ),
       onClick = {},
     ),

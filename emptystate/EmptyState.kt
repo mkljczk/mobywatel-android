@@ -33,7 +33,7 @@ fun EmptyState(
     verticalArrangement = Arrangement.Center,
     horizontalAlignment = Alignment.CenterHorizontally,
   ) {
-    data.title?.let { title -&gt;
+    data.title?.let { title ->
       CustomText(
         label = title,
         color = AppTheme.colors.neutral500,

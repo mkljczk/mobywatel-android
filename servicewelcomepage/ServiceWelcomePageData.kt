@@ -8,19 +8,19 @@ import pl.gov.coi.common.ui.ds.button.buttonicon.ButtonIconData
 import pl.gov.coi.common.ui.ds.header.HeaderData
 import pl.gov.coi.common.ui.theme.AppTheme
 
-class ServiceWelcomePageData&lt;CONTENT_DATA&gt;(
+class ServiceWelcomePageData<CONTENT_DATA>(
   internal val topBarTitle: Label,
   @DrawableRes topBarIconMainResId: Int?,
   topBarIconMainContentDescription: Label = Label.EMPTY,
-  onTopBarIconMainClick: (() -&gt; Unit)?,
+  onTopBarIconMainClick: (() -> Unit)?,
   @DrawableRes topBarIconMenuResId: Int?,
-  onTopBarIconMenuClick: (() -&gt; Unit)?,
+  onTopBarIconMenuClick: (() -> Unit)?,
   internal val headerData: HeaderData,
   internal val alertData: AlertData? = null,
   internal val contentData: CONTENT_DATA,
   internal val buttonData: ButtonData?,
   internal val pullToRefreshEnabled: Boolean = false,
-  internal val refreshAction: () -&gt; Unit = {},
+  internal val refreshAction: () -> Unit = {},
 ) {
 
   internal val mainButtonData: ButtonIconData? =

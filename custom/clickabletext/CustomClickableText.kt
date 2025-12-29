@@ -19,16 +19,16 @@ import pl.gov.coi.common.ui.utils.semanticsContentDescription
 
 
 @Composable
-@Deprecated(message = &quot;For external redirections use Link. For internal redirections use ButtonText&quot;)
+@Deprecated(message = "For external redirections use Link. For internal redirections use ButtonText")
 fun CustomClickableText(
   annotatedText: AnnotatedString,
   style: TextStyle = TextStyle.Default,
   softWrap: Boolean = true,
   overflow: TextOverflow = TextOverflow.Clip,
   maxLines: Int = Int.MAX_VALUE,
-  onTextLayout: (TextLayoutResult) -&gt; Unit = {},
+  onTextLayout: (TextLayoutResult) -> Unit = {},
   semanticsData: SemanticsData = SemanticsData(),
-  onClick: (String) -&gt; Unit,
+  onClick: (String) -> Unit,
 ) {
   val focusManager = LocalFocusManager.current
   val multipleEventsCutter = remember { MultipleEventsCutter.get() }
@@ -52,14 +52,14 @@ fun CustomClickableText(
     overflow = overflow,
     maxLines = maxLines,
     onTextLayout = onTextLayout,
-    onClick = { offset -&gt;
+    onClick = { offset ->
       multipleEventsCutter.processEvent {
         annotatedText.getStringAnnotations(
           start = offset,
           end = offset,
         )
           .firstOrNull()
-          ?.let { annotation -&gt;
+          ?.let { annotation ->
             onClick(annotation.item)
           }
         focusManager.clearFocus(force = true)

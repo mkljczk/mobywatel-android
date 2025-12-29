@@ -28,7 +28,7 @@ import pl.gov.coi.common.ui.text.CustomText
 import pl.gov.coi.common.ui.theme.AppTheme
 
 private const val DOT_CHAR = '\u2022'
-private const val EMPTY_STRING = &quot;&quot;
+private const val EMPTY_STRING = ""
 
 @Composable
 internal fun TextFieldPin(
@@ -47,7 +47,7 @@ internal fun TextFieldPin(
         selection = TextRange(data.value.text.length),
       ),
       onValueChange = {
-        if (it.text.length &lt;= data.length &amp;&amp; it.text.isDigitsOnly()) {
+        if (it.text.length <= data.length && it.text.isDigitsOnly()) {
           data.onValueChanged(it.text)
         }
       },
@@ -60,7 +60,7 @@ internal fun TextFieldPin(
       decorationBox = {
         Column {
           Row {
-            repeat(times = data.length) { index -&gt;
+            repeat(times = data.length) { index ->
               PinCharField(
                 characterIndex = index,
                 pinValue = data.value.text,
@@ -87,8 +87,8 @@ private fun PinCharField(
   val isCharFieldFocused = characterIndex == pinValue.length
 
   val fieldValue = when {
-    characterIndex &gt;= pinValue.length -&gt; EMPTY_STRING
-    else -&gt; DOT_CHAR
+    characterIndex >= pinValue.length -> EMPTY_STRING
+    else -> DOT_CHAR
   }.toString()
 
   Box(
@@ -100,14 +100,14 @@ private fun PinCharField(
       .clip(AppTheme.shapes.radius50)
       .border(
         width = when (isCharFieldFocused) {
-          true -&gt; AppTheme.dimensions.spacing25
-          else -&gt; AppTheme.dimensions.strokeWidth
+          true -> AppTheme.dimensions.spacing25
+          else -> AppTheme.dimensions.strokeWidth
         },
         color = when {
-          isError -&gt; AppTheme.colors.supportRed100
-          isCharFieldFocused -&gt; AppTheme.colors.primary900
-          !enabled -&gt; AppTheme.colors.neutral30
-          else -&gt; AppTheme.colors.neutral80
+          isError -> AppTheme.colors.supportRed100
+          isCharFieldFocused -> AppTheme.colors.primary900
+          !enabled -> AppTheme.colors.neutral30
+          else -> AppTheme.colors.neutral80
         },
         shape = AppTheme.shapes.radius50,
       )
@@ -116,12 +116,12 @@ private fun PinCharField(
   ) {
     CustomText(
       modifier = Modifier.align(alignment = Alignment.Center),
-      label = fieldValue.toLabel(tag = &quot;fieldValue&quot;),
+      label = fieldValue.toLabel(tag = "fieldValue"),
       style = AppTheme.typography.headlineMedium
         .copy(
           color = when (enabled) {
-            true -&gt; AppTheme.colors.neutral500
-            else -&gt; AppTheme.colors.neutral60
+            true -> AppTheme.colors.neutral500
+            else -> AppTheme.colors.neutral60
           },
         ),
       textAlign = TextAlign.Center,

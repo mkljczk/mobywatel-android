@@ -6,12 +6,12 @@ import pl.gov.coi.common.ui.preview.CustomPreviewParameterProvider
 import pl.gov.coi.common.ui.preview.ScreenShotTestData
 import pl.gov.coi.common.ui.theme.AppTheme
 
-class SmallCardPreviewParameterProvider : CustomPreviewParameterProvider&lt;SmallCardData&gt;() {
-  override val screenShotTestValues: Sequence&lt;ScreenShotTestData&lt;SmallCardData&gt;&gt; = sequenceOf(
+class SmallCardPreviewParameterProvider : CustomPreviewParameterProvider<SmallCardData>() {
+  override val screenShotTestValues: Sequence<ScreenShotTestData<SmallCardData>> = sequenceOf(
     ScreenShotTestData(
-      screenShotTestName = &quot;SmallCard&quot;,
+      screenShotTestName = "SmallCard",
       value = SmallCardData(
-        title = &quot;Naruszenie środowiskowe&quot;.toLabel(),
+        title = "Naruszenie środowiskowe".toLabel(),
         iconResId = R.drawable.da002_naruszenie_srodowiskowe,
         iconColorProvider = { AppTheme.colors.serviceLeafy100 },
         onClick = {},

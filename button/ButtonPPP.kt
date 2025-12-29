@@ -7,130 +7,25 @@ import pl.gov.coi.common.ui.ds.button.common.ButtonVariant
 import pl.gov.coi.common.ui.preview.CustomPreviewParameterProvider
 import pl.gov.coi.common.ui.preview.ScreenShotTestData
 
-class ButtonPPP : CustomPreviewParameterProvider&lt;ButtonData&gt;() {
-  override val screenShotTestValues: Sequence&lt;ScreenShotTestData&lt;ButtonData&gt;&gt; = sequenceOf(
+class ButtonPPP : CustomPreviewParameterProvider<ButtonData>() {
+  override val screenShotTestValues: Sequence<ScreenShotTestData<ButtonData>> = sequenceOf(
     ScreenShotTestData(
-      screenShotTestName = &quot;SmallTextPrimaryEnabled&quot;,
+      screenShotTestName = "SmallTextPrimaryEnabled",
       value = ButtonData(
         buttonSize = ButtonSize.Small,
         buttonType = ButtonType.WithText(
-          label = &quot;SmallTextPrimaryEnabled&quot;.toLabel(),
+          label = "SmallTextPrimaryEnabled".toLabel(),
         ),
         buttonVariant = ButtonVariant.Primary,
         onClick = {},
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SmallTextPrimaryDestructive&quot;,
+      screenShotTestName = "SmallTextPrimaryDestructive",
       value = ButtonData(
         buttonSize = ButtonSize.Small,
         buttonType = ButtonType.WithText(
-          label = &quot;SmallTextPrimaryDestructive&quot;.toLabel(),
-        ),
-        buttonVariant = ButtonVariant.Primary,
-        buttonState = ButtonState.Destructive,
-        onClick = {},
-      ),
-    ),
-    ScreenShotTestData(
-      screenShotTestName = &quot;SmallPrimaryDisabled&quot;,
-      value = ButtonData(
-        buttonSize = ButtonSize.Small,
-        buttonType = ButtonType.WithText(
-          label = &quot;SmallPrimaryDisabled&quot;.toLabel(),
-        ),
-        buttonVariant = ButtonVariant.Primary,
-        buttonState = ButtonState.Disabled,
-        onClick = {},
-      ),
-    ),
-    ScreenShotTestData(
-      screenShotTestName = &quot;SmallSecondaryEnabled&quot;,
-      value = ButtonData(
-        buttonSize = ButtonSize.Small,
-        buttonType = ButtonType.WithText(
-          label = &quot;SmallSecondaryEnabled&quot;.toLabel(),
-        ),
-        buttonVariant = ButtonVariant.Secondary(),
-        onClick = {},
-      ),
-    ),
-    ScreenShotTestData(
-      screenShotTestName = &quot;SmallSecondaryDestructive&quot;,
-      value = ButtonData(
-        buttonSize = ButtonSize.Small,
-        buttonType = ButtonType.WithText(
-          label = &quot;SmallSecondaryDestructive&quot;.toLabel(),
-        ),
-        buttonVariant = ButtonVariant.Secondary(),
-        buttonState = ButtonState.Destructive,
-        onClick = {},
-      ),
-    ),
-    ScreenShotTestData(
-      screenShotTestName = &quot;SmallSecondaryDisabled&quot;,
-      value = ButtonData(
-        buttonSize = ButtonSize.Small,
-        buttonType = ButtonType.WithText(
-          label = &quot;SmallSecondaryDisabled&quot;.toLabel(),
-        ),
-        buttonVariant = ButtonVariant.Secondary(),
-        buttonState = ButtonState.Disabled,
-        onClick = {},
-      ),
-    ),
-    ScreenShotTestData(
-      screenShotTestName = &quot;SmallTertiaryEnabled&quot;,
-      value = ButtonData(
-        buttonSize = ButtonSize.Small,
-        buttonType = ButtonType.WithText(
-          label = &quot;SmallTertiaryEnabled&quot;.toLabel(),
-        ),
-        buttonVariant = ButtonVariant.Tertiary,
-        onClick = {},
-      ),
-    ),
-    ScreenShotTestData(
-      screenShotTestName = &quot;SmallTertiaryDestructive&quot;,
-      value = ButtonData(
-        buttonSize = ButtonSize.Small,
-        buttonType = ButtonType.WithText(
-          label = &quot;SmallTertiaryDestructive&quot;.toLabel(),
-        ),
-        buttonVariant = ButtonVariant.Tertiary,
-        buttonState = ButtonState.Destructive,
-        onClick = {},
-      ),
-    ),
-    ScreenShotTestData(
-      screenShotTestName = &quot;SmallTertiaryDisabled&quot;,
-      value = ButtonData(
-        buttonSize = ButtonSize.Small,
-        buttonType = ButtonType.WithText(
-          label = &quot;SmallTertiaryDisabled&quot;.toLabel(),
-        ),
-        buttonVariant = ButtonVariant.Tertiary,
-        buttonState = ButtonState.Disabled,
-        onClick = {},
-      ),
-    ),
-    ScreenShotTestData(
-      screenShotTestName = &quot;LargePrimaryEnabled&quot;,
-      value = ButtonData(
-        buttonSize = ButtonSize.Large(),
-        buttonType = ButtonType.WithText(
-          label = &quot;LargePrimaryEnabled&quot;.toLabel(),
-        ),
-        buttonVariant = ButtonVariant.Primary,
-        onClick = {},
-      ),
-    ),
-    ScreenShotTestData(
-      screenShotTestName = &quot;LargePrimaryDestructive&quot;,
-      value = ButtonData(
-        buttonSize = ButtonSize.Large(),
-        buttonType = ButtonType.WithText(
-          label = &quot;LargePrimaryDestructive&quot;.toLabel(),
+          label = "SmallTextPrimaryDestructive".toLabel(),
         ),
         buttonVariant = ButtonVariant.Primary,
         buttonState = ButtonState.Destructive,
@@ -138,11 +33,11 @@ class ButtonPPP : CustomPreviewParameterProvider&lt;ButtonData&gt;() {
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;LargePrimaryDisabled&quot;,
+      screenShotTestName = "SmallPrimaryDisabled",
       value = ButtonData(
-        buttonSize = ButtonSize.Large(),
+        buttonSize = ButtonSize.Small,
         buttonType = ButtonType.WithText(
-          label = &quot;LargePrimaryDisabled&quot;.toLabel(),
+          label = "SmallPrimaryDisabled".toLabel(),
         ),
         buttonVariant = ButtonVariant.Primary,
         buttonState = ButtonState.Disabled,
@@ -150,22 +45,22 @@ class ButtonPPP : CustomPreviewParameterProvider&lt;ButtonData&gt;() {
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;LargeSecondaryEnabled&quot;,
+      screenShotTestName = "SmallSecondaryEnabled",
       value = ButtonData(
-        buttonSize = ButtonSize.Large(),
+        buttonSize = ButtonSize.Small,
         buttonType = ButtonType.WithText(
-          label = &quot;LargeSecondaryEnabled&quot;.toLabel(),
+          label = "SmallSecondaryEnabled".toLabel(),
         ),
         buttonVariant = ButtonVariant.Secondary(),
         onClick = {},
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;LargeSecondaryDestructive&quot;,
+      screenShotTestName = "SmallSecondaryDestructive",
       value = ButtonData(
-        buttonSize = ButtonSize.Large(),
+        buttonSize = ButtonSize.Small,
         buttonType = ButtonType.WithText(
-          label = &quot;LargeSecondaryDestructive&quot;.toLabel(),
+          label = "SmallSecondaryDestructive".toLabel(),
         ),
         buttonVariant = ButtonVariant.Secondary(),
         buttonState = ButtonState.Destructive,
@@ -173,11 +68,11 @@ class ButtonPPP : CustomPreviewParameterProvider&lt;ButtonData&gt;() {
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;LargeSecondaryDisabled&quot;,
+      screenShotTestName = "SmallSecondaryDisabled",
       value = ButtonData(
-        buttonSize = ButtonSize.Large(),
+        buttonSize = ButtonSize.Small,
         buttonType = ButtonType.WithText(
-          label = &quot;LargeSecondaryDisabled&quot;.toLabel(),
+          label = "SmallSecondaryDisabled".toLabel(),
         ),
         buttonVariant = ButtonVariant.Secondary(),
         buttonState = ButtonState.Disabled,
@@ -185,22 +80,22 @@ class ButtonPPP : CustomPreviewParameterProvider&lt;ButtonData&gt;() {
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;LargeTertiaryEnabled&quot;,
+      screenShotTestName = "SmallTertiaryEnabled",
       value = ButtonData(
-        buttonSize = ButtonSize.Large(),
+        buttonSize = ButtonSize.Small,
         buttonType = ButtonType.WithText(
-          label = &quot;LargeTertiaryEnabled&quot;.toLabel(),
+          label = "SmallTertiaryEnabled".toLabel(),
         ),
         buttonVariant = ButtonVariant.Tertiary,
         onClick = {},
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;LargeTertiaryDestructive&quot;,
+      screenShotTestName = "SmallTertiaryDestructive",
       value = ButtonData(
-        buttonSize = ButtonSize.Large(),
+        buttonSize = ButtonSize.Small,
         buttonType = ButtonType.WithText(
-          label = &quot;LargeTertiaryDestructive&quot;.toLabel(),
+          label = "SmallTertiaryDestructive".toLabel(),
         ),
         buttonVariant = ButtonVariant.Tertiary,
         buttonState = ButtonState.Destructive,
@@ -208,11 +103,116 @@ class ButtonPPP : CustomPreviewParameterProvider&lt;ButtonData&gt;() {
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;LargeTertiaryDisabled&quot;,
+      screenShotTestName = "SmallTertiaryDisabled",
+      value = ButtonData(
+        buttonSize = ButtonSize.Small,
+        buttonType = ButtonType.WithText(
+          label = "SmallTertiaryDisabled".toLabel(),
+        ),
+        buttonVariant = ButtonVariant.Tertiary,
+        buttonState = ButtonState.Disabled,
+        onClick = {},
+      ),
+    ),
+    ScreenShotTestData(
+      screenShotTestName = "LargePrimaryEnabled",
       value = ButtonData(
         buttonSize = ButtonSize.Large(),
         buttonType = ButtonType.WithText(
-          label = &quot;LargeTertiaryDisabled&quot;.toLabel(),
+          label = "LargePrimaryEnabled".toLabel(),
+        ),
+        buttonVariant = ButtonVariant.Primary,
+        onClick = {},
+      ),
+    ),
+    ScreenShotTestData(
+      screenShotTestName = "LargePrimaryDestructive",
+      value = ButtonData(
+        buttonSize = ButtonSize.Large(),
+        buttonType = ButtonType.WithText(
+          label = "LargePrimaryDestructive".toLabel(),
+        ),
+        buttonVariant = ButtonVariant.Primary,
+        buttonState = ButtonState.Destructive,
+        onClick = {},
+      ),
+    ),
+    ScreenShotTestData(
+      screenShotTestName = "LargePrimaryDisabled",
+      value = ButtonData(
+        buttonSize = ButtonSize.Large(),
+        buttonType = ButtonType.WithText(
+          label = "LargePrimaryDisabled".toLabel(),
+        ),
+        buttonVariant = ButtonVariant.Primary,
+        buttonState = ButtonState.Disabled,
+        onClick = {},
+      ),
+    ),
+    ScreenShotTestData(
+      screenShotTestName = "LargeSecondaryEnabled",
+      value = ButtonData(
+        buttonSize = ButtonSize.Large(),
+        buttonType = ButtonType.WithText(
+          label = "LargeSecondaryEnabled".toLabel(),
+        ),
+        buttonVariant = ButtonVariant.Secondary(),
+        onClick = {},
+      ),
+    ),
+    ScreenShotTestData(
+      screenShotTestName = "LargeSecondaryDestructive",
+      value = ButtonData(
+        buttonSize = ButtonSize.Large(),
+        buttonType = ButtonType.WithText(
+          label = "LargeSecondaryDestructive".toLabel(),
+        ),
+        buttonVariant = ButtonVariant.Secondary(),
+        buttonState = ButtonState.Destructive,
+        onClick = {},
+      ),
+    ),
+    ScreenShotTestData(
+      screenShotTestName = "LargeSecondaryDisabled",
+      value = ButtonData(
+        buttonSize = ButtonSize.Large(),
+        buttonType = ButtonType.WithText(
+          label = "LargeSecondaryDisabled".toLabel(),
+        ),
+        buttonVariant = ButtonVariant.Secondary(),
+        buttonState = ButtonState.Disabled,
+        onClick = {},
+      ),
+    ),
+    ScreenShotTestData(
+      screenShotTestName = "LargeTertiaryEnabled",
+      value = ButtonData(
+        buttonSize = ButtonSize.Large(),
+        buttonType = ButtonType.WithText(
+          label = "LargeTertiaryEnabled".toLabel(),
+        ),
+        buttonVariant = ButtonVariant.Tertiary,
+        onClick = {},
+      ),
+    ),
+    ScreenShotTestData(
+      screenShotTestName = "LargeTertiaryDestructive",
+      value = ButtonData(
+        buttonSize = ButtonSize.Large(),
+        buttonType = ButtonType.WithText(
+          label = "LargeTertiaryDestructive".toLabel(),
+        ),
+        buttonVariant = ButtonVariant.Tertiary,
+        buttonState = ButtonState.Destructive,
+        onClick = {},
+      ),
+    ),
+    ScreenShotTestData(
+      screenShotTestName = "LargeTertiaryDisabled",
+      value = ButtonData(
+        buttonSize = ButtonSize.Large(),
+        buttonType = ButtonType.WithText(
+          label = "LargeTertiaryDisabled".toLabel(),
         ),
         buttonVariant = ButtonVariant.Tertiary,
         buttonState = ButtonState.Disabled,

@@ -16,9 +16,9 @@ fun Switch(
   data: SwitchData,
 ) {
   when (data) {
-    is SwitchData.SwitchOnly -&gt; SwitchOnly(data = data)
-    is SwitchData.SwitchWithText -&gt; SwitchWithText(data = data)
-    is SwitchData.SwitchWithExtras -&gt; SwitchWithExtras(data = data)
+    is SwitchData.SwitchOnly -> SwitchOnly(data = data)
+    is SwitchData.SwitchWithText -> SwitchWithText(data = data)
+    is SwitchData.SwitchWithExtras -> SwitchWithExtras(data = data)
   }
 }
 

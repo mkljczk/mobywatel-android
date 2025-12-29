@@ -12,20 +12,20 @@ data class TextAreaData(
   val type: TextAreaType,
   val indexTag: Int? = null,
   val state: TextAreaDataState,
-  val content: String = &quot;&quot;,
+  val content: String = "",
   val enabled: Boolean = true,
   val counterState: CounterState,
   val hint: Label = Label.EMPTY,
   val imeAction: ImeAction = ImeAction.Done,
   val focusRequester: FocusRequester? = null,
-  val onValueChanged: (String) -&gt; Unit,
+  val onValueChanged: (String) -> Unit,
 )
 
 sealed interface CounterState {
   data object Hidden : CounterState
   data class Visible(
     val maxLength: Int,
-    val onCharsLimitReached: (Boolean) -&gt; Unit = {},
+    val onCharsLimitReached: (Boolean) -> Unit = {},
   ) : CounterState
 }
 

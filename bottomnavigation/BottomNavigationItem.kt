@@ -8,5 +8,5 @@ data class BottomNavigationItem(
   val label: Label,
   @DrawableRes val unselectedIconResId: Int,
   @DrawableRes val selectedIconResId: Int,
-  val onClickAction: () -&gt; Unit,
+  val onClickAction: () -> Unit,
 )

@@ -19,7 +19,7 @@ sealed class SingleCardStatusBadgeData(
   sealed class Default(
     testTag: String?,
     text: Label,
-    internal open val dotColorProvider: @Composable () -&gt; Color,
+    internal open val dotColorProvider: @Composable () -> Color,
   ) : SingleCardStatusBadgeData(
     testTag = testTag,
     text = text,
@@ -89,7 +89,7 @@ sealed class SingleCardStatusBadgeData(
     testTag: String?,
     text: Label,
     @DrawableRes iconResId: Int,
-    iconColorProvider: @Composable () -&gt; Color,
+    iconColorProvider: @Composable () -> Color,
     iconContentDescription: Label,
   ) : SingleCardStatusBadgeData(
     testTag = testTag,
@@ -97,7 +97,7 @@ sealed class SingleCardStatusBadgeData(
   ) {
 
     internal val iconData: IconData = IconData.Standard(
-      testTag = testTag?.let { tag -&gt; tag + &quot;Icon&quot; },
+      testTag = testTag?.let { tag -> tag + "Icon" },
       iconResId = iconResId,
       iconSize = IconSize.SIZE16,
       iconColorProvider = iconColorProvider,
@@ -157,7 +157,7 @@ sealed class SingleCardStatusBadgeData(
     testTag: String?,
     text: Label,
     @DrawableRes iconResId: Int,
-    iconColorProvider: @Composable () -&gt; Color,
+    iconColorProvider: @Composable () -> Color,
     iconContentDescription: Label,
   ) : SingleCardStatusBadgeData(
     testTag = testTag,
@@ -165,7 +165,7 @@ sealed class SingleCardStatusBadgeData(
   ) {
 
     internal val iconData: IconData = IconData.Standard(
-      testTag = testTag?.let { tag -&gt; tag + &quot;Icon&quot; },
+      testTag = testTag?.let { tag -> tag + "Icon" },
       iconResId = iconResId,
       iconSize = IconSize.SIZE14,
       iconColorProvider = iconColorProvider,
@@ -225,21 +225,21 @@ sealed class SingleCardStatusBadgeData(
     testTag: String?,
     text: Label,
     private val variant: WithDotAndBorderVariant,
-    internal val dotColorProvider: @Composable () -&gt; Color,
+    internal val dotColorProvider: @Composable () -> Color,
   ) : SingleCardStatusBadgeData(
     testTag = testTag,
     text = text,
   ) {
-    internal val strokeColorProvider: @Composable () -&gt; Color = {
+    internal val strokeColorProvider: @Composable () -> Color = {
       when (variant) {
-        WithDotAndBorderVariant.Default -&gt; AppTheme.colors.neutral80
-        is WithDotAndBorderVariant.Colored -&gt; dotColorProvider()
+        WithDotAndBorderVariant.Default -> AppTheme.colors.neutral80
+        is WithDotAndBorderVariant.Colored -> dotColorProvider()
       }
     }
-    internal val backgroundColorProvider: @Composable () -&gt; Color = {
+    internal val backgroundColorProvider: @Composable () -> Color = {
       when (variant) {
-        WithDotAndBorderVariant.Default -&gt; AppTheme.colors.white
-        is WithDotAndBorderVariant.Colored -&gt; variant.backgroundColorProvider()
+        WithDotAndBorderVariant.Default -> AppTheme.colors.white
+        is WithDotAndBorderVariant.Colored -> variant.backgroundColorProvider()
       }
     }
 
@@ -308,7 +308,7 @@ sealed class SingleCardStatusBadgeData(
   sealed class Elevated(
     testTag: String?,
     text: Label,
-    internal val dotColorProvider: @Composable () -&gt; Color,
+    internal val dotColorProvider: @Composable () -> Color,
   ) : SingleCardStatusBadgeData(
     testTag = testTag,
     text = text,
@@ -353,5 +353,5 @@ sealed class SingleCardStatusBadgeData(
 
 internal sealed interface WithDotAndBorderVariant {
   object Default : WithDotAndBorderVariant
-  data class Colored(val backgroundColorProvider: @Composable () -&gt; Color) : WithDotAndBorderVariant
+  data class Colored(val backgroundColorProvider: @Composable () -> Color) : WithDotAndBorderVariant
 }

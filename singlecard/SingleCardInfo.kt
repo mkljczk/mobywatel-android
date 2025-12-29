@@ -53,16 +53,16 @@ internal fun SingleCardInfo(data: SingleCardData.Info) {
         .padding(all = AppTheme.dimensions.spacing250),
     ) {
       when (data) {
-        is SingleCardData.Info.Title -&gt; SingleCardInfoTitleContent(data = data)
-        is SingleCardData.Info.TitleDescription -&gt; SingleCardInfoTitleDescriptionContent(data = data)
-        is SingleCardData.Info.InfoTitle -&gt; SingleCardInfoTitleInfoContent(data = data)
-        is SingleCardData.Info.IconTitle -&gt; SingleCardInfoTitleIconContent(data = data)
-        is SingleCardData.Info.IconTitleDescription -&gt; SingleCardInfoTitleDescriptionIconContent(data = data)
-        is SingleCardData.Info.TitleStatusBadge -&gt; SingleCardInfoTitleStatusBadgeContent(data = data)
-        is SingleCardData.Info.IconTitleDescriptionLeadingButton -&gt;
+        is SingleCardData.Info.Title -> SingleCardInfoTitleContent(data = data)
+        is SingleCardData.Info.TitleDescription -> SingleCardInfoTitleDescriptionContent(data = data)
+        is SingleCardData.Info.InfoTitle -> SingleCardInfoTitleInfoContent(data = data)
+        is SingleCardData.Info.IconTitle -> SingleCardInfoTitleIconContent(data = data)
+        is SingleCardData.Info.IconTitleDescription -> SingleCardInfoTitleDescriptionIconContent(data = data)
+        is SingleCardData.Info.TitleStatusBadge -> SingleCardInfoTitleStatusBadgeContent(data = data)
+        is SingleCardData.Info.IconTitleDescriptionLeadingButton ->
           SingleCardInfoIconTitleDescriptionLeadingButtonContent(data = data)
 
-        is SingleCardData.Info.ImageTitleDescriptionLeadingButton -&gt;
+        is SingleCardData.Info.ImageTitleDescriptionLeadingButton ->
           SingleCardInfoImageTitleDescriptionLeadingButtonContent(data = data)
       }
 
@@ -70,7 +70,7 @@ internal fun SingleCardInfo(data: SingleCardData.Info) {
         Icon(
           modifier = Modifier.padding(start = AppTheme.dimensions.spacing200),
           data = IconData.Standard(
-            testTag = data.testTag?.let { tag -&gt; tag + &quot;DraggableIcon&quot; },
+            testTag = data.testTag?.let { tag -> tag + "DraggableIcon" },
             iconResId = R.drawable.aa040_handle_3,
             iconSize = IconSize.SIZE24,
             iconColorProvider = { Color.Unspecified },
@@ -92,7 +92,7 @@ internal fun SingleCardInfoTitleContent(
         role = Role.Switch,
         value = data.extras.switchData.checked,
         enabled = data.extras.switchData.enabled,
-        onValueChange = { value -&gt; data.extras.switchData.onCheckedChange?.invoke(value) },
+        onValueChange = { value -> data.extras.switchData.onCheckedChange?.invoke(value) },
       )
     } else {
       Modifier
@@ -105,22 +105,22 @@ internal fun SingleCardInfoTitleContent(
       .then(toggleableModifier()),
   ) {
     CustomText(
-      testTag = data.testTag?.let { tag -&gt; tag + &quot;Text&quot; },
+      testTag = data.testTag?.let { tag -> tag + "Text" },
       label = data.title,
       style = AppTheme.typography.bodyLargeMedium,
       modifier = Modifier.weight(1f),
       color = when (data.cardState) {
-        SingleCardInfoState.ENABLED -&gt; Color.Unspecified
-        SingleCardInfoState.DISABLE -&gt; AppTheme.colors.neutral60
+        SingleCardInfoState.ENABLED -> Color.Unspecified
+        SingleCardInfoState.DISABLE -> AppTheme.colors.neutral60
       },
     )
-    data.extras?.let { extra -&gt;
+    data.extras?.let { extra ->
       Spacer(
         modifier = Modifier.width(width = AppTheme.dimensions.spacing100),
       )
       when (extra) {
-        is SingleCardInfoExtras.ButtonMore -&gt; Button(data = extra.buttonData)
-        is SingleCardInfoExtras.Switch -&gt; Switch(data = extra.switchData)
+        is SingleCardInfoExtras.ButtonMore -> Button(data = extra.buttonData)
+        is SingleCardInfoExtras.Switch -> Switch(data = extra.switchData)
       }
     }
   }
@@ -147,8 +147,8 @@ internal fun RowScope.SingleCardInfoTitleDescriptionContent(
         style = AppTheme.typography.bodyLargeMedium,
         modifier = Modifier.fillMaxWidth(),
         color = when (data.cardState) {
-          SingleCardInfoState.ENABLED -&gt; Color.Unspecified
-          SingleCardInfoState.DISABLE -&gt; AppTheme.colors.neutral60
+          SingleCardInfoState.ENABLED -> Color.Unspecified
+          SingleCardInfoState.DISABLE -> AppTheme.colors.neutral60
         },
       )
       CustomText(
@@ -156,16 +156,16 @@ internal fun RowScope.SingleCardInfoTitleDescriptionContent(
         style = AppTheme.typography.bodyMediumRegular,
         modifier = Modifier.fillMaxWidth(),
         color = when (data.cardState) {
-          SingleCardInfoState.ENABLED -&gt; Color.Unspecified
-          SingleCardInfoState.DISABLE -&gt; AppTheme.colors.neutral60
+          SingleCardInfoState.ENABLED -> Color.Unspecified
+          SingleCardInfoState.DISABLE -> AppTheme.colors.neutral60
         },
       )
     }
-    data.extras?.let { extra -&gt;
+    data.extras?.let { extra ->
       Spacer(modifier = Modifier.width(width = AppTheme.dimensions.spacing100))
       when (extra) {
-        is SingleCardInfoExtras.ButtonMore -&gt; Button(data = extra.buttonData)
-        is SingleCardInfoExtras.Switch -&gt; Switch(data = extra.switchData)
+        is SingleCardInfoExtras.ButtonMore -> Button(data = extra.buttonData)
+        is SingleCardInfoExtras.Switch -> Switch(data = extra.switchData)
       }
     }
   }
@@ -200,11 +200,11 @@ internal fun RowScope.SingleCardInfoTitleInfoContent(
         overflow = data.titleTextOverflow,
       )
     }
-    data.extras?.let { extra -&gt;
+    data.extras?.let { extra ->
       Spacer(modifier = Modifier.width(width = AppTheme.dimensions.spacing100))
       when (extra) {
-        is SingleCardInfoExtras.ButtonMore -&gt; Button(data = extra.buttonData)
-        is SingleCardInfoExtras.Switch -&gt; Switch(data = extra.switchData)
+        is SingleCardInfoExtras.ButtonMore -> Button(data = extra.buttonData)
+        is SingleCardInfoExtras.Switch -> Switch(data = extra.switchData)
       }
     }
   }
@@ -220,7 +220,7 @@ internal fun RowScope.SingleCardInfoTitleIconContent(
       .fillMaxWidth()
       .weight(1f),
   ) {
-    data.buttonIconData?.let { buttonDataIcon -&gt;
+    data.buttonIconData?.let { buttonDataIcon ->
       ButtonIcon(
         data = buttonDataIcon,
       )
@@ -235,8 +235,8 @@ internal fun RowScope.SingleCardInfoTitleIconContent(
       style = AppTheme.typography.bodyLargeMedium,
       modifier = Modifier.fillMaxWidth(),
       color = when (data.cardState) {
-        SingleCardInfoState.ENABLED -&gt; Color.Unspecified
-        SingleCardInfoState.DISABLE -&gt; AppTheme.colors.neutral60
+        SingleCardInfoState.ENABLED -> Color.Unspecified
+        SingleCardInfoState.DISABLE -> AppTheme.colors.neutral60
       },
       labelContentDescription = data.cardContentDescription,
     )
@@ -249,14 +249,14 @@ internal fun RowScope.SingleCardInfoTitleDescriptionIconContent(
 ) {
   Row(
     verticalAlignment = when (data.iconOnOneLineWithTitle) {
-      true -&gt; Alignment.Top
-      false -&gt; Alignment.CenterVertically
+      true -> Alignment.Top
+      false -> Alignment.CenterVertically
     },
     modifier = Modifier
       .fillMaxWidth()
       .weight(1f),
   ) {
-    data.buttonIconData?.let { buttonDataIcon -&gt;
+    data.buttonIconData?.let { buttonDataIcon ->
       ButtonIcon(
         data = buttonDataIcon,
       )
@@ -277,8 +277,8 @@ internal fun RowScope.SingleCardInfoTitleDescriptionIconContent(
         style = AppTheme.typography.bodyLargeMedium,
         modifier = Modifier.fillMaxWidth(),
         color = when (data.cardState) {
-          SingleCardInfoState.ENABLED -&gt; Color.Unspecified
-          SingleCardInfoState.DISABLE -&gt; AppTheme.colors.neutral60
+          SingleCardInfoState.ENABLED -> Color.Unspecified
+          SingleCardInfoState.DISABLE -> AppTheme.colors.neutral60
         },
         labelContentDescription = data.cardContentDescription,
       )
@@ -287,8 +287,8 @@ internal fun RowScope.SingleCardInfoTitleDescriptionIconContent(
         style = AppTheme.typography.bodyMediumRegular,
         modifier = Modifier.fillMaxWidth(),
         color = when (data.cardState) {
-          SingleCardInfoState.ENABLED -&gt; Color.Unspecified
-          SingleCardInfoState.DISABLE -&gt; AppTheme.colors.neutral60
+          SingleCardInfoState.ENABLED -> Color.Unspecified
+          SingleCardInfoState.DISABLE -> AppTheme.colors.neutral60
         },
       )
     }
@@ -321,8 +321,8 @@ internal fun RowScope.SingleCardInfoIconTitleDescriptionLeadingButtonContent(
 ) {
   Row(
     verticalAlignment = when (data.iconOnOneLineWithTitle) {
-      true -&gt; Alignment.Top
-      false -&gt; Alignment.CenterVertically
+      true -> Alignment.Top
+      false -> Alignment.CenterVertically
     },
     modifier = Modifier
       .fillMaxWidth()
@@ -345,8 +345,8 @@ internal fun RowScope.SingleCardInfoIconTitleDescriptionLeadingButtonContent(
         style = AppTheme.typography.bodyLargeMedium,
         modifier = Modifier.fillMaxWidth(),
         color = when (data.cardState) {
-          SingleCardInfoState.ENABLED -&gt; AppTheme.colors.neutral500
-          SingleCardInfoState.DISABLE -&gt; AppTheme.colors.neutral60
+          SingleCardInfoState.ENABLED -> AppTheme.colors.neutral500
+          SingleCardInfoState.DISABLE -> AppTheme.colors.neutral60
         },
         labelContentDescription = data.cardContentDescription,
       )
@@ -355,8 +355,8 @@ internal fun RowScope.SingleCardInfoIconTitleDescriptionLeadingButtonContent(
         style = AppTheme.typography.bodyMediumRegular,
         modifier = Modifier.fillMaxWidth(),
         color = when (data.cardState) {
-          SingleCardInfoState.ENABLED -&gt; AppTheme.colors.neutral200
-          SingleCardInfoState.DISABLE -&gt; AppTheme.colors.neutral60
+          SingleCardInfoState.ENABLED -> AppTheme.colors.neutral200
+          SingleCardInfoState.DISABLE -> AppTheme.colors.neutral60
         },
       )
     }
@@ -371,8 +371,8 @@ internal fun RowScope.SingleCardInfoImageTitleDescriptionLeadingButtonContent(
 ) {
   Row(
     verticalAlignment = when (data.iconOnOneLineWithTitle) {
-      true -&gt; Alignment.Top
-      false -&gt; Alignment.CenterVertically
+      true -> Alignment.Top
+      false -> Alignment.CenterVertically
     },
     modifier = Modifier
       .fillMaxWidth()
@@ -407,8 +407,8 @@ internal fun RowScope.SingleCardInfoImageTitleDescriptionLeadingButtonContent(
         style = AppTheme.typography.bodyLargeMedium,
         modifier = Modifier.fillMaxWidth(),
         color = when (data.cardState) {
-          SingleCardInfoState.ENABLED -&gt; AppTheme.colors.neutral500
-          SingleCardInfoState.DISABLE -&gt; AppTheme.colors.neutral60
+          SingleCardInfoState.ENABLED -> AppTheme.colors.neutral500
+          SingleCardInfoState.DISABLE -> AppTheme.colors.neutral60
         },
         labelContentDescription = data.cardContentDescription,
       )
@@ -417,8 +417,8 @@ internal fun RowScope.SingleCardInfoImageTitleDescriptionLeadingButtonContent(
         style = AppTheme.typography.bodyMediumRegular,
         modifier = Modifier.fillMaxWidth(),
         color = when (data.cardState) {
-          SingleCardInfoState.ENABLED -&gt; AppTheme.colors.neutral200
-          SingleCardInfoState.DISABLE -&gt; AppTheme.colors.neutral60
+          SingleCardInfoState.ENABLED -> AppTheme.colors.neutral200
+          SingleCardInfoState.DISABLE -> AppTheme.colors.neutral60
         },
       )
     }

@@ -6,11 +6,11 @@ import pl.gov.coi.common.ui.ds.menus.MenuItem
 import pl.gov.coi.common.ui.preview.CustomPreviewParameterProvider
 import pl.gov.coi.common.ui.preview.ScreenShotTestData
 
-class MenuPreviewParameterProvider : CustomPreviewParameterProvider&lt;MenuData&gt;() {
-  override val screenShotTestValues: Sequence&lt;ScreenShotTestData&lt;MenuData&gt;&gt;
+class MenuPreviewParameterProvider : CustomPreviewParameterProvider<MenuData>() {
+  override val screenShotTestValues: Sequence<ScreenShotTestData<MenuData>>
     get() = sequenceOf(
       ScreenShotTestData(
-        screenShotTestName = &quot;Menu&quot;,
+        screenShotTestName = "Menu",
         value = provideMenuData(),
       ),
     )
@@ -20,19 +20,19 @@ class MenuPreviewParameterProvider : CustomPreviewParameterProvider&lt;MenuData&
     onMenuClose = {},
     items = listOf(
       MenuItem(
-        label = &quot;Opcja 1&quot;.toLabel(),
+        label = "Opcja 1".toLabel(),
         leftIconResId = R.drawable.ah001_like,
         rightIconResId = R.drawable.ah001_like,
         onItemClick = {},
       ),
       MenuItem(
-        label = &quot;Opcja 2&quot;.toLabel(),
+        label = "Opcja 2".toLabel(),
         leftIconResId = R.drawable.aa002_delete,
         rightIconResId = R.drawable.aa002_delete,
         onItemClick = {},
       ),
       MenuItem(
-        label = &quot;Opcja 3&quot;.toLabel(),
+        label = "Opcja 3".toLabel(),
         leftIconResId = R.drawable.ah002_dislike,
         rightIconResId = R.drawable.ah002_dislike,
         onItemClick = {},

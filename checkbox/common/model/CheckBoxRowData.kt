@@ -7,7 +7,7 @@ import pl.gov.coi.common.ui.ds.link.LinkData
 data class CheckBoxRowData(
   val testTag: String? = null,
   val isChecked: Boolean,
-  val onCheckedChange: (Boolean) -&gt; Unit,
+  val onCheckedChange: (Boolean) -> Unit,
   val label: Label = Label.EMPTY,
   val clickableTextData: ClickableTextData? = null,
 )

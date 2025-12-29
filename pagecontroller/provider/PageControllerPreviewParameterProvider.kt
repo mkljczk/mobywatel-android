@@ -9,23 +9,23 @@ import pl.gov.coi.common.ui.preview.ScreenShotTestData
 import pl.gov.coi.common.ui.theme.AppTheme
 
 class PageControllerPreviewParameterProvider :
-  CustomPreviewParameterProvider&lt;PageControllerData&lt;*&gt;&gt;() {
-  override val screenShotTestValues: Sequence&lt;ScreenShotTestData&lt;PageControllerData&lt;*&gt;&gt;&gt; =
+  CustomPreviewParameterProvider<PageControllerData<*>>() {
+  override val screenShotTestValues: Sequence<ScreenShotTestData<PageControllerData<*>>> =
     sequenceOf(
       ScreenShotTestData(
-        screenShotTestName = &quot;PageControllerSmallCardData&quot;,
+        screenShotTestName = "PageControllerSmallCardData",
         value = providePageControllerSmallCardData(),
       ),
       ScreenShotTestData(
-        screenShotTestName = &quot;PageControllerOnboardingPageData&quot;,
+        screenShotTestName = "PageControllerOnboardingPageData",
         value = providePageControllerOnboardingPageData(),
       ),
       ScreenShotTestData(
-        screenShotTestName = &quot;PageControllerSmallCardDataNoButton&quot;,
+        screenShotTestName = "PageControllerSmallCardDataNoButton",
         value = providePageControllerSmallCardDataNoButton(),
       ),
       ScreenShotTestData(
-        screenShotTestName = &quot;PageControllerOnboardingPageDataNoButton&quot;,
+        screenShotTestName = "PageControllerOnboardingPageDataNoButton",
         value = providePageControllerOnboardingPageDataNoButton(),
       ),
     )
@@ -35,23 +35,23 @@ class PageControllerPreviewParameterProvider :
       contentsData = listOf(
         PageControllerData.PageData(
           OnboardingPageData.Regular(
-            title = &quot;Dokumenty zawsze pod ręką&quot;.toLabel(),
-            message = &quot;Potwierdzaj tożsamość telefonem, na przykład w przychodni, pociągu, na poczcie.&quot;.toLabel() +
-              &quot; Nie musisz pamiętać, aby nosić ze sobą dokumenty.&quot;.toLabel(),
+            title = "Dokumenty zawsze pod ręką".toLabel(),
+            message = "Potwierdzaj tożsamość telefonem, na przykład w przychodni, pociągu, na poczcie.".toLabel() +
+              " Nie musisz pamiętać, aby nosić ze sobą dokumenty.".toLabel(),
             imageResId = R.drawable.coi_common_ui_ic_document_diia,
           ),
           isButtonVisible = false,
-          buttonTitle = &quot;Dalej&quot;.toLabel(),
+          buttonTitle = "Dalej".toLabel(),
         ),
         PageControllerData.PageData(
           OnboardingPageData.Regular(
-            title = &quot;Dokumenty zawsze pod ręką&quot;.toLabel(),
-            message = &quot;Potwierdzaj tożsamość telefonem, na przykład w przychodni, pociągu, na poczcie.&quot;.toLabel() +
-              &quot; Nie musisz pamiętać, aby nosić ze sobą dokumenty.&quot;.toLabel(),
+            title = "Dokumenty zawsze pod ręką".toLabel(),
+            message = "Potwierdzaj tożsamość telefonem, na przykład w przychodni, pociągu, na poczcie.".toLabel() +
+              " Nie musisz pamiętać, aby nosić ze sobą dokumenty.".toLabel(),
             imageResId = R.drawable.coi_common_ui_ic_document_doctor,
           ),
           isButtonVisible = false,
-          buttonTitle = &quot;Dalej&quot;.toLabel(),
+          buttonTitle = "Dalej".toLabel(),
         ),
       ),
     )
@@ -61,24 +61,24 @@ class PageControllerPreviewParameterProvider :
       contentsData = listOf(
         PageControllerData.PageData(
           SmallCardData(
-            title = &quot;Naruszenie środowiskowe&quot;.toLabel(),
+            title = "Naruszenie środowiskowe".toLabel(),
             iconResId = R.drawable.da002_naruszenie_srodowiskowe,
             iconColorProvider = { AppTheme.colors.serviceLeafy100 },
             onClick = {},
           ),
           isButtonVisible = false,
-          buttonTitle = &quot;Dalej&quot;.toLabel(),
+          buttonTitle = "Dalej".toLabel(),
         ),
 
         PageControllerData.PageData(
           SmallCardData(
-            title = &quot;PWZ Pielęgniarka&quot;.toLabel(),
+            title = "PWZ Pielęgniarka".toLabel(),
             iconResId = R.drawable.db017_pwz_pielegniarka,
             iconColorProvider = { AppTheme.colors.documentOcean400 },
             onClick = {},
           ),
           isButtonVisible = false,
-          buttonTitle = &quot;Dalej&quot;.toLabel(),
+          buttonTitle = "Dalej".toLabel(),
         ),
       ),
     )
@@ -87,35 +87,35 @@ class PageControllerPreviewParameterProvider :
     contentsData = listOf(
       PageControllerData.PageData(
         SmallCardData(
-          title = &quot;Naruszenie środowiskowe&quot;.toLabel(),
+          title = "Naruszenie środowiskowe".toLabel(),
           iconResId = R.drawable.da002_naruszenie_srodowiskowe,
           iconColorProvider = { AppTheme.colors.serviceLeafy100 },
           onClick = {},
         ),
         isButtonVisible = true,
-        buttonTitle = &quot;Rozpocznij&quot;.toLabel(),
+        buttonTitle = "Rozpocznij".toLabel(),
       ),
 
       PageControllerData.PageData(
         SmallCardData(
-          title = &quot;PWZ Pielęgniarka&quot;.toLabel(),
+          title = "PWZ Pielęgniarka".toLabel(),
           iconResId = R.drawable.db017_pwz_pielegniarka,
           iconColorProvider = { AppTheme.colors.documentOcean400 },
           onClick = {},
         ),
         isButtonVisible = false,
-        buttonTitle = &quot;Dalej&quot;.toLabel(),
+        buttonTitle = "Dalej".toLabel(),
       ),
 
       PageControllerData.PageData(
         SmallCardData(
-          title = &quot;Legitymacja szkolna&quot;.toLabel(),
+          title = "Legitymacja szkolna".toLabel(),
           iconResId = R.drawable.db008_legitymacja_szkolna,
           iconColorProvider = { AppTheme.colors.documentPink200 },
           onClick = {},
         ),
         isButtonVisible = true,
-        buttonTitle = &quot;Zakończ&quot;.toLabel(),
+        buttonTitle = "Zakończ".toLabel(),
       ),
     ),
   )
@@ -124,33 +124,33 @@ class PageControllerPreviewParameterProvider :
     contentsData = listOf(
       PageControllerData.PageData(
         OnboardingPageData.Regular(
-          title = &quot;Dokumenty zawsze pod ręką&quot;.toLabel(),
-          message = &quot;Potwierdzaj tożsamość telefonem, na przykład w przychodni, pociągu, na poczcie.&quot;.toLabel() +
-            &quot; Nie musisz pamiętać, aby nosić ze sobą dokumenty.&quot;.toLabel(),
+          title = "Dokumenty zawsze pod ręką".toLabel(),
+          message = "Potwierdzaj tożsamość telefonem, na przykład w przychodni, pociągu, na poczcie.".toLabel() +
+            " Nie musisz pamiętać, aby nosić ze sobą dokumenty.".toLabel(),
           imageResId = R.drawable.coi_common_ui_ic_document_diia,
         ),
         isButtonVisible = true,
-        buttonTitle = &quot;Rozpocznij&quot;.toLabel(),
+        buttonTitle = "Rozpocznij".toLabel(),
       ),
       PageControllerData.PageData(
         OnboardingPageData.Regular(
-          title = &quot;Dokumenty zawsze pod ręką&quot;.toLabel(),
-          message = &quot;Potwierdzaj tożsamość telefonem, na przykład w przychodni, pociągu, na poczcie.&quot;.toLabel() +
-            &quot; Nie musisz pamiętać, aby nosić ze sobą dokumenty.&quot;.toLabel(),
+          title = "Dokumenty zawsze pod ręką".toLabel(),
+          message = "Potwierdzaj tożsamość telefonem, na przykład w przychodni, pociągu, na poczcie.".toLabel() +
+            " Nie musisz pamiętać, aby nosić ze sobą dokumenty.".toLabel(),
           imageResId = R.drawable.coi_common_ui_ic_document_doctor,
         ),
         isButtonVisible = false,
-        buttonTitle = &quot;Dalej&quot;.toLabel(),
+        buttonTitle = "Dalej".toLabel(),
       ),
       PageControllerData.PageData(
         OnboardingPageData.Regular(
-          title = &quot;Dokumenty zawsze pod ręką&quot;.toLabel(),
-          message = &quot;Potwierdzaj tożsamość telefonem, na przykład w przychodni, pociągu, na poczcie.&quot;.toLabel() +
-            &quot; Nie musisz pamiętać, aby nosić ze sobą dokumenty.&quot;.toLabel(),
+          title = "Dokumenty zawsze pod ręką".toLabel(),
+          message = "Potwierdzaj tożsamość telefonem, na przykład w przychodni, pociągu, na poczcie.".toLabel() +
+            " Nie musisz pamiętać, aby nosić ze sobą dokumenty.".toLabel(),
           imageResId = R.drawable.coi_common_ui_ic_document_id,
         ),
         isButtonVisible = true,
-        buttonTitle = &quot;Zakończ&quot;.toLabel(),
+        buttonTitle = "Zakończ".toLabel(),
       ),
     ),
   )

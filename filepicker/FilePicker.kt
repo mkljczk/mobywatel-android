@@ -45,7 +45,7 @@ fun FilePicker(
       SingleCard(singleCardData = data.addFileCardData)
 
       AnimatedVisibility(visible = data.showError) {
-        data.errorLabel?.let { errorText -&gt;
+        data.errorLabel?.let { errorText ->
           Column {
             Spacer(modifier = Modifier.height(AppTheme.dimensions.spacing100))
             ErrorText(errorText = errorText, ignoreForAccessibility = true)
@@ -69,7 +69,7 @@ fun FilePicker(
 @Composable
 internal fun FilePickerPreview(
   @PreviewParameter(FilePickerPreviewParameterProvider::class)
-  wrappedValue: WrappedValue&lt;FilePickerData&gt;,
+  wrappedValue: WrappedValue<FilePickerData>,
 ) {
   FilePicker(
     modifier = Modifier.background(AppTheme.colors.background),

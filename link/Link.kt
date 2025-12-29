@@ -39,17 +39,17 @@ fun Link(data: LinkData) {
         },
       ),
     labelContentDescription = when (data.linkType) {
-      LinkData.LinkType.WEBSITE -&gt; CommonUILabelProvider.linkToWebsite()
-      LinkData.LinkType.E_MAIL -&gt; CommonUILabelProvider.linkToEMail()
-      LinkData.LinkType.EXTERNAL_APP -&gt; CommonUILabelProvider.linkToExternalApp()
-    }.let { wcagLabel -&gt; &quot;${data.label.text}. ${wcagLabel.text}&quot;.toLabel(tag = &quot;linkLabel&quot;) },
+      LinkData.LinkType.WEBSITE -> CommonUILabelProvider.linkToWebsite()
+      LinkData.LinkType.E_MAIL -> CommonUILabelProvider.linkToEMail()
+      LinkData.LinkType.EXTERNAL_APP -> CommonUILabelProvider.linkToExternalApp()
+    }.let { wcagLabel -> "${data.label.text}. ${wcagLabel.text}".toLabel(tag = "linkLabel") },
     textAlign = TextAlign.Start,
     label = data.label,
     style = AppTheme.typography.bodyMediumMedium,
     textDecoration = TextDecoration.Underline,
     color = when {
-      data.enabled.not() -&gt; AppTheme.colors.neutral60
-      else -&gt; AppTheme.colors.primary900
+      data.enabled.not() -> AppTheme.colors.neutral60
+      else -> AppTheme.colors.primary900
     },
   )
 }

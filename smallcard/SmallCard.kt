@@ -54,7 +54,7 @@ fun SmallCard(
     modifier = Modifier
       .width(width = SMALL_CARD_WIDTH)
       .semantics {
-        testTag = &quot;card_${data.title.tag}_indexTag_${data.indexTag ?: &quot;noTag&quot;}&quot;
+        testTag = "card_${data.title.tag}_indexTag_${data.indexTag ?: "noTag"}"
       }
       .clickable(
         interactionSource = interactionSource,

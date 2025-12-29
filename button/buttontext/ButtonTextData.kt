@@ -7,5 +7,5 @@ data class ButtonTextData(
   val testTag: String? = null,
   val label: Label,
   val buttonState: ButtonState = ButtonState.Enabled,
-  val onClick: () -&gt; Unit,
+  val onClick: () -> Unit,
 )

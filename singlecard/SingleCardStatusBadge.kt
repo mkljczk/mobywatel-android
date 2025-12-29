@@ -36,12 +36,12 @@ private val STATUS_BADGE_SIZE: Dp = 10.dp
 @Composable
 fun SingleCardStatusBadge(data: SingleCardStatusBadgeData) {
   when (data) {
-    is SingleCardStatusBadgeData.Default -&gt; StatusBadge(data = data)
-    is SingleCardStatusBadgeData.WithNoIcon -&gt; StatusBadge(data = data)
-    is SingleCardStatusBadgeData.WithIcon -&gt; StatusBadge(data = data)
-    is SingleCardStatusBadgeData.WithIconAndBorder -&gt; StatusBadge(data = data)
-    is SingleCardStatusBadgeData.WithDotAndBorder -&gt; StatusBadge(data = data)
-    is SingleCardStatusBadgeData.Elevated -&gt; StatusBadge(data = data)
+    is SingleCardStatusBadgeData.Default -> StatusBadge(data = data)
+    is SingleCardStatusBadgeData.WithNoIcon -> StatusBadge(data = data)
+    is SingleCardStatusBadgeData.WithIcon -> StatusBadge(data = data)
+    is SingleCardStatusBadgeData.WithIconAndBorder -> StatusBadge(data = data)
+    is SingleCardStatusBadgeData.WithDotAndBorder -> StatusBadge(data = data)
+    is SingleCardStatusBadgeData.Elevated -> StatusBadge(data = data)
   }
 }
 
@@ -78,12 +78,12 @@ internal fun StatusBadge(data: SingleCardStatusBadgeData.WithNoIcon) {
     label = data.text,
     maxLines = 1,
     color = when (data) {
-      is SingleCardStatusBadgeData.WithNoIcon.Error -&gt; AppTheme.colors.supportRed100
-      is SingleCardStatusBadgeData.WithNoIcon.Normal -&gt; AppTheme.colors.neutral200
+      is SingleCardStatusBadgeData.WithNoIcon.Error -> AppTheme.colors.supportRed100
+      is SingleCardStatusBadgeData.WithNoIcon.Normal -> AppTheme.colors.neutral200
     },
     style = when (data) {
-      is SingleCardStatusBadgeData.WithNoIcon.Error -&gt; AppTheme.typography.bodyMediumMedium
-      is SingleCardStatusBadgeData.WithNoIcon.Normal -&gt; AppTheme.typography.bodyMediumRegular
+      is SingleCardStatusBadgeData.WithNoIcon.Error -> AppTheme.typography.bodyMediumMedium
+      is SingleCardStatusBadgeData.WithNoIcon.Normal -> AppTheme.typography.bodyMediumRegular
     },
   )
 }

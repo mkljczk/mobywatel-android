@@ -3,43 +3,43 @@ package pl.gov.coi.common.ui.ds.dropdownbutton
 import pl.gov.coi.common.ui.preview.CustomPreviewParameterProvider
 import pl.gov.coi.common.ui.preview.ScreenShotTestData
 
-class DropDownButtonPPP : CustomPreviewParameterProvider&lt;DropDownButtonData&gt;() {
-  override val screenShotTestValues: Sequence&lt;ScreenShotTestData&lt;DropDownButtonData&gt;&gt; = sequenceOf(
+class DropDownButtonPPP : CustomPreviewParameterProvider<DropDownButtonData>() {
+  override val screenShotTestValues: Sequence<ScreenShotTestData<DropDownButtonData>> = sequenceOf(
     ScreenShotTestData(
-      screenShotTestName = &quot;DisabledDropDown&quot;,
+      screenShotTestName = "DisabledDropDown",
       value = DropDownButtonData(
-        &quot;Dropdown Label&quot;.toLabel(),
-        placeholder = &quot;DropDown placeholder placeholder placeholder&quot;.toLabel(),
+        "Dropdown Label".toLabel(),
+        placeholder = "DropDown placeholder placeholder placeholder".toLabel(),
         items = emptyList(),
         initialSelectedItem = null,
         buttonType = DropDownButtonState.Disabled(
-          helperText = &quot;helper text&quot;.toLabel(),
+          helperText = "helper text".toLabel(),
         ),
         onClick = { },
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;HelperDropDown&quot;,
+      screenShotTestName = "HelperDropDown",
       value = DropDownButtonData(
-        &quot;Dropdown Label&quot;.toLabel(),
-        placeholder = &quot;DropDown placeholder placeholder placee&quot;.toLabel(),
+        "Dropdown Label".toLabel(),
+        placeholder = "DropDown placeholder placeholder placee".toLabel(),
         items = emptyList(),
         initialSelectedItem = null,
         buttonType = DropDownButtonState.Enabled(
-          helperText = &quot;helper text&quot;.toLabel(),
+          helperText = "helper text".toLabel(),
         ),
         onClick = { },
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;ErrorDropDown&quot;,
+      screenShotTestName = "ErrorDropDown",
       value = DropDownButtonData(
-        &quot;Dropdown Label&quot;.toLabel(),
-        placeholder = &quot;DropDown placeholder&quot;.toLabel(),
+        "Dropdown Label".toLabel(),
+        placeholder = "DropDown placeholder".toLabel(),
         items = emptyList(),
         initialSelectedItem = null,
         buttonType = DropDownButtonState.Error(
-          errorText = &quot;error text&quot;.toLabel(),
+          errorText = "error text".toLabel(),
         ),
         onClick = { },
       ),

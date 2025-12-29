@@ -21,7 +21,7 @@ import pl.gov.coi.common.ui.preview.WrappedValue
 import pl.gov.coi.common.ui.theme.AppTheme
 
 data class CardListData(
-  val cards: List&lt;SingleCardData&gt;,
+  val cards: List<SingleCardData>,
   val type: ListType = ListType.COLUMN,
 )
 
@@ -34,9 +34,9 @@ fun CardList(
     elevation = AppTheme.elevations.level0,
   ) {
     when (data.type) {
-      ListType.COLUMN -&gt;
+      ListType.COLUMN ->
         Column {
-          data.cards.forEachIndexed { index, singleCardData -&gt;
+          data.cards.forEachIndexed { index, singleCardData ->
             ItemContent(
               card = singleCardData,
               isLastItem = data.cards.lastIndex == index,
@@ -44,9 +44,9 @@ fun CardList(
           }
         }
 
-      ListType.LAZY -&gt;
+      ListType.LAZY ->
         LazyColumn {
-          itemsIndexed(data.cards) { index, singleCardData -&gt;
+          itemsIndexed(data.cards) { index, singleCardData ->
             ItemContent(
               card = singleCardData,
               isLastItem = data.cards.lastIndex == index,
@@ -86,7 +86,7 @@ private fun ListDivider() {
 @Composable
 fun CardListPreview(
   @PreviewParameter(CardListPreviewProvider::class)
-  wrappedValue: WrappedValue&lt;ProvidedCardListData&gt;,
+  wrappedValue: WrappedValue<ProvidedCardListData>,
 ) = with(wrappedValue.value()) {
   Column {
     Text(

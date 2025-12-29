@@ -15,7 +15,7 @@ import pl.gov.coi.common.ui.theme.AppTheme
 @Composable
 internal fun RadioButtonContent(
   isSelected: Boolean,
-  content: @Composable (() -&gt; Unit)?,
+  content: @Composable (() -> Unit)?,
 ) {
   content?.let {
     AnimatedVisibility(

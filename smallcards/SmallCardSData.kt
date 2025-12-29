@@ -9,6 +9,6 @@ data class SmallCardSData(
   val testTag: String? = null,
   val title: Label,
   @DrawableRes val iconResId: Int,
-  val iconColorProvider: @Composable () -&gt; Color = { Color.Unspecified },
-  val onClick: () -&gt; Unit,
+  val iconColorProvider: @Composable () -> Color = { Color.Unspecified },
+  val onClick: () -> Unit,
 )

@@ -7,15 +7,15 @@ import androidx.core.text.isDigitsOnly
 import pl.gov.coi.common.domain.label.Label
 import pl.gov.coi.common.domain.label.toLabel
 
-private const val POLAND_COUNTRY_CODE = &quot;+48&quot;
-private const val PLACEHOLDER_POSTAL_CODE = &quot;__-___&quot;
+private const val POLAND_COUNTRY_CODE = "+48"
+private const val PLACEHOLDER_POSTAL_CODE = "__-___"
 
 enum class MaskType(val keyboardType: KeyboardType) : OffsetMapping {
   BLIK(
     keyboardType = KeyboardType.Number,
   ) {
     override fun getPlaceholderValue() = Label.EMPTY
-    override fun getTextValue(text: String) = text.run { if (length &lt; 6) this else substring(0..5) }
+    override fun getTextValue(text: String) = text.run { if (length < 6) this else substring(0..5) }
 
     override fun getDisplayText(text: AnnotatedString): String {
       val trimmed = getTextValue(text.text)
@@ -23,22 +23,22 @@ enum class MaskType(val keyboardType: KeyboardType) : OffsetMapping {
       return StringBuilder().apply {
         for (i in trimmed.indices) {
           append(trimmed[i])
-          if (i == 2) append(&quot; &quot;)
+          if (i == 2) append(" ")
         }
       }.toString()
     }
 
-    override fun filter(text: String): Boolean = text.isDigitsOnly() &amp;&amp; text.length &lt;= 6
+    override fun filter(text: String): Boolean = text.isDigitsOnly() && text.length <= 6
 
     override fun originalToTransformed(offset: Int): Int {
-      if (offset &lt;= 2) return offset
-      if (offset &lt;= 6) return offset + 1
+      if (offset <= 2) return offset
+      if (offset <= 6) return offset + 1
       return 7
     }
 
     override fun transformedToOriginal(offset: Int): Int {
-      if (offset &lt;= 3) return offset
-      if (offset &lt;= 7) return offset - 1
+      if (offset <= 3) return offset
+      if (offset <= 7) return offset - 1
       return 6
     }
   },
@@ -46,15 +46,15 @@ enum class MaskType(val keyboardType: KeyboardType) : OffsetMapping {
     keyboardType = KeyboardType.Number,
   ) {
     override fun getPlaceholderValue() = PLACEHOLDER_POSTAL_CODE
-      .toLabel(tag = &quot;placeholderValue&quot;)
+      .toLabel(tag = "placeholderValue")
 
     override fun getTextValue(text: String): String {
-      val trimmed = text.run { if (length &gt;= 5) substring(0..4) else this }
+      val trimmed = text.run { if (length >= 5) substring(0..4) else this }
 
       return StringBuilder().apply {
         for (i in trimmed.indices) {
           append(trimmed[i])
-          if (i == 1) append(&quot;-&quot;)
+          if (i == 1) append("-")
         }
       }.toString()
     }
@@ -63,17 +63,17 @@ enum class MaskType(val keyboardType: KeyboardType) : OffsetMapping {
       return getTextValue(text.text)
     }
 
-    override fun filter(text: String): Boolean = text.isDigitsOnly() &amp;&amp; text.length &lt;= 5
+    override fun filter(text: String): Boolean = text.isDigitsOnly() && text.length <= 5
 
     override fun originalToTransformed(offset: Int): Int {
-      if (offset &lt;= 1) return offset
-      if (offset &lt;= 5) return offset + 1
+      if (offset <= 1) return offset
+      if (offset <= 5) return offset + 1
       return 6
     }
 
     override fun transformedToOriginal(offset: Int): Int {
-      if (offset &lt;= 2) return offset
-      if (offset &lt;= 6) return offset - 1
+      if (offset <= 2) return offset
+      if (offset <= 6) return offset - 1
       return 5
     }
   },
@@ -84,16 +84,16 @@ enum class MaskType(val keyboardType: KeyboardType) : OffsetMapping {
 
     override fun getPlaceholderValue() = Label.EMPTY
 
-    override fun getTextValue(text: String): String = &quot;$POLAND_COUNTRY_CODE $text&quot;
+    override fun getTextValue(text: String): String = "$POLAND_COUNTRY_CODE $text"
 
-    override fun filter(text: String): Boolean = text.isDigitsOnly() &amp;&amp; text.length &lt;= 9
+    override fun filter(text: String): Boolean = text.isDigitsOnly() && text.length <= 9
 
     override fun originalToTransformed(offset: Int): Int {
       return offset + prefixOffset
     }
 
     override fun transformedToOriginal(offset: Int): Int {
-      if (offset &lt; prefixOffset) return 0
+      if (offset < prefixOffset) return 0
       return offset - prefixOffset
     }
 

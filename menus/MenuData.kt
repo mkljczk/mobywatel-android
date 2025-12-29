@@ -8,8 +8,8 @@ import pl.gov.coi.common.ui.theme.AppTheme
 
 data class MenuData(
   val isMenuVisible: Boolean,
-  val onMenuClose: () -&gt; Unit,
-  val items: List&lt;MenuItem&gt;,
+  val onMenuClose: () -> Unit,
+  val items: List<MenuItem>,
 )
 
 class MenuItem(
@@ -17,7 +17,7 @@ class MenuItem(
   val label: Label,
   @DrawableRes leftIconResId: Int?,
   @DrawableRes rightIconResId: Int?,
-  val onItemClick: () -&gt; Unit,
+  val onItemClick: () -> Unit,
 ) {
   internal val leftIconData = leftIconResId?.let {
     IconData.Standard(

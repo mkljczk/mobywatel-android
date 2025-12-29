@@ -4,12 +4,12 @@ import androidx.compose.runtime.Composable
 import pl.gov.coi.common.domain.label.Label
 
 interface RadioButtonCustomContent {
-  fun content(): @Composable () -&gt; Unit
+  fun content(): @Composable () -> Unit
 }
 
 data class RadioButtonRow(
   val item: RadioButtonItemData,
-  val onClick: () -&gt; Unit,
+  val onClick: () -> Unit,
   val label: Label,
   val description: Label? = null,
   val content: RadioButtonCustomContent? = null,

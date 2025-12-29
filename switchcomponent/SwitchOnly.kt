@@ -23,9 +23,9 @@ internal fun SwitchOnly(
   ) {
     Switch(
       modifier = Modifier
-        .semanticsContentDescription(data.contentDescription?.text ?: &quot;&quot;)
+        .semanticsContentDescription(data.contentDescription?.text ?: "")
         .semantics { testTagsAsResourceId = true }
-        .semantics { testTag = data.testTag ?: &quot;switch${data.testIndexTag?.let { &quot;_${data.testIndexTag}&quot; } ?: &quot;&quot;}&quot; },
+        .semantics { testTag = data.testTag ?: "switch${data.testIndexTag?.let { "_${data.testIndexTag}" } ?: ""}" },
       checked = data.checked,
       enabled = data.enabled,
       colors = SwitchDefaults.colors(

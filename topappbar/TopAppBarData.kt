@@ -14,7 +14,7 @@ import pl.gov.coi.common.ui.theme.AppTheme
 sealed interface TopAppBarData {
   sealed class Small(
     val menuType: MenuType? = null,
-    val containerColor: @Composable () -&gt; Color,
+    val containerColor: @Composable () -> Color,
   ) : TopAppBarData {
     class Default(
       val navigationButtonData: NavigationButtonData? = null,
@@ -23,7 +23,7 @@ sealed interface TopAppBarData {
       menuType: MenuType? = null,
       val progressBarData: ProgressBarData? = null,
       val forceTitleFocusTrigger: Boolean? = true,
-      containerColor: @Composable () -&gt; Color = { AppTheme.colors.background },
+      containerColor: @Composable () -> Color = { AppTheme.colors.background },
     ) : Small(
       menuType = menuType,
       containerColor = containerColor,
@@ -31,7 +31,7 @@ sealed interface TopAppBarData {
 
     class Sygnet(
       menuType: MenuType? = null,
-      containerColor: @Composable () -&gt; Color = { AppTheme.colors.background },
+      containerColor: @Composable () -> Color = { AppTheme.colors.background },
     ) : Small(
       menuType = menuType,
       containerColor = containerColor,
@@ -39,7 +39,7 @@ sealed interface TopAppBarData {
 
     class Logo(
       val navigationButtonData: NavigationButtonData? = null,
-      containerColor: @Composable () -&gt; Color = { AppTheme.colors.background },
+      containerColor: @Composable () -> Color = { AppTheme.colors.background },
       menuType: MenuType? = null,
     ) : Small(
       menuType = menuType,
@@ -52,7 +52,7 @@ sealed interface TopAppBarData {
     val title: Label,
     val menuType: MenuType? = null,
     val forceTitleFocusTrigger: Boolean? = true,
-    val containerColor: @Composable () -&gt; Color = { AppTheme.colors.background },
+    val containerColor: @Composable () -> Color = { AppTheme.colors.background },
   ) : TopAppBarData
 
   data class Large(
@@ -60,13 +60,13 @@ sealed interface TopAppBarData {
     val title: Label,
     val menuType: MenuType? = null,
     val forceTitleFocusTrigger: Boolean? = true,
-    val containerColor: @Composable () -&gt; Color = { AppTheme.colors.background },
+    val containerColor: @Composable () -> Color = { AppTheme.colors.background },
   ) : TopAppBarData
 }
 
 data class NavigationButtonData(
   val icon: Icon,
-  val onClick: () -&gt; Unit,
+  val onClick: () -> Unit,
 ) {
   data class Icon(
     @DrawableRes val iconResId: Int,
@@ -91,14 +91,14 @@ sealed interface MenuType {
   ) : MenuType
 
   data class IconList(
-    val menuIconList: List&lt;MenuButtonData&gt;,
+    val menuIconList: List<MenuButtonData>,
   ) : MenuType
 
   data class MenuButtonData(
     val icon: MenuIcon,
-    val iconColorProvider: @Composable () -&gt; Color = { AppTheme.colors.neutral200 },
+    val iconColorProvider: @Composable () -> Color = { AppTheme.colors.neutral200 },
     val menuData: MenuData? = null,
-    val onClick: () -&gt; Unit,
+    val onClick: () -> Unit,
   ) {
     fun getButton() = ButtonIconData(
       iconResId = icon.iconResId,

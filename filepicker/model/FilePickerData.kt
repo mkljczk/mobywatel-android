@@ -15,14 +15,14 @@ import pl.gov.coi.common.ui.utils.textWithDotAndSpaceOrEmpty
 data class FilePickerData(
   val addFileLabel: Label,
   val errorLabel: Label?,
-  val files: List&lt;PickerFile&gt;,
-  val requirements: List&lt;Label&gt;,
-  val onAddFileClicked: () -&gt; Unit,
+  val files: List<PickerFile>,
+  val requirements: List<Label>,
+  val onAddFileClicked: () -> Unit,
   val maxAllowedFiles: Int,
 ) {
-  internal val cardsData = files.map { file -&gt; file.cardData }
+  internal val cardsData = files.map { file -> file.cardData }
 
-  internal val combinedRequirements = requirements.reduce { combinedRequirements, requirement -&gt;
+  internal val combinedRequirements = requirements.reduce { combinedRequirements, requirement ->
     combinedRequirements + Label.SPACE + requirement
   }
 
@@ -38,7 +38,7 @@ data class FilePickerData(
         singleCardLabel = SingleCardLabel(
           label = addFileLabel,
           labelColor = { AppTheme.colors.primary900 },
-          contentDescription = contentDescription().toLabel(&quot;filePicker_contentDescription&quot;),
+          contentDescription = contentDescription().toLabel("filePicker_contentDescription"),
         ),
       ),
     ),
@@ -52,7 +52,7 @@ private fun FilePickerData.contentDescription() =
     errorLabel.textWithDotAndSpaceOrEmpty()).trim()
 
 internal val FilePickerData.showAddButton
-  get() = files.size &lt; maxAllowedFiles
+  get() = files.size < maxAllowedFiles
 
 internal val FilePickerData.showError
   get() = errorLabel != null

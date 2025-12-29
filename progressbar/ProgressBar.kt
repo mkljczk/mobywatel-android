@@ -31,13 +31,13 @@ fun ProgressBar(
   Column(
     modifier = Modifier
       .fillMaxWidth()
-      .semantics { testTag = data.testTag ?: &quot;Progress&quot; },
+      .semantics { testTag = data.testTag ?: "Progress" },
   ) {
     if (data is ProgressBarData.IndicatorBar) {
       CustomText(
         modifier = Modifier
           .fillMaxWidth(progress),
-        testTag = data.testTag?.let { tag -&gt; tag + &quot;Text&quot; },
+        testTag = data.testTag?.let { tag -> tag + "Text" },
         label = data.label,
         style = AppTheme.typography.bodySmallRegular,
         color = AppTheme.colors.neutral200,

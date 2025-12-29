@@ -63,7 +63,7 @@ fun BottomNavigation(
           selectableGroup()
         },
       content = {
-        data.items.forEachIndexed { index, item -&gt;
+        data.items.forEachIndexed { index, item ->
           this.BottomNavigationItem(
             testTag = item.testTag,
             selected = data.selectedItemIndex == index,
@@ -85,7 +85,7 @@ fun BottomNavigation(
 private fun RowScope.BottomNavigationItem(
   testTag: String?,
   selected: Boolean,
-  onClick: () -&gt; Unit,
+  onClick: () -> Unit,
   @DrawableRes unselectedIconResId: Int,
   @DrawableRes selectedIconResId: Int,
   modifier: Modifier = Modifier,
@@ -111,7 +111,7 @@ private fun RowScope.BottomNavigationItem(
       )
       .weight(1f)
       .semantics { testTagsAsResourceId = true }
-      .semantics { this.testTag = testTag ?: &quot;navigationItem${label?.tag ?: &quot;Undefined&quot;}&quot; },
+      .semantics { this.testTag = testTag ?: "navigationItem${label?.tag ?: "Undefined"}" },
     contentAlignment = Alignment.Center,
   ) {
     Column {
@@ -131,9 +131,9 @@ private fun RowScope.BottomNavigationItem(
           )
           .background(
             when {
-              selected -&gt; selectedIconBackground
-              isFocused.value -&gt; AppTheme.colors.neutral500.copy(alpha = 0.1f)
-              else -&gt; unselectedIconBackground
+              selected -> selectedIconBackground
+              isFocused.value -> AppTheme.colors.neutral500.copy(alpha = 0.1f)
+              else -> unselectedIconBackground
             },
           )
           .defaultRippleEffect(interactionSource = interactionSource)
@@ -143,7 +143,7 @@ private fun RowScope.BottomNavigationItem(
         Icon(
           modifier = Modifier.align(Alignment.Center),
           data = IconData.Standard(
-            testTag = testTag?.let { tag -&gt; tag + &quot;Icon&quot; },
+            testTag = testTag?.let { tag -> tag + "Icon" },
             iconResId = if (selected) selectedIconResId else unselectedIconResId,
             iconSize = IconSize.SIZE24,
             iconColorProvider = { if (selected) selectedContentColor else unselectedContentColor },
@@ -154,7 +154,7 @@ private fun RowScope.BottomNavigationItem(
       if (label != null) {
         val fontSize = AppTheme.typography.bodySmallMedium.fontSize.value / LocalDensity.current.fontScale
         CustomText(
-          testTag = testTag?.let { tag -&gt; tag + &quot;Text&quot; },
+          testTag = testTag?.let { tag -> tag + "Text" },
           label = label,
           fontSize = fontSize.sp,
           style = AppTheme.typography.bodySmallMedium,

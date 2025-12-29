@@ -24,7 +24,7 @@ import pl.gov.coi.common.ui.ds.custom.icon.Icon
 import pl.gov.coi.common.ui.text.CustomText
 import pl.gov.coi.common.ui.theme.AppTheme
 
-@Deprecated(message = &quot;This component is deprecated, please use DS component Alert.&quot;)
+@Deprecated(message = "This component is deprecated, please use DS component Alert.")
 @Composable
 fun Banner(
   data: BannerData,
@@ -35,10 +35,10 @@ fun Banner(
       .wrapContentHeight()
       .background(
         color = when (data) {
-          is BannerData.Error -&gt; AppTheme.colors.supportRed20
-          is BannerData.HighEmphasisError -&gt; AppTheme.colors.supportRed100
-          is BannerData.HighEmphasisInfo -&gt; AppTheme.colors.supportBlue100
-          is BannerData.Info -&gt; AppTheme.colors.supportBlue20
+          is BannerData.Error -> AppTheme.colors.supportRed20
+          is BannerData.HighEmphasisError -> AppTheme.colors.supportRed100
+          is BannerData.HighEmphasisInfo -> AppTheme.colors.supportBlue100
+          is BannerData.Info -> AppTheme.colors.supportBlue20
         },
       ),
   ) {
@@ -59,14 +59,14 @@ fun Banner(
       Column(
         modifier = Modifier.weight(weight = 1f),
       ) {
-        data.title?.let { title -&gt;
+        data.title?.let { title ->
           CustomText(
             label = title,
             style = AppTheme.typography.bodyLargeMedium,
             overflow = TextOverflow.Ellipsis,
             color = when (data) {
-              is BannerData.Error, is BannerData.Info -&gt; Color.Black
-              is BannerData.HighEmphasisError, is BannerData.HighEmphasisInfo -&gt; Color.White
+              is BannerData.Error, is BannerData.Info -> Color.Black
+              is BannerData.HighEmphasisError, is BannerData.HighEmphasisInfo -> Color.White
             },
           )
           Spacer(
@@ -79,30 +79,30 @@ fun Banner(
           label = data.bodyText,
           style = AppTheme.typography.bodyMediumRegular,
           color = when (data) {
-            is BannerData.Error, is BannerData.Info -&gt; AppTheme.colors.neutral500
-            is BannerData.HighEmphasisError, is BannerData.HighEmphasisInfo -&gt; AppTheme.colors.white
+            is BannerData.Error, is BannerData.Info -> AppTheme.colors.neutral500
+            is BannerData.HighEmphasisError, is BannerData.HighEmphasisInfo -> AppTheme.colors.white
           },
         )
         when (data) {
-          is BannerData.Error -&gt; data.buttonData?.let { buttonTextData -&gt;
+          is BannerData.Error -> data.buttonData?.let { buttonTextData ->
             Spacer(
               modifier = Modifier.height(height = AppTheme.dimensions.spacing100),
             )
             ButtonText(data = buttonTextData)
           }
-          is BannerData.HighEmphasisError -&gt; data.buttonData?.let { buttonData -&gt;
+          is BannerData.HighEmphasisError -> data.buttonData?.let { buttonData ->
             Spacer(
               modifier = Modifier.height(height = AppTheme.dimensions.spacing100),
             )
             Button(data = buttonData)
           }
-          is BannerData.HighEmphasisInfo -&gt; data.buttonData?.let { buttonData -&gt;
+          is BannerData.HighEmphasisInfo -> data.buttonData?.let { buttonData ->
             Spacer(
               modifier = Modifier.height(height = AppTheme.dimensions.spacing100),
             )
             Button(data = buttonData)
           }
-          is BannerData.Info -&gt; data.buttonData?.let { buttonTextData -&gt;
+          is BannerData.Info -> data.buttonData?.let { buttonTextData ->
             Spacer(
               modifier = Modifier.height(height = AppTheme.dimensions.spacing100),
             )
@@ -110,7 +110,7 @@ fun Banner(
           }
         }
       }
-      data.closeButtonData?.let { buttonData -&gt;
+      data.closeButtonData?.let { buttonData ->
         Spacer(
           modifier = Modifier.width(width = AppTheme.dimensions.spacing150),
         )

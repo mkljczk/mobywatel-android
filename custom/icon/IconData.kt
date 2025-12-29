@@ -12,7 +12,7 @@ sealed class IconData(
   internal val testTag: String?,
   @DrawableRes internal val iconResId: Int,
   internal val iconSize: IconSize,
-  internal val iconColorProvider: @Composable () -&gt; Color,
+  internal val iconColorProvider: @Composable () -> Color,
   internal val contentDescription: Label?,
   internal val iconState: IconState,
 ) {
@@ -20,7 +20,7 @@ sealed class IconData(
     testTag: String? = null,
     iconResId: Int,
     iconSize: IconSize,
-    iconColorProvider: @Composable () -&gt; Color,
+    iconColorProvider: @Composable () -> Color,
     contentDescription: Label?,
     iconState: IconState = IconState.ENABLED,
   ) : IconData(
@@ -36,9 +36,9 @@ sealed class IconData(
     testTag: String? = null,
     iconResId: Int,
     iconSize: IconSize,
-    iconColorProvider: @Composable () -&gt; Color,
+    iconColorProvider: @Composable () -> Color,
     internal val backgroundSize: IconSize,
-    internal val backgroundColorProvider: @Composable () -&gt; Color,
+    internal val backgroundColorProvider: @Composable () -> Color,
     internal val backgroundShape: BackgroundShape,
     contentDescription: Label?,
     iconState: IconState = IconState.ENABLED,
@@ -79,7 +79,7 @@ sealed interface BackgroundShape {
   object Rounded : BackgroundShape
   object Square : BackgroundShape
   class RoundedSquare(
-    val shape: @Composable () -&gt; Shape,
+    val shape: @Composable () -> Shape,
   ) : BackgroundShape
 }
 

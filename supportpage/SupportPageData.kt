@@ -9,12 +9,12 @@ import pl.gov.coi.common.ui.ds.custom.icon.IconData
 import pl.gov.coi.common.ui.ds.custom.icon.IconSize
 import pl.gov.coi.common.ui.theme.AppTheme
 
-class SupportPageData&lt;CONTENT_DATA&gt;(
+class SupportPageData<CONTENT_DATA>(
   internal val topBarTitle: Label,
   @DrawableRes topBarIconMainResId: Int?,
-  onTopBarIconMainClick: (() -&gt; Unit)?,
+  onTopBarIconMainClick: (() -> Unit)?,
   @DrawableRes topBarIconMenuResId: Int?,
-  onTopBarIconMenuClick: (() -&gt; Unit)?,
+  onTopBarIconMenuClick: (() -> Unit)?,
   @DrawableRes iconResId: Int,
   iconContentDescription: Label,
   internal val title: Label,

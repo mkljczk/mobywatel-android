@@ -52,9 +52,9 @@ internal fun TextFieldPhoneNumber(
 fun Preview() {
   TextFieldPhoneNumber(
     data = TextInputData.PhoneNumber(
-      label = &quot;Numer telefonu&quot;.toLabel(tag = &quot;phoneNumberPreviewLabel&quot;),
-      countryCodeValue = &quot;+48&quot;.toLabel(tag = &quot;countryCodePreviewValue&quot;),
-      phoneNumberValue = &quot;123456789&quot;.toLabel(tag = &quot;phoneNumberPreviewValue&quot;),
+      label = "Numer telefonu".toLabel(tag = "phoneNumberPreviewLabel"),
+      countryCodeValue = "+48".toLabel(tag = "countryCodePreviewValue"),
+      phoneNumberValue = "123456789".toLabel(tag = "phoneNumberPreviewValue"),
       onCountryCodeChanged = {},
       onPhoneNumberChanged = {},
       isCountryCodeCorrect = null,

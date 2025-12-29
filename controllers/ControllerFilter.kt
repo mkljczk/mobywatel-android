@@ -34,13 +34,13 @@ fun ControllerFilter(
     state = state,
     horizontalArrangement = Arrangement.spacedBy(space = AppTheme.dimensions.spacing50),
     content = {
-      itemsIndexed(data.items) { index, _ -&gt;
+      itemsIndexed(data.items) { index, _ ->
         Box(
           modifier = Modifier
             .background(
               color = when (data.selectedItemIndex == index) {
-                true -&gt; AppTheme.colors.secondary900
-                false -&gt; Color.Transparent
+                true -> AppTheme.colors.secondary900
+                false -> Color.Transparent
               },
               shape = AppTheme.shapes.radius200,
             )
@@ -60,12 +60,12 @@ fun ControllerFilter(
             label = data.items[index],
             textAlign = TextAlign.Center,
             style = when (data.selectedItemIndex == index) {
-              true -&gt; AppTheme.typography.bodyMediumMedium
-              false -&gt; AppTheme.typography.bodyMediumRegular
+              true -> AppTheme.typography.bodyMediumMedium
+              false -> AppTheme.typography.bodyMediumRegular
             },
             color = when (data.selectedItemIndex == index) {
-              true -&gt; AppTheme.colors.primary900
-              false -&gt; AppTheme.colors.neutral200
+              true -> AppTheme.colors.primary900
+              false -> AppTheme.colors.neutral200
             },
             maxLines = MAX_LINES,
           )

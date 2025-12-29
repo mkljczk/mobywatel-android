@@ -17,20 +17,20 @@ import pl.gov.coi.common.ui.ds.radiobutton.common.model.RadioButtonRow
 import pl.gov.coi.common.ui.ds.radiobutton.common.model.RadioButtonSupportText
 import pl.gov.coi.common.ui.ds.radiobutton.common.model.RadioButtonVariant
 
-class RadioButtonPPP : CustomWrappedDataPreviewParameterProvider&lt;
+class RadioButtonPPP : CustomWrappedDataPreviewParameterProvider<
   Unit,
   RadioButtonData?,
-  Mapper&lt;Unit, RadioButtonData?&gt;,
+  Mapper<Unit, RadioButtonData?>,
   RadioButtonData,
-  &gt;() {
+  >() {
 
-  override fun mapper(context: Context): Mapper&lt;Unit, RadioButtonData?&gt; = object : Mapper&lt;Unit, RadioButtonData?&gt; {
+  override fun mapper(context: Context): Mapper<Unit, RadioButtonData?> = object : Mapper<Unit, RadioButtonData?> {
     override fun invoke(p1: Unit): RadioButtonData? = null
   }
 
-  override val screenShotTestValues: Sequence&lt;ScreenShotTestDataProvider&lt;RadioButtonData&gt;&gt; = sequenceOf(
+  override val screenShotTestValues: Sequence<ScreenShotTestDataProvider<RadioButtonData>> = sequenceOf(
     ScreenShotTestDataProvider(
-      screenShotTestName = &quot;RadioButtonDefault&quot;,
+      screenShotTestName = "RadioButtonDefault",
       wrappedValue = WrappedValue {
         provideRadioButton(
           radioButtonVariant = RadioButtonVariant.Default,
@@ -38,7 +38,7 @@ class RadioButtonPPP : CustomWrappedDataPreviewParameterProvider&lt;
       },
     ),
     ScreenShotTestDataProvider(
-      screenShotTestName = &quot;RadioButtonDefaultDisabled&quot;,
+      screenShotTestName = "RadioButtonDefaultDisabled",
       wrappedValue = WrappedValue {
         provideRadioButton(
           radioButtonVariant = RadioButtonVariant.Default,
@@ -48,7 +48,7 @@ class RadioButtonPPP : CustomWrappedDataPreviewParameterProvider&lt;
       },
     ),
     ScreenShotTestDataProvider(
-      screenShotTestName = &quot;RadioButtonDefaultWithOptionals&quot;,
+      screenShotTestName = "RadioButtonDefaultWithOptionals",
       wrappedValue = WrappedValue {
         provideRadioButton(
           radioButtonVariant = RadioButtonVariant.Default,
@@ -63,7 +63,7 @@ class RadioButtonPPP : CustomWrappedDataPreviewParameterProvider&lt;
     ),
 
     ScreenShotTestDataProvider(
-      screenShotTestName = &quot;RadioButtonDefaultError&quot;,
+      screenShotTestName = "RadioButtonDefaultError",
       wrappedValue = WrappedValue {
         provideRadioButton(
           radioButtonVariant = RadioButtonVariant.Default,
@@ -74,7 +74,7 @@ class RadioButtonPPP : CustomWrappedDataPreviewParameterProvider&lt;
       },
     ),
     ScreenShotTestDataProvider(
-      screenShotTestName = &quot;RadioButtonContentBox&quot;,
+      screenShotTestName = "RadioButtonContentBox",
       wrappedValue = WrappedValue {
         provideRadioButton(
           radioButtonVariant = RadioButtonVariant.ContentBox,
@@ -83,7 +83,7 @@ class RadioButtonPPP : CustomWrappedDataPreviewParameterProvider&lt;
       },
     ),
     ScreenShotTestDataProvider(
-      screenShotTestName = &quot;RadioButtonContentBoxDisabled&quot;,
+      screenShotTestName = "RadioButtonContentBoxDisabled",
       wrappedValue = WrappedValue {
         provideRadioButton(
           radioButtonVariant = RadioButtonVariant.ContentBox,
@@ -93,7 +93,7 @@ class RadioButtonPPP : CustomWrappedDataPreviewParameterProvider&lt;
       },
     ),
     ScreenShotTestDataProvider(
-      screenShotTestName = &quot;RadioButtonContentBoxWithOptionals&quot;,
+      screenShotTestName = "RadioButtonContentBoxWithOptionals",
       wrappedValue = WrappedValue {
         provideRadioButton(
           radioButtonVariant = RadioButtonVariant.ContentBox,
@@ -107,7 +107,7 @@ class RadioButtonPPP : CustomWrappedDataPreviewParameterProvider&lt;
       },
     ),
     ScreenShotTestDataProvider(
-      screenShotTestName = &quot;RadioButtonContentBoxError&quot;,
+      screenShotTestName = "RadioButtonContentBoxError",
       wrappedValue = WrappedValue {
         provideRadioButton(
           radioButtonVariant = RadioButtonVariant.ContentBox,
@@ -125,7 +125,7 @@ class RadioButtonPPP : CustomWrappedDataPreviewParameterProvider&lt;
     selectedIndex: Int? = null,
     label: Label? = null,
     description: Label? = null,
-    onClickHelperIcon: (() -&gt; Unit)? = null,
+    onClickHelperIcon: (() -> Unit)? = null,
     content: RadioButtonCustomContent? = null,
     enabled: Boolean = true,
   ) = RadioButtonData(
@@ -156,25 +156,25 @@ class RadioButtonPPP : CustomWrappedDataPreviewParameterProvider&lt;
     onClickHelperIcon = onClickHelperIcon,
   )
 
-  private fun provideLabel() = &quot;Etykieta&quot;.toLabel(&quot;&quot;)
+  private fun provideLabel() = "Etykieta".toLabel("")
 
-  private fun provideDescription() = &quot;Description&quot;.toLabel(&quot;&quot;)
+  private fun provideDescription() = "Description".toLabel("")
 
-  private fun provideHelperText() = RadioButtonSupportText.Helper(helperText = &quot;HelperText&quot;.toLabel(&quot;&quot;))
+  private fun provideHelperText() = RadioButtonSupportText.Helper(helperText = "HelperText".toLabel(""))
 
-  private fun provideError() = RadioButtonSupportText.Error(errorText = &quot;Error&quot;.toLabel(&quot;&quot;))
+  private fun provideError() = RadioButtonSupportText.Error(errorText = "Error".toLabel(""))
 
   class CustomContent : RadioButtonCustomContent {
-    override fun content(): @Composable () -&gt; Unit = {
+    override fun content(): @Composable () -> Unit = {
       DropDownButton(
         data = DropDownButtonData(
-          label = &quot;Test&quot;.toLabel(&quot;&quot;),
+          label = "Test".toLabel(""),
           items = listOf(
-            &quot;Option 1&quot;.toLabel(&quot;&quot;),
-            &quot;Option 2&quot;.toLabel(&quot;&quot;),
-            &quot;Option 3&quot;.toLabel(&quot;&quot;),
+            "Option 1".toLabel(""),
+            "Option 2".toLabel(""),
+            "Option 3".toLabel(""),
           ),
-          placeholder = &quot;Choose&quot;.toLabel(&quot;&quot;),
+          placeholder = "Choose".toLabel(""),
           onClick = {},
         ),
       )

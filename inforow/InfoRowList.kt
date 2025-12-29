@@ -26,10 +26,10 @@ fun InfoRowList(
     modifier = Modifier
       .wrapContentHeight(),
   ) {
-    data.items.forEachIndexed { index, stepData -&gt;
+    data.items.forEachIndexed { index, stepData ->
       when (stepData) {
-        is InfoRowData.Default -&gt; DefaultInfoRow(data = stepData)
-        is InfoRowData.Bullet -&gt; BulletInfoRow(data = stepData)
+        is InfoRowData.Default -> DefaultInfoRow(data = stepData)
+        is InfoRowData.Bullet -> BulletInfoRow(data = stepData)
       }
       if (index != data.items.lastIndex) {
         Spacer(

@@ -52,7 +52,7 @@ fun SwitchWithExtras(data: SwitchData.SwitchWithExtras) {
   val coroutineScope = rememberCoroutineScope()
   var validationMessageShowed by remember { mutableStateOf(false) }
 
-  fun getSwitchLabel() = &quot;${data.label.text} ${CommonUILabelProvider.switchLabel().text} &quot; +
+  fun getSwitchLabel() = "${data.label.text} ${CommonUILabelProvider.switchLabel().text} " +
     if (data.checked) {
       CommonUILabelProvider.switchOnLabel().text
     } else {
@@ -64,12 +64,12 @@ fun SwitchWithExtras(data: SwitchData.SwitchWithExtras) {
       .fillMaxWidth()
       .wrapContentHeight()
       .bringIntoViewRequester(bringIntoViewRequester = bringIntoViewRequester)
-      .onGloballyPositioned { coordinates -&gt;
+      .onGloballyPositioned { coordinates ->
         inputFieldCoordinates = IntOffset(
           x = coordinates.positionInWindow().x.toInt(),
           y = coordinates.positionInWindow().y.toInt(),
         )
-        if ((data.validationState is ValidationState.Invalid) &amp;&amp; !validationMessageShowed) {
+        if ((data.validationState is ValidationState.Invalid) && !validationMessageShowed) {
           coroutineScope.launch {
             bringIntoViewRequester.bringIntoView()
             validationMessageShowed = true
@@ -101,8 +101,8 @@ fun SwitchWithExtras(data: SwitchData.SwitchWithExtras) {
               label = data.customActionContentDescription.text,
               action = {
                 when (data.type) {
-                  is SwitchExtraType.Link -&gt; data.type.data.onClick(data.type.data.url)
-                  is SwitchExtraType.TextButton -&gt; data.type.data.onClick()
+                  is SwitchExtraType.Link -> data.type.data.onClick(data.type.data.url)
+                  is SwitchExtraType.TextButton -> data.type.data.onClick()
                 }
                 true
               },
@@ -124,18 +124,18 @@ fun SwitchWithExtras(data: SwitchData.SwitchWithExtras) {
           .weight(1f),
       ) {
         CustomText(
-          testTag = data.testTag?.let { tag -&gt; tag + &quot;Text&quot; },
+          testTag = data.testTag?.let { tag -> tag + "Text" },
           label = data.label,
           style = AppTheme.typography.bodyMediumRegular,
           color = AppTheme.colors.neutral200,
         )
         Spacer(modifier = Modifier.height(AppTheme.dimensions.spacing100))
         when (data.type) {
-          is SwitchExtraType.Link -&gt; Link(
+          is SwitchExtraType.Link -> Link(
             data = data.type.data,
           )
 
-          is SwitchExtraType.TextButton -&gt; ButtonText(
+          is SwitchExtraType.TextButton -> ButtonText(
             data = data.type.data,
           )
         }
@@ -152,10 +152,10 @@ fun SwitchWithExtras(data: SwitchData.SwitchWithExtras) {
       ) {
         SwitchOnly(
           data = SwitchData.SwitchOnly(
-            testTag = data.testTag?.let { tag -&gt; tag + &quot;Switch&quot; },
+            testTag = data.testTag?.let { tag -> tag + "Switch" },
             checked = data.checked,
             enabled = data.enabled,
-            onCheckedChange = { value -&gt;
+            onCheckedChange = { value ->
               data.onCheckedChange?.invoke(value)
             },
             contentDescription = data.label,
@@ -167,7 +167,7 @@ fun SwitchWithExtras(data: SwitchData.SwitchWithExtras) {
     if (data.validationState is ValidationState.Invalid) {
       Spacer(modifier = Modifier.height(AppTheme.dimensions.spacing100))
       ErrorText(
-        testTag = data.testTag?.let { tag -&gt; tag + &quot;ErrorText&quot; },
+        testTag = data.testTag?.let { tag -> tag + "ErrorText" },
         errorText = data.validationState.message,
         ignoreForAccessibility = true,
       )

@@ -64,26 +64,26 @@ internal fun SingleCardClickable(data: SingleCardData.Clickable) {
         .padding(all = AppTheme.dimensions.spacing250),
     ) {
       when (data) {
-        is SingleCardData.Clickable.Title -&gt; SingleCardClickableTitleContent(data = data)
-        is SingleCardData.Clickable.TitleDescription -&gt; SingleCardClickableTitleDescriptionContent(data = data)
-        is SingleCardData.Clickable.InfoTitle -&gt; SingleCardClickableInfoTitleContent(data = data)
-        is SingleCardData.Clickable.IconTitle -&gt; SingleCardClickableIconTitleContent(data = data)
-        is SingleCardData.Clickable.IconTitleColored -&gt; SingleCardClickableIconTitleColoredContent(data = data)
-        is SingleCardData.Clickable.IconTitleDescription -&gt; SingleCardClickableIconTitleDescriptionContent(data = data)
-        is SingleCardData.Clickable.ButtonIconTitle -&gt;
+        is SingleCardData.Clickable.Title -> SingleCardClickableTitleContent(data = data)
+        is SingleCardData.Clickable.TitleDescription -> SingleCardClickableTitleDescriptionContent(data = data)
+        is SingleCardData.Clickable.InfoTitle -> SingleCardClickableInfoTitleContent(data = data)
+        is SingleCardData.Clickable.IconTitle -> SingleCardClickableIconTitleContent(data = data)
+        is SingleCardData.Clickable.IconTitleColored -> SingleCardClickableIconTitleColoredContent(data = data)
+        is SingleCardData.Clickable.IconTitleDescription -> SingleCardClickableIconTitleDescriptionContent(data = data)
+        is SingleCardData.Clickable.ButtonIconTitle ->
           SingleCardClickableButtonIconTitleContent(data = data)
 
-        is SingleCardData.Clickable.ButtonIconTitleDescription -&gt;
+        is SingleCardData.Clickable.ButtonIconTitleDescription ->
           SingleCardClickableButtonIconTitleDescriptionContent(data = data)
 
-        is SingleCardData.Clickable.DeleteButtonIconTitle -&gt;
+        is SingleCardData.Clickable.DeleteButtonIconTitle ->
           SingleCardClickableDeleteButtonIconTitleContent(data = data)
 
-        is SingleCardData.Clickable.TitleDescriptionStatusBadge -&gt;
+        is SingleCardData.Clickable.TitleDescriptionStatusBadge ->
           SingleCardClickableTitleDescriptionStatusBadgeContent(data = data)
       }
 
-      data.trailingIcon?.let { iconData -&gt;
+      data.trailingIcon?.let { iconData ->
         Icon(
           modifier = Modifier.padding(start = AppTheme.dimensions.spacing200),
           data = iconData,
@@ -102,8 +102,8 @@ internal fun RowScope.SingleCardClickableTitleContent(
     style = AppTheme.typography.bodyLargeMedium,
     modifier = Modifier.weight(1f),
     color = when (data.state) {
-      SingleCardClickableRadioButtonState.DISABLED -&gt; AppTheme.colors.neutral60
-      else -&gt; Color.Unspecified
+      SingleCardClickableRadioButtonState.DISABLED -> AppTheme.colors.neutral60
+      else -> Color.Unspecified
     },
   )
 }
@@ -123,8 +123,8 @@ internal fun RowScope.SingleCardClickableTitleDescriptionContent(
       style = AppTheme.typography.bodyLargeMedium,
       modifier = Modifier.fillMaxWidth(),
       color = when (data.state) {
-        SingleCardClickableRadioButtonState.DISABLED -&gt; AppTheme.colors.neutral60
-        else -&gt; Color.Unspecified
+        SingleCardClickableRadioButtonState.DISABLED -> AppTheme.colors.neutral60
+        else -> Color.Unspecified
       },
     )
     CustomText(
@@ -132,8 +132,8 @@ internal fun RowScope.SingleCardClickableTitleDescriptionContent(
       style = AppTheme.typography.bodyMediumRegular,
       modifier = Modifier.fillMaxWidth(),
       color = when (data.state) {
-        SingleCardClickableRadioButtonState.DISABLED -&gt; AppTheme.colors.neutral60
-        else -&gt; Color.Unspecified
+        SingleCardClickableRadioButtonState.DISABLED -> AppTheme.colors.neutral60
+        else -> Color.Unspecified
       },
     )
   }
@@ -154,8 +154,8 @@ internal fun RowScope.SingleCardClickableInfoTitleContent(
       style = AppTheme.typography.bodyMediumRegular,
       modifier = Modifier.fillMaxWidth(),
       color = when (data.state) {
-        SingleCardClickableRadioButtonState.DISABLED -&gt; AppTheme.colors.neutral60
-        else -&gt; Color.Unspecified
+        SingleCardClickableRadioButtonState.DISABLED -> AppTheme.colors.neutral60
+        else -> Color.Unspecified
       },
     )
     CustomText(
@@ -163,8 +163,8 @@ internal fun RowScope.SingleCardClickableInfoTitleContent(
       style = AppTheme.typography.bodyLargeMedium,
       modifier = Modifier.fillMaxWidth(),
       color = when (data.state) {
-        SingleCardClickableRadioButtonState.DISABLED -&gt; AppTheme.colors.neutral60
-        else -&gt; Color.Unspecified
+        SingleCardClickableRadioButtonState.DISABLED -> AppTheme.colors.neutral60
+        else -> Color.Unspecified
       },
     )
   }
@@ -191,8 +191,8 @@ internal fun RowScope.SingleCardClickableIconTitleContent(
       style = AppTheme.typography.bodyLargeMedium,
       modifier = Modifier.fillMaxWidth(),
       color = when (data.state) {
-        SingleCardClickableRadioButtonState.DISABLED -&gt; AppTheme.colors.neutral60
-        else -&gt; Color.Unspecified
+        SingleCardClickableRadioButtonState.DISABLED -> AppTheme.colors.neutral60
+        else -> Color.Unspecified
       },
     )
   }
@@ -229,8 +229,8 @@ internal fun RowScope.SingleCardClickableIconTitleDescriptionContent(
 ) {
   Row(
     verticalAlignment = when (data.iconOnOneLineWithTitle) {
-      true -&gt; Alignment.Top
-      false -&gt; Alignment.CenterVertically
+      true -> Alignment.Top
+      false -> Alignment.CenterVertically
     },
     modifier = Modifier
       .fillMaxWidth()
@@ -250,16 +250,16 @@ internal fun RowScope.SingleCardClickableIconTitleDescriptionContent(
         label = data.title,
         style = AppTheme.typography.bodyLargeMedium,
         color = when (data.state) {
-          SingleCardClickableRadioButtonState.DISABLED -&gt; AppTheme.colors.neutral60
-          else -&gt; Color.Unspecified
+          SingleCardClickableRadioButtonState.DISABLED -> AppTheme.colors.neutral60
+          else -> Color.Unspecified
         },
       )
       CustomText(
         label = data.description,
         style = AppTheme.typography.bodyMediumRegular,
         color = when (data.state) {
-          SingleCardClickableRadioButtonState.DISABLED -&gt; AppTheme.colors.neutral60
-          else -&gt; Color.Unspecified
+          SingleCardClickableRadioButtonState.DISABLED -> AppTheme.colors.neutral60
+          else -> Color.Unspecified
         },
       )
     }
@@ -314,16 +314,16 @@ internal fun RowScope.SingleCardClickableButtonIconTitleDescriptionContent(
         label = data.title,
         style = AppTheme.typography.bodyLargeMedium,
         color = when (data.state) {
-          SingleCardClickableRadioButtonState.DISABLED -&gt; AppTheme.colors.neutral60
-          else -&gt; Color.Unspecified
+          SingleCardClickableRadioButtonState.DISABLED -> AppTheme.colors.neutral60
+          else -> Color.Unspecified
         },
       )
       CustomText(
         label = data.description,
         style = AppTheme.typography.bodyMediumRegular,
         color = when (data.state) {
-          SingleCardClickableRadioButtonState.DISABLED -&gt; AppTheme.colors.neutral60
-          else -&gt; Color.Unspecified
+          SingleCardClickableRadioButtonState.DISABLED -> AppTheme.colors.neutral60
+          else -> Color.Unspecified
         },
       )
     }
@@ -370,8 +370,8 @@ internal fun RowScope.SingleCardClickableTitleDescriptionStatusBadgeContent(
       style = AppTheme.typography.bodyLargeMedium,
       modifier = Modifier.fillMaxWidth(),
       color = when (data.state) {
-        SingleCardClickableRadioButtonState.DISABLED -&gt; AppTheme.colors.neutral60
-        else -&gt; Color.Unspecified
+        SingleCardClickableRadioButtonState.DISABLED -> AppTheme.colors.neutral60
+        else -> Color.Unspecified
       },
     )
     CustomText(
@@ -379,8 +379,8 @@ internal fun RowScope.SingleCardClickableTitleDescriptionStatusBadgeContent(
       style = AppTheme.typography.bodyMediumRegular,
       modifier = Modifier.fillMaxWidth(),
       color = when (data.state) {
-        SingleCardClickableRadioButtonState.DISABLED -&gt; AppTheme.colors.neutral60
-        else -&gt; Color.Unspecified
+        SingleCardClickableRadioButtonState.DISABLED -> AppTheme.colors.neutral60
+        else -> Color.Unspecified
       },
     )
     Spacer(modifier = Modifier.height(height = AppTheme.dimensions.spacing100))

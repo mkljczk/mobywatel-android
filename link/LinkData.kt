@@ -8,7 +8,7 @@ data class LinkData(
   val url: String,
   val linkType: LinkType,
   val enabled: Boolean = true,
-  val onClick: (String) -&gt; Unit,
+  val onClick: (String) -> Unit,
 ) {
   enum class LinkType {
     WEBSITE, E_MAIL, EXTERNAL_APP

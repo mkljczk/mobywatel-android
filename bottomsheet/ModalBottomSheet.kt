@@ -46,8 +46,8 @@ private const val MAX_HEIGHT_PERCENT = 0.9f
 fun ModalBottomSheet(
   data: ModalBottomSheetData,
   horizontalPadding: Dp = AppTheme.dimensions.spacing200,
-  bottomSheetContent: @Composable () -&gt; Unit,
-  innerContent: @Composable () -&gt; Unit,
+  bottomSheetContent: @Composable () -> Unit,
+  innerContent: @Composable () -> Unit,
 ) = with(data) {
   val configuration = LocalConfiguration.current
   val screenHeight = configuration.screenHeightDp.dp
@@ -55,15 +55,15 @@ fun ModalBottomSheet(
 
   val sheetState = rememberModalBottomSheetState(
     initialValue = when (sheetState.value) {
-      ModalSheetValue.EXPANDED -&gt; ModalBottomSheetValue.Expanded
-      ModalSheetValue.HIDDEN -&gt; ModalBottomSheetValue.Hidden
-      ModalSheetValue.HALF_EXPANDED -&gt; ModalBottomSheetValue.HalfExpanded
+      ModalSheetValue.EXPANDED -> ModalBottomSheetValue.Expanded
+      ModalSheetValue.HIDDEN -> ModalBottomSheetValue.Hidden
+      ModalSheetValue.HALF_EXPANDED -> ModalBottomSheetValue.HalfExpanded
     },
-    confirmValueChange = { value -&gt;
+    confirmValueChange = { value ->
       when (value) {
-        ModalBottomSheetValue.Hidden -&gt; sheetState.onValueChange(ModalSheetValue.HIDDEN)
-        ModalBottomSheetValue.Expanded -&gt; sheetState.onValueChange(ModalSheetValue.EXPANDED)
-        ModalBottomSheetValue.HalfExpanded -&gt; sheetState.onValueChange(ModalSheetValue.HALF_EXPANDED)
+        ModalBottomSheetValue.Hidden -> sheetState.onValueChange(ModalSheetValue.HIDDEN)
+        ModalBottomSheetValue.Expanded -> sheetState.onValueChange(ModalSheetValue.EXPANDED)
+        ModalBottomSheetValue.HalfExpanded -> sheetState.onValueChange(ModalSheetValue.HALF_EXPANDED)
       }
       true
     },
@@ -116,7 +116,7 @@ fun ModalBottomSheet(
 
           )
           Box(modifier = Modifier.fillMaxWidth()) {
-            title?.let { title -&gt;
+            title?.let { title ->
               CustomText(
                 modifier = Modifier
                   .fillMaxWidth()
@@ -130,7 +130,7 @@ fun ModalBottomSheet(
                 style = AppTheme.typography.subtitleMedium,
               )
             }
-            onCloseClick?.let { onCloseClick -&gt;
+            onCloseClick?.let { onCloseClick ->
               IconButton(
                 modifier = Modifier
                   .align(Alignment.TopEnd)
@@ -166,7 +166,7 @@ fun ModalBottomSheet(
 @Composable
 fun ModalBottomSheetPreview() {
   val data = ModalBottomSheetData(
-    title = &quot;Bottom Sheet (1.1.0)&quot;.toLabel(tag = &quot;modalBottomSheetPreviewTitle&quot;),
+    title = "Bottom Sheet (1.1.0)".toLabel(tag = "modalBottomSheetPreviewTitle"),
     sheetState = ModalSheetState(
       value = ModalSheetValue.EXPANDED,
       skipHalfExpanded = true,

@@ -67,16 +67,16 @@ fun TextArea(
     modifier = Modifier
       .fillMaxWidth()
       .wrapContentHeight()
-      .onGloballyPositioned { coordinates -&gt;
+      .onGloballyPositioned { coordinates ->
         inputFieldCoordinates = IntOffset(
           x = coordinates.positionInWindow().x.toInt(),
           y = coordinates.positionInWindow().y.toInt(),
         )
       },
   ) {
-    data.label?.let { label -&gt;
+    data.label?.let { label ->
       CustomText(
-        testTag = data.testTag?.let { tag -&gt; tag + &quot;Text&quot; },
+        testTag = data.testTag?.let { tag -> tag + "Text" },
         label = label,
         style = AppTheme.typography.bodyMediumRegular,
         color = if (data.enabled) AppTheme.colors.neutral200 else AppTheme.colors.neutral60,
@@ -115,8 +115,8 @@ fun TextArea(
           .semantics {
             contentDescription = data.contentDescription()
             editableText = AnnotatedString(data.content)
-            testTag = data.testTag?.let { tag -&gt; tag + &quot;EditText&quot; } ?: data.label?.tag ?: &quot;Undefined&quot;
-              .let { tag -&gt; &quot;EditText $tag${data.indexTag?.let { &quot;_${data.indexTag}&quot; } ?: &quot;&quot;}&quot; }
+            testTag = data.testTag?.let { tag -> tag + "EditText" } ?: data.label?.tag ?: "Undefined"
+              .let { tag -> "EditText $tag${data.indexTag?.let { "_${data.indexTag}" } ?: ""}" }
           }
           .semantics {
             if (data.state is TextAreaDataState.Error) {
@@ -125,10 +125,10 @@ fun TextArea(
             }
           },
         value = data.content,
-        onValueChange = { text -&gt;
+        onValueChange = { text ->
           data.onValueChanged(text)
           if (data.counterState is CounterState.Visible) {
-            data.counterState.onCharsLimitReached(text.length &gt; data.counterState.maxLength)
+            data.counterState.onCharsLimitReached(text.length > data.counterState.maxLength)
           }
         },
         minLines = getMinLines(textAreaType = data.type),
@@ -137,7 +137,7 @@ fun TextArea(
         textStyle = AppTheme.typography.bodyLargeRegular.copy(
           color = if (data.enabled) AppTheme.colors.neutral500 else AppTheme.colors.neutral60,
         ),
-        decorationBox = { innerTextField -&gt;
+        decorationBox = { innerTextField ->
           Column(
             modifier = Modifier.padding(
               all = AppTheme.dimensions.spacing100,
@@ -150,7 +150,7 @@ fun TextArea(
             ) {
               if (data.content.isEmpty()) {
                 CustomText(
-                  testTag = data.testTag?.let { tag -&gt; tag + &quot;HintText&quot; },
+                  testTag = data.testTag?.let { tag -> tag + "HintText" },
                   label = data.hint,
                   overflow = TextOverflow.Ellipsis,
                   style = AppTheme.typography.bodyLargeRegular,
@@ -173,20 +173,20 @@ fun TextArea(
       )
     }
     when (data.state) {
-      is TextAreaDataState.Default -&gt;
+      is TextAreaDataState.Default ->
         if (data.state.helperLabel.isNotBlank()) {
           Spacer(modifier = Modifier.height(AppTheme.dimensions.spacing50))
           HelperText(
-            testTag = data.testTag?.let { tag -&gt; tag + &quot;HelperText&quot; },
+            testTag = data.testTag?.let { tag -> tag + "HelperText" },
             helperLabel = data.state.helperLabel,
             ignoreForAccessibility = true,
           )
         }
 
-      is TextAreaDataState.Error -&gt; {
+      is TextAreaDataState.Error -> {
         Spacer(modifier = Modifier.height(AppTheme.dimensions.spacing50))
         ErrorText(
-          testTag = data.testTag?.let { tag -&gt; tag + &quot;ErrorText&quot; },
+          testTag = data.testTag?.let { tag -> tag + "ErrorText" },
           errorText = data.state.errorLabel,
           ignoreForAccessibility = true,
         )
@@ -207,8 +207,8 @@ private fun getCursorBrushColor(
   state: TextAreaDataState,
   isFocused: Boolean,
 ) = when (state) {
-  is TextAreaDataState.Error -&gt; SolidColor(AppTheme.colors.supportRed100)
-  else -&gt; SolidColor(
+  is TextAreaDataState.Error -> SolidColor(AppTheme.colors.supportRed100)
+  else -> SolidColor(
     value = if (isFocused) {
       AppTheme.colors.primary900
     } else {
@@ -230,8 +230,8 @@ private fun getMinLines(
 private fun getMaxLines(
   textAreaType: TextAreaType,
 ) = when (textAreaType) {
-  is TextAreaType.Fix -&gt; textAreaType.lines
-  is TextAreaType.Flexible -&gt; textAreaType.maxLines
+  is TextAreaType.Fix -> textAreaType.lines
+  is TextAreaType.Flexible -> textAreaType.maxLines
 }
 
 @Composable
@@ -240,10 +240,10 @@ private fun getCardBorderColor(
   state: TextAreaDataState,
   isFocused: Boolean,
 ) = when {
-  enabled.not() -&gt; AppTheme.colors.neutral30
-  state is TextAreaDataState.Error -&gt; AppTheme.colors.supportRed100
-  isFocused -&gt; AppTheme.colors.primary900
-  else -&gt; AppTheme.colors.neutral80
+  enabled.not() -> AppTheme.colors.neutral30
+  state is TextAreaDataState.Error -> AppTheme.colors.supportRed100
+  isFocused -> AppTheme.colors.primary900
+  else -> AppTheme.colors.neutral80
 }
 
 @Composable
@@ -258,17 +258,17 @@ private fun buildCounter(
       style = SpanStyle(
         fontStyle = AppTheme.typography.bodySmallRegular.fontStyle,
         fontWeight = when (state) {
-          is TextAreaDataState.Error -&gt; FontWeight.Bold
-          else -&gt; FontWeight.Normal
+          is TextAreaDataState.Error -> FontWeight.Bold
+          else -> FontWeight.Normal
         },
         color = when {
-          enabled.not() -&gt; AppTheme.colors.neutral60
-          state is TextAreaDataState.Error -&gt; AppTheme.colors.supportRed100
-          else -&gt; AppTheme.colors.neutral200
+          enabled.not() -> AppTheme.colors.neutral60
+          state is TextAreaDataState.Error -> AppTheme.colors.supportRed100
+          else -> AppTheme.colors.neutral200
         },
       ),
     ) {
-      append(&quot;$contentLength&quot;)
+      append("$contentLength")
     }
     withStyle(
       style = SpanStyle(
@@ -276,7 +276,7 @@ private fun buildCounter(
         color = if (enabled) AppTheme.colors.neutral200 else AppTheme.colors.neutral60,
       ),
     ) {
-      append(&quot;/$maxLength&quot;)
+      append("/$maxLength")
     }
   }
   Text(
@@ -290,8 +290,8 @@ private fun buildCounter(
 private fun TextAreaData.contentDescription() =
   (label.textWithDotAndSpaceOrEmpty() +
     (when (state) {
-      is TextAreaDataState.Default -&gt; state.helperLabel
-      is TextAreaDataState.Error -&gt; state.errorLabel
+      is TextAreaDataState.Default -> state.helperLabel
+      is TextAreaDataState.Error -> state.errorLabel
     }).textWithDotAndSpaceOrEmpty()).trim()
 
 @Preview

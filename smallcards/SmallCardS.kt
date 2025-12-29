@@ -49,7 +49,7 @@ fun SmallCardS(
   ) {
     Icon(
       data = IconData.Background(
-        testTag = smallCardSData.testTag?.let { tag -&gt; tag + &quot;Icon&quot; },
+        testTag = smallCardSData.testTag?.let { tag -> tag + "Icon" },
         iconResId = smallCardSData.iconResId,
         backgroundSize = IconSize.SIZE48,
         iconSize = IconSize.SIZE24,
@@ -61,7 +61,7 @@ fun SmallCardS(
     )
     Spacer(modifier = Modifier.height(AppTheme.dimensions.spacing100))
     CustomText(
-      testTag = smallCardSData.testTag?.let { tag -&gt; tag + &quot;Text&quot; },
+      testTag = smallCardSData.testTag?.let { tag -> tag + "Text" },
       label = smallCardSData.title,
       style = AppTheme.typography.bodySmallRegular,
       color = AppTheme.colors.neutral500,

@@ -2,11 +2,11 @@ package pl.gov.coi.common.ui.ds.pagecontroller
 
 import pl.gov.coi.common.domain.label.Label
 
-data class PageControllerData&lt;CONTENT_DATA&gt;(
-  val contentsData: List&lt;PageData&lt;CONTENT_DATA&gt;&gt;,
+data class PageControllerData<CONTENT_DATA>(
+  val contentsData: List<PageData<CONTENT_DATA>>,
 ) {
 
-  data class PageData&lt;CONTENT_DATA&gt;(
+  data class PageData<CONTENT_DATA>(
     val content: CONTENT_DATA,
     val isButtonVisible: Boolean,
     val buttonTitle: Label,

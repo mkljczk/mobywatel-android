@@ -32,7 +32,7 @@ fun Icon(
     modifier = modifier
       .alpha(data.iconState.alphaValue)
       .semantics { testTagsAsResourceId = true }
-      .semantics { testTag = data.testTag ?: &quot;icon${getResourceEntryNameIcon(data.iconResId, localContext)}&quot; }
+      .semantics { testTag = data.testTag ?: "icon${getResourceEntryNameIcon(data.iconResId, localContext)}" }
       .semanticsContentDescription(data.contentDescription?.text, focusable),
     contentAlignment = Alignment.Center,
   ) {
@@ -50,12 +50,12 @@ fun Icon(
           ),
         onDraw = {
           when (data.backgroundShape) {
-            BackgroundShape.Rounded -&gt;
+            BackgroundShape.Rounded ->
               drawCircle(color = backgroundColor)
 
             BackgroundShape.Square,
             is BackgroundShape.RoundedSquare,
-            -&gt;
+            ->
               drawRoundRect(
                 color = backgroundColor,
               )

@@ -11,10 +11,10 @@ import pl.gov.coi.common.ui.ds.link.LinkData
 import pl.gov.coi.common.ui.preview.CustomPreviewParameterProvider
 import pl.gov.coi.common.ui.preview.ScreenShotTestData
 
-class GroupCheckBoxPPP : CustomPreviewParameterProvider&lt;CheckBoxGroupData&gt;() {
-  override val screenShotTestValues: Sequence&lt;ScreenShotTestData&lt;CheckBoxGroupData&gt;&gt; = sequenceOf(
+class GroupCheckBoxPPP : CustomPreviewParameterProvider<CheckBoxGroupData>() {
+  override val screenShotTestValues: Sequence<ScreenShotTestData<CheckBoxGroupData>> = sequenceOf(
     ScreenShotTestData(
-      screenShotTestName = &quot;CheckboxGroup&quot;,
+      screenShotTestName = "CheckboxGroup",
       value = CheckBoxGroupData(
         checkboxes = listOf(
           getCheckBoxData(isChecked = true),
@@ -25,38 +25,38 @@ class GroupCheckBoxPPP : CustomPreviewParameterProvider&lt;CheckBoxGroupData&gt;
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;CheckboxesWithErrorText&quot;,
+      screenShotTestName = "CheckboxesWithErrorText",
       value = CheckBoxGroupData(
         checkboxes = listOf(
           getCheckBoxData(),
           getCheckBoxData(),
         ),
         getCheckBoxHeader(),
-        type = CheckBoxType.Error(errorText = &quot;errorText&quot;.toLabel()),
+        type = CheckBoxType.Error(errorText = "errorText".toLabel()),
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;CheckboxesWithHelperText&quot;,
+      screenShotTestName = "CheckboxesWithHelperText",
       value = CheckBoxGroupData(
         checkboxes = listOf(
           getCheckBoxData(),
           getCheckBoxData(),
         ),
         getCheckBoxHeader(),
-        type = CheckBoxType.Helper(helperText = &quot;Helper text&quot;.toLabel()),
+        type = CheckBoxType.Helper(helperText = "Helper text".toLabel()),
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;CheckboxesUrl&quot;,
+      screenShotTestName = "CheckboxesUrl",
       value = CheckBoxGroupData(
         checkboxes = listOf(
           getCheckBoxData(isChecked = true),
           getCheckBoxData(
             clickableTextData = ClickableTextData.Link(
               linkData = LinkData(
-                label = &quot;urlText&quot;.toLabel(),
-                url = &quot;url&quot;,
-                onClick = { url -&gt; println(&quot;Checkbox $url clicked&quot;) },
+                label = "urlText".toLabel(),
+                url = "url",
+                onClick = { url -> println("Checkbox $url clicked") },
                 linkType = LinkData.LinkType.WEBSITE,
               ),
             ),
@@ -67,14 +67,14 @@ class GroupCheckBoxPPP : CustomPreviewParameterProvider&lt;CheckBoxGroupData&gt;
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;CheckboxesTextButton&quot;,
+      screenShotTestName = "CheckboxesTextButton",
       value = CheckBoxGroupData(
         checkboxes = listOf(
           getCheckBoxData(isChecked = true),
           getCheckBoxData(
             clickableTextData = ClickableTextData.Button(
               buttonData = ButtonTextData(
-                label = &quot;text button&quot;.toLabel(),
+                label = "text button".toLabel(),
                 onClick = {},
               ),
             ),
@@ -85,7 +85,7 @@ class GroupCheckBoxPPP : CustomPreviewParameterProvider&lt;CheckBoxGroupData&gt;
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;CheckboxesContentWithError&quot;,
+      screenShotTestName = "CheckboxesContentWithError",
       value = CheckBoxGroupData(
         header = getCheckBoxHeader(),
         checkboxes = listOf(
@@ -93,15 +93,15 @@ class GroupCheckBoxPPP : CustomPreviewParameterProvider&lt;CheckBoxGroupData&gt;
           getCheckBoxData(),
         ),
         type = CheckBoxType.Error(
-          errorText = (&quot;Lorem ipsum dolor sit amet, consectetur &quot; +
-            &quot;adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore &quot; +
-            &quot;magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation &quot;).toLabel(),
+          errorText = ("Lorem ipsum dolor sit amet, consectetur " +
+            "adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore " +
+            "magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ").toLabel(),
         ),
         contentType = CheckboxContentType.CONTENT_BOX,
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;CheckboxesDisabled&quot;,
+      screenShotTestName = "CheckboxesDisabled",
       value = CheckBoxGroupData(
         checkboxes = listOf(
           getCheckBoxData(isChecked = true),
@@ -109,7 +109,7 @@ class GroupCheckBoxPPP : CustomPreviewParameterProvider&lt;CheckBoxGroupData&gt;
           getCheckBoxData(),
         ),
         header = getCheckBoxHeader(),
-        type = CheckBoxType.Error(errorText = &quot;Error text&quot;.toLabel()),
+        type = CheckBoxType.Error(errorText = "Error text".toLabel()),
         isEnabled = false,
       ),
     ),
@@ -121,12 +121,12 @@ class GroupCheckBoxPPP : CustomPreviewParameterProvider&lt;CheckBoxGroupData&gt;
   ) = CheckBoxRowData(
     isChecked = isChecked,
     onCheckedChange = {},
-    label = &quot;Checkbox label&quot;.toLabel(),
+    label = "Checkbox label".toLabel(),
     clickableTextData = clickableTextData,
   )
 
   private fun getCheckBoxHeader() = CheckBoxHeaderData(
-    label = &quot;Checkbox group Label&quot;.toLabel(),
+    label = "Checkbox group Label".toLabel(),
     onClick = {},
   )
 }

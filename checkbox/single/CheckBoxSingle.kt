@@ -20,14 +20,14 @@ import pl.gov.coi.common.ui.theme.AppTheme
 fun CheckBoxSingle(data: CheckBoxSingleData) {
   Column {
     when (data.contentType) {
-      CheckboxContentType.CONTENT_BOX -&gt; ContentBox {
+      CheckboxContentType.CONTENT_BOX -> ContentBox {
         Column {
           CheckboxRow(data = data.checkbox, type = data.type, isEnabled = data.isEnabled)
           CheckBoxBottomText(data.type)
         }
       }
 
-      CheckboxContentType.DEFAULT -&gt; Column {
+      CheckboxContentType.DEFAULT -> Column {
         CheckboxRow(data = data.checkbox, type = data.type, isEnabled = data.isEnabled)
         CheckBoxBottomText(data.type)
       }

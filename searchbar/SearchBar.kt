@@ -28,14 +28,14 @@ import pl.gov.coi.common.ui.theme.AppTheme
 fun SearchBar(
   modifier: Modifier = Modifier,
   data: SearchBarData,
-  innerContent: @Composable () -&gt; Unit,
+  innerContent: @Composable () -> Unit,
 ) {
   androidx.compose.material3.SearchBar(
     modifier = Modifier
       .fillMaxWidth()
       .semantics {
         testTagsAsResourceId = true
-        testTag = &quot;SearchBarComponent&quot;
+        testTag = "SearchBarComponent"
       }
       .then(other = modifier),
     query = data.query,
@@ -70,7 +70,7 @@ fun SearchBar(
       )
     },
     trailingIcon = {
-      if (data.isActive &amp;&amp; data.query.isNotEmpty()) {
+      if (data.isActive && data.query.isNotEmpty()) {
         SearchBarTrailingIcon(
           onClearClicked = data.onClearClicked,
         )
@@ -84,7 +84,7 @@ fun SearchBar(
 @Composable
 private fun SearchBarLeadingIcon(
   isActive: Boolean,
-  onActiveChanged: (Boolean) -&gt; Unit,
+  onActiveChanged: (Boolean) -> Unit,
 ) {
   ButtonIcon(
     data = ButtonIconData(
@@ -97,7 +97,7 @@ private fun SearchBarLeadingIcon(
 
 @Composable
 private fun SearchBarTrailingIcon(
-  onClearClicked: () -&gt; Unit,
+  onClearClicked: () -> Unit,
 ) {
   ButtonIcon(
     data = ButtonIconData(
@@ -116,8 +116,8 @@ fun SearchBarPreview(
 ) {
   SearchBar(data = data) {
     CustomText(
-      label = (&quot;Inner content - results of the search should be placed in InnerContent&quot;)
-        .toLabel(tag = &quot;searchBarText&quot;),
+      label = ("Inner content - results of the search should be placed in InnerContent")
+        .toLabel(tag = "searchBarText"),
     )
   }
 }

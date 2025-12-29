@@ -40,10 +40,10 @@ fun Alert(
       .clip(shape = AppTheme.shapes.radius200)
       .background(
         color = when (data) {
-          is AlertData.Info -&gt; AppTheme.colors.supportBlue20
-          is AlertData.Warning -&gt; AppTheme.colors.supportOrange20
-          is AlertData.Error -&gt; AppTheme.colors.supportRed20
-          is AlertData.Success -&gt; lightAlertSuccessColor
+          is AlertData.Info -> AppTheme.colors.supportBlue20
+          is AlertData.Warning -> AppTheme.colors.supportOrange20
+          is AlertData.Error -> AppTheme.colors.supportRed20
+          is AlertData.Success -> lightAlertSuccessColor
         },
       )
       .semantics(mergeDescendants = true) {
@@ -62,9 +62,9 @@ fun Alert(
       Column(
         modifier = Modifier.weight(weight = 1f),
       ) {
-        data.title?.let { title -&gt;
+        data.title?.let { title ->
           CustomText(
-            testTag = data.testTag?.let { tag -&gt; tag + &quot;TitleText&quot; },
+            testTag = data.testTag?.let { tag -> tag + "TitleText" },
             label = title,
             style = AppTheme.typography.bodyLargeMedium,
             overflow = TextOverflow.Ellipsis,
@@ -77,22 +77,22 @@ fun Alert(
           )
         }
         CustomText(
-          testTag = data.testTag?.let { tag -&gt; tag + &quot;BodyText&quot; },
+          testTag = data.testTag?.let { tag -> tag + "BodyText" },
           label = data.bodyText,
           style = AppTheme.typography.bodyMediumRegular,
           color = AppTheme.colors.neutral500,
         )
-        data.alertButtonData?.let { alertActionButtonData -&gt;
+        data.alertButtonData?.let { alertActionButtonData ->
           Spacer(
             modifier = Modifier.height(height = AppTheme.dimensions.spacing100),
           )
           when (alertActionButtonData) {
-            is AlertButtonData.Link -&gt; Link(data = alertActionButtonData.data)
-            is AlertButtonData.ButtonText -&gt; ButtonText(data = alertActionButtonData.data)
+            is AlertButtonData.Link -> Link(data = alertActionButtonData.data)
+            is AlertButtonData.ButtonText -> ButtonText(data = alertActionButtonData.data)
           }
         }
       }
-      data.closeButtonData?.let { buttonData -&gt;
+      data.closeButtonData?.let { buttonData ->
         Spacer(modifier = Modifier.width(width = AppTheme.dimensions.spacing100))
         ButtonIcon(
           data = buttonData,

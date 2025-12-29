@@ -18,23 +18,23 @@ data class ProvidedSingleCardDocumentRowData(
 )
 
 class SingleCardDocumentRowPPP : CustomWrappedDataPreviewParameterProvider
-  &lt;Unit, DocumentRowData, Mapper&lt;Unit, DocumentRowData&gt;, ProvidedSingleCardDocumentRowData&gt;() {
+  <Unit, DocumentRowData, Mapper<Unit, DocumentRowData>, ProvidedSingleCardDocumentRowData>() {
 
-  override fun mapper(context: Context): Mapper&lt;Unit, DocumentRowData&gt; {
-    return object : Mapper&lt;Unit, DocumentRowData&gt; {
+  override fun mapper(context: Context): Mapper<Unit, DocumentRowData> {
+    return object : Mapper<Unit, DocumentRowData> {
       override fun invoke(p1: Unit): DocumentRowData = getSingleCardDocument()
     }
   }
 
   private val cards = mapOf(
-    &quot;SingleCardDocumentRow&quot; to getSingleCardDocument(),
-    &quot;SingleCardDocumentRowWithDescription&quot; to getSingleCardDocumentWithDescription(),
-    &quot;SingleCardDocumentRowWithStatus&quot; to getSingleCardDocumentWithStatus(),
-    &quot;SingleCardDocumentRowWithDescriptionStatus&quot; to getSingleCardDocumentWithDescriptionStatus(),
+    "SingleCardDocumentRow" to getSingleCardDocument(),
+    "SingleCardDocumentRowWithDescription" to getSingleCardDocumentWithDescription(),
+    "SingleCardDocumentRowWithStatus" to getSingleCardDocumentWithStatus(),
+    "SingleCardDocumentRowWithDescriptionStatus" to getSingleCardDocumentWithDescriptionStatus(),
   )
 
-  override val screenShotTestValues: Sequence&lt;ScreenShotTestDataProvider&lt;ProvidedSingleCardDocumentRowData&gt;&gt;
-    get() = cards.map { (testName, cardData) -&gt;
+  override val screenShotTestValues: Sequence<ScreenShotTestDataProvider<ProvidedSingleCardDocumentRowData>>
+    get() = cards.map { (testName, cardData) ->
       ScreenShotTestDataProvider(
         screenShotTestName = testName,
         wrappedValue = WrappedValue {
@@ -47,7 +47,7 @@ class SingleCardDocumentRowPPP : CustomWrappedDataPreviewParameterProvider
     }.asSequence()
 
   private fun getSingleCardDocument() = DocumentRowData(
-    title = &quot;Legitymacja poselska&quot;.toLabel(),
+    title = "Legitymacja poselska".toLabel(),
     iconColorProvider = { colorResource(id = R.color.coi_mobywatel_feature_dashboard_deputy_card_primary) },
     iconResId = R.drawable.db012_legitymacja_poselska,
     badgeData = null,
@@ -55,12 +55,12 @@ class SingleCardDocumentRowPPP : CustomWrappedDataPreviewParameterProvider
   )
 
   private fun getSingleCardDocumentWithDescription() = getSingleCardDocument().copy(
-    description = &quot;Opis dokumentu&quot;.toLabel(),
+    description = "Opis dokumentu".toLabel(),
   )
 
   private fun getSingleCardDocumentWithStatus() = getSingleCardDocument().copy(
     badgeData = StatusBadgeData.WithIcon(
-      label = &quot;Błąd pobierania&quot;.toLabel(),
+      label = "Błąd pobierania".toLabel(),
       withBorder = false,
       status = StatusBadgeWithIconStatus.NEGATIVE,
     ),
@@ -68,7 +68,7 @@ class SingleCardDocumentRowPPP : CustomWrappedDataPreviewParameterProvider
 
   private fun getSingleCardDocumentWithDescriptionStatus() = getSingleCardDocumentWithDescription().copy(
     badgeData = StatusBadgeData.WithIcon(
-      label = &quot;Błąd pobierania&quot;.toLabel(),
+      label = "Błąd pobierania".toLabel(),
       withBorder = false,
       status = StatusBadgeWithIconStatus.NEGATIVE,
     ),

@@ -9,7 +9,7 @@ sealed class SwitchData(
   val testTag: String?,
   val checked: Boolean,
   val enabled: Boolean,
-  val onCheckedChange: ((Boolean) -&gt; Unit)?,
+  val onCheckedChange: ((Boolean) -> Unit)?,
   val contentDescription: Label?,
   val testIndexTag: Int? = null,
 ) {
@@ -17,7 +17,7 @@ sealed class SwitchData(
     testTag: String? = null,
     checked: Boolean,
     enabled: Boolean = true,
-    onCheckedChange: ((Boolean) -&gt; Unit)?,
+    onCheckedChange: ((Boolean) -> Unit)?,
     contentDescription: Label? = null,
     testIndexTag: Int? = null,
   ) : SwitchData(
@@ -35,7 +35,7 @@ sealed class SwitchData(
     val label: Label,
     val validationState: ValidationState = ValidationState.Default,
     enabled: Boolean = true,
-    onCheckedChange: (Boolean) -&gt; Unit,
+    onCheckedChange: (Boolean) -> Unit,
     testIndexTag: Int? = null,
   ) : SwitchData(
     testTag = testTag,
@@ -54,7 +54,7 @@ sealed class SwitchData(
     val label: Label,
     val validationState: ValidationState = ValidationState.Default,
     enabled: Boolean = true,
-    onCheckedChange: (Boolean) -&gt; Unit,
+    onCheckedChange: (Boolean) -> Unit,
     testIndexTag: Int? = null,
     val type: SwitchExtraType,
     val customActionContentDescription: Label,

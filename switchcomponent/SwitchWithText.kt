@@ -50,14 +50,14 @@ internal fun SwitchWithText(
         role = Role.Switch,
         value = data.checked,
         enabled = false,
-        onValueChange = { value -&gt; data.onCheckedChange?.invoke(value) },
+        onValueChange = { value -> data.onCheckedChange?.invoke(value) },
       )
-      .onGloballyPositioned { coordinates -&gt;
+      .onGloballyPositioned { coordinates ->
         inputFieldCoordinates = IntOffset(
           x = coordinates.positionInWindow().x.toInt(),
           y = coordinates.positionInWindow().y.toInt(),
         )
-        if ((data.validationState is ValidationState.Invalid) &amp;&amp; !validationMessageShowed) {
+        if ((data.validationState is ValidationState.Invalid) && !validationMessageShowed) {
           coroutineScope.launch {
             bringIntoViewRequester.bringIntoView()
             validationMessageShowed = true
@@ -71,7 +71,7 @@ internal fun SwitchWithText(
       verticalAlignment = Alignment.CenterVertically,
     ) {
       CustomText(
-        testTag = data.testTag?.let { tag -&gt; tag + &quot;Text&quot; },
+        testTag = data.testTag?.let { tag -> tag + "Text" },
         modifier = Modifier
           .weight(1f),
         label = data.label,
@@ -81,7 +81,7 @@ internal fun SwitchWithText(
       Spacer(modifier = Modifier.width(AppTheme.dimensions.spacing100))
       SwitchOnly(
         data = SwitchData.SwitchOnly(
-          testTag = data.testTag?.let { tag -&gt; tag + &quot;Switch&quot; },
+          testTag = data.testTag?.let { tag -> tag + "Switch" },
           checked = data.checked,
           enabled = data.enabled,
           onCheckedChange = data.onCheckedChange,
@@ -92,7 +92,7 @@ internal fun SwitchWithText(
     }
     if (data.validationState is ValidationState.Invalid) {
       Spacer(modifier = Modifier.height(AppTheme.dimensions.spacing100))
-      ErrorText(testTag = data.testTag?.let { tag -&gt; tag + &quot;ErrorText&quot; }, errorText = data.validationState.message)
+      ErrorText(testTag = data.testTag?.let { tag -> tag + "ErrorText" }, errorText = data.validationState.message)
     }
   }
 }

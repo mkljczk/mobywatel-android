@@ -18,31 +18,31 @@ import pl.gov.coi.common.ui.unmapped.singlecard.BodyTitleSection
 import pl.gov.coi.common.ui.unmapped.singlecard.DefaultSingleCardData
 import pl.gov.coi.common.ui.unmapped.singlecard.SingleCardLabel
 
-class AccordionPreviewParameterProvider : CustomPreviewParameterProvider&lt;AccordionData&gt;() {
+class AccordionPreviewParameterProvider : CustomPreviewParameterProvider<AccordionData>() {
 
-  override val screenShotTestValues: Sequence&lt;ScreenShotTestData&lt;AccordionData&gt;&gt; = sequenceOf(
+  override val screenShotTestValues: Sequence<ScreenShotTestData<AccordionData>> = sequenceOf(
     ScreenShotTestData(
-      screenShotTestName = &quot;AccordionSingle&quot;,
+      screenShotTestName = "AccordionSingle",
       value = provideAccordionSinglePreviewData(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;AccordionSingleExpanded&quot;,
+      screenShotTestName = "AccordionSingleExpanded",
       value = provideAccordionSingleExpandedPreviewData(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;AccordionSingleHistoryExpanded&quot;,
+      screenShotTestName = "AccordionSingleHistoryExpanded",
       value = provideAccordionSingleHistoryExpandedPreviewData(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;AccordionList&quot;,
+      screenShotTestName = "AccordionList",
       value = provideAccordionListPreviewData(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;AccordionListOneExpanded&quot;,
+      screenShotTestName = "AccordionListOneExpanded",
       value = provideAccordionListOneExpandedPreviewData(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;AccordionSingleCardContent&quot;,
+      screenShotTestName = "AccordionSingleCardContent",
       value = provideAccordionSingleCardPreviewData(),
     ),
   )
@@ -50,7 +50,7 @@ class AccordionPreviewParameterProvider : CustomPreviewParameterProvider&lt;Acco
   private fun provideAccordionSingleCardPreviewData() = AccordionData(
     elements = listOf(
       AccordionElement(
-        header = &quot;Accordion single header&quot;.toLabel(),
+        header = "Accordion single header".toLabel(),
         addContentPadding = false,
         content = object : CustomAccordionContent {
           @Composable
@@ -62,7 +62,7 @@ class AccordionPreviewParameterProvider : CustomPreviewParameterProvider&lt;Acco
                     bodySection = BodySection(
                       title = BodyTitleSection.Title(
                         singleCardLabel = SingleCardLabel(
-                          label = &quot;SingleCard 1&quot;.toLabel(),
+                          label = "SingleCard 1".toLabel(),
                         ),
                       ),
                     ),
@@ -71,7 +71,7 @@ class AccordionPreviewParameterProvider : CustomPreviewParameterProvider&lt;Acco
                     bodySection = BodySection(
                       title = BodyTitleSection.Title(
                         singleCardLabel = SingleCardLabel(
-                          label = &quot;SingleCard 2&quot;.toLabel(),
+                          label = "SingleCard 2".toLabel(),
                         ),
                       ),
                     ),
@@ -80,7 +80,7 @@ class AccordionPreviewParameterProvider : CustomPreviewParameterProvider&lt;Acco
                     bodySection = BodySection(
                       title = BodyTitleSection.Title(
                         singleCardLabel = SingleCardLabel(
-                          label = &quot;SingleCard 3&quot;.toLabel(),
+                          label = "SingleCard 3".toLabel(),
                         ),
                       ),
                     ),
@@ -100,7 +100,7 @@ class AccordionPreviewParameterProvider : CustomPreviewParameterProvider&lt;Acco
     AccordionData(
       elements = listOf(
         AccordionElement(
-          header = &quot;Accordion single header&quot;.toLabel(),
+          header = "Accordion single header".toLabel(),
           content = CustomTextAccordionContent(),
           initialExpanded = false,
           onListExpanded = {},
@@ -112,7 +112,7 @@ class AccordionPreviewParameterProvider : CustomPreviewParameterProvider&lt;Acco
     AccordionData(
       elements = listOf(
         AccordionElement(
-          header = &quot;Accordion expanded header&quot;.toLabel(),
+          header = "Accordion expanded header".toLabel(),
           content = CustomTextAccordionContent(),
           initialExpanded = true,
           onListExpanded = {},
@@ -124,7 +124,7 @@ class AccordionPreviewParameterProvider : CustomPreviewParameterProvider&lt;Acco
     AccordionData(
       elements = listOf(
         AccordionElement(
-          header = &quot;Accordion history expanded header&quot;.toLabel(),
+          header = "Accordion history expanded header".toLabel(),
           content = CustomTimelineAccordionContent(),
           initialExpanded = true,
           onListExpanded = {},
@@ -136,19 +136,19 @@ class AccordionPreviewParameterProvider : CustomPreviewParameterProvider&lt;Acco
     AccordionData(
       elements = listOf(
         AccordionElement(
-          header = &quot;Accordion header 1&quot;.toLabel(),
+          header = "Accordion header 1".toLabel(),
           content = CustomTextAccordionContent(),
           initialExpanded = false,
           onListExpanded = {},
         ),
         AccordionElement(
-          header = &quot;Accordion header 2&quot;.toLabel(),
+          header = "Accordion header 2".toLabel(),
           content = CustomTextAccordionContent(),
           initialExpanded = false,
           onListExpanded = {},
         ),
         AccordionElement(
-          header = &quot;Accordion header 3&quot;.toLabel(),
+          header = "Accordion header 3".toLabel(),
           content = CustomTextAccordionContent(),
           initialExpanded = false,
           onListExpanded = {},
@@ -160,19 +160,19 @@ class AccordionPreviewParameterProvider : CustomPreviewParameterProvider&lt;Acco
     AccordionData(
       elements = listOf(
         AccordionElement(
-          header = &quot;Accordion header 1 expanded&quot;.toLabel(),
+          header = "Accordion header 1 expanded".toLabel(),
           content = CustomTextAccordionContent(),
           initialExpanded = true,
           onListExpanded = {},
         ),
         AccordionElement(
-          header = &quot;Accordion header 2&quot;.toLabel(),
+          header = "Accordion header 2".toLabel(),
           content = CustomTextAccordionContent(),
           initialExpanded = false,
           onListExpanded = {},
         ),
         AccordionElement(
-          header = &quot;Accordion header 3&quot;.toLabel(),
+          header = "Accordion header 3".toLabel(),
           content = CustomTextAccordionContent(),
           initialExpanded = false,
           onListExpanded = {},
@@ -183,7 +183,7 @@ class AccordionPreviewParameterProvider : CustomPreviewParameterProvider&lt;Acco
   private class CustomTextAccordionContent : CustomAccordionContent {
     @Composable
     override fun Content() {
-      CustomText(label = &quot;Provide content here&quot;.toLabel(&quot;&quot;))
+      CustomText(label = "Provide content here".toLabel(""))
     }
   }
 
@@ -194,13 +194,13 @@ class AccordionPreviewParameterProvider : CustomPreviewParameterProvider&lt;Acco
         data = TimelineData(
           items = listOf(
             TimelineItemData(
-              label = &quot;02.08.2023 12:00&quot;.toLabel(&quot;&quot;),
-              title = &quot;Primary Bold&quot;.toLabel(&quot;&quot;),
-              description = &quot;Urząd Stanu Cywilnego w Bolesławcu&quot;.toLabel(&quot;&quot;),
+              label = "02.08.2023 12:00".toLabel(""),
+              title = "Primary Bold".toLabel(""),
+              description = "Urząd Stanu Cywilnego w Bolesławcu".toLabel(""),
             ),
             TimelineItemData(
-              label = &quot;01.08.2023 12:00&quot;.toLabel(&quot;&quot;),
-              title = &quot;Primary Bold&quot;.toLabel(&quot;&quot;),
+              label = "01.08.2023 12:00".toLabel(""),
+              title = "Primary Bold".toLabel(""),
             ),
           ),
         ),

@@ -1,8 +1,8 @@
-&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;project version=&quot;4&quot;&gt;
-  &lt;component name=&quot;ProjectModuleManager&quot;&gt;
-    &lt;modules&gt;
-      &lt;module fileurl=&quot;file://$PROJECT_DIR$/ds.iml&quot; filepath=&quot;$PROJECT_DIR$/ds.iml&quot; /&gt;
-    &lt;/modules&gt;
-  &lt;/component&gt;
-&lt;/project&gt;
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ds.iml" filepath="$PROJECT_DIR$/ds.iml" />
+    </modules>
+  </component>
+</project>

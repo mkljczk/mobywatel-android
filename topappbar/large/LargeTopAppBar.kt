@@ -34,7 +34,7 @@ internal fun LargeTopAppBar(
       scrolledContainerColor = data.containerColor(),
     ),
     title = {
-      if (scrollBehavior.state.collapsedFraction &lt; 0.35) {
+      if (scrollBehavior.state.collapsedFraction < 0.35) {
         Text(
           modifier = Modifier
             .semantics {
@@ -48,7 +48,7 @@ internal fun LargeTopAppBar(
           maxLines = TEXT_MAX_TWO_LINES,
         )
       }
-      if (scrollBehavior.state.collapsedFraction &gt; 0.75) {
+      if (scrollBehavior.state.collapsedFraction > 0.75) {
         Row(
           modifier = Modifier.fillMaxWidth(),
           horizontalArrangement = Arrangement.Center,

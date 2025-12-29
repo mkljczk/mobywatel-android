@@ -40,32 +40,32 @@ fun TextInput(
         }
       },
   ) {
-    data.label?.let { label -&gt;
+    data.label?.let { label ->
       CustomText(
-        testTag = data.testTag?.let { tag -&gt; tag + &quot;Text&quot; },
+        testTag = data.testTag?.let { tag -> tag + "Text" },
         ignoreForAccessibility = true,
         label = label,
         style = AppTheme.typography.bodyMediumRegular,
         color = when (data.enabled) {
-          true -&gt; AppTheme.colors.neutral200
-          else -&gt; AppTheme.colors.neutral60
+          true -> AppTheme.colors.neutral200
+          else -> AppTheme.colors.neutral60
         },
       )
       Spacer(modifier = Modifier.height(AppTheme.dimensions.spacing50))
     }
 
     when (data) {
-      is TextInputData.Pin -&gt; TextFieldPin(
+      is TextInputData.Pin -> TextFieldPin(
         data = data,
         focusHost = focusHost,
         focusManager = focusManager,
       )
-      is TextInputData.PhoneNumber -&gt; TextFieldPhoneNumber(
+      is TextInputData.PhoneNumber -> TextFieldPhoneNumber(
         data = data,
         focusHost = focusHost,
         focusManager = focusManager,
       )
-      else -&gt; TextField(
+      else -> TextField(
         data = data,
         focusHost = focusHost,
         focusManager = focusManager,
@@ -73,25 +73,25 @@ fun TextInput(
     }
 
     when (val validationState = data.validationState) {
-      is ValidationState.Invalid -&gt; {
+      is ValidationState.Invalid -> {
         Spacer(modifier = Modifier.height(AppTheme.dimensions.spacing50))
         ErrorText(
-          testTag = data.testTag?.let { tag -&gt; tag + &quot;ErrorText&quot; },
+          testTag = data.testTag?.let { tag -> tag + "ErrorText" },
           errorText = validationState.message,
           ignoreForAccessibility = true,
         )
       }
-      else -&gt; data.helperText?.let { helperText -&gt;
+      else -> data.helperText?.let { helperText ->
         Spacer(modifier = Modifier.height(AppTheme.dimensions.spacing50))
         HelperText(
-          testTag = data.testTag?.let { tag -&gt; tag + &quot;HelperText&quot; },
+          testTag = data.testTag?.let { tag -> tag + "HelperText" },
           helperLabel = helperText,
           ignoreForAccessibility = true,
         )
       }
     }
 
-    data.infoButtonData?.let { infoButtonData -&gt;
+    data.infoButtonData?.let { infoButtonData ->
       Spacer(modifier = Modifier.height(AppTheme.dimensions.spacing100))
       ButtonText(data = infoButtonData)
     }

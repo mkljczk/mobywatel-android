@@ -8,55 +8,55 @@ import pl.gov.coi.common.ui.ds.emptystate.EmptyStateData
 import pl.gov.coi.common.ui.preview.CustomPreviewParameterProvider
 import pl.gov.coi.common.ui.preview.ScreenShotTestData
 
-class EmptyStatePreviewParameterProvider : CustomPreviewParameterProvider&lt;EmptyStateData&gt;() {
-  override val screenShotTestValues: Sequence&lt;ScreenShotTestData&lt;EmptyStateData&gt;&gt; = sequenceOf(
+class EmptyStatePreviewParameterProvider : CustomPreviewParameterProvider<EmptyStateData>() {
+  override val screenShotTestValues: Sequence<ScreenShotTestData<EmptyStateData>> = sequenceOf(
     ScreenShotTestData(
-      screenShotTestName = &quot;EmptyStateDataNoTitle&quot;,
+      screenShotTestName = "EmptyStateDataNoTitle",
       value = provideEmptyStateDataNoTitle(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;EmptyStateStateDataWithTitle&quot;,
+      screenShotTestName = "EmptyStateStateDataWithTitle",
       value = provideEmptyStateDataWithTitle(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;EmptyStateDataStandardWithButton&quot;,
+      screenShotTestName = "EmptyStateDataStandardWithButton",
       value = provideEmptyStateDataWithButton(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;EmptyStateDataNoTitleWithButton&quot;,
+      screenShotTestName = "EmptyStateDataNoTitleWithButton",
       value = provideEmptyStateDataNoTitleWithButton(),
     ),
   )
 
   private fun provideEmptyStateDataWithTitle() = EmptyStateData(
-    title = &quot;Title section (optional)&quot;.toLabel(),
-    body = &quot;Body section&quot;.toLabel(),
+    title = "Title section (optional)".toLabel(),
+    body = "Body section".toLabel(),
   )
 
   private fun provideEmptyStateDataNoTitle() = EmptyStateData(
-    body = &quot;Body section&quot;.toLabel(),
+    body = "Body section".toLabel(),
   )
 
   private fun provideEmptyStateDataWithButton() = EmptyStateData(
-    title = &quot;Title section (optional)&quot;.toLabel(),
-    body = &quot;Body section&quot;.toLabel(),
+    title = "Title section (optional)".toLabel(),
+    body = "Body section".toLabel(),
     buttonData = ButtonData(
       buttonSize = ButtonSize.Small,
       buttonVariant = ButtonVariant.Tertiary,
       buttonType = ButtonType.WithText(
-        label = &quot;Tertiary small button (optional)&quot;.toLabel(),
+        label = "Tertiary small button (optional)".toLabel(),
       ),
       onClick = {},
     ),
   )
 
   private fun provideEmptyStateDataNoTitleWithButton() = EmptyStateData(
-    body = &quot;Body section&quot;.toLabel(),
+    body = "Body section".toLabel(),
     buttonData = ButtonData(
       buttonSize = ButtonSize.Small,
       buttonVariant = ButtonVariant.Tertiary,
       buttonType = ButtonType.WithText(
-        label = &quot;Tertiary small button (optional)&quot;.toLabel(),
+        label = "Tertiary small button (optional)".toLabel(),
       ),
       onClick = {},
     ),

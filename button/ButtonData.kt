@@ -11,5 +11,5 @@ data class ButtonData(
   val buttonType: ButtonType,
   val buttonVariant: ButtonVariant,
   val buttonState: ButtonState = ButtonState.Enabled,
-  val onClick: () -&gt; Unit,
+  val onClick: () -> Unit,
 )

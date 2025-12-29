@@ -58,27 +58,27 @@ fun ChatBubble(
         modifier = Modifier
           .padding(
             start = when (data) {
-              is ChatBubbleData.IncomingMessage -&gt; AppTheme.dimensions.zero
-              is ChatBubbleData.OutgoingMessage -&gt; AppTheme.dimensions.spacing600
+              is ChatBubbleData.IncomingMessage -> AppTheme.dimensions.zero
+              is ChatBubbleData.OutgoingMessage -> AppTheme.dimensions.spacing600
             },
             end = when (data) {
-              is ChatBubbleData.IncomingMessage -&gt; AppTheme.dimensions.spacing600
-              is ChatBubbleData.OutgoingMessage -&gt; AppTheme.dimensions.zero
+              is ChatBubbleData.IncomingMessage -> AppTheme.dimensions.spacing600
+              is ChatBubbleData.OutgoingMessage -> AppTheme.dimensions.zero
             },
           )
           .weight(1f)
           .then(
             when {
-              data.isLoading -&gt; Modifier.wrapContentWidth(align = Alignment.Start)
-              data is ChatBubbleData.IncomingMessage -&gt; Modifier.fillMaxWidth()
-              else -&gt; Modifier.wrapContentWidth(align = Alignment.End)
+              data.isLoading -> Modifier.wrapContentWidth(align = Alignment.Start)
+              data is ChatBubbleData.IncomingMessage -> Modifier.fillMaxWidth()
+              else -> Modifier.wrapContentWidth(align = Alignment.End)
             },
           ),
         shape = AppTheme.shapes.radius150,
         colors = CardDefaults.cardColors(
           containerColor = when (data) {
-            is ChatBubbleData.IncomingMessage -&gt; Color.White
-            is ChatBubbleData.OutgoingMessage -&gt; AppTheme.colors.primary900
+            is ChatBubbleData.IncomingMessage -> Color.White
+            is ChatBubbleData.OutgoingMessage -> AppTheme.colors.primary900
           },
         ),
         elevation = CardDefaults.cardElevation(
@@ -99,7 +99,7 @@ fun ChatBubble(
               .padding(bottom = AppTheme.dimensions.spacing50),
             horizontalArrangement = Arrangement.SpaceBetween,
           ) {
-            data.label?.let { label -&gt;
+            data.label?.let { label ->
               CustomText(
                 modifier = Modifier
                   .weight(
@@ -121,24 +121,24 @@ fun ChatBubble(
           }
 
           val annotatedString = buildAnnotatedString {
-            data.content?.forEach { content -&gt;
+            data.content?.forEach { content ->
               when (content.type) {
                 ContentType.TEXT,
                 ContentType.SOURCE,
-                -&gt;
+                ->
                   withStyle(
                     style = SpanStyle(
                       fontStyle = AppTheme.typography.bodyLargeRegular.fontStyle,
                       color = when (data) {
-                        is ChatBubbleData.IncomingMessage -&gt; lightGrey4
-                        is ChatBubbleData.OutgoingMessage -&gt; AppTheme.colors.white
+                        is ChatBubbleData.IncomingMessage -> lightGrey4
+                        is ChatBubbleData.OutgoingMessage -> AppTheme.colors.white
                       },
                     ),
                   ) {
                     append(content.value)
                   }
 
-                ContentType.LINK -&gt; if (content.url == null) {
+                ContentType.LINK -> if (content.url == null) {
                   withStyle(
                     style = SpanStyle(
                       fontStyle = AppTheme.typography.bodyLargeRegular.fontStyle,
@@ -163,7 +163,7 @@ fun ChatBubble(
                   pop()
                 }
 
-                ContentType.UNKNOWN -&gt; Unit
+                ContentType.UNKNOWN -> Unit
               }
             }
           }
@@ -174,17 +174,17 @@ fun ChatBubble(
             onClick = data.onUrlClick,
           )
 
-          data.footerData?.let { data -&gt; MessageFooter(footerData = data) }
+          data.footerData?.let { data -> MessageFooter(footerData = data) }
         }
       }
     }
 
     data
       .actions
-      ?.takeIf { actions -&gt; actions.isNotEmpty() }
-      ?.let { actions -&gt; CtaSection(actions = actions) }
+      ?.takeIf { actions -> actions.isNotEmpty() }
+      ?.let { actions -> CtaSection(actions = actions) }
 
-    data.additionalInfo?.let { additionalInfo -&gt;
+    data.additionalInfo?.let { additionalInfo ->
       Spacer(modifier = Modifier.height(AppTheme.dimensions.spacing50))
       CustomText(
         label = additionalInfo,
@@ -193,7 +193,7 @@ fun ChatBubble(
       )
     }
 
-    data.suggestions?.let { suggestions -&gt;
+    data.suggestions?.let { suggestions ->
       Spacer(modifier = Modifier.height(AppTheme.dimensions.spacing300))
       FlowRow(
         modifier = Modifier.fillMaxWidth(),
@@ -203,7 +203,7 @@ fun ChatBubble(
         ),
         verticalArrangement = Arrangement.spacedBy(space = AppTheme.dimensions.spacing100),
       ) {
-        suggestions.forEachIndexed { index, suggestion -&gt;
+        suggestions.forEachIndexed { index, suggestion ->
           Button(
             data = ButtonData(
               buttonSize = ButtonSize.Large(
@@ -211,7 +211,7 @@ fun ChatBubble(
               ),
               buttonVariant = ButtonVariant.Secondary(),
               buttonType = ButtonType.WithText(
-                label = suggestion.value.toLabel(tag = &quot;suggestionButton_$index&quot;),
+                label = suggestion.value.toLabel(tag = "suggestionButton_$index"),
               ),
               onClick = suggestion.onClick,
             ),
@@ -240,7 +240,7 @@ private fun MessageFooter(footerData: FooterData) {
       modifier = Modifier.fillMaxWidth(),
       verticalAlignment = Alignment.CenterVertically,
     ) {
-      footerData.sourcesData?.let { sourcesData -&gt;
+      footerData.sourcesData?.let { sourcesData ->
         CustomText(
           label = sourcesData.title,
           style = AppTheme.typography.bodyMediumMedium,
@@ -255,21 +255,21 @@ private fun MessageFooter(footerData: FooterData) {
           alignment = Alignment.End,
         ),
       ) {
-        footerData.actionsData.forEach { actionData -&gt;
+        footerData.actionsData.forEach { actionData ->
           ButtonIcon(data = actionData.buttonData)
         }
       }
     }
   }
-  footerData.sourcesData?.let { sourcesData -&gt;
+  footerData.sourcesData?.let { sourcesData ->
     Spacer(modifier = Modifier.height(height = AppTheme.dimensions.spacing50))
     Column(modifier = Modifier.fillMaxWidth()) {
       val visibleSources =
         when (sourcesExpanded || sourcesData.items.size == 2) {
-          true -&gt; sourcesData.items
-          false -&gt; sourcesData.items.take(1)
+          true -> sourcesData.items
+          false -> sourcesData.items.take(1)
         }
-      visibleSources.forEachIndexed { index, source -&gt;
+      visibleSources.forEachIndexed { index, source ->
         Row(
           modifier = Modifier.fillMaxWidth(),
           verticalAlignment = Alignment.CenterVertically,
@@ -283,14 +283,14 @@ private fun MessageFooter(footerData: FooterData) {
                 buttonSize = ButtonSize.Small,
                 buttonVariant = ButtonVariant.Primary,
                 buttonType = ButtonType.WithText(
-                  label = source.value.toLabel(tag = &quot;sourceButton_$index&quot;),
+                  label = source.value.toLabel(tag = "sourceButton_$index"),
                 ),
                 onClick = source.onClick,
               ),
             )
           }
-          if ((!sourcesExpanded &amp;&amp; index == 0 &amp;&amp; sourcesData.items.size &gt; 2) ||
-            (sourcesExpanded &amp;&amp; index == sourcesData.items.size - 1)
+          if ((!sourcesExpanded && index == 0 && sourcesData.items.size > 2) ||
+            (sourcesExpanded && index == sourcesData.items.size - 1)
           ) {
             Box(
               modifier = Modifier
@@ -302,8 +302,8 @@ private fun MessageFooter(footerData: FooterData) {
                   buttonVariant = ButtonVariant.Tertiary,
                   buttonType = ButtonType.WithText(
                     label = when (sourcesExpanded) {
-                      true -&gt; sourcesData.showLessButtonLabel
-                      false -&gt; sourcesData.showMoreButtonLabel
+                      true -> sourcesData.showLessButtonLabel
+                      false -> sourcesData.showMoreButtonLabel
                     },
                   ),
                   onClick = {
@@ -324,7 +324,7 @@ private fun MessageFooter(footerData: FooterData) {
 }
 
 @Composable
-private fun CtaSection(actions: List&lt;ClickableContent&gt;) {
+private fun CtaSection(actions: List<ClickableContent>) {
   Column(
     modifier = Modifier
       .fillMaxWidth()
@@ -333,7 +333,7 @@ private fun CtaSection(actions: List&lt;ClickableContent&gt;) {
         end = AppTheme.dimensions.spacing600,
       ),
   ) {
-    actions.forEachIndexed { index, action -&gt;
+    actions.forEachIndexed { index, action ->
       Button(data = action.actionButtonData)
       if (index != actions.lastIndex) {
         Spacer(modifier = Modifier.height(height = AppTheme.dimensions.spacing100))

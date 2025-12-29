@@ -51,7 +51,7 @@ fun Accordion(
     elevation = AppTheme.elevations.level0,
   ) {
     Column {
-      data.elements.forEachIndexed { index, element -&gt;
+      data.elements.forEachIndexed { index, element ->
         AccordionSingle(
           data = element,
         )
@@ -127,8 +127,8 @@ private fun AccordionSingle(
       Icon(
         data = IconData.Standard(
           iconResId = when (expanded) {
-            true -&gt; R.drawable.ab007_chevron_up
-            else -&gt; R.drawable.ab008_chevron_down
+            true -> R.drawable.ab007_chevron_up
+            else -> R.drawable.ab008_chevron_down
           },
           iconSize = IconSize.SIZE24,
           iconColorProvider = { AppTheme.colors.neutral200 },

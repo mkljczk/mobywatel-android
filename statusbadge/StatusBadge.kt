@@ -46,15 +46,15 @@ fun StatusBadge(
   }
   Row(
     modifier = modifier.semantics {
-      contentDescription = &quot;${data.contentDescription.text} ${data.label.text}&quot;
+      contentDescription = "${data.contentDescription.text} ${data.label.text}"
     },
     horizontalArrangement = Arrangement.spacedBy(space = AppTheme.dimensions.spacing50),
     verticalAlignment = Alignment.CenterVertically,
   ) {
     when (data) {
-      is StatusBadgeData.WithIcon -&gt; Icon(
+      is StatusBadgeData.WithIcon -> Icon(
         data = IconData.Standard(
-          testTag = data.testTag?.let { tag -&gt; tag + &quot;Icon&quot; },
+          testTag = data.testTag?.let { tag -> tag + "Icon" },
           iconResId = data.status.getIconResId(),
           contentDescription = Label.EMPTY,
           iconColorProvider = { data.status.getIconColor() },
@@ -62,10 +62,10 @@ fun StatusBadge(
         ),
       )
 
-      is StatusBadgeData.WithDot -&gt; DotIcon(data = data)
+      is StatusBadgeData.WithDot -> DotIcon(data = data)
     }
     CustomText(
-      testTag = data.testTag?.let { tag -&gt; tag + &quot;Text&quot; },
+      testTag = data.testTag?.let { tag -> tag + "Text" },
       maxLines = data.maxLines,
       label = data.label,
       color = AppTheme.colors.neutral500,
@@ -87,7 +87,7 @@ internal fun DotIcon(
   ) {
     Icon(
       data = IconData.Standard(
-        testTag = data.testTag?.let { tag -&gt; tag + &quot;Icon&quot; },
+        testTag = data.testTag?.let { tag -> tag + "Icon" },
         iconResId = R.drawable.e003_badge,
         contentDescription = Label.EMPTY,
         iconColorProvider = { data.status.getIconColor() },
@@ -99,28 +99,28 @@ internal fun DotIcon(
 
 private fun StatusBadgeWithIconStatus.getIconResId() =
   when (this) {
-    StatusBadgeWithIconStatus.POSITIVE -&gt; R.drawable.b009_check_mark
-    StatusBadgeWithIconStatus.INFORMATIVE -&gt; R.drawable.b008_info
-    StatusBadgeWithIconStatus.NEGATIVE -&gt; R.drawable.b010_x_mark
-    StatusBadgeWithIconStatus.NOTICE -&gt; R.drawable.b012_notice_mark
-    StatusBadgeWithIconStatus.MINUS -&gt; R.drawable.b007_minus
+    StatusBadgeWithIconStatus.POSITIVE -> R.drawable.b009_check_mark
+    StatusBadgeWithIconStatus.INFORMATIVE -> R.drawable.b008_info
+    StatusBadgeWithIconStatus.NEGATIVE -> R.drawable.b010_x_mark
+    StatusBadgeWithIconStatus.NOTICE -> R.drawable.b012_notice_mark
+    StatusBadgeWithIconStatus.MINUS -> R.drawable.b007_minus
   }
 
 @Composable
 private fun StatusBadgeWithIconStatus.getIconColor() = when (this) {
-  StatusBadgeWithIconStatus.POSITIVE -&gt; AppTheme.colors.supportGreen100
-  StatusBadgeWithIconStatus.INFORMATIVE -&gt; AppTheme.colors.supportBlue100
-  StatusBadgeWithIconStatus.NEGATIVE -&gt; AppTheme.colors.supportRed100
-  StatusBadgeWithIconStatus.NOTICE -&gt; Color.Unspecified
-  StatusBadgeWithIconStatus.MINUS -&gt; AppTheme.colors.neutral200
+  StatusBadgeWithIconStatus.POSITIVE -> AppTheme.colors.supportGreen100
+  StatusBadgeWithIconStatus.INFORMATIVE -> AppTheme.colors.supportBlue100
+  StatusBadgeWithIconStatus.NEGATIVE -> AppTheme.colors.supportRed100
+  StatusBadgeWithIconStatus.NOTICE -> Color.Unspecified
+  StatusBadgeWithIconStatus.MINUS -> AppTheme.colors.neutral200
 }
 
 @Composable
 private fun StatusBadgeWithDotStatus.getIconColor() = when (this) {
-  StatusBadgeWithDotStatus.POSITIVE -&gt; AppTheme.colors.supportGreen100
-  StatusBadgeWithDotStatus.INFORMATIVE -&gt; AppTheme.colors.supportBlue100
-  StatusBadgeWithDotStatus.NEGATIVE -&gt; AppTheme.colors.supportRed100
-  StatusBadgeWithDotStatus.WARNING -&gt; AppTheme.colors.supportOrange100
+  StatusBadgeWithDotStatus.POSITIVE -> AppTheme.colors.supportGreen100
+  StatusBadgeWithDotStatus.INFORMATIVE -> AppTheme.colors.supportBlue100
+  StatusBadgeWithDotStatus.NEGATIVE -> AppTheme.colors.supportRed100
+  StatusBadgeWithDotStatus.WARNING -> AppTheme.colors.supportOrange100
 }
 
 @Composable

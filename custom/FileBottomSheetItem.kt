@@ -24,7 +24,7 @@ import pl.gov.coi.common.ui.theme.AppTheme
 data class FileBottomSheetItemData(
   @DrawableRes val iconResId: Int,
   val title: Label,
-  val onClick: () -&gt; Unit,
+  val onClick: () -> Unit,
 ) {
   internal val iconData = IconData.Standard(
     iconResId = iconResId,
@@ -57,14 +57,14 @@ fun FileBottomSheetItem(
 }
 
 @Composable
-private fun Modifier.debounceClick(debounceTime: Long = 300L, onClick: () -&gt; Unit): Modifier {
+private fun Modifier.debounceClick(debounceTime: Long = 300L, onClick: () -> Unit): Modifier {
   var lastClickTime = remember { 0L }
   return this then clickable(
     interactionSource = remember { MutableInteractionSource() },
     indication = rememberRipple(),
     onClick = {
       val currentTime = SystemClock.elapsedRealtime()
-      if ((currentTime - lastClickTime) &gt; debounceTime) {
+      if ((currentTime - lastClickTime) > debounceTime) {
         lastClickTime = currentTime
         onClick()
       }

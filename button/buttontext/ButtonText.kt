@@ -29,16 +29,16 @@ fun ButtonText(
   val focusManager = LocalFocusManager.current
   val multipleEventsCutter = remember { MultipleEventsCutter.get() }
   val textColor = when (data.buttonState) {
-    ButtonState.Enabled -&gt; AppTheme.colors.primary900
-    ButtonState.Destructive -&gt; AppTheme.colors.supportRed100
-    ButtonState.Disabled -&gt; AppTheme.colors.neutral60
+    ButtonState.Enabled -> AppTheme.colors.primary900
+    ButtonState.Destructive -> AppTheme.colors.supportRed100
+    ButtonState.Disabled -> AppTheme.colors.neutral60
   }
   Row(
     verticalAlignment = Alignment.CenterVertically,
     modifier = modifier
       .heightIn(min = AppTheme.dimensions.spacing250)
       .semantics {
-        testTag = data.testTag ?: &quot;button${data.label.tag}&quot;
+        testTag = data.testTag ?: "button${data.label.tag}"
         role = Role.Button
       }
       .clickable(

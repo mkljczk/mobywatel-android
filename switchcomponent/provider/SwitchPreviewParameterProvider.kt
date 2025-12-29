@@ -8,25 +8,25 @@ import pl.gov.coi.common.ui.ds.switchcomponent.SwitchExtraType
 import pl.gov.coi.common.ui.preview.CustomPreviewParameterProvider
 import pl.gov.coi.common.ui.preview.ScreenShotTestData
 
-class SwitchPreviewParameterProvider : CustomPreviewParameterProvider&lt;SwitchData&gt;() {
+class SwitchPreviewParameterProvider : CustomPreviewParameterProvider<SwitchData>() {
 
-  override val screenShotTestValues: Sequence&lt;ScreenShotTestData&lt;SwitchData&gt;&gt; = sequenceOf(
+  override val screenShotTestValues: Sequence<ScreenShotTestData<SwitchData>> = sequenceOf(
     ScreenShotTestData(
-      screenShotTestName = &quot;SwitchEnabledStateOFF&quot;,
+      screenShotTestName = "SwitchEnabledStateOFF",
       value = SwitchData.SwitchOnly(
         checked = false,
         onCheckedChange = {},
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SwitchEnabledStateON&quot;,
+      screenShotTestName = "SwitchEnabledStateON",
       value = SwitchData.SwitchOnly(
         checked = true,
         onCheckedChange = {},
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SwitchDisabledStateOFF&quot;,
+      screenShotTestName = "SwitchDisabledStateOFF",
       value = SwitchData.SwitchOnly(
         enabled = false,
         checked = false,
@@ -34,7 +34,7 @@ class SwitchPreviewParameterProvider : CustomPreviewParameterProvider&lt;SwitchD
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SwitchDisabledStateON&quot;,
+      screenShotTestName = "SwitchDisabledStateON",
       value = SwitchData.SwitchOnly(
         checked = true,
         enabled = false,
@@ -42,79 +42,79 @@ class SwitchPreviewParameterProvider : CustomPreviewParameterProvider&lt;SwitchD
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SwitchWithShortText&quot;,
+      screenShotTestName = "SwitchWithShortText",
       value = SwitchData.SwitchWithText(
-        label = &quot;Krótka  treść&quot;.toLabel(),
+        label = "Krótka  treść".toLabel(),
         checked = false,
         onCheckedChange = {},
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SwitchWithLongTextInvalid&quot;,
+      screenShotTestName = "SwitchWithLongTextInvalid",
       value = SwitchData.SwitchWithText(
-        label = &quot;Switch component longer description, Lorem ipsum dolor sit amet, consectetur adipiscing elit&quot;
+        label = "Switch component longer description, Lorem ipsum dolor sit amet, consectetur adipiscing elit"
           .toLabel(),
         onCheckedChange = {},
         checked = false,
         validationState = ValidationState.Invalid(
-          message = &quot;Komunikat walidacyjny&quot;.toLabel(),
+          message = "Komunikat walidacyjny".toLabel(),
         ),
       ),
     ),
 
     ScreenShotTestData(
-      screenShotTestName = &quot;SwitchWithLink&quot;,
+      screenShotTestName = "SwitchWithLink",
       value = SwitchData.SwitchWithExtras(
         checked = true,
         enabled = true,
         onCheckedChange = { },
-        label = &quot;Switch with link&quot;.toLabel(),
-        customActionContentDescription = &quot;Pobierz Switch with link&quot;.toLabel(),
+        label = "Switch with link".toLabel(),
+        customActionContentDescription = "Pobierz Switch with link".toLabel(),
         type = SwitchExtraType.Link(
           data = LinkData(
-            label = &quot;Link&quot;.toLabel(),
+            label = "Link".toLabel(),
             linkType = LinkData.LinkType.WEBSITE,
-            url = &quot;&quot;,
+            url = "",
             onClick = {},
           ),
         ),
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SwitchWithButtonText&quot;,
+      screenShotTestName = "SwitchWithButtonText",
       value = SwitchData.SwitchWithExtras(
         checked = true,
         enabled = true,
         onCheckedChange = { },
-        label = &quot;Switch with text button&quot;.toLabel(),
-        customActionContentDescription = &quot;Zobacz&quot;.toLabel(),
+        label = "Switch with text button".toLabel(),
+        customActionContentDescription = "Zobacz".toLabel(),
         type = SwitchExtraType.TextButton(
           data = ButtonTextData(
-            label = &quot;button text label&quot;.toLabel(),
+            label = "button text label".toLabel(),
             onClick = {},
           ),
         ),
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;SwitchWithLinkInvalid&quot;,
+      screenShotTestName = "SwitchWithLinkInvalid",
       value = SwitchData.SwitchWithExtras(
         checked = true,
         enabled = true,
         onCheckedChange = { },
-        label = &quot;Switch with link&quot;.toLabel(),
+        label = "Switch with link".toLabel(),
         type = SwitchExtraType.Link(
           data = LinkData(
-            label = &quot;Link&quot;.toLabel(),
+            label = "Link".toLabel(),
             linkType = LinkData.LinkType.EXTERNAL_APP,
-            url = &quot;&quot;,
+            url = "",
             onClick = {},
           ),
         ),
         validationState = ValidationState.Invalid(
-          message = &quot;Komunikat walidacyjny&quot;.toLabel(),
+          message = "Komunikat walidacyjny".toLabel(),
         ),
-        customActionContentDescription = &quot;Pobierz Switch with link&quot;.toLabel(),
+        customActionContentDescription = "Pobierz Switch with link".toLabel(),
       ),
     ),
   )

@@ -7,25 +7,25 @@ import pl.gov.coi.common.ui.ds.textarea.TextAreaType
 import pl.gov.coi.common.ui.preview.CustomPreviewParameterProvider
 import pl.gov.coi.common.ui.preview.ScreenShotTestData
 
-class TextAreaPPP : CustomPreviewParameterProvider&lt;TextAreaData&gt;() {
-  override val screenShotTestValues: Sequence&lt;ScreenShotTestData&lt;TextAreaData&gt;&gt; = sequenceOf(
+class TextAreaPPP : CustomPreviewParameterProvider<TextAreaData>() {
+  override val screenShotTestValues: Sequence<ScreenShotTestData<TextAreaData>> = sequenceOf(
     ScreenShotTestData(
-      screenShotTestName = &quot;FlexibleEmpty&quot;,
+      screenShotTestName = "FlexibleEmpty",
       value = TextAreaData(
         type = TextAreaType.Flexible(),
-        hint = &quot;Flexible text area - hint&quot;.toLabel(),
+        hint = "Flexible text area - hint".toLabel(),
         counterState = CounterState.Hidden,
         onValueChanged = {},
         state = TextAreaDataState.Default(),
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;FlexibleWithCounterAndLabel&quot;,
+      screenShotTestName = "FlexibleWithCounterAndLabel",
       value = TextAreaData(
-        label = &quot;Flexible - WithCounterAndLabel&quot;.toLabel(),
+        label = "Flexible - WithCounterAndLabel".toLabel(),
         type = TextAreaType.Flexible(),
         state = TextAreaDataState.Default(),
-        hint = &quot;Flexible text area - hint&quot;.toLabel(),
+        hint = "Flexible text area - hint".toLabel(),
         counterState = CounterState.Visible(
           maxLength = 400,
           onCharsLimitReached = {},
@@ -34,35 +34,35 @@ class TextAreaPPP : CustomPreviewParameterProvider&lt;TextAreaData&gt;() {
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;FlexibleWithLabel&quot;,
+      screenShotTestName = "FlexibleWithLabel",
       value = TextAreaData(
-        label = &quot;Flexible - WithLabel&quot;.toLabel(),
+        label = "Flexible - WithLabel".toLabel(),
         type = TextAreaType.Flexible(),
         state = TextAreaDataState.Default(),
-        hint = &quot;Flexible text area - hint&quot;.toLabel(),
+        hint = "Flexible text area - hint".toLabel(),
         counterState = CounterState.Hidden,
         onValueChanged = {},
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;FlexibleWithCounterLabelAndHelper&quot;,
+      screenShotTestName = "FlexibleWithCounterLabelAndHelper",
       value = TextAreaData(
-        label = &quot;Flexible - WithCounterLabelAndHelper&quot;.toLabel(),
+        label = "Flexible - WithCounterLabelAndHelper".toLabel(),
         type = TextAreaType.Flexible(),
-        state = TextAreaDataState.Default(helperLabel = &quot;HelperText&quot;.toLabel()),
-        hint = &quot;Flexible text area - hint&quot;.toLabel(),
+        state = TextAreaDataState.Default(helperLabel = "HelperText".toLabel()),
+        hint = "Flexible text area - hint".toLabel(),
         counterState = CounterState.Hidden,
         onValueChanged = {},
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;FlexibleWithCounterLabelAndHelperDisabled&quot;,
+      screenShotTestName = "FlexibleWithCounterLabelAndHelperDisabled",
       value = TextAreaData(
-        label = &quot;Flexible - FlexibleWithCounterLabelAndHelperDisabled&quot;.toLabel(),
+        label = "Flexible - FlexibleWithCounterLabelAndHelperDisabled".toLabel(),
         type = TextAreaType.Flexible(),
         enabled = false,
-        state = TextAreaDataState.Default(helperLabel = &quot;HelperText&quot;.toLabel()),
-        hint = &quot;Flexible text area - hint&quot;.toLabel(),
+        state = TextAreaDataState.Default(helperLabel = "HelperText".toLabel()),
+        hint = "Flexible text area - hint".toLabel(),
         counterState = CounterState.Visible(
           maxLength = 200,
         ),
@@ -70,9 +70,9 @@ class TextAreaPPP : CustomPreviewParameterProvider&lt;TextAreaData&gt;() {
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;FlexibleWithCounterAndContentDisabled&quot;,
+      screenShotTestName = "FlexibleWithCounterAndContentDisabled",
       value = TextAreaData(
-        label = &quot;Flexible - FlexibleWithCounterAndContentDisabled&quot;.toLabel(),
+        label = "Flexible - FlexibleWithCounterAndContentDisabled".toLabel(),
         type = TextAreaType.Flexible(maxLines = 6),
         enabled = false,
         state = TextAreaDataState.Default(),
@@ -80,16 +80,16 @@ class TextAreaPPP : CustomPreviewParameterProvider&lt;TextAreaData&gt;() {
           maxLength = 255,
         ),
         onValueChanged = {},
-        content = &quot;TextArea content&quot;,
+        content = "TextArea content",
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;FlexibleWithCounterLabelAndInvalid&quot;,
+      screenShotTestName = "FlexibleWithCounterLabelAndInvalid",
       value = TextAreaData(
-        label = &quot;Flexible - WithCounterLabelAndInvalid&quot;.toLabel(),
+        label = "Flexible - WithCounterLabelAndInvalid".toLabel(),
         type = TextAreaType.Flexible(),
-        state = TextAreaDataState.Default(helperLabel = &quot;HelperText&quot;.toLabel()),
-        hint = &quot;Flexible text area - hint&quot;.toLabel(),
+        state = TextAreaDataState.Default(helperLabel = "HelperText".toLabel()),
+        hint = "Flexible text area - hint".toLabel(),
         counterState = CounterState.Visible(
           maxLength = 400,
           onCharsLimitReached = {},
@@ -98,34 +98,34 @@ class TextAreaPPP : CustomPreviewParameterProvider&lt;TextAreaData&gt;() {
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;FixWithCounterLabelAndHelper&quot;,
+      screenShotTestName = "FixWithCounterLabelAndHelper",
       value = TextAreaData(
-        label = &quot;Fix - WithCounterLabelAndHelper&quot;.toLabel(),
+        label = "Fix - WithCounterLabelAndHelper".toLabel(),
         type = TextAreaType.Fix(),
-        state = TextAreaDataState.Default(helperLabel = &quot;HelperText&quot;.toLabel()),
-        hint = &quot;Fix text area - hint&quot;.toLabel(),
+        state = TextAreaDataState.Default(helperLabel = "HelperText".toLabel()),
+        hint = "Fix text area - hint".toLabel(),
         counterState = CounterState.Hidden,
         onValueChanged = {},
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;FixEmpty&quot;,
+      screenShotTestName = "FixEmpty",
       value = TextAreaData(
-        label = &quot;Fix - FixEmpty&quot;.toLabel(),
+        label = "Fix - FixEmpty".toLabel(),
         type = TextAreaType.Fix(),
-        state = TextAreaDataState.Default(helperLabel = &quot;HelperText&quot;.toLabel()),
-        hint = &quot;Fix text area - hint&quot;.toLabel(),
+        state = TextAreaDataState.Default(helperLabel = "HelperText".toLabel()),
+        hint = "Fix text area - hint".toLabel(),
         counterState = CounterState.Hidden,
         onValueChanged = {},
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;FixWithCounterLabelAndInvalid&quot;,
+      screenShotTestName = "FixWithCounterLabelAndInvalid",
       value = TextAreaData(
-        label = &quot;Fix - WithCounterLabelAndInvalid&quot;.toLabel(),
+        label = "Fix - WithCounterLabelAndInvalid".toLabel(),
         type = TextAreaType.Flexible(),
-        state = TextAreaDataState.Error(errorLabel = &quot;Invalid Fix&quot;.toLabel()),
-        hint = &quot;Flexible text area - hint&quot;.toLabel(),
+        state = TextAreaDataState.Error(errorLabel = "Invalid Fix".toLabel()),
+        hint = "Flexible text area - hint".toLabel(),
         counterState = CounterState.Visible(
           maxLength = 400,
           onCharsLimitReached = {},

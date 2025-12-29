@@ -9,13 +9,13 @@ interface CustomAccordionContent {
 }
 
 data class AccordionData(
-  val elements: List&lt;AccordionElement&gt;,
+  val elements: List<AccordionElement>,
 )
 
 data class AccordionElement(
   val header: Label,
   val initialExpanded: Boolean = false,
-  val onListExpanded: (Boolean) -&gt; Unit = {},
+  val onListExpanded: (Boolean) -> Unit = {},
   val addContentPadding: Boolean = true,
   val content: CustomAccordionContent,
 )

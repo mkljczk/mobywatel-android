@@ -10,8 +10,8 @@ import pl.gov.coi.common.domain.validators.ValidationState
 import pl.gov.coi.common.ui.theme.AppTheme
 
 @Deprecated(
-  message = &quot;Do not use.&quot;,
-  replaceWith = ReplaceWith(&quot;pl.gov.coi.common.ui.ds.radiobutton.RadioButton&quot;),
+  message = "Do not use.",
+  replaceWith = ReplaceWith("pl.gov.coi.common.ui.ds.radiobutton.RadioButton"),
 )
 @Composable
 fun OldRadioButton(

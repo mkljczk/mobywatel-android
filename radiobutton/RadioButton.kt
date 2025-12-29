@@ -40,8 +40,8 @@ fun RadioButton(
       onClickHelperIcon = data.onClickHelperIcon,
     )
     when (data.radioButtonVariant) {
-      is RadioButtonVariant.Default -&gt; RadioButtonDefault(data = data)
-      is RadioButtonVariant.ContentBox -&gt; RadioButtonContentBox(data = data)
+      is RadioButtonVariant.Default -> RadioButtonDefault(data = data)
+      is RadioButtonVariant.ContentBox -> RadioButtonContentBox(data = data)
     }
   }
 }
@@ -71,7 +71,7 @@ private fun RadioButtonDefault(
 @Composable
 private fun RadioButtonHeader(
   label: Label?,
-  onClickHelperIcon: (() -&gt; Unit)?,
+  onClickHelperIcon: (() -> Unit)?,
 ) {
   Row {
     label?.let {
@@ -82,7 +82,7 @@ private fun RadioButtonHeader(
       )
     }
     Spacer(modifier = Modifier.width(AppTheme.dimensions.spacing50))
-    onClickHelperIcon?.let { onClick -&gt;
+    onClickHelperIcon?.let { onClick ->
       ButtonIcon(
         data = ButtonIconData(
           iconResId = R.drawable.ab015_help,
@@ -99,9 +99,9 @@ private fun RadioButtonHeader(
 
 @Composable
 private fun RadioButtonSupportText(supportText: RadioButtonSupportText) = when (supportText) {
-  is RadioButtonSupportText.Helper -&gt; RadioButtonHelperText(helperText = supportText.helperText)
-  is RadioButtonSupportText.Error -&gt; RadioButtonError(errorText = supportText.errorText)
-  RadioButtonSupportText.None -&gt; Unit
+  is RadioButtonSupportText.Helper -> RadioButtonHelperText(helperText = supportText.helperText)
+  is RadioButtonSupportText.Error -> RadioButtonError(errorText = supportText.errorText)
+  RadioButtonSupportText.None -> Unit
 }
 
 @Composable
@@ -130,7 +130,7 @@ private fun RadioButtonHelperText(
 @Composable
 fun RadioButtonPreview(
   @PreviewParameter(RadioButtonPPP::class)
-  wrappedValue: WrappedValue&lt;RadioButtonData&gt;,
+  wrappedValue: WrappedValue<RadioButtonData>,
 ) {
   Column(
     modifier = Modifier

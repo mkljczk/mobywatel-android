@@ -32,7 +32,7 @@ internal fun RadioButtonRow(
     modifier = Modifier
       .wrapContentHeight()
       .semantics {
-        testTag = &quot;radiobutton ${data.label.tag}&quot;
+        testTag = "radiobutton ${data.label.tag}"
       }
       .selectable(
         selected = data.item.isSelected,
@@ -41,7 +41,7 @@ internal fun RadioButtonRow(
         interactionSource = NoRippleInteractionSource(),
         indication = null,
         onClick = {
-          if (data.item.enabled &amp;&amp; data.item.isSelected.not()) {
+          if (data.item.enabled && data.item.isSelected.not()) {
             multipleEventsCutter.processEvent {
               data.onClick()
             }

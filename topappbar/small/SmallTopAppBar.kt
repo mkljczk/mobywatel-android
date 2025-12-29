@@ -34,8 +34,8 @@ internal fun SmallTopAppBar(
   data: TopAppBarData.Small,
   scrollBehavior: TopAppBarScrollBehavior,
 ) {
-  when (data is TopAppBarData.Small.Default &amp;&amp; data.alignment == TitleAlignment.Left) {
-    true -&gt; TopAppBar(
+  when (data is TopAppBarData.Small.Default && data.alignment == TitleAlignment.Left) {
+    true -> TopAppBar(
       colors = TopAppBarDefaults.topAppBarColors(
         containerColor = data.containerColor(),
         scrolledContainerColor = data.containerColor(),
@@ -60,14 +60,14 @@ internal fun SmallTopAppBar(
       scrollBehavior = scrollBehavior,
     )
 
-    false -&gt; CenterAlignedTopAppBar(
+    false -> CenterAlignedTopAppBar(
       colors = TopAppBarDefaults.topAppBarColors(
         containerColor = data.containerColor(),
         scrolledContainerColor = data.containerColor(),
       ),
       title = {
         when (data) {
-          is TopAppBarData.Small.Default -&gt; CustomText(
+          is TopAppBarData.Small.Default -> CustomText(
             modifier = Modifier
               .semantics {
                 heading()
@@ -82,20 +82,20 @@ internal fun SmallTopAppBar(
             focusIndex = -1f,
           )
 
-          is TopAppBarData.Small.Logo -&gt; Image(
+          is TopAppBarData.Small.Logo -> Image(
             modifier = Modifier.height(AppTheme.dimensions.spacing400),
             painter = painterResource(id = R.drawable.coi_common_ui_ic_mobywatel_horizontal_logo),
             contentDescription = null,
           )
 
-          is TopAppBarData.Small.Sygnet -&gt; Unit
+          is TopAppBarData.Small.Sygnet -> Unit
         }
       },
       navigationIcon = {
         when (data) {
-          is TopAppBarData.Small.Default -&gt; data.navigationButtonData.CreateNavigationButton()
-          is TopAppBarData.Small.Logo -&gt; data.navigationButtonData.CreateNavigationButton()
-          is TopAppBarData.Small.Sygnet -&gt; CustomIcon(
+          is TopAppBarData.Small.Default -> data.navigationButtonData.CreateNavigationButton()
+          is TopAppBarData.Small.Logo -> data.navigationButtonData.CreateNavigationButton()
+          is TopAppBarData.Small.Sygnet -> CustomIcon(
             modifier = Modifier.padding(start = AppTheme.dimensions.spacing150),
             iconResId = R.drawable.coi_common_ui_ic_mobywatel_logo,
             iconSize = IconSize.SBig,
@@ -110,10 +110,10 @@ internal fun SmallTopAppBar(
     )
   }
   when (data) {
-    is TopAppBarData.Small.Default -&gt; if (data.progressBarData != null) {
+    is TopAppBarData.Small.Default -> if (data.progressBarData != null) {
       ProgressBar(data = data.progressBarData)
     }
 
-    else -&gt; Unit
+    else -> Unit
   }
 }

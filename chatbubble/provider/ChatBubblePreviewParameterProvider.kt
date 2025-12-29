@@ -10,39 +10,39 @@ import pl.gov.coi.common.ui.ds.chatbubble.SourcesData
 import pl.gov.coi.common.ui.preview.CustomPreviewParameterProvider
 import pl.gov.coi.common.ui.preview.ScreenShotTestData
 
-class ChatBubblePreviewParameterProvider : CustomPreviewParameterProvider&lt;ChatBubbleData&gt;() {
+class ChatBubblePreviewParameterProvider : CustomPreviewParameterProvider<ChatBubbleData>() {
 
-  override val screenShotTestValues: Sequence&lt;ScreenShotTestData&lt;ChatBubbleData&gt;&gt; = sequenceOf(
+  override val screenShotTestValues: Sequence<ScreenShotTestData<ChatBubbleData>> = sequenceOf(
     ScreenShotTestData(
-      screenShotTestName = &quot;ChatBubbleBotLoading&quot;,
+      screenShotTestName = "ChatBubbleBotLoading",
       value = provideChatBubbleBotLoadingPreviewData(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;ChatBubbleBot&quot;,
+      screenShotTestName = "ChatBubbleBot",
       value = provideChatBubbleBotPreviewData(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;ChatBubbleUser&quot;,
+      screenShotTestName = "ChatBubbleUser",
       value = provideChatBubbleUserPreviewData(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;ChatBubbleBotWithOptionsWithSources&quot;,
+      screenShotTestName = "ChatBubbleBotWithOptionsWithSources",
       value = provideChatBubbleBotWithOptionsPreviewData(
         sourcesData = SourcesData(
-          title = &quot;Źródło&quot;.toLabel(),
-          showMoreButtonLabel = &quot;+ X więcej&quot;.toLabel(),
-          showLessButtonLabel = &quot;Pokaż mniej&quot;.toLabel(),
+          title = "Źródło".toLabel(),
+          showMoreButtonLabel = "+ X więcej".toLabel(),
+          showLessButtonLabel = "Pokaż mniej".toLabel(),
           items = listOf(
             ClickableContent(
-              value = &quot;1. Gov.pl&quot;,
+              value = "1. Gov.pl",
               onClick = {},
             ),
             ClickableContent(
-              value = &quot;2. Gov.pl&quot;,
+              value = "2. Gov.pl",
               onClick = {},
             ),
             ClickableContent(
-              value = &quot;3. Gov.pl&quot;,
+              value = "3. Gov.pl",
               onClick = {},
             ),
           ),
@@ -50,7 +50,7 @@ class ChatBubblePreviewParameterProvider : CustomPreviewParameterProvider&lt;Cha
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;ChatBubbleBotWithOptionsWithoutSources&quot;,
+      screenShotTestName = "ChatBubbleBotWithOptionsWithoutSources",
       value = provideChatBubbleBotWithOptionsPreviewData(
         sourcesData = null,
       ),
@@ -59,18 +59,18 @@ class ChatBubblePreviewParameterProvider : CustomPreviewParameterProvider&lt;Cha
 
   private fun provideChatBubbleBotLoadingPreviewData() =
     ChatBubbleData.IncomingMessage(
-      label = &quot;Wirtualny asystent&quot;.toLabel(),
+      label = "Wirtualny asystent".toLabel(),
     )
 
   private fun provideChatBubbleBotPreviewData() =
     ChatBubbleData.IncomingMessage(
-      label = &quot;Wirtualny asystent&quot;.toLabel(),
+      label = "Wirtualny asystent".toLabel(),
       isLoading = false,
       content = listOf(
         Content(
           type = ContentType.TEXT,
-          value = &quot;Treść odpowiedzi bota - jakaś dłuższa, żeby było widać jak wygląda wielolinijkowo. &quot; +
-            &quot;Dalsza część odpowiedzi, jeszcze trochę znaków.&quot;,
+          value = "Treść odpowiedzi bota - jakaś dłuższa, żeby było widać jak wygląda wielolinijkowo. " +
+            "Dalsza część odpowiedzi, jeszcze trochę znaków.",
         ),
       ),
     )
@@ -80,40 +80,40 @@ class ChatBubblePreviewParameterProvider : CustomPreviewParameterProvider&lt;Cha
       content = listOf(
         Content(
           type = ContentType.TEXT,
-          value = &quot;Treść pytania użytkownika&quot;,
+          value = "Treść pytania użytkownika",
         ),
       ),
     )
 
   private fun provideChatBubbleBotWithOptionsPreviewData(sourcesData: SourcesData?) =
     ChatBubbleData.IncomingMessage(
-      label = &quot;Wirtualny asystent&quot;.toLabel(),
+      label = "Wirtualny asystent".toLabel(),
       isLoading = false,
       content = listOf(
         Content(
           type = ContentType.TEXT,
-          value = &quot;To jest jakiś tekst, a tutaj jest &quot;,
+          value = "To jest jakiś tekst, a tutaj jest ",
         ),
         Content(
           type = ContentType.LINK,
-          value = &quot;link&quot;,
-          url = &quot;www.gov.pl&quot;,
+          value = "link",
+          url = "www.gov.pl",
         ),
         Content(
           type = ContentType.TEXT,
-          value = &quot;. To wszystko jest z naszego źródła &quot;,
+          value = ". To wszystko jest z naszego źródła ",
         ),
         Content(
           type = ContentType.SOURCE,
-          value = &quot;(1)&quot;,
-          url = &quot;www.gov.pl&quot;,
+          value = "(1)",
+          url = "www.gov.pl",
         ),
         Content(
           type = ContentType.TEXT,
-          value = &quot;. Dalszy tekst.&quot;,
+          value = ". Dalszy tekst.",
         ),
       ),
-      additionalInfo = &quot;Odpowiedź 2 z 10&quot;.toLabel(),
+      additionalInfo = "Odpowiedź 2 z 10".toLabel(),
       footerData = FooterData(
         sourcesData = sourcesData,
         actionsData = listOf(
@@ -124,21 +124,21 @@ class ChatBubblePreviewParameterProvider : CustomPreviewParameterProvider&lt;Cha
       ),
       actions = listOf(
         ClickableContent(
-          value = &quot;Zgłoś naruszenie&quot;,
+          value = "Zgłoś naruszenie",
           onClick = {},
         ),
         ClickableContent(
-          value = &quot;Akcja&quot;,
+          value = "Akcja",
           onClick = {},
         ),
       ),
       suggestions = listOf(
         ClickableContent(
-          value = &quot;Jak założyć profil zaufany?&quot;,
+          value = "Jak założyć profil zaufany?",
           onClick = {},
         ),
         ClickableContent(
-          value = &quot;Jak złożyć wniosek o dodatek elektryczny?&quot;,
+          value = "Jak złożyć wniosek o dodatek elektryczny?",
           onClick = {},
         ),
       ),

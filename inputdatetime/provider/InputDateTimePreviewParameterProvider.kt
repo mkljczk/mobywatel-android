@@ -6,34 +6,34 @@ import pl.gov.coi.common.ui.ds.inputdatetime.InputDateTimeData
 import pl.gov.coi.common.ui.preview.CustomPreviewParameterProvider
 import pl.gov.coi.common.ui.preview.ScreenShotTestData
 
-class InputDateTimePreviewParameterProvider : CustomPreviewParameterProvider&lt;InputDateTimeData&gt;() {
-  override val screenShotTestValues: Sequence&lt;ScreenShotTestData&lt;InputDateTimeData&gt;&gt; = sequenceOf(
+class InputDateTimePreviewParameterProvider : CustomPreviewParameterProvider<InputDateTimeData>() {
+  override val screenShotTestValues: Sequence<ScreenShotTestData<InputDateTimeData>> = sequenceOf(
     ScreenShotTestData(
-      screenShotTestName = &quot;InputDateEnabledPlaceholder&quot;,
+      screenShotTestName = "InputDateEnabledPlaceholder",
       value = provideInputDateEnabledPlaceholderPreviewData(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;InputDateEnabledSelectedDate&quot;,
+      screenShotTestName = "InputDateEnabledSelectedDate",
       value = provideInputDateEnabledSelectedDatePreviewData(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;InputDateErrorPlaceholder&quot;,
+      screenShotTestName = "InputDateErrorPlaceholder",
       value = provideInputDateErrorPlaceholderPreviewData(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;InputDateErrorSelectedDate&quot;,
+      screenShotTestName = "InputDateErrorSelectedDate",
       value = provideInputDateErrorSelectedDatePreviewData(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;InputDateErrorLongMessage&quot;,
+      screenShotTestName = "InputDateErrorLongMessage",
       value = provideInputDateErrorLongMessagePreviewData(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;InputDateDisabledPlaceholder&quot;,
+      screenShotTestName = "InputDateDisabledPlaceholder",
       value = provideInputDateDisabledPlaceholderPreviewData(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;InputDateDisabledSelectedDate&quot;,
+      screenShotTestName = "InputDateDisabledSelectedDate",
       value = provideInputDateDisabledSelectedDatePreviewData(),
     ),
   )
@@ -41,72 +41,72 @@ class InputDateTimePreviewParameterProvider : CustomPreviewParameterProvider&lt;
 
 fun provideInputDateEnabledPlaceholderPreviewData() =
   InputDateTimeData(
-    label = &quot;Label&quot;.toLabel(&quot;&quot;),
-    helperText = &quot;Helper text.&quot;.toLabel(&quot;&quot;),
+    label = "Label".toLabel(""),
+    helperText = "Helper text.".toLabel(""),
     type = InputDateTimeData.Type.Date,
     onClick = {},
   )
 
 fun provideInputDateEnabledSelectedDatePreviewData() =
   InputDateTimeData(
-    inputText = &quot;29.04.2024&quot;,
-    label = &quot;Label&quot;.toLabel(&quot;&quot;),
+    inputText = "29.04.2024",
+    label = "Label".toLabel(""),
     type = InputDateTimeData.Type.Date,
-    helperText = &quot;Helper text.&quot;.toLabel(&quot;&quot;),
+    helperText = "Helper text.".toLabel(""),
     onClick = {},
   )
 
 fun provideInputDateErrorPlaceholderPreviewData() =
   InputDateTimeData(
-    label = &quot;Label&quot;.toLabel(&quot;&quot;),
-    helperText = &quot;Helper text.&quot;.toLabel(&quot;&quot;),
+    label = "Label".toLabel(""),
+    helperText = "Helper text.".toLabel(""),
     type = InputDateTimeData.Type.Date,
     validationState = ValidationState.Invalid(
-      message = &quot;Error text.&quot;.toLabel(&quot;&quot;),
+      message = "Error text.".toLabel(""),
     ),
     onClick = {},
   )
 
 fun provideInputDateErrorSelectedDatePreviewData() =
   InputDateTimeData(
-    inputText = &quot;29.04.2024&quot;,
-    label = &quot;Label&quot;.toLabel(&quot;&quot;),
+    inputText = "29.04.2024",
+    label = "Label".toLabel(""),
     type = InputDateTimeData.Type.Date,
-    helperText = &quot;Helper text.&quot;.toLabel(&quot;&quot;),
+    helperText = "Helper text.".toLabel(""),
     validationState = ValidationState.Invalid(
-      message = &quot;Error text.&quot;.toLabel(&quot;&quot;),
+      message = "Error text.".toLabel(""),
     ),
     onClick = {},
   )
 
 fun provideInputDateErrorLongMessagePreviewData() =
   InputDateTimeData(
-    inputText = &quot;29.04.2024&quot;,
-    label = &quot;Label&quot;.toLabel(&quot;&quot;),
+    inputText = "29.04.2024",
+    label = "Label".toLabel(""),
     type = InputDateTimeData.Type.Date,
-    helperText = &quot;Helper text.&quot;.toLabel(&quot;&quot;),
+    helperText = "Helper text.".toLabel(""),
     validationState = ValidationState.Invalid(
-      message = (&quot;Podczas walidacji tekst pomocniczy zostaje zastąpiony tekstem błędu (komponent validation error). &quot; +
-        &quot;Validation error dla komunikatu o długości powyżej jednej linii.&quot;).toLabel(&quot;&quot;),
+      message = ("Podczas walidacji tekst pomocniczy zostaje zastąpiony tekstem błędu (komponent validation error). " +
+        "Validation error dla komunikatu o długości powyżej jednej linii.").toLabel(""),
     ),
     onClick = {},
   )
 
 fun provideInputDateDisabledPlaceholderPreviewData() =
   InputDateTimeData(
-    label = &quot;Label&quot;.toLabel(&quot;&quot;),
+    label = "Label".toLabel(""),
     type = InputDateTimeData.Type.Date,
-    helperText = &quot;Helper text.&quot;.toLabel(&quot;&quot;),
+    helperText = "Helper text.".toLabel(""),
     enabled = false,
     onClick = {},
   )
 
 fun provideInputDateDisabledSelectedDatePreviewData() =
   InputDateTimeData(
-    inputText = &quot;29.04.2024&quot;,
-    label = &quot;Label&quot;.toLabel(&quot;&quot;),
+    inputText = "29.04.2024",
+    label = "Label".toLabel(""),
     type = InputDateTimeData.Type.Date,
-    helperText = &quot;Helper text.&quot;.toLabel(&quot;&quot;),
+    helperText = "Helper text.".toLabel(""),
     enabled = false,
     onClick = {},
   )

@@ -28,10 +28,10 @@ import pl.gov.coi.common.ui.theme.AppTheme
 import pl.gov.coi.common.ui.topMenu.TopMenu
 
 @Composable
-fun &lt;CONTENT_DATA, BOTTOM_CONTENT&gt; IconPage(
-  data: IconPageData&lt;CONTENT_DATA, BOTTOM_CONTENT&gt;,
-  content: @Composable (CONTENT_DATA) -&gt; Unit = {},
-  bottomContent: @Composable (BOTTOM_CONTENT) -&gt; Unit = {},
+fun <CONTENT_DATA, BOTTOM_CONTENT> IconPage(
+  data: IconPageData<CONTENT_DATA, BOTTOM_CONTENT>,
+  content: @Composable (CONTENT_DATA) -> Unit = {},
+  bottomContent: @Composable (BOTTOM_CONTENT) -> Unit = {},
 ) {
   Column(
     modifier = Modifier
@@ -66,7 +66,7 @@ fun &lt;CONTENT_DATA, BOTTOM_CONTENT&gt; IconPage(
         color = AppTheme.colors.neutral500,
       )
 
-      data.descriptionFirst?.let { descriptionFirst -&gt;
+      data.descriptionFirst?.let { descriptionFirst ->
         Spacer(modifier = Modifier.height(height = AppTheme.dimensions.spacing200))
         CustomText(
           label = descriptionFirst,
@@ -76,7 +76,7 @@ fun &lt;CONTENT_DATA, BOTTOM_CONTENT&gt; IconPage(
         )
       }
 
-      data.descriptionSecond?.let { descriptionSecond -&gt;
+      data.descriptionSecond?.let { descriptionSecond ->
         Spacer(modifier = Modifier.height(height = AppTheme.dimensions.spacing200))
         CustomText(
           label = descriptionSecond,
@@ -86,13 +86,13 @@ fun &lt;CONTENT_DATA, BOTTOM_CONTENT&gt; IconPage(
         )
       }
 
-      data.content?.let { content -&gt;
+      data.content?.let { content ->
         Spacer(modifier = Modifier.height(height = AppTheme.dimensions.spacing200))
         content(content)
       }
     }
 
-    data.bottomContent?.let { bottomContent -&gt;
+    data.bottomContent?.let { bottomContent ->
       Spacer(modifier = Modifier.height(height = AppTheme.dimensions.spacing200))
       bottomContent(bottomContent)
     }
@@ -104,7 +104,7 @@ fun &lt;CONTENT_DATA, BOTTOM_CONTENT&gt; IconPage(
 fun IconPagePreview(
   @PreviewParameter(
     IconPagePreviewProvider::class,
-  ) data: IconPageData&lt;*, *&gt;,
+  ) data: IconPageData<*, *>,
 ) {
   Column(
     modifier = Modifier
@@ -112,7 +112,7 @@ fun IconPagePreview(
       .background(color = AppTheme.colors.background),
   ) {
     TopMenu(
-      label = &quot;IconPage 1.1.0&quot;.toLabel(tag = &quot;topMenuLabel&quot;),
+      label = "IconPage 1.1.0".toLabel(tag = "topMenuLabel"),
       mainButtonData = ButtonIconData(
 
         iconResId = R.drawable.ab004_arrow_left,
@@ -122,13 +122,13 @@ fun IconPagePreview(
     )
     IconPage(
       data = data,
-      content = { contentData -&gt;
+      content = { contentData ->
         if (contentData is InfoRowListData) InfoRowList(data = contentData)
       },
-      bottomContent = { bottomContentData -&gt;
+      bottomContent = { bottomContentData ->
         if (bottomContentData is IconPageBottomContentData) {
           Button(data = bottomContentData.primaryButtonData)
-          bottomContentData.secondaryButtonData?.let { secondaryButtonData -&gt;
+          bottomContentData.secondaryButtonData?.let { secondaryButtonData ->
             Spacer(modifier = Modifier.height(height = AppTheme.dimensions.spacing150))
             Button(data = secondaryButtonData)
           }

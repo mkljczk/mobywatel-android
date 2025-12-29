@@ -8,8 +8,8 @@ import pl.gov.coi.common.ui.ds.custom.icon.IconSize
 
 data class ImageData(
   val image: Bitmap,
-  val onClick: () -&gt; Unit,
+  val onClick: () -> Unit,
   val size: IconSize,
-  val shapeProvider: @Composable () -&gt; Shape,
+  val shapeProvider: @Composable () -> Shape,
   val contentDescription: Label,
 )

@@ -8,180 +8,180 @@ import pl.gov.coi.common.ui.preview.ScreenShotTestData
 /* 
  TODO REMOVE MOB-49304 
  */
-class SingleCardStatusBadgePreviewProvider : CustomPreviewParameterProvider&lt;SingleCardStatusBadgeData&gt;() {
-  override val screenShotTestValues: Sequence&lt;ScreenShotTestData&lt;SingleCardStatusBadgeData&gt;&gt;
+class SingleCardStatusBadgePreviewProvider : CustomPreviewParameterProvider<SingleCardStatusBadgeData>() {
+  override val screenShotTestValues: Sequence<ScreenShotTestData<SingleCardStatusBadgeData>>
     get() = sequenceOf(
       ScreenShotTestData(
-        screenShotTestName = &quot; StatusBadgeDataDefaultGreen&quot;,
+        screenShotTestName = " StatusBadgeDataDefaultGreen",
         value = SingleCardStatusBadgeData.Default.Green(
-          text = &quot;Roboto, Medium, 16, Neutral-500&quot;.toLabel(),
+          text = "Roboto, Medium, 16, Neutral-500".toLabel(),
         ),
       ),
       ScreenShotTestData(
-        screenShotTestName = &quot; StatusBadgeDataDefaultYellow&quot;,
+        screenShotTestName = " StatusBadgeDataDefaultYellow",
         value = SingleCardStatusBadgeData.Default.Yellow(
-          text = &quot;Roboto, Medium, 16, Neutral-500&quot;.toLabel(),
+          text = "Roboto, Medium, 16, Neutral-500".toLabel(),
         ),
       ),
       ScreenShotTestData(
-        screenShotTestName = &quot; StatusBadgeDataDefaultRed&quot;,
+        screenShotTestName = " StatusBadgeDataDefaultRed",
         value = SingleCardStatusBadgeData.Default.Red(
-          text = &quot;Roboto, Medium, 16, Neutral-500&quot;.toLabel(),
+          text = "Roboto, Medium, 16, Neutral-500".toLabel(),
         ),
       ),
       ScreenShotTestData(
-        screenShotTestName = &quot; StatusBadgeDataDefaultBlue&quot;,
+        screenShotTestName = " StatusBadgeDataDefaultBlue",
         value = SingleCardStatusBadgeData.Default.Blue(
-          text = &quot;Roboto, Medium, 16, Neutral-500&quot;.toLabel(),
+          text = "Roboto, Medium, 16, Neutral-500".toLabel(),
         ),
       ),
       ScreenShotTestData(
-        screenShotTestName = &quot; StatusBadgeDataWithNoIconNormal&quot;,
+        screenShotTestName = " StatusBadgeDataWithNoIconNormal",
         value = SingleCardStatusBadgeData.WithNoIcon.Normal(
-          text = &quot;Roboto, Regular, 14, Neutral-200&quot;.toLabel(),
+          text = "Roboto, Regular, 14, Neutral-200".toLabel(),
         ),
       ),
       ScreenShotTestData(
-        screenShotTestName = &quot; StatusBadgeDataWithNoIconError&quot;,
+        screenShotTestName = " StatusBadgeDataWithNoIconError",
         value = SingleCardStatusBadgeData.WithNoIcon.Error(
-          text = &quot;Roboto, Medium, 14, Red-100&quot;.toLabel(),
+          text = "Roboto, Medium, 14, Red-100".toLabel(),
         ),
       ),
 
       ScreenShotTestData(
-        screenShotTestName = &quot; StatusBadgeDataWithIconSuccess&quot;,
+        screenShotTestName = " StatusBadgeDataWithIconSuccess",
         value = SingleCardStatusBadgeData.WithIcon.Success(
-          text = &quot;Roboto, Regular, 12, Neutral-200&quot;.toLabel(),
+          text = "Roboto, Regular, 12, Neutral-200".toLabel(),
           iconContentDescription = Label.EMPTY,
         ),
       ),
       ScreenShotTestData(
-        screenShotTestName = &quot; StatusBadgeDataWithIconError&quot;,
+        screenShotTestName = " StatusBadgeDataWithIconError",
         value = SingleCardStatusBadgeData.WithIcon.Error(
-          text = &quot;Roboto, Regular, 12, Neutral-200&quot;.toLabel(),
+          text = "Roboto, Regular, 12, Neutral-200".toLabel(),
           iconContentDescription = Label.EMPTY,
         ),
       ),
       ScreenShotTestData(
-        screenShotTestName = &quot; StatusBadgeDataWithIconWarning&quot;,
+        screenShotTestName = " StatusBadgeDataWithIconWarning",
         value = SingleCardStatusBadgeData.WithIcon.Warning(
-          text = &quot;Roboto, Regular, 12, Neutral-200&quot;.toLabel(),
+          text = "Roboto, Regular, 12, Neutral-200".toLabel(),
           iconContentDescription = Label.EMPTY,
         ),
       ),
       ScreenShotTestData(
-        screenShotTestName = &quot; StatusBadgeDataWithIconInfo&quot;,
+        screenShotTestName = " StatusBadgeDataWithIconInfo",
         value = SingleCardStatusBadgeData.WithIcon.Info(
-          text = &quot;Roboto, Regular, 12, Neutral-200&quot;.toLabel(),
+          text = "Roboto, Regular, 12, Neutral-200".toLabel(),
           iconContentDescription = Label.EMPTY,
         ),
       ),
       ScreenShotTestData(
-        screenShotTestName = &quot; StatusBadgeDataWithIconAndBorderActive&quot;,
+        screenShotTestName = " StatusBadgeDataWithIconAndBorderActive",
         value = SingleCardStatusBadgeData.WithIconAndBorder.Active(
-          text = &quot;Roboto, Regular, 12, Neutral-200&quot;.toLabel(),
+          text = "Roboto, Regular, 12, Neutral-200".toLabel(),
           iconContentDescription = Label.EMPTY,
         ),
       ),
       ScreenShotTestData(
-        screenShotTestName = &quot; StatusBadgeDataWithIconAndBorderActive&quot;,
+        screenShotTestName = " StatusBadgeDataWithIconAndBorderActive",
         value = SingleCardStatusBadgeData.WithIconAndBorder.ActionNeeded(
-          text = &quot;Roboto, Regular, 12, Neutral-200&quot;.toLabel(),
+          text = "Roboto, Regular, 12, Neutral-200".toLabel(),
           iconContentDescription = Label.EMPTY,
         ),
       ),
       ScreenShotTestData(
-        screenShotTestName = &quot; StatusBadgeDataWithIconAndBorderFailure&quot;,
+        screenShotTestName = " StatusBadgeDataWithIconAndBorderFailure",
         value = SingleCardStatusBadgeData.WithIconAndBorder.Failure(
-          text = &quot;Roboto, Regular, 12, Neutral-200&quot;.toLabel(),
+          text = "Roboto, Regular, 12, Neutral-200".toLabel(),
           iconContentDescription = Label.EMPTY,
         ),
       ),
       ScreenShotTestData(
-        screenShotTestName = &quot; StatusBadgeDataWithIconAndBorderCanceled&quot;,
+        screenShotTestName = " StatusBadgeDataWithIconAndBorderCanceled",
         value = SingleCardStatusBadgeData.WithIconAndBorder.Canceled(
-          text = &quot;Roboto, Regular, 12, Neutral-200&quot;.toLabel(),
+          text = "Roboto, Regular, 12, Neutral-200".toLabel(),
           iconContentDescription = Label.EMPTY,
         ),
       ),
       ScreenShotTestData(
-        screenShotTestName = &quot; StatusBadgeDataWithDotAndBorderGreen&quot;,
+        screenShotTestName = " StatusBadgeDataWithDotAndBorderGreen",
         value = SingleCardStatusBadgeData.WithDotAndBorder.Green(
-          text = &quot;Roboto, Regular, 12, Neutral-200&quot;.toLabel(),
+          text = "Roboto, Regular, 12, Neutral-200".toLabel(),
           isColored = false,
         ),
       ),
       ScreenShotTestData(
-        screenShotTestName = &quot; StatusBadgeDatWithDotAndBorderYellow&quot;,
+        screenShotTestName = " StatusBadgeDatWithDotAndBorderYellow",
         value = SingleCardStatusBadgeData.WithDotAndBorder.Yellow(
-          text = &quot;Roboto, Regular, 12, Neutral-200&quot;.toLabel(),
+          text = "Roboto, Regular, 12, Neutral-200".toLabel(),
           isColored = false,
         ),
       ),
       ScreenShotTestData(
-        screenShotTestName = &quot; StatusBadgeDataWithDotAndBorderRed&quot;,
+        screenShotTestName = " StatusBadgeDataWithDotAndBorderRed",
         value = SingleCardStatusBadgeData.WithDotAndBorder.Red(
-          text = &quot;Roboto, Regular, 12, Neutral-200&quot;.toLabel(),
+          text = "Roboto, Regular, 12, Neutral-200".toLabel(),
           isColored = false,
         ),
       ),
       ScreenShotTestData(
-        screenShotTestName = &quot; StatusBadgeDataWithDotAndBorderBlue&quot;,
+        screenShotTestName = " StatusBadgeDataWithDotAndBorderBlue",
         value = SingleCardStatusBadgeData.WithDotAndBorder.Blue(
-          text = &quot;Roboto, Regular, 12, Neutral-200&quot;.toLabel(),
+          text = "Roboto, Regular, 12, Neutral-200".toLabel(),
           isColored = false,
         ),
       ),
       ScreenShotTestData(
-        screenShotTestName = &quot; StatusBadgeDataWithDotAndBorderGreenColored&quot;,
+        screenShotTestName = " StatusBadgeDataWithDotAndBorderGreenColored",
         value = SingleCardStatusBadgeData.WithDotAndBorder.Green(
-          text = &quot;Roboto, Regular, 12, Neutral-200&quot;.toLabel(),
+          text = "Roboto, Regular, 12, Neutral-200".toLabel(),
           isColored = true,
         ),
       ),
       ScreenShotTestData(
-        screenShotTestName = &quot; StatusBadgeDataWithDotAndBorderYellowColored&quot;,
+        screenShotTestName = " StatusBadgeDataWithDotAndBorderYellowColored",
         value = SingleCardStatusBadgeData.WithDotAndBorder.Yellow(
-          text = &quot;Roboto, Regular, 12, Neutral-200&quot;.toLabel(),
+          text = "Roboto, Regular, 12, Neutral-200".toLabel(),
           isColored = true,
         ),
       ),
       ScreenShotTestData(
-        screenShotTestName = &quot; StatusBadgeDatWithDotAndBorderRedColored&quot;,
+        screenShotTestName = " StatusBadgeDatWithDotAndBorderRedColored",
         value = SingleCardStatusBadgeData.WithDotAndBorder.Red(
-          text = &quot;Roboto, Regular, 12, Neutral-200&quot;.toLabel(),
+          text = "Roboto, Regular, 12, Neutral-200".toLabel(),
           isColored = true,
         ),
       ),
       ScreenShotTestData(
-        screenShotTestName = &quot; StatusBadgeDataWithDotAndBorderBlueColored&quot;,
+        screenShotTestName = " StatusBadgeDataWithDotAndBorderBlueColored",
         value = SingleCardStatusBadgeData.WithDotAndBorder.Blue(
-          text = &quot;Roboto, Regular, 12, Neutral-200&quot;.toLabel(),
+          text = "Roboto, Regular, 12, Neutral-200".toLabel(),
           isColored = true,
         ),
       ),
       ScreenShotTestData(
-        screenShotTestName = &quot; StatusBadgeDataElevatedGreen&quot;,
+        screenShotTestName = " StatusBadgeDataElevatedGreen",
         value = SingleCardStatusBadgeData.Elevated.Green(
-          text = &quot;Roboto, Regular, 12, Neutral-200&quot;.toLabel(),
+          text = "Roboto, Regular, 12, Neutral-200".toLabel(),
         ),
       ),
       ScreenShotTestData(
-        screenShotTestName = &quot; StatusBadgeDataElevatedYellow&quot;,
+        screenShotTestName = " StatusBadgeDataElevatedYellow",
         value = SingleCardStatusBadgeData.Elevated.Yellow(
-          text = &quot;Roboto, Regular, 12, Neutral-200&quot;.toLabel(),
+          text = "Roboto, Regular, 12, Neutral-200".toLabel(),
         ),
       ),
       ScreenShotTestData(
-        screenShotTestName = &quot; StatusBadgeDataElevatedRed&quot;,
+        screenShotTestName = " StatusBadgeDataElevatedRed",
         value = SingleCardStatusBadgeData.Elevated.Red(
-          text = &quot;Roboto, Regular, 12, Neutral-200&quot;.toLabel(),
+          text = "Roboto, Regular, 12, Neutral-200".toLabel(),
         ),
       ),
       ScreenShotTestData(
-        screenShotTestName = &quot; StatusBadgeDataElevatedBlue&quot;,
+        screenShotTestName = " StatusBadgeDataElevatedBlue",
         value = SingleCardStatusBadgeData.Elevated.Blue(
-          text = &quot;Roboto, Regular, 12, Neutral-200&quot;.toLabel(),
+          text = "Roboto, Regular, 12, Neutral-200".toLabel(),
         ),
       ),
     )

@@ -27,11 +27,11 @@ import pl.gov.coi.common.ui.pulltorefresh.PullToRefresh
 import pl.gov.coi.common.ui.theme.AppTheme
 import pl.gov.coi.common.ui.topMenu.TopMenu
 
-@Deprecated(&quot;Use BaseScaffold and Header&quot;)
+@Deprecated("Use BaseScaffold and Header")
 @Composable
-fun &lt;CONTENT_DATA&gt; ServiceWelcomePage(
-  data: ServiceWelcomePageData&lt;CONTENT_DATA&gt;,
-  content: @Composable (CONTENT_DATA) -&gt; Unit = {},
+fun <CONTENT_DATA> ServiceWelcomePage(
+  data: ServiceWelcomePageData<CONTENT_DATA>,
+  content: @Composable (CONTENT_DATA) -> Unit = {},
 ) {
   Scaffold(
     modifier = Modifier.fillMaxSize(),
@@ -42,7 +42,7 @@ fun &lt;CONTENT_DATA&gt; ServiceWelcomePage(
         mainButtonData = data.mainButtonData,
       )
     },
-  ) { contentPadding -&gt;
+  ) { contentPadding ->
     Column(
       modifier = Modifier
         .fillMaxSize()
@@ -105,7 +105,7 @@ fun &lt;CONTENT_DATA&gt; ServiceWelcomePage(
 @Preview
 @Composable
 fun ServiceWelcomePagePreview(
-  @PreviewParameter(ServiceWelcomePagePreviewParameterProvider::class) data: ServiceWelcomePageData&lt;*&gt;,
+  @PreviewParameter(ServiceWelcomePagePreviewParameterProvider::class) data: ServiceWelcomePageData<*>,
 ) {
 
   ServiceWelcomePage(data = data) {

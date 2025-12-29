@@ -3,23 +3,23 @@ package pl.gov.coi.common.ui.ds.link
 import pl.gov.coi.common.ui.preview.CustomPreviewParameterProvider
 import pl.gov.coi.common.ui.preview.ScreenShotTestData
 
-class LinkPreviewProvider : CustomPreviewParameterProvider&lt;LinkData&gt;() {
-  override val screenShotTestValues: Sequence&lt;ScreenShotTestData&lt;LinkData&gt;&gt; = sequenceOf(
+class LinkPreviewProvider : CustomPreviewParameterProvider<LinkData>() {
+  override val screenShotTestValues: Sequence<ScreenShotTestData<LinkData>> = sequenceOf(
     ScreenShotTestData(
-      screenShotTestName = &quot;LinkEnabled&quot;,
+      screenShotTestName = "LinkEnabled",
       value = LinkData(
-        label = &quot;Link&quot;.toLabel(),
+        label = "Link".toLabel(),
         linkType = LinkData.LinkType.WEBSITE,
-        url = &quot;&quot;,
+        url = "",
         onClick = {},
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;LinkDisabled&quot;,
+      screenShotTestName = "LinkDisabled",
       value = LinkData(
-        label = &quot;Link&quot;.toLabel(),
+        label = "Link".toLabel(),
         linkType = LinkData.LinkType.WEBSITE,
-        url = &quot;&quot;,
+        url = "",
         enabled = false,
         onClick = {},
       ),

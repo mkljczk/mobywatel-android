@@ -52,7 +52,7 @@ private fun Color.orRedIfError(isError: Boolean) =
 @Composable
 fun RadioButtonItemPreview(
   @PreviewParameter(RadioButtonItemPPP::class)
-  wrappedValue: WrappedValue&lt;RadioButtonItemData&gt;,
+  wrappedValue: WrappedValue<RadioButtonItemData>,
 ) {
   Column(
     modifier = Modifier

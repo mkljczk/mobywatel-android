@@ -10,168 +10,168 @@ import pl.gov.coi.common.ui.ds.inforow.model.InfoRowListData
 import pl.gov.coi.common.ui.preview.CustomPreviewParameterProvider
 import pl.gov.coi.common.ui.preview.ScreenShotTestData
 
-class IconPagePreviewProvider : CustomPreviewParameterProvider&lt;IconPageData&lt;*, *&gt;&gt;() {
-  override val screenShotTestValues: Sequence&lt;ScreenShotTestData&lt;IconPageData&lt;*, *&gt;&gt;&gt; = sequenceOf(
+class IconPagePreviewProvider : CustomPreviewParameterProvider<IconPageData<*, *>>() {
+  override val screenShotTestValues: Sequence<ScreenShotTestData<IconPageData<*, *>>> = sequenceOf(
     ScreenShotTestData(
-      screenShotTestName = &quot;IconPageResultStateFailure&quot;,
+      screenShotTestName = "IconPageResultStateFailure",
       value = IconPageData(
         iconSection = IconSection.Result.Failure,
-        title = &quot;Icon Page Result Failure&quot;.toLabel(),
-        descriptionFirst = &quot;description first&quot;.toLabel(),
-        descriptionSecond = &quot;description second&quot;.toLabel(),
+        title = "Icon Page Result Failure".toLabel(),
+        descriptionFirst = "description first".toLabel(),
+        descriptionSecond = "description second".toLabel(),
         content = null,
         bottomContent = null,
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;IconPageResultStateInfoNoBottomButtons&quot;,
+      screenShotTestName = "IconPageResultStateInfoNoBottomButtons",
       value = IconPageData(
         iconSection = IconSection.Result.Info,
-        title = &quot;Icon Page Result Info&quot;.toLabel(),
-        descriptionFirst = &quot;description first&quot;.toLabel(),
+        title = "Icon Page Result Info".toLabel(),
+        descriptionFirst = "description first".toLabel(),
         content = null,
         bottomContent = null,
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;IconPageResultStateInfoBottomButtons&quot;,
+      screenShotTestName = "IconPageResultStateInfoBottomButtons",
       value = IconPageData(
         iconSection = IconSection.Result.Info,
-        title = &quot;Icon Page Result Info&quot;.toLabel(),
-        descriptionFirst = &quot;description first&quot;.toLabel(),
+        title = "Icon Page Result Info".toLabel(),
+        descriptionFirst = "description first".toLabel(),
         content = null,
         bottomContent = IconPageBottomContentData(
           primaryButtonData = ButtonData(
             buttonSize = ButtonSize.Large(),
             buttonVariant = ButtonVariant.Primary,
-            buttonType = ButtonType.WithText(label = &quot;Dalej&quot;.toLabel()),
+            buttonType = ButtonType.WithText(label = "Dalej".toLabel()),
             onClick = { },
           ),
           secondaryButtonData = ButtonData(
             buttonSize = ButtonSize.Large(),
             buttonVariant = ButtonVariant.Secondary(),
-            buttonType = ButtonType.WithText(label = &quot;Zamknij&quot;.toLabel()),
+            buttonType = ButtonType.WithText(label = "Zamknij".toLabel()),
             onClick = { },
           ),
         ),
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;IconPageResultStateSuccessNoBottomButtons&quot;,
+      screenShotTestName = "IconPageResultStateSuccessNoBottomButtons",
       value = IconPageData(
         iconSection = IconSection.Result.Success,
-        title = &quot;Icon Page Result Success&quot;.toLabel(),
-        descriptionFirst = &quot;description first&quot;.toLabel(),
+        title = "Icon Page Result Success".toLabel(),
+        descriptionFirst = "description first".toLabel(),
         content = null,
         bottomContent = null,
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;IconPageResultStateSuccessBottomButtons&quot;,
+      screenShotTestName = "IconPageResultStateSuccessBottomButtons",
       value = IconPageData(
         iconSection = IconSection.Result.Success,
-        title = &quot;Icon Page Result Success&quot;.toLabel(),
-        descriptionFirst = &quot;description first&quot;.toLabel(),
+        title = "Icon Page Result Success".toLabel(),
+        descriptionFirst = "description first".toLabel(),
         content = null,
         bottomContent = IconPageBottomContentData(
           primaryButtonData = ButtonData(
             buttonSize = ButtonSize.Large(),
             buttonVariant = ButtonVariant.Primary,
-            buttonType = ButtonType.WithText(label = &quot;Dalej&quot;.toLabel()),
+            buttonType = ButtonType.WithText(label = "Dalej".toLabel()),
             onClick = { },
           ),
           secondaryButtonData = ButtonData(
             buttonSize = ButtonSize.Large(),
             buttonVariant = ButtonVariant.Secondary(),
-            buttonType = ButtonType.WithText(label = &quot;Zamknij&quot;.toLabel()),
+            buttonType = ButtonType.WithText(label = "Zamknij".toLabel()),
             onClick = { },
           ),
         ),
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;IconPageResultStateWarning&quot;,
+      screenShotTestName = "IconPageResultStateWarning",
       value = IconPageData(
         iconSection = IconSection.Result.Warning,
-        title = &quot;Icon Page Result Success&quot;.toLabel(),
-        descriptionFirst = &quot;description first&quot;.toLabel(),
+        title = "Icon Page Result Success".toLabel(),
+        descriptionFirst = "description first".toLabel(),
         content = null,
         bottomContent = null,
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;IconPageEmptyStateDescription&quot;,
+      screenShotTestName = "IconPageEmptyStateDescription",
       value = IconPageData(
         iconSection = IconSection.Empty(),
-        title = &quot;Icon Page Empty state&quot;.toLabel(),
-        descriptionFirst = &quot;description first&quot;.toLabel(),
+        title = "Icon Page Empty state".toLabel(),
+        descriptionFirst = "description first".toLabel(),
         content = null,
         bottomContent = null,
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;IconPageEmptyStateNoBottomButtons&quot;,
+      screenShotTestName = "IconPageEmptyStateNoBottomButtons",
       value = IconPageData(
         iconSection = IconSection.Empty(),
-        title = &quot;Icon Page Empty State&quot;.toLabel(),
+        title = "Icon Page Empty State".toLabel(),
         content = null,
         bottomContent = null,
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;IconPageEmptyStateBottomButtons&quot;,
+      screenShotTestName = "IconPageEmptyStateBottomButtons",
       value = IconPageData(
         iconSection = IconSection.Empty(),
-        title = &quot;Icon Page Empty State&quot;.toLabel(),
+        title = "Icon Page Empty State".toLabel(),
         content = null,
         bottomContent = IconPageBottomContentData(
           primaryButtonData = ButtonData(
             buttonSize = ButtonSize.Large(),
             buttonVariant = ButtonVariant.Primary,
-            buttonType = ButtonType.WithText(label = &quot;Dalej&quot;.toLabel()),
+            buttonType = ButtonType.WithText(label = "Dalej".toLabel()),
             onClick = { },
           ),
           secondaryButtonData = ButtonData(
             buttonSize = ButtonSize.Large(),
             buttonVariant = ButtonVariant.Secondary(),
-            buttonType = ButtonType.WithText(label = &quot;Zamknij&quot;.toLabel()),
+            buttonType = ButtonType.WithText(label = "Zamknij".toLabel()),
             onClick = { },
           ),
         ),
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;IconPageEmptyIconDescription&quot;,
+      screenShotTestName = "IconPageEmptyIconDescription",
       value = IconPageData(
         iconSection = IconSection.Empty(
           iconRes = R.drawable.g005_mbiznes,
         ),
-        title = &quot;Icon Page Empty State&quot;.toLabel(),
-        descriptionFirst = &quot;description first&quot;.toLabel(),
-        descriptionSecond = &quot;description second&quot;.toLabel(),
+        title = "Icon Page Empty State".toLabel(),
+        descriptionFirst = "description first".toLabel(),
+        descriptionSecond = "description second".toLabel(),
         content = null,
         bottomContent = null,
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;IconPageEmptyWithContentNoBottomButtons&quot;,
+      screenShotTestName = "IconPageEmptyWithContentNoBottomButtons",
       value = IconPageData(
         iconSection = IconSection.Empty(
           iconRes = R.drawable.g005_mbiznes,
         ),
-        title = &quot;Icon Page Empty State&quot;.toLabel(),
-        descriptionFirst = &quot;description first&quot;.toLabel(),
-        descriptionSecond = &quot;description second&quot;.toLabel(),
+        title = "Icon Page Empty State".toLabel(),
+        descriptionFirst = "description first".toLabel(),
+        descriptionSecond = "description second".toLabel(),
         content = InfoRowListData(
           items = listOf(
             InfoRowData.Bullet(
-              description = &quot;Support text font: bodyLargeRegular color: neutral200&quot;.toLabel(),
+              description = "Support text font: bodyLargeRegular color: neutral200".toLabel(),
             ),
             InfoRowData.Bullet(
-              description = &quot;Support text font: bodyLargeRegular color: neutral200&quot;.toLabel(),
+              description = "Support text font: bodyLargeRegular color: neutral200".toLabel(),
             ),
             InfoRowData.Bullet(
-              description = &quot;Support text font: bodyLargeRegular color: neutral200&quot;.toLabel(),
+              description = "Support text font: bodyLargeRegular color: neutral200".toLabel(),
             ),
           ),
         ),
@@ -179,24 +179,24 @@ class IconPagePreviewProvider : CustomPreviewParameterProvider&lt;IconPageData&l
       ),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;IconPageEmptyWithContentBottomButtons&quot;,
+      screenShotTestName = "IconPageEmptyWithContentBottomButtons",
       value = IconPageData(
         iconSection = IconSection.Empty(
           iconRes = R.drawable.g005_mbiznes,
         ),
-        title = &quot;Icon Page Empty State&quot;.toLabel(),
-        descriptionFirst = &quot;description first&quot;.toLabel(),
-        descriptionSecond = &quot;description second&quot;.toLabel(),
+        title = "Icon Page Empty State".toLabel(),
+        descriptionFirst = "description first".toLabel(),
+        descriptionSecond = "description second".toLabel(),
         content = InfoRowListData(
           items = listOf(
             InfoRowData.Bullet(
-              description = &quot;Support text font: bodyLargeRegular color: neutral200&quot;.toLabel(),
+              description = "Support text font: bodyLargeRegular color: neutral200".toLabel(),
             ),
             InfoRowData.Bullet(
-              description = &quot;Support text font: bodyLargeRegular color: neutral200&quot;.toLabel(),
+              description = "Support text font: bodyLargeRegular color: neutral200".toLabel(),
             ),
             InfoRowData.Bullet(
-              description = &quot;Support text font: bodyLargeRegular color: neutral200&quot;.toLabel(),
+              description = "Support text font: bodyLargeRegular color: neutral200".toLabel(),
             ),
           ),
         ),
@@ -204,13 +204,13 @@ class IconPagePreviewProvider : CustomPreviewParameterProvider&lt;IconPageData&l
           primaryButtonData = ButtonData(
             buttonSize = ButtonSize.Large(),
             buttonVariant = ButtonVariant.Primary,
-            buttonType = ButtonType.WithText(label = &quot;Dalej&quot;.toLabel()),
+            buttonType = ButtonType.WithText(label = "Dalej".toLabel()),
             onClick = { },
           ),
           secondaryButtonData = ButtonData(
             buttonSize = ButtonSize.Large(),
             buttonVariant = ButtonVariant.Secondary(),
-            buttonType = ButtonType.WithText(label = &quot;Zamknij&quot;.toLabel()),
+            buttonType = ButtonType.WithText(label = "Zamknij".toLabel()),
             onClick = { },
           ),
         ),

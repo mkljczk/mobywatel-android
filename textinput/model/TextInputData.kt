@@ -19,10 +19,10 @@ sealed class TextInputData(
   open val validationState: ValidationState,
   open val helperText: Label?,
   open val infoButtonData: ButtonTextData?,
-  open val onValueChanged: (String) -&gt; Unit,
+  open val onValueChanged: (String) -> Unit,
   open val enabled: Boolean,
   open val imeAction: ImeAction,
-  open val keyboardAction: (FocusManager) -&gt; KeyboardActions,
+  open val keyboardAction: (FocusManager) -> KeyboardActions,
   open val singleLine: Boolean,
   open val textAlign: TextAlign? = null,
   open val removableIconVisible: Boolean,
@@ -39,10 +39,10 @@ sealed class TextInputData(
     override val validationState: ValidationState = ValidationState.Default,
     override val helperText: Label? = null,
     override val infoButtonData: ButtonTextData? = null,
-    override val onValueChanged: (String) -&gt; Unit,
+    override val onValueChanged: (String) -> Unit,
     override val enabled: Boolean = true,
     override val imeAction: ImeAction = ImeAction.Done,
-    override val keyboardAction: (FocusManager) -&gt; KeyboardActions = { KeyboardActions.Default },
+    override val keyboardAction: (FocusManager) -> KeyboardActions = { KeyboardActions.Default },
     override val singleLine: Boolean = true,
     override val textAlign: TextAlign? = null,
     override val removableIconVisible: Boolean = true,
@@ -75,10 +75,10 @@ sealed class TextInputData(
     override val validationState: ValidationState = ValidationState.Default,
     override val helperText: Label? = null,
     override val infoButtonData: ButtonTextData? = null,
-    override val onValueChanged: (String) -&gt; Unit,
+    override val onValueChanged: (String) -> Unit,
     override val enabled: Boolean = true,
     override val imeAction: ImeAction = ImeAction.Done,
-    override val keyboardAction: (FocusManager) -&gt; KeyboardActions = { KeyboardActions.Default },
+    override val keyboardAction: (FocusManager) -> KeyboardActions = { KeyboardActions.Default },
     override val singleLine: Boolean = true,
     override val textAlign: TextAlign? = null,
     override val removableIconVisible: Boolean = true,
@@ -102,8 +102,8 @@ sealed class TextInputData(
     keyboardAction = keyboardAction,
   ) {
     override val keyboardType: KeyboardType = when (isPhoneNumberPrefix) {
-      true -&gt; KeyboardType.Phone
-      false -&gt; KeyboardType.Number
+      true -> KeyboardType.Phone
+      false -> KeyboardType.Number
     }
   }
 
@@ -115,16 +115,16 @@ sealed class TextInputData(
     override val validationState: ValidationState = ValidationState.Default,
     override val helperText: Label? = null,
     override val infoButtonData: ButtonTextData? = null,
-    override val onValueChanged: (String) -&gt; Unit,
+    override val onValueChanged: (String) -> Unit,
     override val enabled: Boolean = true,
     override val imeAction: ImeAction = ImeAction.Done,
-    override val keyboardAction: (FocusManager) -&gt; KeyboardActions = { KeyboardActions.Default },
+    override val keyboardAction: (FocusManager) -> KeyboardActions = { KeyboardActions.Default },
     override val singleLine: Boolean = true,
     override val textAlign: TextAlign? = null,
     override val removableIconVisible: Boolean = false,
     override val keyboardType: KeyboardType = KeyboardType.Password,
     val iconContentDescription: IconContentDescription = IconContentDescription(),
-    val onPasswordVisibilityChanged: (Boolean) -&gt; Unit = {},
+    val onPasswordVisibilityChanged: (Boolean) -> Unit = {},
   ) : TextInputData(
     testTag = testTag,
     label = label,
@@ -155,10 +155,10 @@ sealed class TextInputData(
     override val validationState: ValidationState = ValidationState.Default,
     override val helperText: Label? = null,
     override val infoButtonData: ButtonTextData? = null,
-    override val onValueChanged: (String) -&gt; Unit,
+    override val onValueChanged: (String) -> Unit,
     override val enabled: Boolean = true,
     override val imeAction: ImeAction = ImeAction.Done,
-    override val keyboardAction: (FocusManager) -&gt; KeyboardActions = { KeyboardActions.Default },
+    override val keyboardAction: (FocusManager) -> KeyboardActions = { KeyboardActions.Default },
     override val singleLine: Boolean = true,
     override val textAlign: TextAlign? = null,
     override val removableIconVisible: Boolean = false,
@@ -190,10 +190,10 @@ sealed class TextInputData(
     override val validationState: ValidationState = ValidationState.Default,
     override val helperText: Label? = null,
     override val infoButtonData: ButtonTextData? = null,
-    override val onValueChanged: (String) -&gt; Unit,
+    override val onValueChanged: (String) -> Unit,
     override val enabled: Boolean = true,
     override val imeAction: ImeAction = ImeAction.Done,
-    override val keyboardAction: (FocusManager) -&gt; KeyboardActions = { KeyboardActions.Default },
+    override val keyboardAction: (FocusManager) -> KeyboardActions = { KeyboardActions.Default },
     override val singleLine: Boolean = true,
     override val textAlign: TextAlign? = null,
     override val removableIconVisible: Boolean = false,
@@ -225,10 +225,10 @@ sealed class TextInputData(
     override val validationState: ValidationState = ValidationState.Default,
     override val helperText: Label? = null,
     override val infoButtonData: ButtonTextData? = null,
-    override val onValueChanged: (String) -&gt; Unit,
+    override val onValueChanged: (String) -> Unit,
     override val enabled: Boolean = true,
     override val imeAction: ImeAction = ImeAction.Done,
-    override val keyboardAction: (FocusManager) -&gt; KeyboardActions = { KeyboardActions.Default },
+    override val keyboardAction: (FocusManager) -> KeyboardActions = { KeyboardActions.Default },
     override val singleLine: Boolean = true,
     override val textAlign: TextAlign? = null,
     override val removableIconVisible: Boolean = true,
@@ -259,8 +259,8 @@ sealed class TextInputData(
     override val validationState: ValidationState = ValidationState.Default,
     val countryCodeValue: Label?,
     val phoneNumberValue: Label?,
-    val onCountryCodeChanged: (String) -&gt; Unit,
-    val onPhoneNumberChanged: (String) -&gt; Unit,
+    val onCountryCodeChanged: (String) -> Unit,
+    val onPhoneNumberChanged: (String) -> Unit,
     val isCountryCodeCorrect: Boolean? = null,
     val isPhoneNumberCorrect: Boolean? = null,
     val countryCodeTextAlign: TextAlign = TextAlign.Center,
@@ -286,16 +286,16 @@ sealed class TextInputData(
     override val keyboardType: KeyboardType = KeyboardType.Phone
 
     val countryCodeNumber = Number(
-      testTag = testTag?.let { tag -&gt; tag + &quot;CountryCodeText&quot; },
+      testTag = testTag?.let { tag -> tag + "CountryCodeText" },
       label = label?.addToTag(addStringToTag = COUNTRY_CODE_SUFFIX),
       indexTag = indexTag,
       hint = null,
       value = countryCodeValue ?: Label.EMPTY,
       onValueChanged = onCountryCodeChanged,
       validationState = when (isCountryCodeCorrect) {
-        true -&gt; ValidationState.Valid
-        false -&gt; ValidationState.Invalid(message = Label.EMPTY)
-        null -&gt; ValidationState.Default
+        true -> ValidationState.Valid
+        false -> ValidationState.Invalid(message = Label.EMPTY)
+        null -> ValidationState.Default
       },
       isPhoneNumberPrefix = true,
       removableIconVisible = false,
@@ -304,15 +304,15 @@ sealed class TextInputData(
     )
 
     val phoneNumber = Number(
-      testTag = testTag?.let { tag -&gt; tag + &quot;PhoneNumberText&quot; },
+      testTag = testTag?.let { tag -> tag + "PhoneNumberText" },
       label = label?.addToTag(addStringToTag = PHONE_NUMBER_SUFFIX),
       indexTag = indexTag,
       value = phoneNumberValue ?: Label.EMPTY,
       onValueChanged = onPhoneNumberChanged,
       validationState = when (isPhoneNumberCorrect) {
-        true -&gt; ValidationState.Valid
-        false -&gt; ValidationState.Invalid(message = Label.EMPTY)
-        null -&gt; ValidationState.Default
+        true -> ValidationState.Valid
+        false -> ValidationState.Invalid(message = Label.EMPTY)
+        null -> ValidationState.Default
       },
       textAlign = phoneNumberTextAlign,
       imeAction = imeAction,
@@ -321,5 +321,5 @@ sealed class TextInputData(
 }
 
 private const val PIN_LENGTH_DEFAULT_VALUE = 4
-private const val COUNTRY_CODE_SUFFIX = &quot;_CountryCode&quot;
-private const val PHONE_NUMBER_SUFFIX = &quot;_PhoneNumber&quot;
+private const val COUNTRY_CODE_SUFFIX = "_CountryCode"
+private const val PHONE_NUMBER_SUFFIX = "_PhoneNumber"

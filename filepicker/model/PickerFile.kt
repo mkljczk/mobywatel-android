@@ -22,7 +22,7 @@ import pl.gov.coi.common.ui.unmapped.singlecard.toSingleCardLabel
 sealed class PickerFile(
   open val title: Label,
   open val description: Label,
-  open val onDeleteClick: () -&gt; Unit,
+  open val onDeleteClick: () -> Unit,
 ) {
   internal abstract val cardData: DefaultSingleCardData
 
@@ -38,8 +38,8 @@ sealed class PickerFile(
   data class Image(
     override val title: Label,
     override val description: Label,
-    override val onDeleteClick: () -&gt; Unit,
-    val onImageClick: (() -&gt; Unit)? = null,
+    override val onDeleteClick: () -> Unit,
+    val onImageClick: (() -> Unit)? = null,
     val leadingImageData: LeadingImageData,
   ) : PickerFile(
     title = title,
@@ -54,7 +54,7 @@ sealed class PickerFile(
 
       data class Icon(
         @DrawableRes val iconResId: Int,
-        val backgroundColor: @Composable () -&gt; Color,
+        val backgroundColor: @Composable () -> Color,
       ) : LeadingImageData() {
 
         companion object {
@@ -69,13 +69,13 @@ sealed class PickerFile(
     override val cardData = DefaultSingleCardData(
       leadingSection = LeadingSection(
         mediaSection = when (leadingImageData) {
-          is LeadingImageData.Image -&gt; MediaSection.Image(
+          is LeadingImageData.Image -> MediaSection.Image(
             bitmap = leadingImageData.bitmap,
             onClick = onImageClick,
             contentDescription = onImageClick?.let { CommonUILabelProvider.commonAccessibilityPhotoPreview() },
           )
 
-          is LeadingImageData.Icon -&gt; RoundedSquareIcon(
+          is LeadingImageData.Icon -> RoundedSquareIcon(
             iconResId = leadingImageData.iconResId,
             contentDescription = onImageClick?.let { CommonUILabelProvider.commonAccessibilityFilePreview() },
             onClick = onImageClick,
@@ -98,7 +98,7 @@ sealed class PickerFile(
   data class Regular(
     override val title: Label,
     override val description: Label,
-    override val onDeleteClick: () -&gt; Unit,
+    override val onDeleteClick: () -> Unit,
   ) : PickerFile(
     title = title,
     description = description,

@@ -28,11 +28,11 @@ import pl.gov.coi.common.ui.topMenu.TopMenu
 import pl.gov.coi.common.ui.ds.inforow.InfoRowList
 import pl.gov.coi.common.ui.ds.inforow.model.InfoRowListData
 
-@Deprecated(&quot;Use BaseScaffold with Header&quot;)
+@Deprecated("Use BaseScaffold with Header")
 @Composable
-fun &lt;CONTENT_DATA&gt; SupportPage(
-  data: SupportPageData&lt;CONTENT_DATA&gt;,
-  content: @Composable (CONTENT_DATA) -&gt; Unit = {},
+fun <CONTENT_DATA> SupportPage(
+  data: SupportPageData<CONTENT_DATA>,
+  content: @Composable (CONTENT_DATA) -> Unit = {},
 ) {
   Scaffold(
     modifier = Modifier.fillMaxSize(),
@@ -43,7 +43,7 @@ fun &lt;CONTENT_DATA&gt; SupportPage(
         mainButtonData = data.mainButtonData,
       )
     },
-  ) { contentPadding -&gt;
+  ) { contentPadding ->
     Column(
       modifier = Modifier
         .fillMaxSize()
@@ -111,7 +111,7 @@ fun &lt;CONTENT_DATA&gt; SupportPage(
 
 @Preview
 @Composable
-fun SupportPagePreview(@PreviewParameter(SupportPagePreviewParameterProvider::class) data: SupportPageData&lt;*&gt;) {
+fun SupportPagePreview(@PreviewParameter(SupportPagePreviewParameterProvider::class) data: SupportPageData<*>) {
   SupportPage(data = data) {
     if (it is InfoRowListData) {
       ContentBox {

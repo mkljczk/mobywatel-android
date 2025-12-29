@@ -13,22 +13,22 @@ sealed class DialogData(
   open val testTag: String?,
   open val title: Label,
   open val body: Label? = null,
-  open val annotatedBody: (@Composable () -&gt; AnnotatedString)? = null,
+  open val annotatedBody: (@Composable () -> AnnotatedString)? = null,
   open val primaryButtonData: ButtonData,
   open val secondaryButtonData: ButtonData? = null,
   internal val horizontalAlignment: Alignment.Horizontal = Alignment.Start,
   internal val textAlign: TextAlign = TextAlign.Start,
-  open val onDismiss: () -&gt; Unit,
+  open val onDismiss: () -> Unit,
 ) {
   data class WithThreeButtons(
     override val testTag: String? = null,
     override val title: Label,
     override val body: Label? = null,
-    override val annotatedBody: (@Composable () -&gt; AnnotatedString)? = null,
+    override val annotatedBody: (@Composable () -> AnnotatedString)? = null,
     override val primaryButtonData: ButtonData,
     override val secondaryButtonData: ButtonData,
     val tertiaryButtonData: ButtonData,
-    override val onDismiss: () -&gt; Unit,
+    override val onDismiss: () -> Unit,
   ) : DialogData(
     testTag = testTag,
     title = title,
@@ -45,10 +45,10 @@ sealed class DialogData(
     override val testTag: String? = null,
     override val title: Label,
     override val body: Label? = null,
-    override val annotatedBody: (@Composable () -&gt; AnnotatedString)? = null,
+    override val annotatedBody: (@Composable () -> AnnotatedString)? = null,
     override val primaryButtonData: ButtonData,
     override val secondaryButtonData: ButtonData? = null,
-    override val onDismiss: () -&gt; Unit,
+    override val onDismiss: () -> Unit,
   ) : DialogData(
     testTag = testTag,
     title = title,
@@ -65,11 +65,11 @@ sealed class DialogData(
     override val testTag: String? = null,
     override val title: Label,
     override val body: Label? = null,
-    override val annotatedBody: (@Composable () -&gt; AnnotatedString)? = null,
+    override val annotatedBody: (@Composable () -> AnnotatedString)? = null,
     override val primaryButtonData: ButtonData,
     override val secondaryButtonData: ButtonData? = null,
     val icon: DialogIconData,
-    override val onDismiss: () -&gt; Unit,
+    override val onDismiss: () -> Unit,
   ) : DialogData(
     testTag = testTag,
     title = title,
@@ -85,5 +85,5 @@ sealed class DialogData(
 
 data class DialogIconData(
   @DrawableRes val iconResId: Int,
-  val iconColorProvider: @Composable () -&gt; Color,
+  val iconColorProvider: @Composable () -> Color,
 )

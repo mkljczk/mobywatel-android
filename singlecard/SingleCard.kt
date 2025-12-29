@@ -10,10 +10,10 @@ import pl.gov.coi.common.ui.ds.singlecard.provider.SingleCardPreviewParameterPro
 val SINGLE_CARD_MINIMUM_HEIGHT: Dp = 80.dp
 
 @Deprecated(
-  message = &quot;Deprecated&quot;,
+  message = "Deprecated",
   replaceWith = ReplaceWith(
-    expression = &quot;SingleCard()&quot;,
-    imports = arrayOf(&quot;pl.gov.coi.common.ui.unmapped.singlecard&quot;),
+    expression = "SingleCard()",
+    imports = arrayOf("pl.gov.coi.common.ui.unmapped.singlecard"),
   ),
 )
 @Composable
@@ -21,10 +21,10 @@ fun SingleCard(
   data: SingleCardData,
 ) {
   when (data) {
-    is SingleCardData.Info -&gt; SingleCardInfo(data = data)
-    is SingleCardData.Clickable -&gt; SingleCardClickable(data = data)
-    is SingleCardData.SelectableRadioButton -&gt; SingleCardSelectableRadioButton(data = data)
-    is SingleCardData.SelectableCheckbox -&gt; SingleCardSelectableCheckbox(data = data)
+    is SingleCardData.Info -> SingleCardInfo(data = data)
+    is SingleCardData.Clickable -> SingleCardClickable(data = data)
+    is SingleCardData.SelectableRadioButton -> SingleCardSelectableRadioButton(data = data)
+    is SingleCardData.SelectableCheckbox -> SingleCardSelectableCheckbox(data = data)
   }
 }
 

@@ -7,95 +7,95 @@ import pl.gov.coi.common.ui.ds.textinput.model.TextInputData
 import pl.gov.coi.common.ui.preview.CustomPreviewParameterProvider
 import pl.gov.coi.common.ui.preview.ScreenShotTestData
 
-class TextInputPreviewParameterProvider : CustomPreviewParameterProvider&lt;TextInputData&gt;() {
+class TextInputPreviewParameterProvider : CustomPreviewParameterProvider<TextInputData>() {
 
-  override val screenShotTestValues: Sequence&lt;ScreenShotTestData&lt;TextInputData&gt;&gt; = sequenceOf(
+  override val screenShotTestValues: Sequence<ScreenShotTestData<TextInputData>> = sequenceOf(
     ScreenShotTestData(
-      screenShotTestName = &quot;TextInputText&quot;,
+      screenShotTestName = "TextInputText",
       value = provideTextInputText(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;TextInputTextWithOptionals&quot;,
+      screenShotTestName = "TextInputTextWithOptionals",
       value = provideTextInputTextWithOptionals(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;TextInputTextError&quot;,
+      screenShotTestName = "TextInputTextError",
       value = provideTextInputTextError(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;TextInputTextDisabled&quot;,
+      screenShotTestName = "TextInputTextDisabled",
       value = provideTextInputTextDisabled(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;TextInputNumber&quot;,
+      screenShotTestName = "TextInputNumber",
       value = provideTextInputNumber(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;TextInputPassword&quot;,
+      screenShotTestName = "TextInputPassword",
       value = provideTextInputPassword(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;TextInputSearch&quot;,
+      screenShotTestName = "TextInputSearch",
       value = provideTextInputSearch(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;TextInputPin&quot;,
+      screenShotTestName = "TextInputPin",
       value = provideTextInputPin(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;TextInputPinError&quot;,
+      screenShotTestName = "TextInputPinError",
       value = provideTextInputPinError(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;TextInputPinDisabled&quot;,
+      screenShotTestName = "TextInputPinDisabled",
       value = provideTextInputPinDisabled(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;TextInputPhoneNumberFilled&quot;,
+      screenShotTestName = "TextInputPhoneNumberFilled",
       value = provideTextInputPhoneNumberFilled(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;TextInputPhoneNumberInvalidNumber&quot;,
+      screenShotTestName = "TextInputPhoneNumberInvalidNumber",
       value = provideTextInputPhoneNumberInvalidNumber(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;TextInputPhoneNumberInvalidPrefix&quot;,
+      screenShotTestName = "TextInputPhoneNumberInvalidPrefix",
       value = provideTextInputPhoneNumberInvalidCountryCode(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;TextInputPhoneNumberLong&quot;,
+      screenShotTestName = "TextInputPhoneNumberLong",
       value = provideTextInputPhoneNumberLong(),
     ),
     ScreenShotTestData(
-      screenShotTestName = &quot;TextInputSearchLong&quot;,
+      screenShotTestName = "TextInputSearchLong",
       value = provideTextInputSearchLong(),
     ),
   )
 
   private fun provideTextInputText() = TextInputData.Text(
-    label = &quot;Etykieta&quot;.toLabel(),
+    label = "Etykieta".toLabel(),
     value = Label.EMPTY,
     onValueChanged = {},
   )
 
   private fun provideTextInputTextWithOptionals() = TextInputData.Text(
-    label = &quot;Etykieta&quot;.toLabel(),
-    hint = &quot;Tekst zastępczy (hint)&quot;.toLabel(),
+    label = "Etykieta".toLabel(),
+    hint = "Tekst zastępczy (hint)".toLabel(),
     value = Label.EMPTY,
-    helperText = &quot;Tekst pomocniczy (helper text)&quot;.toLabel(),
+    helperText = "Tekst pomocniczy (helper text)".toLabel(),
     infoButtonData = ButtonTextData(
-      label = &quot;Info button&quot;.toLabel(),
+      label = "Info button".toLabel(),
       onClick = {},
     ),
     onValueChanged = {},
   )
 
   private fun provideTextInputTextError() = TextInputData.Text(
-    label = &quot;Etykieta&quot;.toLabel(),
-    hint = &quot;Tekst zastępczy (hint)&quot;.toLabel(),
+    label = "Etykieta".toLabel(),
+    hint = "Tekst zastępczy (hint)".toLabel(),
     value = Label.EMPTY,
     validationState = ValidationState.Invalid(
-      message = &quot;Tekst błędu&quot;.toLabel(),
+      message = "Tekst błędu".toLabel(),
     ),
     helperText = null,
     infoButtonData = null,
@@ -103,60 +103,60 @@ class TextInputPreviewParameterProvider : CustomPreviewParameterProvider&lt;Text
   )
 
   private fun provideTextInputTextDisabled() = TextInputData.Text(
-    label = &quot;Etykieta&quot;.toLabel(),
-    hint = &quot;Tekst zastępczy (hint)&quot;.toLabel(),
+    label = "Etykieta".toLabel(),
+    hint = "Tekst zastępczy (hint)".toLabel(),
     value = Label.EMPTY,
-    helperText = &quot;Tekst pomocniczy (helper text)&quot;.toLabel(),
+    helperText = "Tekst pomocniczy (helper text)".toLabel(),
     infoButtonData = null,
     enabled = false,
     onValueChanged = {},
   )
 
   private fun provideTextInputNumber() = TextInputData.Number(
-    label = &quot;Etykieta&quot;.toLabel(),
-    hint = &quot;Tekst zastępczy (hint)&quot;.toLabel(),
-    value = &quot;1234&quot;.toLabel(),
+    label = "Etykieta".toLabel(),
+    hint = "Tekst zastępczy (hint)".toLabel(),
+    value = "1234".toLabel(),
     onValueChanged = {},
   )
 
   private fun provideTextInputPassword() = TextInputData.Password(
-    label = &quot;Hasło&quot;.toLabel(),
-    value = &quot;123&quot;.toLabel(),
+    label = "Hasło".toLabel(),
+    value = "123".toLabel(),
     onValueChanged = {},
   )
 
   private fun provideTextInputSearch() = TextInputData.Search(
-    hint = &quot;Wyszukaj (hint)&quot;.toLabel(),
+    hint = "Wyszukaj (hint)".toLabel(),
     value = Label.EMPTY,
     onValueChanged = {},
   )
 
   private fun provideTextInputPin() = TextInputData.Pin(
-    label = &quot;Etykieta&quot;.toLabel(),
-    value = &quot;123&quot;.toLabel(),
+    label = "Etykieta".toLabel(),
+    value = "123".toLabel(),
     onValueChanged = {},
   )
 
   private fun provideTextInputPinError() = TextInputData.Pin(
-    label = &quot;Etykieta&quot;.toLabel(),
-    value = &quot;1234&quot;.toLabel(),
+    label = "Etykieta".toLabel(),
+    value = "1234".toLabel(),
     validationState = ValidationState.Invalid(
-      message = &quot;Tekst błędu&quot;.toLabel(),
+      message = "Tekst błędu".toLabel(),
     ),
     onValueChanged = {},
   )
 
   private fun provideTextInputPinDisabled() = TextInputData.Pin(
-    label = &quot;Etykieta&quot;.toLabel(),
-    value = &quot;1234&quot;.toLabel(),
+    label = "Etykieta".toLabel(),
+    value = "1234".toLabel(),
     enabled = false,
     onValueChanged = {},
   )
 
   private fun provideTextInputPhoneNumberFilled() = TextInputData.PhoneNumber(
-    label = &quot;Numer telefonu&quot;.toLabel(),
-    countryCodeValue = &quot;+48&quot;.toLabel(),
-    phoneNumberValue = &quot;123456789&quot;.toLabel(),
+    label = "Numer telefonu".toLabel(),
+    countryCodeValue = "+48".toLabel(),
+    phoneNumberValue = "123456789".toLabel(),
     onCountryCodeChanged = {},
     onPhoneNumberChanged = {},
     isCountryCodeCorrect = null,
@@ -165,31 +165,31 @@ class TextInputPreviewParameterProvider : CustomPreviewParameterProvider&lt;Text
   )
 
   private fun provideTextInputPhoneNumberInvalidNumber() = TextInputData.PhoneNumber(
-    label = &quot;Numer telefonu&quot;.toLabel(),
-    countryCodeValue = &quot;+48&quot;.toLabel(),
-    phoneNumberValue = &quot;12345&quot;.toLabel(),
+    label = "Numer telefonu".toLabel(),
+    countryCodeValue = "+48".toLabel(),
+    phoneNumberValue = "12345".toLabel(),
     onCountryCodeChanged = {},
     onPhoneNumberChanged = {},
     isCountryCodeCorrect = null,
     isPhoneNumberCorrect = false,
-    validationState = ValidationState.Invalid(message = &quot;Niepoprawny numer&quot;.toLabel()),
+    validationState = ValidationState.Invalid(message = "Niepoprawny numer".toLabel()),
   )
 
   private fun provideTextInputPhoneNumberInvalidCountryCode() = TextInputData.PhoneNumber(
-    label = &quot;Numer telefonu&quot;.toLabel(),
-    countryCodeValue = &quot;+48&quot;.toLabel(),
-    phoneNumberValue = &quot;12345&quot;.toLabel(),
+    label = "Numer telefonu".toLabel(),
+    countryCodeValue = "+48".toLabel(),
+    phoneNumberValue = "12345".toLabel(),
     onCountryCodeChanged = {},
     onPhoneNumberChanged = {},
     isCountryCodeCorrect = false,
     isPhoneNumberCorrect = true,
-    validationState = ValidationState.Invalid(message = &quot;Niepoprawny prefix&quot;.toLabel()),
+    validationState = ValidationState.Invalid(message = "Niepoprawny prefix".toLabel()),
   )
 
   private fun provideTextInputPhoneNumberLong() = TextInputData.PhoneNumber(
-    label = &quot;Numer telefonu&quot;.toLabel(),
-    countryCodeValue = &quot;+48&quot;.toLabel(),
-    phoneNumberValue = &quot;123456789123456789123456789&quot;.toLabel(),
+    label = "Numer telefonu".toLabel(),
+    countryCodeValue = "+48".toLabel(),
+    phoneNumberValue = "123456789123456789123456789".toLabel(),
     onCountryCodeChanged = {},
     onPhoneNumberChanged = {},
     isCountryCodeCorrect = null,
@@ -198,8 +198,8 @@ class TextInputPreviewParameterProvider : CustomPreviewParameterProvider&lt;Text
   )
 
   private fun provideTextInputSearchLong() = TextInputData.Search(
-    hint = &quot;Wyszukaj (hint)&quot;.toLabel(),
-    value = &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.&quot;.toLabel(),
+    hint = "Wyszukaj (hint)".toLabel(),
+    value = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.".toLabel(),
     onValueChanged = {},
   )
 }

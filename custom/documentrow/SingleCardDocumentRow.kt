@@ -85,21 +85,21 @@ private fun RowScope.SingleCardClickableContent(
         .weight(1f),
     ) {
       CustomText(
-        testTag = data.testTag?.let { tag -&gt; tag + &quot;TitleText&quot; },
+        testTag = data.testTag?.let { tag -> tag + "TitleText" },
         label = data.title,
         style = AppTheme.typography.bodyLargeMedium,
         modifier = Modifier.fillMaxWidth(),
       )
-      data.description?.let { description -&gt;
+      data.description?.let { description ->
         CustomText(
-          testTag = data.testTag?.let { tag -&gt; tag + &quot;DescriptionText&quot; },
+          testTag = data.testTag?.let { tag -> tag + "DescriptionText" },
           label = description,
           style = AppTheme.typography.bodyMediumRegular,
           modifier = Modifier.fillMaxWidth(),
         )
       }
 
-      data.badgeData?.let { badge -&gt;
+      data.badgeData?.let { badge ->
         Spacer(modifier = Modifier.height(height = AppTheme.dimensions.spacing25))
         StatusBadge(data = badge)
       }
@@ -111,7 +111,7 @@ private fun RowScope.SingleCardClickableContent(
 @Composable
 fun SingleCardDocumentRowPreview(
   @PreviewParameter(SingleCardDocumentRowPPP::class)
-  wrappedValue: WrappedValue&lt;ProvidedSingleCardDocumentRowData&gt;,
+  wrappedValue: WrappedValue<ProvidedSingleCardDocumentRowData>,
 ) = with(wrappedValue.value()) {
   Column {
     Text(

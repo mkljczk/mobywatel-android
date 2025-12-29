@@ -44,7 +44,7 @@ import pl.gov.coi.common.ui.utils.get
 import pl.gov.coi.common.ui.utils.getResourceEntryNameIcon
 
 
-@SuppressLint(&quot;UnrememberedMutableInteractionSource&quot;)
+@SuppressLint("UnrememberedMutableInteractionSource")
 @Composable
 fun Button(data: ButtonData) {
   val focusManager = LocalFocusManager.current
@@ -92,13 +92,13 @@ fun Button(data: ButtonData) {
       ),
     ) {
       when (data.buttonType) {
-        is ButtonType.WithIcon -&gt; ButtonIcon(
+        is ButtonType.WithIcon -> ButtonIcon(
           testTag = data.testTag,
           buttonType = data.buttonType,
           color = contentColor,
         )
 
-        is ButtonType.WithText -&gt; ButtonText(
+        is ButtonType.WithText -> ButtonText(
           testTag = data.testTag,
           buttonSize = data.buttonSize,
           buttonType = data.buttonType,
@@ -141,7 +141,7 @@ private fun ButtonIcon(
   color: Color,
 ) {
   val iconData = IconData.Standard(
-    testTag = testTag?.let { tag -&gt; tag + &quot;Icon&quot; },
+    testTag = testTag?.let { tag -> tag + "Icon" },
     iconResId = buttonType.iconResId,
     iconSize = IconSize.SIZE24,
     iconColorProvider = { color },
@@ -158,33 +158,33 @@ private fun ButtonText(
   color: Color,
 ) {
   CustomText(
-    testTag = testTag?.let { tag -&gt; tag + &quot;Text&quot; },
+    testTag = testTag?.let { tag -> tag + "Text" },
     modifier = Modifier.clearAndSetSemantics {},
     label = buttonType.label,
     color = color,
     textAlign = TextAlign.Center,
     style = when (buttonSize) {
-      is ButtonSize.Large -&gt; AppTheme.typography.bodyLargeMedium
-      ButtonSize.Small -&gt; AppTheme.typography.bodyMediumMedium
+      is ButtonSize.Large -> AppTheme.typography.bodyLargeMedium
+      ButtonSize.Small -> AppTheme.typography.bodyMediumMedium
     },
   )
 }
 
 @Composable
 private fun getButtonTypeModifier(data: ButtonData) = when (data.buttonType) {
-  is ButtonType.WithIcon -&gt; getButtonWithIconModifier(buttonType = data.buttonType, buttonSize = data.buttonSize)
-  is ButtonType.WithText -&gt; getButtonWithTextModifier(buttonType = data.buttonType, buttonSize = data.buttonSize)
+  is ButtonType.WithIcon -> getButtonWithIconModifier(buttonType = data.buttonType, buttonSize = data.buttonSize)
+  is ButtonType.WithText -> getButtonWithTextModifier(buttonType = data.buttonType, buttonSize = data.buttonSize)
 }
 
 @Composable
 private fun getPaddingValues(data: ButtonData) = when (data.buttonType) {
-  is ButtonType.WithIcon -&gt; PaddingValues(all = AppTheme.dimensions.zero)
-  is ButtonType.WithText -&gt; when (data.buttonSize) {
-    is ButtonSize.Large -&gt; PaddingValues(
+  is ButtonType.WithIcon -> PaddingValues(all = AppTheme.dimensions.zero)
+  is ButtonType.WithText -> when (data.buttonSize) {
+    is ButtonSize.Large -> PaddingValues(
       vertical = AppTheme.dimensions.spacing100,
       horizontal = AppTheme.dimensions.spacing200,
     )
-    ButtonSize.Small -&gt; PaddingValues(
+    ButtonSize.Small -> PaddingValues(
       vertical = AppTheme.dimensions.spacing50,
       horizontal = AppTheme.dimensions.spacing200,
     )
@@ -193,15 +193,15 @@ private fun getPaddingValues(data: ButtonData) = when (data.buttonType) {
 
 @Composable
 private fun getBorderStroke(data: ButtonData) = when (data.buttonVariant) {
-  is ButtonVariant.Secondary -&gt; BorderStroke(
+  is ButtonVariant.Secondary -> BorderStroke(
     width = AppTheme.dimensions.strokeWidth,
     color = when (data.buttonState) {
-      ButtonState.Enabled -&gt; getSecondaryEnabledButtonColor(data.buttonVariant)
-      ButtonState.Destructive -&gt; AppTheme.colors.supportRed100
-      ButtonState.Disabled -&gt; AppTheme.colors.neutral30
+      ButtonState.Enabled -> getSecondaryEnabledButtonColor(data.buttonVariant)
+      ButtonState.Destructive -> AppTheme.colors.supportRed100
+      ButtonState.Disabled -> AppTheme.colors.neutral30
     },
   )
-  else -&gt; null
+  else -> null
 }
 
 @Composable
@@ -210,23 +210,23 @@ private fun getContainerColor(
   buttonVariant: ButtonVariant,
   buttonState: ButtonState,
 ): Color = when (buttonSize) {
-  is ButtonSize.Large -&gt; when (buttonVariant) {
-    ButtonVariant.Primary -&gt; when (buttonState) {
-      ButtonState.Enabled -&gt; AppTheme.colors.primary900
-      ButtonState.Destructive -&gt; AppTheme.colors.supportRed100
-      ButtonState.Disabled -&gt; AppTheme.colors.neutral30
+  is ButtonSize.Large -> when (buttonVariant) {
+    ButtonVariant.Primary -> when (buttonState) {
+      ButtonState.Enabled -> AppTheme.colors.primary900
+      ButtonState.Destructive -> AppTheme.colors.supportRed100
+      ButtonState.Disabled -> AppTheme.colors.neutral30
     }
-    is ButtonVariant.Secondary -&gt; Color.Transparent
-    ButtonVariant.Tertiary -&gt; Color.Transparent
+    is ButtonVariant.Secondary -> Color.Transparent
+    ButtonVariant.Tertiary -> Color.Transparent
   }
-  ButtonSize.Small -&gt; when (buttonVariant) {
-    ButtonVariant.Primary -&gt; when (buttonState) {
-      ButtonState.Enabled -&gt; AppTheme.colors.secondary900
-      ButtonState.Destructive -&gt; AppTheme.colors.supportRed20
-      ButtonState.Disabled -&gt; AppTheme.colors.neutral30
+  ButtonSize.Small -> when (buttonVariant) {
+    ButtonVariant.Primary -> when (buttonState) {
+      ButtonState.Enabled -> AppTheme.colors.secondary900
+      ButtonState.Destructive -> AppTheme.colors.supportRed20
+      ButtonState.Disabled -> AppTheme.colors.neutral30
     }
-    is ButtonVariant.Secondary -&gt; Color.Transparent
-    ButtonVariant.Tertiary -&gt; Color.Transparent
+    is ButtonVariant.Secondary -> Color.Transparent
+    ButtonVariant.Tertiary -> Color.Transparent
   }
 }
 
@@ -236,33 +236,33 @@ private fun getContentColor(
   buttonVariant: ButtonVariant,
   buttonState: ButtonState,
 ): Color = when (buttonSize) {
-  is ButtonSize.Large -&gt; when (buttonVariant) {
-    ButtonVariant.Primary -&gt; when (buttonState) {
-      ButtonState.Enabled -&gt; AppTheme.colors.white
-      ButtonState.Destructive -&gt; AppTheme.colors.white
-      ButtonState.Disabled -&gt; AppTheme.colors.neutral60
+  is ButtonSize.Large -> when (buttonVariant) {
+    ButtonVariant.Primary -> when (buttonState) {
+      ButtonState.Enabled -> AppTheme.colors.white
+      ButtonState.Destructive -> AppTheme.colors.white
+      ButtonState.Disabled -> AppTheme.colors.neutral60
     }
-    is ButtonVariant.Secondary -&gt; when (buttonState) {
-      ButtonState.Enabled -&gt; getSecondaryEnabledButtonColor(buttonVariant)
-      ButtonState.Destructive -&gt; getSecondaryDestructiveButtonColor(buttonVariant)
-      ButtonState.Disabled -&gt; AppTheme.colors.neutral60
+    is ButtonVariant.Secondary -> when (buttonState) {
+      ButtonState.Enabled -> getSecondaryEnabledButtonColor(buttonVariant)
+      ButtonState.Destructive -> getSecondaryDestructiveButtonColor(buttonVariant)
+      ButtonState.Disabled -> AppTheme.colors.neutral60
     }
-    ButtonVariant.Tertiary -&gt; when (buttonState) {
-      ButtonState.Enabled -&gt; AppTheme.colors.primary900
-      ButtonState.Destructive -&gt; AppTheme.colors.supportRed100
-      ButtonState.Disabled -&gt; AppTheme.colors.neutral60
+    ButtonVariant.Tertiary -> when (buttonState) {
+      ButtonState.Enabled -> AppTheme.colors.primary900
+      ButtonState.Destructive -> AppTheme.colors.supportRed100
+      ButtonState.Disabled -> AppTheme.colors.neutral60
     }
   }
-  ButtonSize.Small -&gt; when (buttonVariant) {
-    is ButtonVariant.Secondary -&gt; when (buttonState) {
-      ButtonState.Enabled -&gt; getSecondaryEnabledButtonColor(buttonVariant)
-      ButtonState.Destructive -&gt; getSecondaryDestructiveButtonColor(buttonVariant)
-      ButtonState.Disabled -&gt; AppTheme.colors.neutral60
+  ButtonSize.Small -> when (buttonVariant) {
+    is ButtonVariant.Secondary -> when (buttonState) {
+      ButtonState.Enabled -> getSecondaryEnabledButtonColor(buttonVariant)
+      ButtonState.Destructive -> getSecondaryDestructiveButtonColor(buttonVariant)
+      ButtonState.Disabled -> AppTheme.colors.neutral60
     }
-    else -&gt; when (buttonState) {
-      ButtonState.Enabled -&gt; AppTheme.colors.primary900
-      ButtonState.Destructive -&gt; AppTheme.colors.supportRed100
-      ButtonState.Disabled -&gt; AppTheme.colors.neutral60
+    else -> when (buttonState) {
+      ButtonState.Enabled -> AppTheme.colors.primary900
+      ButtonState.Destructive -> AppTheme.colors.supportRed100
+      ButtonState.Disabled -> AppTheme.colors.neutral60
     }
   }
 }
@@ -285,23 +285,23 @@ private fun getSecondaryEnabledButtonColor(buttonVariant: ButtonVariant.Secondar
 
 @Composable
 private fun getButtonWithIconSize(buttonSize: ButtonSize) = when (buttonSize) {
-  is ButtonSize.Large -&gt; AppTheme.dimensions.spacing600
-  ButtonSize.Small -&gt; AppTheme.dimensions.spacing400
+  is ButtonSize.Large -> AppTheme.dimensions.spacing600
+  ButtonSize.Small -> AppTheme.dimensions.spacing400
 }
 
 @Composable
 private fun getButtonShape(buttonType: ButtonType, buttonSize: ButtonSize) = when (buttonType) {
-  is ButtonType.WithIcon -&gt; CircleShape
-  is ButtonType.WithText -&gt; when (buttonSize) {
-    is ButtonSize.Large -&gt; AppTheme.shapes.radius300
-    ButtonSize.Small -&gt; AppTheme.shapes.radius200
+  is ButtonType.WithIcon -> CircleShape
+  is ButtonType.WithText -> when (buttonSize) {
+    is ButtonSize.Large -> AppTheme.shapes.radius300
+    ButtonSize.Small -> AppTheme.shapes.radius200
   }
 }
 
 @OptIn(ExperimentalComposeUiApi::class)
 @Composable
 private fun getButtonWithTextModifier(buttonType: ButtonType.WithText, buttonSize: ButtonSize) = when (buttonSize) {
-  is ButtonSize.Large -&gt;
+  is ButtonSize.Large ->
     Modifier
       .heightIn(min = AppTheme.dimensions.spacing600)
       .semantics {
@@ -317,7 +317,7 @@ private fun getButtonWithTextModifier(buttonType: ButtonType.WithText, buttonSiz
         },
       )
 
-  ButtonSize.Small -&gt;
+  ButtonSize.Small ->
     Modifier
       .heightIn(min = AppTheme.dimensions.spacing400)
       .semantics {
@@ -340,7 +340,7 @@ private fun getButtonWithIconModifier(buttonType: ButtonType.WithIcon, buttonSiz
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-private fun LayoutWithoutMinimumInteractiveComponentPadding(content: @Composable () -&gt; Unit) {
+private fun LayoutWithoutMinimumInteractiveComponentPadding(content: @Composable () -> Unit) {
   CompositionLocalProvider(LocalMinimumInteractiveComponentEnforcement provides false) {
     content()
   }

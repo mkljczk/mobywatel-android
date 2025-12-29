@@ -8,7 +8,7 @@ import pl.gov.coi.common.ui.ds.custom.icon.IconData
 import pl.gov.coi.common.ui.ds.custom.icon.IconSize
 import pl.gov.coi.common.ui.theme.AppTheme
 
-data class IconPageData&lt;CONTENT, BOTTOM_CONTENT&gt;(
+data class IconPageData<CONTENT, BOTTOM_CONTENT>(
   val iconSection: IconSection,
   val title: Label,
   val descriptionFirst: Label? = null,
@@ -34,7 +34,7 @@ sealed class IconSection(
 
   sealed class Result(
     val iconResId: Int,
-    val iconColorProvider: @Composable () -&gt; Color,
+    val iconColorProvider: @Composable () -> Color,
   ) : IconSection(
     icon = IconData.Standard(
       iconResId = iconResId,

@@ -38,7 +38,7 @@ fun ErrorText(
   ) {
     Icon(
       data = IconData.Standard(
-        testTag = testTag?.let { tag -&gt; tag + &quot;Icon&quot; },
+        testTag = testTag?.let { tag -> tag + "Icon" },
         iconResId = R.drawable.c3_error_mark,
         iconSize = IconSize.SIZE20,
         iconColorProvider = { AppTheme.colors.supportRed100 },
@@ -48,7 +48,7 @@ fun ErrorText(
     )
     Spacer(modifier = Modifier.width(AppTheme.dimensions.spacing50))
     CustomText(
-      testTag = testTag?.let { tag -&gt; tag + &quot;Text&quot; },
+      testTag = testTag?.let { tag -> tag + "Text" },
       textAlign = TextAlign.Start,
       label = errorText,
       style = AppTheme.typography.bodySmallRegular,

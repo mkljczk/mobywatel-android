@@ -16,13 +16,13 @@ sealed class AlertData(
   val title: Label?,
   val bodyText: Label,
   iconResId: Int,
-  iconColorProvider: @Composable () -&gt; Color,
-  onCloseButtonClick: (() -&gt; Unit)?,
+  iconColorProvider: @Composable () -> Color,
+  onCloseButtonClick: (() -> Unit)?,
   closeIconContentDescription: Label,
   val alertButtonData: AlertButtonData?,
 ) {
 
-  internal val closeButtonData = onCloseButtonClick?.let { onCloseButtonClick -&gt;
+  internal val closeButtonData = onCloseButtonClick?.let { onCloseButtonClick ->
     ButtonIconData(
       iconResId = R.drawable.ab009_x_mark,
       iconColorProvider = { AppTheme.colors.neutral200 },
@@ -43,7 +43,7 @@ sealed class AlertData(
     alertContentDescription: Label = CommonUILabelProvider.commonAccessibilityInformation(),
     title: Label? = null,
     bodyText: Label,
-    onCloseButtonClick: (() -&gt; Unit)? = null,
+    onCloseButtonClick: (() -> Unit)? = null,
     closeIconContentDescription: Label = CommonUILabelProvider.commonAccessibilityCloseInformation(),
     alertButtonData: AlertButtonData? = null,
   ) : AlertData(
@@ -63,7 +63,7 @@ sealed class AlertData(
     alertContentDescription: Label = CommonUILabelProvider.commonAccessibilityWarningInformation(),
     title: Label? = null,
     bodyText: Label,
-    onCloseButtonClick: (() -&gt; Unit)? = null,
+    onCloseButtonClick: (() -> Unit)? = null,
     closeIconContentDescription: Label = CommonUILabelProvider.commonAccessibilityCloseWarningInformation(),
     alertButtonData: AlertButtonData? = null,
   ) : AlertData(
@@ -83,7 +83,7 @@ sealed class AlertData(
     alertContentDescription: Label = CommonUILabelProvider.commonAccessibilitySuccessInformation(),
     title: Label? = null,
     bodyText: Label,
-    onCloseButtonClick: (() -&gt; Unit)? = null,
+    onCloseButtonClick: (() -> Unit)? = null,
     closeIconContentDescription: Label = CommonUILabelProvider.commonAccessibilityCloseSuccessInformation(),
     alertButtonData: AlertButtonData? = null,
   ) : AlertData(
@@ -106,7 +106,7 @@ sealed class AlertData(
     alertContentDescription: Label = CommonUILabelProvider.commonAccessibilityErrorInformation(),
     title: Label? = null,
     bodyText: Label,
-    onCloseButtonClick: (() -&gt; Unit)? = null,
+    onCloseButtonClick: (() -> Unit)? = null,
     closeIconContentDescription: Label = CommonUILabelProvider.commonAccessibilityCloseSuccessInformation(),
     alertButtonData: AlertButtonData? = null,
   ) : AlertData(

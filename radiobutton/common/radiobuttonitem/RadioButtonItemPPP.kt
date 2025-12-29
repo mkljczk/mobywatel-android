@@ -7,20 +7,20 @@ import pl.gov.coi.common.ui.preview.ScreenShotTestDataProvider
 import pl.gov.coi.common.ui.preview.WrappedValue
 import pl.gov.coi.common.ui.ds.radiobutton.common.model.RadioButtonItemData
 
-class RadioButtonItemPPP : CustomWrappedDataPreviewParameterProvider&lt;
+class RadioButtonItemPPP : CustomWrappedDataPreviewParameterProvider<
   Unit,
   RadioButtonItemData?,
-  Mapper&lt;Unit, RadioButtonItemData?&gt;,
+  Mapper<Unit, RadioButtonItemData?>,
   RadioButtonItemData,
-  &gt;() {
+  >() {
 
-  override fun mapper(context: Context) = object : Mapper&lt;Unit, RadioButtonItemData?&gt; {
+  override fun mapper(context: Context) = object : Mapper<Unit, RadioButtonItemData?> {
     override fun invoke(p1: Unit): RadioButtonItemData? = null
   }
 
-  override val screenShotTestValues: Sequence&lt;ScreenShotTestDataProvider&lt;RadioButtonItemData&gt;&gt; = sequenceOf(
+  override val screenShotTestValues: Sequence<ScreenShotTestDataProvider<RadioButtonItemData>> = sequenceOf(
     ScreenShotTestDataProvider(
-      screenShotTestName = &quot;RadioButtonItemUnselected&quot;,
+      screenShotTestName = "RadioButtonItemUnselected",
       wrappedValue = WrappedValue {
         provideRadioButtonItemData(
           enabled = true,
@@ -30,7 +30,7 @@ class RadioButtonItemPPP : CustomWrappedDataPreviewParameterProvider&lt;
       },
     ),
     ScreenShotTestDataProvider(
-      screenShotTestName = &quot;RadioButtonItemUnselectedDisabled&quot;,
+      screenShotTestName = "RadioButtonItemUnselectedDisabled",
       wrappedValue = WrappedValue {
         provideRadioButtonItemData(
           enabled = false,
@@ -40,7 +40,7 @@ class RadioButtonItemPPP : CustomWrappedDataPreviewParameterProvider&lt;
       },
     ),
     ScreenShotTestDataProvider(
-      screenShotTestName = &quot;RadioButtonItemSelected&quot;,
+      screenShotTestName = "RadioButtonItemSelected",
       wrappedValue = WrappedValue {
         provideRadioButtonItemData(
           enabled = true,
@@ -50,7 +50,7 @@ class RadioButtonItemPPP : CustomWrappedDataPreviewParameterProvider&lt;
       },
     ),
     ScreenShotTestDataProvider(
-      screenShotTestName = &quot;RadioButtonItemSelectedDisabled&quot;,
+      screenShotTestName = "RadioButtonItemSelectedDisabled",
       wrappedValue = WrappedValue {
         provideRadioButtonItemData(
           enabled = false,
@@ -60,7 +60,7 @@ class RadioButtonItemPPP : CustomWrappedDataPreviewParameterProvider&lt;
       },
     ),
     ScreenShotTestDataProvider(
-      screenShotTestName = &quot;RadioButtonItemUnselectedError&quot;,
+      screenShotTestName = "RadioButtonItemUnselectedError",
       wrappedValue = WrappedValue {
         provideRadioButtonItemData(
           enabled = true,
@@ -70,7 +70,7 @@ class RadioButtonItemPPP : CustomWrappedDataPreviewParameterProvider&lt;
       },
     ),
     ScreenShotTestDataProvider(
-      screenShotTestName = &quot;RadioButtonItemSelectedError&quot;,
+      screenShotTestName = "RadioButtonItemSelectedError",
       wrappedValue = WrappedValue {
         provideRadioButtonItemData(
           enabled = true,

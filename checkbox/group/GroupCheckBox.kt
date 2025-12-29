@@ -31,18 +31,18 @@ import pl.gov.coi.common.ui.theme.AppTheme
 @Composable
 fun CheckBoxGroup(data: CheckBoxGroupData) {
   Column {
-    data.header?.let { header -&gt;
+    data.header?.let { header ->
       LabelRow(
         label = header.label,
         onHelperButtonClick = header.onClick,
       )
     }
     when (data.contentType) {
-      CheckboxContentType.CONTENT_BOX -&gt; ContentBox {
+      CheckboxContentType.CONTENT_BOX -> ContentBox {
         GroupCheckBoxContainerContent(data)
       }
 
-      CheckboxContentType.DEFAULT -&gt; GroupCheckBoxContainerContent(data)
+      CheckboxContentType.DEFAULT -> GroupCheckBoxContainerContent(data)
     }
   }
 }
@@ -50,7 +50,7 @@ fun CheckBoxGroup(data: CheckBoxGroupData) {
 @Composable
 private fun GroupCheckBoxContainerContent(data: CheckBoxGroupData) {
   Column {
-    data.checkboxes.forEachIndexed { index, checkboxData -&gt;
+    data.checkboxes.forEachIndexed { index, checkboxData ->
       CheckboxRow(data = checkboxData, type = data.type, isEnabled = data.isEnabled)
       if (index != data.checkboxes.lastIndex) {
         Spacer(modifier = Modifier.height(AppTheme.dimensions.spacing250))
@@ -61,7 +61,7 @@ private fun GroupCheckBoxContainerContent(data: CheckBoxGroupData) {
 }
 
 @Composable
-private fun ColumnScope.LabelRow(label: Label, onHelperButtonClick: (() -&gt; Unit)?) {
+private fun ColumnScope.LabelRow(label: Label, onHelperButtonClick: (() -> Unit)?) {
   Row(verticalAlignment = Alignment.CenterVertically) {
     CustomText(
       textAlign = TextAlign.Start,
@@ -69,7 +69,7 @@ private fun ColumnScope.LabelRow(label: Label, onHelperButtonClick: (() -&gt; Un
       style = AppTheme.typography.subtitleMedium,
       color = AppTheme.colors.neutral500,
     )
-    onHelperButtonClick?.let { onClick -&gt;
+    onHelperButtonClick?.let { onClick ->
       Spacer(modifier = Modifier.width(AppTheme.dimensions.spacing50))
       ButtonIcon(
         data = ButtonIconData(

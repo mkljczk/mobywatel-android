@@ -15,13 +15,13 @@ import pl.gov.coi.common.ui.preview.CustomPreviewParameterProvider
 import pl.gov.coi.common.ui.preview.ScreenShotTestData
 import pl.gov.coi.common.ui.theme.AppTheme
 
-class ServiceWelcomePagePreviewParameterProvider : CustomPreviewParameterProvider&lt;ServiceWelcomePageData&lt;*&gt;&gt;() {
-  override val screenShotTestValues: Sequence&lt;ScreenShotTestData&lt;ServiceWelcomePageData&lt;*&gt;&gt;&gt;
+class ServiceWelcomePagePreviewParameterProvider : CustomPreviewParameterProvider<ServiceWelcomePageData<*>>() {
+  override val screenShotTestValues: Sequence<ScreenShotTestData<ServiceWelcomePageData<*>>>
     get() = sequenceOf(
       ScreenShotTestData(
-        screenShotTestName = &quot;ServiceWelcomePageData&quot;,
+        screenShotTestName = "ServiceWelcomePageData",
         value = ServiceWelcomePageData(
-          topBarTitle = &quot;Top bar title&quot;.toLabel(),
+          topBarTitle = "Top bar title".toLabel(),
           topBarIconMainResId = R.drawable.ab004_arrow_left,
           onTopBarIconMainClick = {},
           topBarIconMenuResId = R.drawable.c1_info,
@@ -30,17 +30,17 @@ class ServiceWelcomePagePreviewParameterProvider : CustomPreviewParameterProvide
             iconResId = R.drawable.da015_historia_pojazdu,
             iconColorProvider = { AppTheme.colors.headerCeladon100 },
             iconBackgroundColorProvider = { AppTheme.colors.headerGrass30 },
-            title = &quot;Title Size XXL Color - black 900&quot;.toLabel(),
-            message = &quot;Description text Size - M, Color - grey 900&quot;.toLabel(),
+            title = "Title Size XXL Color - black 900".toLabel(),
+            message = "Description text Size - M, Color - grey 900".toLabel(),
           ),
           contentData = Unit,
           buttonData = null,
         ),
       ),
       ScreenShotTestData(
-        screenShotTestName = &quot;ServiceWelcomePageDataWithContent&quot;,
+        screenShotTestName = "ServiceWelcomePageDataWithContent",
         value = ServiceWelcomePageData(
-          topBarTitle = &quot;Top bar title&quot;.toLabel(),
+          topBarTitle = "Top bar title".toLabel(),
           topBarIconMainResId = R.drawable.ab004_arrow_left,
           onTopBarIconMainClick = {},
           topBarIconMenuResId = R.drawable.c1_info,
@@ -49,21 +49,21 @@ class ServiceWelcomePagePreviewParameterProvider : CustomPreviewParameterProvide
             iconResId = R.drawable.da015_historia_pojazdu,
             iconColorProvider = { AppTheme.colors.headerCeladon100 },
             iconBackgroundColorProvider = { AppTheme.colors.headerGrass30 },
-            title = &quot;Title Size XXL Color - black 900&quot;.toLabel(),
-            message = &quot;Description text Size - M, Color - grey 900&quot;.toLabel(),
+            title = "Title Size XXL Color - black 900".toLabel(),
+            message = "Description text Size - M, Color - grey 900".toLabel(),
           ),
           alertData = AlertData.Warning(
-            title = &quot;Alert title example&quot;.toLabel(),
-            bodyText = &quot;Alert body text&quot;.toLabel(),
+            title = "Alert title example".toLabel(),
+            bodyText = "Alert body text".toLabel(),
             alertContentDescription = Label.EMPTY,
           ),
           contentData = InfoRowListData(
             items = listOf(
               InfoRowData.Bullet(
-                description = &quot;Support text\nSIZE M: Roboto Normal Gray 900&quot;.toLabel(),
+                description = "Support text\nSIZE M: Roboto Normal Gray 900".toLabel(),
               ),
               InfoRowData.Bullet(
-                description = &quot;Support text\nSIZE M: Roboto Normal Gray 900&quot;.toLabel(),
+                description = "Support text\nSIZE M: Roboto Normal Gray 900".toLabel(),
               ),
             ),
           ),
@@ -71,7 +71,7 @@ class ServiceWelcomePagePreviewParameterProvider : CustomPreviewParameterProvide
             buttonSize = ButtonSize.Large(),
             buttonVariant = ButtonVariant.Primary,
             buttonType = ButtonType.WithText(
-              label = &quot;Sprawdź&quot;.toLabel(),
+              label = "Sprawdź".toLabel(),
             ),
             onClick = {},
           ),
@@ -79,9 +79,9 @@ class ServiceWelcomePagePreviewParameterProvider : CustomPreviewParameterProvide
       ),
 
       ScreenShotTestData(
-        screenShotTestName = &quot;ServiceWelcomePageDataWithStepsContent&quot;,
+        screenShotTestName = "ServiceWelcomePageDataWithStepsContent",
         value = ServiceWelcomePageData(
-          topBarTitle = &quot;Top bar title&quot;.toLabel(),
+          topBarTitle = "Top bar title".toLabel(),
           topBarIconMainResId = R.drawable.ab004_arrow_left,
           onTopBarIconMainClick = {},
           topBarIconMenuResId = R.drawable.c1_info,
@@ -90,16 +90,16 @@ class ServiceWelcomePagePreviewParameterProvider : CustomPreviewParameterProvide
             iconResId = R.drawable.da015_historia_pojazdu,
             iconColorProvider = { AppTheme.colors.headerCeladon100 },
             iconBackgroundColorProvider = { AppTheme.colors.headerGrass30 },
-            title = &quot;Title Size XXL Color - black 900&quot;.toLabel(),
-            message = &quot;Description text Size - M, Color - grey 900&quot;.toLabel(),
+            title = "Title Size XXL Color - black 900".toLabel(),
+            message = "Description text Size - M, Color - grey 900".toLabel(),
           ),
           contentData = InfoRowListData(
             items = listOf(
               InfoRowData.Bullet(
-                description = &quot;Support text\nSIZE M: Roboto Normal Gray 900&quot;.toLabel(),
+                description = "Support text\nSIZE M: Roboto Normal Gray 900".toLabel(),
               ),
               InfoRowData.Bullet(
-                description = &quot;Support text\nSIZE M: Roboto Normal Gray 900&quot;.toLabel(),
+                description = "Support text\nSIZE M: Roboto Normal Gray 900".toLabel(),
               ),
             ),
           ),
@@ -107,7 +107,7 @@ class ServiceWelcomePagePreviewParameterProvider : CustomPreviewParameterProvide
             buttonSize = ButtonSize.Large(),
             buttonVariant = ButtonVariant.Primary,
             buttonType = ButtonType.WithText(
-              label = &quot;Sprawdź&quot;.toLabel(),
+              label = "Sprawdź".toLabel(),
             ),
             onClick = {},
           ),

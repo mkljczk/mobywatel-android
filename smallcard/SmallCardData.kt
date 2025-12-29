@@ -10,9 +10,9 @@ import pl.gov.coi.common.ui.ds.custom.icon.IconSize
 data class SmallCardData(
   val title: Label,
   @DrawableRes val iconResId: Int,
-  val iconColorProvider: @Composable () -&gt; Color = { Color.Unspecified },
+  val iconColorProvider: @Composable () -> Color = { Color.Unspecified },
   val indexTag: Int? = null,
-  val onClick: () -&gt; Unit,
+  val onClick: () -> Unit,
 ) {
   internal val iconData: IconData = IconData.Standard(
     iconResId = iconResId,

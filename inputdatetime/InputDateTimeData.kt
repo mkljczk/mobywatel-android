@@ -11,7 +11,7 @@ data class InputDateTimeData(
   val validationState: ValidationState = ValidationState.Default,
   val helperText: Label? = null,
   val enabled: Boolean = true,
-  val onClick: () -&gt; Unit,
+  val onClick: () -> Unit,
 ) {
 
   sealed class Type(
@@ -30,7 +30,7 @@ data class InputDateTimeData(
   }
 
   companion object {
-    private const val DATE_PLACEHOLDER = &quot;DD.MM.RRRR&quot;
-    private const val TIME_PLACEHOLDER = &quot;GG:MM&quot;
+    private const val DATE_PLACEHOLDER = "DD.MM.RRRR"
+    private const val TIME_PLACEHOLDER = "GG:MM"
   }
 }

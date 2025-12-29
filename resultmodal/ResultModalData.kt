@@ -12,7 +12,7 @@ import pl.gov.coi.common.ui.theme.AppTheme
 
 class ResultModalData(
   iconRes: Int,
-  iconColorProvider: @Composable () -&gt; Color,
+  iconColorProvider: @Composable () -> Color,
   iconContentDescription: Label,
   val title: Label,
   val dataTitle1: Label,
@@ -23,7 +23,7 @@ class ResultModalData(
   val secondaryButton: ButtonData?,
   val tertiaryButton: ButtonData?,
   closeIconContentDescription: Label,
-  closeAction: () -&gt; Unit,
+  closeAction: () -> Unit,
 ) {
   val closeIconButtonData = ButtonIconData(
     iconResId = R.drawable.ab009_x_mark,

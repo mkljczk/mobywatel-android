@@ -19,9 +19,9 @@ fun TopAppBar(
   data: TopAppBarData,
   scrollBehavior: TopAppBarScrollBehavior = TopAppBarDefaults.pinnedScrollBehavior(),
 ) = when (data) {
-  is TopAppBarData.Medium -&gt; MediumTopAppBar(data, scrollBehavior)
-  is TopAppBarData.Large -&gt; LargeTopAppBar(data, scrollBehavior)
-  is TopAppBarData.Small -&gt; SmallTopAppBar(data, scrollBehavior)
+  is TopAppBarData.Medium -> MediumTopAppBar(data, scrollBehavior)
+  is TopAppBarData.Large -> LargeTopAppBar(data, scrollBehavior)
+  is TopAppBarData.Small -> SmallTopAppBar(data, scrollBehavior)
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
