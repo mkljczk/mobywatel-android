@@ -1,0 +1,6 @@
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;project version=&quot;4&quot;&gt;
+  &lt;component name=&quot;ProjectRootManager&quot;&gt;
+    &lt;output url=&quot;file://$PROJECT_DIR$/out&quot; /&gt;
+  &lt;/component&gt;
+&lt;/project&gt;
